@@ -1,163 +1,67 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAKĪKAT-KALESİ | mornek99-hub.github.io</title>
+    <title>HAKĪKAT-FESTUNG | mornek99-hub.github.io</title>
     <style>
-        body {
-            background-color: #050505;
-            color: #c0c0c0;
-            font-family: 'Courier New', Courier, monospace;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        h1 {
-            color: #00ff41;
-            border-bottom: 2px solid #00ff41;
-            padding-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        h2 {
-            color: #e5c07b;
-            border-bottom: 1px solid #333;
-            padding-bottom: 15px;
-            margin-top: 60px;
-        }
-
-        .status-bar {
-            background: #111;
-            color: #00ff41;
-            padding: 10px;
-            font-size: 0.8rem;
-            border: 1px solid #333;
-            margin-bottom: 40px;
-        }
-
-        .terminal-box {
-            background: #111;
-            padding: 20px;
-            border: 1px solid #333;
-            margin-top: 20px;
-            font-size: 0.9rem;
-        }
-
-        .module-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .module-card {
-            border: 1px solid #333; 
-            padding: 20px; 
-            background: #0a0a0a;
-            transition: 0.3s;
-        }
-
-        .module-card:hover {
-            border-color: #00ff41;
-            box-shadow: 0 0 10px rgba(0, 255, 65, 0.1);
-        }
-
-        .reboot-btn {
-            display: inline-block;
-            border: 1px solid #00ff41;
-            color: #00ff41;
-            padding: 10px 20px;
-            text-decoration: none;
-            cursor: pointer;
-            margin-top: 20px;
-            font-family: 'Courier New', monospace;
-        }
-
-        .reboot-btn:hover {
-            background: #00ff41;
-            color: #000;
-        }
+        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; padding: 20px; max-width: 800px; margin: auto; }
+        .master-box { border: 1px solid #e5c07b; border-left: 5px solid #e5c07b; padding: 20px; color: #00ff41; margin-bottom: 40px; }
+        .log-btn { display: block; width: 200px; margin: 40px auto; border: 1px solid #00ff41; color: #00ff41; padding: 15px; text-decoration: none; text-align: center; font-weight: bold; }
+        .log-btn:hover { background: #00ff41; color: #000; }
+        .terminal { background: #000; border: 1px solid #333; padding: 20px; font-size: 0.9rem; }
+        .terminal-header { color: #555; border-bottom: 1px solid #222; padding-bottom: 5px; margin-bottom: 15px; display: flex; justify-content: space-between; }
+        .exe-btn { border: 1px solid #00ff41; color: #00ff41; padding: 10px; cursor: pointer; display: inline-block; margin: 15px 0; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>HAKĪKAT-KALESİ</h1>
-        <div style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">
-            DOMAIN: <span style="color: #00ff41;">mornek99-hub.github.io</span>
-        </div>
-        <div style="color: #666; font-size: 0.9rem; margin-bottom: 20px;">
-            SİSTEM MİMARI: <span style="color: #e5c07b;">MEHMET ÖRNEK</span>
-        </div>
-        
-        <div class="status-bar">
-            SYSTEM: ONLINE | KERNEL: RASM | ROOT-ACCESS: GRANTED
-        </div>
-    </header>
-
-    <div style="border: 1px solid #e5c07b; background: #0a0a0a; padding: 25px; border-left: 5px solid #e5c07b;">
-        <h3 style="color: #e5c07b; margin-top: 0;">SYSTEM-DEFINITION: ROOT-ZIEL</h3>
-        <p>Der Koran ist eine Anleitung für die Bewusstseins-Erweiterung zum Erreichen des höchsten Status (Insan-ı Kamil).</p>
+    <div class="master-box">
+        # MASTER ARCHITECTURE INITIALIZED<br>
+        CMD_BOOT = "SURE_96 (IQRA)"<br>
+        R_MIN = 0.0 # Supraleitung aktiviert<br>
+        STATUS = "CONNECTED"
     </div>
 
-    <section>
-        <h2>DIAGNOSE-KONSOLE</h2>
-        <div onclick="runSystemCheck()" class="reboot-btn">
-            > EXECUTE SYSTEM CHECK (mornek99-hub)
+    <a href="fizik-tr.html" class="log-btn">LOGBUCH ÖFFNEN</a>
+
+    <div class="terminal">
+        <div class="terminal-header">
+            <span>ADMIN@HAKIKAT-FESTUNG:~</span>
+            <span>PYTHON 3.9 KERNEL</span>
         </div>
+        HAKIKAT OS V52.0 - READY FOR INPUT.<br>
+        CLICK EXECUTE TO RUN 'hakikat_os.py'
         
-        <div id="log-container" style="display: none; margin-top: 20px; background: #000; border: 1px solid #00ff41; padding: 15px; color: #00ff41; font-family: 'Courier New', monospace;">
-            <div id="log-display"></div>
-        </div>
-    </section>
+        <div id="exe-btn" class="exe-btn" onclick="runCheck()"> > EXECUTE SYSTEM CHECK </div>
+        <div id="display" style="color: #00ff41; margin-top: 10px; font-family: 'Courier New', monospace;"></div>
+    </div>
 
-    <section>
-        <h2>BÖLÜM 6: MODÜL KONTROLÜ</h2>
-        <div class="module-grid">
-            <div class="module-card"><strong style="color: #00ff41;">[ MOD. 96 ] IKRA_INIT</strong><p>Veri Okuma Protokolü aktif.</p></div>
-            <div class="module-card"><strong style="color: #00ff41;">[ MOD. 81 ] TEKVIR_ZIP</strong><p>Ego sıkıştırma algoritması.</p></div>
-            <div class="module-card"><strong style="color: #00ff41;">[ MOD. 112 ] AHAD_CORE</strong><p>Tekillik (Singularity) modu.</p></div>
-        </div>
-    </section>
-
-    <footer style="margin-top: 80px; text-align: center; border-top: 1px solid #333; padding-top: 40px;">
-        <div style="font-size: 0.75rem; color: #666;">
-            mornek99-hub.github.io © 2025<br>
-            RASM-KERNEL SECURED
-        </div>
+    <footer style="margin-top: 50px; text-align: center; font-size: 0.75rem; color: #444; border-top: 1px dashed #333; padding-top: 20px;">
+        HAKĪKAT-FESTUNG © 2026<br>
+        <span style="color: #e5c07b;">SİSTEM MİMARI: MEHMET ÖRNEK</span><br>
+        QUELLE: RASM-KERNEL (GESCHÜTZT)
     </footer>
 
     <script>
-        function runSystemCheck() {
-            const container = document.getElementById('log-container');
-            const display = document.getElementById('log-display');
-            container.style.display = 'block';
-            display.innerHTML = "";
-            
-            const logs = [
-                "> BOOTING FROM: mornek99-hub.github.io",
-                "> LOADING KERNEL... [DONE]",
-                "> SUWAYDA-MODULE: SYNCHRONIZING...",
-                "> ANALYZING NAFS-RESISTANCE... 0.00 Ohm",
-                "> SYSTEM STATUS: SAF BİLİNÇ",
-                "> ALL MODULES OPERATIONAL."
+        function runCheck() {
+            const d = document.getElementById('display');
+            document.getElementById('exe-btn').style.display = 'none';
+            const lines = [
+                "> BOOTING FROM: mornek99-hub.github.io...",
+                "> SCANNING SUWAYDA-MODULE...",
+                "> ANALYZING NAFS-RESISTANCE: 0.00 OHM",
+                "> STATUS: CONNECTED (PURE CONSCIOUSNESS)"
             ];
-            
             let i = 0;
-            function printLog() {
-                if (i < logs.length) {
-                    display.innerHTML += logs[i] + "<br>";
-                    i++;
-                    setTimeout(printLog, 500);
+            function print() {
+                if(i < lines.length) { 
+                    d.innerHTML += lines[i] + "<br>"; 
+                    i++; 
+                    setTimeout(print, 600); 
                 }
             }
-            printLog();
+            print();
         }
     </script>
 </body>
