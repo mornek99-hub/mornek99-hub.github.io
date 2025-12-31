@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAKĪKAT-KALESİ | V8.1</title>
+    <style>
+        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .lang-switch { margin-bottom: 30px; }
+        .lang-switch a { color: #e5c07b; text-decoration: none; padding: 5px 10px; border: 1px solid #333; margin: 0 5px; font-size: 0.8rem; }
+        .lang-switch a.active { background: #e5c07b; color: #000; }
+        h1 { color: #fff; font-size: 1.8rem; letter-spacing: 4px; margin: 10px 0; }
+        .version { color: #e5c07b; font-size: 1.2rem; margin-bottom: 20px; }
+        .master-box { background: #0a0a0a; border-left: 3px solid #e5c07b; padding: 15px; text-align: left; font-size: 0.85rem; color: #00ff41; max-width: 350px; width: 90%; margin: 20px auto; }
+        .btn-logbuch { display: inline-block; border: 1px solid #00ff41; color: #00ff41; padding: 12px 25px; text-decoration: none; margin: 20px 0; transition: 0.3s; }
+        .terminal { background: #000; border: 1px solid #333; width: 100%; max-width: 400px; text-align: left; margin-top: 30px; font-size: 0.8rem; }
+        .term-header { background: #1a1a1a; padding: 5px 10px; color: #888; display: flex; justify-content: space-between; border-bottom: 1px solid #333; }
+        .term-body { padding: 15px; height: 250px; overflow-y: auto; color: #c0c0c0; }
+        .flood-text { color: #00ff41; margin-top: 10px; display: none; }
+        .exec-btn { background: none; border: 1px solid #00ff41; color: #00ff41; padding: 8px 15px; cursor: pointer; margin-top: 15px; font-family: 'Courier New', monospace; }
+    </style>
+</head>
+<body>
+    <div class="lang-switch">
+        <a href="index.html">DE</a>
+        <a href="index-tr.html" class="active">TR</a>
+    </div>
+    <div style="color:#00ff41; font-size: 0.7rem; margin-bottom: 10px;">[SİSTEM: ÇEVRİMİÇİ] :: [SICAKLIK: 36.6°C]</div>
+    <h1>HAKĪKAT-KALESİ</h1>
+    <div class="version">V8.1</div>
+    <p style="font-style: italic; max-width: 300px;">"İnsan, ruh ile yüceltilen maddedir."</p>
+    <div class="master-box">
+        # ANA MİMARİ BAŞLATILDI<br>
+        CMD_BOOT = "SURE_96 (IQRA)"<br>
+        R_MIN = 0.0 # Süperiletkenlik aktif<br>
+        DURUM = "BAĞLI"
+    </div>
+    <a href="dashboard-tr.html" class="btn-logbuch">GÜNLÜĞÜ AÇ</a>
+    <div class="terminal">
+        <div class="term-header"><span>ADMIN@HAKIKAT-KALESI:~</span><span>PYTHON 3.9 KERNEL</span></div>
+        <div class="term-body" id="termBody">
+            <div id="initText">HAKIKAT OS V52.0 - GİRDİ İÇİN HAZIR.<br>'hakikat_os.py' ÇALIŞTIRMAK İÇİN EXECUTE TIKLAYIN</div>
+            <button class="exec-btn" onclick="runCheck()">> EXECUTE SYSTEM CHECK</button>
+            <div id="floodContainer" class="flood-text"></div>
+        </div>
+    </div>
+    <script>
+        function runCheck() {
+            const container = document.getElementById('floodContainer');
+            container.style.display = 'block';
+            const logs = [
+                ">>> HAKĪKAT-KALESİ OS BAŞLATILIYOR...", ">>> ÇEKİRDEK YÜKLENİYOR: 'SÜNNETULLAH'...", "[SİSTEM] HumanOS Başlatılıyor (Unit: ADMIN)...", "[KONTROL] Hardware ID: ONAYLANDI.", "[KONTROL] Ego-Katmanı (Nafs): AKTİF.", ">> MODÜL 1: HACK_DETECTION (Temizlik)...", "... Dogmalar kaldırılıyor...", "[BAŞARILI] Saf Sessiz Harf Kodu (Rasm) açığa çıkarıldı.", ">> MODÜL 2: DİRENÇ ÖLÇÜMÜ...", "> DİRENÇ: 0.00 Ω (Süperiletkenlik)", "[DURUM] SİSTEM SOĞUTULDU. AKIŞ MODU AKTİF.", ">> MODÜL 3: MİRAJ BAĞLANTISI...", "===========================================", "█ █ █ ERİŞİM ONAYLANDI █ █ █", "===========================================", "[SİSTEM FİNAL] : DAMLA DENİZE KAVUŞTU."
+            ];
+            let i = 0;
+            function printLog() { if (i < logs.length) { container.innerHTML += logs[i] + "<br>"; i++; document.getElementById('termBody').scrollTop = document.getElementById('termBody').scrollHeight; setTimeout(printLog, 150); } }
+            printLog();
+        }
+    </script>
+    <div style="margin-top: 40px;"><img src="https://komarev.com/ghpvc/?username=mornek99-hub-main&color=00ff41&style=flat-square&label=SİSTEM+KAYITLARI" alt="Visitor Count"></div>
+</body>
+</html>
