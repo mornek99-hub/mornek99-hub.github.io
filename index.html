@@ -51,11 +51,6 @@
             const logs = [
                 ">>> BOOTING HAKĪKAT-FESTUNG OS...", ">>> LOADING KERNEL: 'SÜNNETULLAH'...", "[SYSTEM] Initialisiere HumanOS (Unit: ADMIN)...", "[CHECK] Hardware ID: CONFIRMED.", "[CHECK] Ego-Layer (Nafs): ACTIVE.", ">> MODUL 1: HACK_DETECTION (Bereinigung)...", "... Scanning for 'Political Bloatware'...", "... Removing Dogma/Vowels...", "[SUCCESS] Reiner Konsonanten-Code (Rasm) freigelegt.", ">> MODUL 2: WIDERSTANDSMESSUNG...", "> RESISTANCE: 100.0 Ω", "> ACTION: Active_Salat...", "> RESISTANCE: 0.00 Ω (Supraleitung erreicht)", "[STATUS] SYSTEM COOLED DOWN. FLOW STATE ACTIVE.", ">> MODUL 3: MIRAJ UPLINK...", "... Connecting to Source...", "===========================================", "█ █ █ ACCESS GRANTED █ █ █", "===========================================", "[SYSTEM FINAL] : DER TROPFEN IST IM MEER."
             ];
-            let i = 0;
-            function printLog() { if (i < logs.length) { container.innerHTML += logs[i] + "<br>"; i++; document.getElementById('termBody').scrollTop = document.getElementById('termBody').scrollHeight; setTimeout(printLog, 150); } }
-            printLog();
-        }
-    </script>
      <div style="border: 1px solid #e5c07b; background: #0a0a0a; padding: 25px; margin-top: 40px; border-left: 5px solid #e5c07b; text-align: left;">
         <h3 style="color: #e5c07b; margin-top: 0; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px dashed #333; padding-bottom: 10px;">
             SYSTEM-DEFINITION: ROOT-ZIEL
@@ -68,7 +63,28 @@
 
     <footer style="margin-top: 50px; border-top: 1px solid #333; padding-top: 20px; opacity: 0.8; text-align: center;">
         <div style="margin-bottom: 15px;">
-            <img src="https://komarev.com/ghpvc/?username=mornek-festung-final&color=00ff41&style=flat-square&label=SYSTEM+LOGS" alt="Visitor Count">
+                    <div style="margin-bottom: 15px; border: 1px solid #00ff41; padding: 10px; background: rgba(0, 255, 65, 0.05);">
+            <span style="color: #00ff41; font-family: 'Courier New', monospace; font-size: 0.8rem;">ZUGRIFFE (GLOBAL):</span><br>
+            <span id="visit-count" style="color: #00ff41; font-family: 'Courier New', monospace; font-size: 1.5rem; font-weight: bold;">...</span>
+        </div>
+
+        <script>
+            function countVisit() {
+                // Dieser Dienst liefert echte Daten, kein starres Bild
+                const url = "https://hits.seeyoufarm.com/api/count/incr/badge.json?url=https%3A%2F%2Fmornek99-hub.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false";
+                
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('visit-count').innerText = data.value;
+                    })
+                    .catch(err => {
+                        document.getElementById('visit-count').innerText = "AKTIV";
+                    });
+            }
+            window.addEventListener('load', countVisit);
+        </script>
+
         </div>
         <div style="font-size: 0.75rem; color: #666; line-height: 1.6;">
             HAKĪKAT-FESTUNG © 2025<br>
