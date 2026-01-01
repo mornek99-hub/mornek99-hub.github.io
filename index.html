@@ -1,33 +1,88 @@
-                if (i < logs.length) { 
-                    container.innerHTML += logs[i] + "<br>"; 
-                    i++; 
-                    document.getElementById('termBody').scrollTop = document.getElementById('termBody').scrollHeight; 
-                    setTimeout(printLog, 150); 
-                } 
-            }
-            printLog();
-        }
-    </script>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAKĪKAT-FESTUNG | V8.1</title>
+    <style>
+        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .lang-switch { margin-bottom: 30px; }
+        .lang-switch a { color: #e5c07b; text-decoration: none; padding: 5px 15px; border: 1px solid #333; margin: 0 5px; font-size: 0.9rem; }
+        .status-header { color: #00ff41; font-size: 0.8rem; margin-bottom: 15px; }
+        h1 { color: #fff; font-size: 2.2rem; letter-spacing: 5px; margin: 10px 0; text-transform: uppercase; }
+        .version { color: #e5c07b; font-size: 1.3rem; margin-bottom: 25px; }
+        .intro-quote { font-style: italic; color: #aaa; margin-bottom: 35px; }
+        .master-box { background: #0a0a0a; border: 1px solid #1a1a1a; border-left: 4px solid #e5c07b; padding: 20px; text-align: left; font-size: 0.95rem; color: #00ff41; max-width: 450px; width: 95%; margin: 20px auto; }
+        .btn-logbuch { display: inline-block; background-color: #00ff41; color: #000; padding: 18px 40px; text-decoration: none; margin: 30px 0; font-weight: bold; text-transform: uppercase; }
+        .terminal { background: #000; border: 1px solid #333; width: 100%; max-width: 500px; text-align: left; margin-top: 30px; }
+        .term-header { background: #1a1a1a; padding: 8px 12px; color: #888; display: flex; justify-content: space-between; border-bottom: 1px solid #333; font-size: 0.8rem; }
+        .term-body { padding: 15px; height: 250px; overflow-y: auto; color: #00ff41; font-size: 0.85rem; }
+        .root-ziel-box { border: 1px solid #e5c07b; border-left: 5px solid #e5c07b; background: #0a0a0a; padding: 30px; margin-top: 50px; text-align: left; max-width: 500px; width: 95%; }
+        .root-ziel-box h3 { color: #e5c07b; margin-top: 0; text-transform: uppercase; border-bottom: 1px dashed #333; padding-bottom: 10px; }
+        footer { margin-top: 60px; border-top: 1px solid #333; padding-top: 25px; font-size: 0.8rem; color: #666; width: 100%; }
+    </style>
+</head>
+<body>
 
-    <div style="border: 1px solid #e5c07b; background: #0a0a0a; padding: 25px; margin-top: 40px; border-left: 5px solid #e5c07b; text-align: left; max-width: 400px;">
-        <h3 style="color: #e5c07b; margin-top: 0; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px dashed #333; padding-bottom: 10px;">
-            SYSTEM-DEFINITION: ROOT-ZIEL
-        </h3>
-        <p style="font-size: 1.05rem; line-height: 1.8; color: #ddd; margin-bottom: 0;">
+    <div class="lang-switch">
+        <a href="index.html" style="background: #e5c07b; color: #000;">DE</a>
+        <a href="index-tr.html">TR</a>
+    </div>
+
+    <div class="status-header">[SYSTEM: ONLINE] :: [TEMP: 36.6°C]</div>
+
+    <h1>HAKĪKAT-FESTUNG</h1>
+    <div class="version">V8.1</div>
+
+    <p class="intro-quote">"Der Mensch ist Materie, veredelt durch Geist."</p>
+
+    <div class="master-box">
+        # MASTER ARCHITEKTUR INITIALISIERT<br>
+        CMD_BOOT = "SURE_96 (IQRA)"<br>
+        R_MIN = 0.0 # Supraleitung aktiv<br>
+        STATUS = "VERBUNDEN"
+    </div>
+
+    <a href="fizik.html" class="btn-logbuch">LOGBUCH ÖFFNEN</a>
+
+    <div class="terminal">
+        <div class="term-header"><span>ADMIN@HAKIKAT-FESTUNG:~</span><span>PYTHON 3.9 KERNEL</span></div>
+        <div class="term-body" id="termBody">
+            <div id="display">HAKIKAT OS V52.0 - BEREIT.<br>SYSTEM CHECK LÄUFT...</div>
+        </div>
+    </div>
+
+    <div class="root-ziel-box">
+        <h3>SYSTEM-DEFINITION: ROOT-ZIEL</h3>
+        <p style="font-size: 1.1rem; line-height: 1.8; color: #ddd;">
             Der Koran ist eine <strong>Anleitung zur Bewusstseinserweiterung</strong>. 
-            Er dient dazu, die höchste Bewusstseinsstufe zu erreichen, die der <em>Insan-ı Kamil</em> benötigt, um die <strong>Höchste Intelligenz</strong> noch in diesem Leben zu realisieren.
+            Er dient dazu, die höchste Bewusstseinsstufe zu erreichen.
         </p>
     </div>
 
-    <footer style="margin-top: 50px; border-top: 1px solid #333; padding-top: 20px; opacity: 0.8; text-align: center;">
-        <div style="margin-bottom: 15px;">
-            <img src="https://komarev.com/ghpvc/?username=mornek-kale-de-final&color=00ff41&style=flat-square&label=SYSTEM+LOGS" alt="Visitor Count">
-        </div>
-        <div style="font-size: 0.75rem; color: #666; line-height: 1.6;">
-            HAKĪKAT-FESTUNG © 2026<br>
-            SYSTEM-ARCHITEKT: MEHMET ÖRNEK<br>
-            QUELLE: RASM-KERNEL (GESCHÜTZT)
-        </div>
+    <footer>
+        HAKĪKAT-FESTUNG © 2026<br>
+        SİSTEM MİMARI: MEHMET ÖRNEK<br>
+        QUELLE: RASM-KERNEL
     </footer>
+
+    <script>
+        const logs = [
+            ">>> SYSTEM START...",
+            "[CHECK] NAFS-WIDERSTAND: 0.00 Ω",
+            "[STATUS] SUPRALEITUNG AKTIV.",
+            "█ █ █ ZUGRIFF GEWÄHRT █ █ █"
+        ];
+        let i = 0;
+        const d = document.getElementById('display');
+        function print() {
+            if(i < logs.length) {
+                d.innerHTML += "<br>" + logs[i];
+                i++;
+                setTimeout(print, 500);
+            }
+        }
+        print();
+    </script>
 </body>
 </html>
