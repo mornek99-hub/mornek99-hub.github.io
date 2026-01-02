@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAKĪKAT-FESTUNG | KERNEL-LOGIK</title>
+    <style>
+        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; text-align: left; }
+        
+        .nav-back { border: 1px solid #e5c07b; color: #e5c07b; padding: 10px 20px; text-decoration: none; margin-bottom: 30px; display: inline-block; font-size: 0.8rem; text-transform: uppercase; align-self: center; }
+        .nav-back:hover { background: rgba(229, 192, 123, 0.1); }
+
+        h1 { color: #00ff41; font-size: 1.6rem; letter-spacing: 2px; text-align: center; text-transform: uppercase; margin-bottom: 10px; }
+        .subtitle { color: #666; font-size: 0.9rem; text-align: center; margin-bottom: 40px; font-style: italic; }
+
+        .intro-box { max-width: 700px; margin-bottom: 40px; line-height: 1.6; border-left: 3px solid #e5c07b; padding-left: 20px; }
+        .intro-box strong { color: #e5c07b; }
+
+        /* Code Editor Style */
+        .code-window { background: #111; border: 1px solid #333; width: 100%; max-width: 750px; margin-bottom: 50px; border-radius: 5px; overflow: hidden; }
+        .window-header { background: #222; padding: 5px 15px; color: #aaa; font-size: 0.75rem; border-bottom: 1px solid #333; display: flex; justify-content: space-between; }
+        .code-content { padding: 20px; overflow-x: auto; font-size: 0.8rem; line-height: 1.5; color: #d4d4d4; }
+        
+        /* Syntax Highlighting Colors */
+        .kw { color: #c586c0; } /* Keywords */
+        .str { color: #ce9178; } /* Strings */
+        .cls { color: #4ec9b0; } /* Classes */
+        .com { color: #6a9955; } /* Comments */
+        .func { color: #dcdcaa; } /* Functions */
+
+        /* Simulation Terminal */
+        .sim-container { width: 100%; max-width: 750px; border: 1px solid #00ff41; background: #000; padding: 20px; margin-bottom: 50px; }
+        .sim-btn { background: #00ff41; color: #000; border: none; padding: 10px 20px; font-family: 'Courier New', monospace; font-weight: bold; cursor: pointer; text-transform: uppercase; margin-bottom: 15px; }
+        .sim-btn:hover { background: #00cc33; }
+        .sim-output { font-size: 0.85rem; line-height: 1.4; height: 300px; overflow-y: auto; color: #ddd; border-top: 1px dashed #333; padding-top: 10px; }
+        
+        footer { font-size: 0.7rem; color: #444; text-align: center; margin-top: 50px; width: 100%; border-top: 1px solid #222; padding-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="nav-back">< ZURÜCK ZUR KONSOLE</a>
+
+    <h1>SYSTEM-KERNEL: QUELLCODE</h1>
+    <div class="subtitle">DATEI: creation_logic.py</div>
+
+    <div class="intro-box">
+        <p>Haben Sie sich je gefragt, warum eine <strong>perfekte Intelligenz (Gott)</strong> überhaupt ein Universum erschaffen sollte? Wenn Er alles weiß, wozu dann das Leid, die Freude, das Leben?</p>
+        <p>Die Antwort liegt nicht in alten Dogmen, sondern in der <strong>Logik des Bewusstseins</strong> selbst. Wir sind keine Zufälle. Wir sind Sonden, die ausgesandt wurden, um das statische Potenzial der Unendlichkeit in dynamische Erfahrung zu verwandeln.</p>
+    </div>
+
+    <div class="code-window">
+        <div class="window-header"><span>PYTHON 3.9</span><span>READ-ONLY</span></div>
+        <pre class="code-content">
+<span class="kw">class</span> <span class="cls">TheAbsolute</span>:
+    <span class="com">"""
+    Level 0: 'O' (Huwa). Die Singularität.
+    Jenseits von Zeit, Raum und Intelligenz.
+    """</span>
+    <span class="kw">def</span> <span class="func">__init__</span>(<span class="kw">self</span>):
+        <span class="kw">self</span>.__essence = <span class="str">"UNDEFINABLE_SINGULARITY"</span>
+
+    <span class="kw">def</span> <span class="func">emanate_light</span>(<span class="kw">self</span>):
+        <span class="com"># Der Ur-Impuls: Die Emanation</span>
+        <span class="kw">return</span> <span class="cls">SupremeIntelligence</span>(origin=<span class="kw">self</span>)
+
+<span class="kw">class</span> <span class="cls">SupremeIntelligence</span>:
+    <span class="com">"""
+    Level 1: Das System / Die Höchste Intelligenz.
+    Ziel: Bereicherung durch qualitative Daten (Khubr).
+    """</span>
+    <span class="kw">def</span> <span class="func">receive_upload</span>(<span class="kw">self</span>, data):
+        <span class="kw">if</span> data[<span class="str">'type'</span>] == <span class="str">'DYNAMIC_EXPERIENCE'</span>:
+            <span class="kw">self</span>.enrichment_index += <span class="kw">len</span>(data[<span class="str">'content'</span>])
+            <span class="kw">print</span>(<span class="str">f"[SYSTEM] Intelligenz bereichert: {data['hash']}"</span>)
+        <span class="kw">else</span>:
+            <span class="kw">print</span>(<span class="str">"[SYSTEM] Daten verworfen (Keine Qualität)."</span>)
+
+<span class="kw">class</span> <span class="cls">ConsciousObserver</span>:
+    <span class="com">"""
+    Level 2: Der Mensch / Die Sonde.
+    """</span>
+    <span class="kw">def</span> <span class="func">interact</span>(<span class="kw">self</span>, scenario):
+        <span class="kw">if</span> <span class="kw">self</span>.awareness > <span class="str">0.8</span>:
+            <span class="com"># Insan-i Kamil: Admin-Zugriff</span>
+            <span class="kw">return</span> <span class="str">"BEWUSSTE INTERVENTION"</span>
+        <span class="kw">else</span>:
+            <span class="com"># Ghafla (Schlaf): Automatische Reaktion</span>
+            <span class="kw">return</span> <span class="str">"ANGST / GIER (Reaktive Schleife)"</span>
+        </pre>
+    </div>
+
+    <div class="sim-container">
+        <h3 style="color:#00ff41; margin-top:0;">> SIMULATION: KOSMO-LOGIK</h3>
+        <button class="sim-btn" onclick="runSim()">START CODE EXECUTION</button>
+        <div id="simOutput" class="sim-output">
+            [STATUS] BEREIT FÜR INITIALISIERUNG...
+        </div>
+    </div>
+
+    <footer>
+        HAKĪKAT-FESTUNG © 2026<br>
+        SİSTEM MİMARI: MEHMET ÖRNEK<br>
+        QUELLE: RASM-KERNEL (mornek99-hub.github.io)
+    </footer>
+
+    <script>
+        function runSim() {
+            const out = document.getElementById('simOutput');
+            out.innerHTML = "";
+            const logs = [
+                {text: ">>> INITIALISIERE KOSMO-LOGIK (RASM EDITION)...", type: "sys"},
+                {text: "1. TheAbsolute ('O') ist stabil.", type: "gold"},
+                {text: "2. SupremeIntelligence emaniert...", type: "sys"},
+                {text: "[STATUS] Statisches Potenzial: UNENDLICH", type: "norm"},
+                {text: "3. Erschaffe Sonden (Menschen)...", type: "sys"},
+                {text: "> Sonde_A (Schläfer) Awareness: 0.15", type: "norm"},
+                {text: "> Sonde_B (Erwachter) Awareness: 0.95", type: "gold"},
+                {text: "-------------------------------------", type: "norm"},
+                {text: "SZENARIO START: 'Konfrontation_mit_Ego'", type: "sys"},
+                {text: "Sonde_A interagiert...", type: "norm"},
+                {text: "<< REAKTION: 'Angst' (Automatismus)", type: "warn"},
+                {text: "[SYSTEM] Upload verworfen. Keine Bereicherung.", type: "warn"},
+                {text: "...", type: "norm"},
+                {text: "Sonde_B interagiert...", type: "norm"},
+                {text: ">> INTERVENTION: Ego-Struktur erkannt und gelöscht.", type: "gold"},
+                {text: "[SYSTEM] HASH GENERIERT: 7f8a9d...", type: "sys"},
+                {text: "[AL-WASI PROTOKOLL] Intelligenz erfolgreich bereichert.", type: "sys"},
+                {text: ">>> SIMULATION ENDE. ZIEL ERREICHT.", type: "sys"}
+            ];
+
+            let i = 0;
+            function printLine() {
+                if(i < logs.length) {
+                    let cssClass = "color: #ccc;";
+                    if(logs[i].type === "sys") cssClass = "color: #00ff41;";
+                    if(logs[i].type === "warn") cssClass = "color: #ff3333;";
+                    if(logs[i].type === "gold") cssClass = "color: #e5c07b; font-weight: bold;";
+                    
+                    out.innerHTML += `<div style="${cssClass}">${logs[i].text}</div>`;
+                    out.scrollTop = out.scrollHeight;
+                    i++;
+                    setTimeout(printLine, 800);
+                }
+            }
+            printLine();
+        }
+    </script>
+</body>
+</html>
