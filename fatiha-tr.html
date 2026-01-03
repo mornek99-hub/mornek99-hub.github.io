@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQ_05 | EL-FATİHA</title>
+    <style>
+        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; padding: 20px; max-width: 800px; margin: auto; border-top: 3px solid #00ff41; }
+        
+        h1 { color: #00ff41; font-size: 1.2rem; margin-bottom: 5px; letter-spacing: 2px; }
+        .sub-header { color: #666; font-size: 0.8rem; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        
+        .verse-block { 
+            background: #0a0a0a; 
+            border-left: 2px solid #333; 
+            padding: 15px; 
+            margin-bottom: 20px; 
+            transition: 0.3s;
+        }
+        .verse-block:hover { border-left-color: #00ff41; background: #0e0e0e; }
+
+        .verse-number { color: #00ff41; font-weight: bold; font-size: 0.8rem; margin-bottom: 5px; display: block; }
+        .arabic { color: #e5c07b; font-size: 1.1rem; margin-bottom: 10px; display: block; direction: rtl; }
+        .translation { color: #ddd; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { color: #888; font-size: 0.85rem; border-top: 1px dashed #333; padding-top: 10px; }
+        
+        .keyword { color: #e5c07b; font-weight: bold; }
+
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 50px; }
+        .btn { text-decoration: none; color: #666; border: 1px solid #333; padding: 10px 20px; font-size: 0.8rem; transition: 0.3s; }
+        .btn:hover { color: #e5c07b; border-color: #e5c07b; }
+        .btn-next { border-color: #00ff41; color: #00ff41; }
+        .btn-next:hover { background: #00ff41; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="kutuphane.html" style="text-decoration: none; color: #666; font-size: 0.8rem;"> < KÜTÜPHANEYE DÖN</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQUENCE_05: EL-FATİHA</h1>
+        <div class="sub-header">
+            DURUM: GİRİŞ (LOGIN) // ERİŞİM: ADMİN PANELİ<br>
+            RASM-ANALİZİ: BAĞLANTI PROTOKOLÜ
+        </div>
+    </div>
+
+    <div class="verse-block">
+        <span class="verse-number">AYET 01</span>
+        <span class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+        <span class="translation">"Rahman ve Rahim olan Allah'ın adıyla."</span>
+        <div class="analysis">
+            <span class="keyword">KİMLİK DOĞRULAMA (AUTH):</span> "Bismillah" dizisi (string), sisteme giriş anahtarıdır. Hiçbir süreç, Yöneticiyi (Allah) referans göstermeden başlatılamaz. Rahman/Rahim işletim sisteminin özellikleridir: Kaynak sağlar (Rahman) ve süreçleri korur (Rahim).
+        </div>
+    </div>
+
+    <div class="verse-block">
+        <span class="verse-number">AYET 02</span>
+        <span class="arabic">الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ</span>
+        <span class="translation">"Hamd (Övgü/Değerlendirme), Alemlerin Rabbi Allah'a mahsustur."</span>
+        <div class="analysis">
+            <span class="keyword">SİSTEM GERİ BİLDİRİMİ (FEEDBACK):</span> <span class="keyword">HAMD</span>, tüm çıktıların ve sonuçların değerlendirilmesidir. Tüm veri akışı <span class="keyword">RABB'e (Yöneticiye)</span> döner. "Alemler" (Alamin), simülasyonun farklı katmanlarını veya boyutlarını temsil eder.
+        </div>
+    </div>
+
+    <div class="verse-block">
+        <span class="verse-number">AYET 04</span>
+        <span class="arabic">مَالِكِ يَوْمِ الدِّينِ</span>
+        <span class="translation">"Din (Hesap) Günü'nün Maliki."</span>
+        <div class="analysis">
+            <span class="keyword">FİNAL DERLEME (COMPILATION):</span> <span class="keyword">DİN</span>, teknik olarak "Borç/Yasa/Karşılık" demektir. "Yevmiddin", tüm süreçlerin durdurulup kodların derlendiği (Compile) gündür. Kullanıcı, Admin'in bu sonlandırma yetkisine sahip olduğunu kabul eder.
+        </div>
+    </div>
+
+    <div class="verse-block">
+        <span class="verse-number">AYET 05</span>
+        <span class="arabic">إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ</span>
+        <span class="translation">"Yalnız sana kulluk eder ve yalnız senden yardım dileriz."</span>
+        <div class="analysis">
+            <span class="keyword">DEDİKE SUNUCU (DEDICATED):</span> <span class="keyword">İYYAKE (Sadece Sana)</span>, aracı (Proxy) kullanmadan doğrudan bağlantıyı ifade eder. İstemci (İnsan) doğrudan Ana Bilgisayara (Mainframe) bağlanır. <span class="keyword">ABD (Kulluk)</span>, sisteme tam uyumlu çalışma (Slave Mode) demektir.
+        </div>
+    </div>
+
+    <div class="verse-block">
+        <span class="verse-number">AYET 06</span>
+        <span class="arabic">اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ</span>
+        <span class="translation">"Bizi dosdoğru yola ilet."</span>
+        <div class="analysis">
+            <span class="keyword">ROTA TALEBİ (ROUTING):</span> Bu, temel sistem sorgusudur (Query). <span class="keyword">İHDİNA (Bize yol göster)</span>, navigasyon isteğidir. <span class="keyword">SIRAT-I MÜSTAKİM</span> (Dosdoğru Yol), veri yapısı içindeki en kısa ve hatasız yoldur (Shortest Path Algorithm). Amaç, döngülere (Loop) girmeden hedefe varmaktır.
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <a href="muddessir-tr.html" class="btn">< ÖNCEKİ: MÜDDESSİR</a>
+        <a href="tebbet-tr.html" class="btn btn-next">SONRAKİ: TEBBET (LOG) >></a>
+    </div>
+
+</body>
+</html>
