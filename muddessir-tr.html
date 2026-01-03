@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQ_04 | EL-MÜDDESSİR</title>
+    <style>
+        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; padding: 20px; max-width: 800px; margin: auto; border-top: 3px solid #00ff41; }
+        
+        h1 { color: #00ff41; font-size: 1.2rem; margin-bottom: 5px; letter-spacing: 2px; }
+        .sub-header { color: #666; font-size: 0.8rem; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        
+        .verse-block { 
+            background: #0a0a0a; 
+            border-left: 2px solid #333; 
+            padding: 15px; 
+            margin-bottom: 20px; 
+            transition: 0.3s;
+        }
+        .verse-block:hover { border-left-color: #00ff41; background: #0e0e0e; }
+
+        .verse-number { color: #00ff41; font-weight: bold; font-size: 0.8rem; margin-bottom: 5px; display: block; }
+        .arabic { color: #e5c07b; font-size: 1.1rem; margin-bottom: 10px; display: block; direction: rtl; }
+        .translation { color: #ddd; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { color: #888; font-size: 0.85rem; border-top: 1px dashed #333; padding-top: 10px; }
+        
+        .keyword { color: #e5c07b; font-weight: bold; }
+
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 50px; }
+        .btn { text-decoration: none; color: #666; border: 1px solid #333; padding: 10px 20px; font-size: 0.8rem; transition: 0.3s; }
+        .btn:hover { color: #e5c07b; border-color: #e5c07b; }
+        .btn-next { border-color: #00ff41; color: #00ff41; }
+        .btn-next:hover { background: #00ff41; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="kutuphane.html" style="text-decoration: none; color: #666; font-size: 0.8rem;"> < KÜTÜPHANEYE DÖN</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQUENCE_04: EL-MÜDDESSİR</h1>
+        <div class="sub-header">
+            DURUM: AKTİF // KOMUT: YÜRÜT (EXECUTE)<br>
+            RASM-ANALİZİ: HARİCİ ÇIKTI (OUTPUT)
+        </div>
+    </div>
+
+    <div class="verse-block">
+        <span class="verse-number">AYET 01-02</span>
+        <span class="arabic">يَا أَيُّهَا الْمُدَّثِّرُ ۙ قُمْ فَأَنذِرْ</span>
+        <span class="translation">"Ey Bürünüp Kalkan! Kalk ve Uyar."</span>
+        <div class="analysis">
+            <span class="keyword">AKTİVASYON KOMUTU:</span> Dahili yüklemeden (Müzzemmil) sonra şimdi harici çıktı zamanı. <span class="keyword">KUM (Kalk)</span> komutu "Çalıştır/Başlat" (Run) demektir. <span class="keyword">ENZİR (Uyar)</span> sistemin "Broadcast Modu"na geçmesidir. Veri artık sadece içeride değil, dışarıya (çevreye) sinyal olarak yayılır.
+        </div>
+    </div>
+
+    <div class="verse-block">
+        <span class="verse-number">AYET 03</span>
+        <span class="arabic">وَرَبَّكَ فَكَبِّرْ</span>
+        <span class="translation">"Ve Rabbini tekbir et (yücelt)."</span>
+        <div class="analysis">
+            <span class="keyword">ÖNCELİK AYARI (PRIORITY):</span> <span class="keyword">KEBBİR (Büyüt)</span> teknik olarak işlem önceliğini (Process Priority) en tepeye çıkarmak demektir. Sistemde "Rabb" (Yönetici) komutları, diğer tüm kullanıcı (Ego) ve çevresel girdilerden daha yüksek önceliğe (High Priority) sahip olmalıdır.
+        </div>
+    </div>
+
+    <div class="verse-block">
+        <span class="verse-number">AYET 04</span>
+        <span class="arabic">وَثِيَابَكَ فَطَهِّرْ</span>
+        <span class="translation">"Ve elbiseni temizle."</span>
+        <div class="analysis">
+            <span class="keyword">ARAYÜZ TEMİZLİĞİ:</span> <span class="keyword">SİYAB (Elbise)</span>, sistemin dış kabuğu veya arayüzüdür (Interface). <span class="keyword">TAHHİR (Temizle)</span> komutu, "Bug"ları, hataları ve gereksiz verileri arayüzden temizlemektir. Mesajın hatasız iletilmesi için terminal "clean" olmalıdır.
+        </div>
+    </div>
+
+    <div class="verse-block">
+        <span class="verse-number">AYET 05</span>
+        <span class="arabic">وَالرُّجْزَ فَاهْجُرْ</span>
+        <span class="translation">"Ve pislikten (şüpheden) uzak dur."</span>
+        <div class="analysis">
+            <span class="keyword">GÜVENLİK DUVARI (FIREWALL):</span> <span class="keyword">RİCZ (Pislik/Azap)</span> bozuk veri veya virüs demektir. <span class="keyword">HECR (Terk et/Ayrıl)</span> ise aktif izolasyondur. Sistem, veri akışı sırasında bozuk paketleri (Corrupted Data) tespit edip bloklamalıdır.
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <a href="muzzemmil-tr.html" class="btn">< ÖNCEKİ: MÜZZEMMİL</a>
+        <a href="fatiha-tr.html" class="btn btn-next">SONRAKİ: FATİHA >></a>
+    </div>
+
+</body>
+</html>
