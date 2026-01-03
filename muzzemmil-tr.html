@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQ_03 | EL-MÜZZEMMİL</title>
+    <style>
+        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; padding: 20px; max-width: 800px; margin: auto; border-top: 3px solid #00ff41; }
+        
+        h1 { color: #00ff41; font-size: 1.2rem; margin-bottom: 5px; letter-spacing: 2px; }
+        .sub-header { color: #666; font-size: 0.8rem; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        
+        .verse-block { 
+            background: #0a0a0a; 
+            border-left: 2px solid #333; 
+            padding: 15px; 
+            margin-bottom: 20px; 
+            transition: 0.3s;
+        }
+        .verse-block:hover { border-left-color: #00ff41; background: #0e0e0e; }
+
+        .verse-number { color: #00ff41; font-weight: bold; font-size: 0.8rem; margin-bottom: 5px; display: block; }
+        .arabic { color: #e5c07b; font-size: 1.1rem; margin-bottom: 10px; display: block; direction: rtl; }
+        .translation { color: #ddd; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { color: #888; font-size: 0.85rem; border-top: 1px dashed #333; padding-top: 10px; }
+        
+        .keyword { color: #e5c07b; font-weight: bold; }
+
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 50px; }
+        .btn { text-decoration: none; color: #666; border: 1px solid #333; padding: 10px 20px; font-size: 0.8rem; transition: 0.3s; }
+        .btn:hover { color: #e5c07b; border-color: #e5c07b; }
+        .btn-next { border-color: #00ff41; color: #00ff41; }
+        .btn-next:hover { background: #00ff41; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="kutuphane.html" style="text-decoration: none; color: #666; font-size: 0.8rem;"> < KÜTÜPHANEYE DÖN</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQUENCE_03: EL-MÜZZEMMİL</h1>
+        <div class="sub-header">
+            DURUM: İŞLENİYOR // EYLEM: SİSTEM YÜKLEME<br>
+            RASM-ANALİZİ: DAHİLİ KONFİGÜRASYON
+        </div>
+    </div>
+
+    <div class="verse-block">
+        <span class="verse-number">AYET 01</span>
+        <span class="arabic">يَا أَيُّهَا الْمُزَّمِّلُ</span>
+        <span class="translation">"Ey Örtünüp Bürünen (Yüklenen)."</span>
+        <div class="analysis">
+            <span class="keyword">SİSTEM TANIMLAMASI:</span> <span class="keyword">MÜZZEMMİL (Z-M-L)</span> kökü, "yükünü yüklenmiş" veya "sefere hazırlanan" demektir. Teknik: Sistem "Boot" (Açılış) aşamasındadır. RAM'e gerekli modüller yüklenmektedir. Terminal, ağır bir işlem için kendini hazırlamaktadır.
+        </div>
+    </div>
+
+    <div class="verse-block">
+        <span class="verse-number">AYET 02</span>
+        <span class="arabic">قُمِ اللَّيْلَ إِلَّا قَلِيلًا</span>
+        <span class="translation">"Geceleyin kalk, birazı hariç."</span>
+        <div class="analysis">
+            <span class="keyword">BAKIM PENCERESİ:</span> <span class="keyword">KIYAM (Ayağa Kalkma/Dikilme)</span> gece vakti (Leyl) yapılır. Neden? Çünkü dış parazitler (Güneş ışığı/Kullanıcı girdisi) minimumdur. Server, veri bütünlüğünü sağlamak ve güncellemeleri işlemek için "Gece Modu"nda (Nightly Build) tam kapasite çalışmalıdır.
+        </div>
+    </div>
+
+    <div class="verse-block">
+        <span class="verse-number">AYET 04</span>
+        <span class="arabic">وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا</span>
+        <span class="translation">"Ve Kur'an'ı tertil ile (dizerek) oku."</span>
+        <div class="analysis">
+            <span class="keyword">VERİ YAPILANDIRMASI:</span> <span class="keyword">TERTİL (R-T-L)</span>, "dişler gibi inci gibi dizmek" demektir. Bu "güzel şarkı söylemek" değil, <span class="keyword">SIRALI İŞLEME (Sequencing)</span> demektir. Veri paketleri (Packets) rastgele değil, belirli bir mimari sıraya göre işlenmelidir.
+        </div>
+    </div>
+
+    <div class="verse-block">
+        <span class="verse-number">AYET 05</span>
+        <span class="arabic">إِنَّا سَنُلْقِي عَلَيْكَ قَوْلًا ثَقِيلًا</span>
+        <span class="translation">"Doğrusu biz sana ağır bir söz bırakacağız."</span>
+        <div class="analysis">
+            <span class="keyword">VERİ TRANSFERİ (UPLOAD):</span> Gece hazırlığının amacı budur. <span class="keyword">KAVLEN SAKİLEN</span> (Ağır Söz), yüksek yoğunluklu veri paketidir (High Density Data). Sadece gece soğutulmuş ve stabil hale gelmiş bir işlemci bu yükü çökmeden kaldırabilir.
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <a href="kalem-tr.html" class="btn">< ÖNCEKİ: KALEM</a>
+        <a href="muddessir-tr.html" class="btn btn-next">SONRAKİ: MÜDDESSİR >></a>
+    </div>
+
+</body>
+</html>
