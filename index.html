@@ -3,119 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAKĪKAT-FESTUNG | V8.1</title>
+    <title>HAKĪKAT KONSOLE</title>
     <style>
-        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; text-align: center; }
-        .lang-switch { margin-bottom: 30px; }
-        .lang-switch a { color: #e5c07b; text-decoration: none; padding: 5px 15px; border: 1px solid #333; margin: 0 5px; font-size: 0.9rem; }
-        .status-header { color: #00ff41; font-size: 0.8rem; margin-bottom: 15px; }
-        h1 { color: #fff; font-size: 2.2rem; letter-spacing: 5px; margin: 10px 0; text-transform: uppercase; }
-        .version { color: #e5c07b; font-size: 1.3rem; margin-bottom: 25px; }
-        .intro-quote { font-style: italic; color: #aaa; margin-bottom: 35px; }
-        
-        .master-box { background: #0a0a0a; border: 1px solid #1a1a1a; border-left: 4px solid #e5c07b; padding: 20px; text-align: left; font-size: 0.95rem; color: #00ff41; max-width: 450px; width: 95%; margin: 20px auto; }
-        
-        .btn-logbuch { display: inline-block; background-color: #00ff41; color: #000; padding: 18px 40px; text-decoration: none; margin: 30px 0; font-weight: bold; text-transform: uppercase; font-size: 1.2rem; }
-        
-        .terminal { background: #000; border: 1px solid #333; width: 100%; max-width: 500px; text-align: left; margin-top: 30px; font-size: 0.85rem; }
-        .term-header { background: #1a1a1a; padding: 8px 12px; color: #888; display: flex; justify-content: space-between; border-bottom: 1px solid #333; }
-        .term-body { padding: 15px; height: 300px; overflow-y: auto; color: #00ff41; line-height: 1.5; }
-        
-        /* Der Button-Style für das Terminal */
-        .exec-btn { background: none; border: 1px solid #00ff41; color: #00ff41; padding: 10px 20px; cursor: pointer; margin-top: 15px; font-family: 'Courier New', monospace; font-weight: bold; display: inline-block; }
-        .exec-btn:hover { background: rgba(0, 255, 65, 0.1); }
-
-        .root-ziel-box { border: 1px solid #e5c07b; border-left: 5px solid #e5c07b; background: #0a0a0a; padding: 30px; margin-top: 50px; text-align: left; max-width: 500px; width: 95%; }
-        .root-ziel-box h3 { color: #e5c07b; margin-top: 0; text-transform: uppercase; border-bottom: 1px dashed #333; padding-bottom: 12px; }
-        
-        footer { margin-top: 60px; border-top: 1px solid #333; padding-top: 25px; font-size: 0.8rem; color: #666; width: 100%; }
+        body { background-color: #050505; color: #00ff41; font-family: 'Courier New', monospace; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .console { border: 1px solid #00ff41; padding: 40px; background: #000; text-align: center; width: 80%; max-width: 400px; }
+        .menu { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+        .btn { text-decoration: none; color: #00ff41; border: 1px solid #00ff41; padding: 10px; transition: 0.3s; text-transform: uppercase; }
+        .btn:hover { background: #00ff41; color: #000; }
     </style>
-<meta name="google-site-verification" content="Nf7uZlpra4dMzdBrn4eA4BnvLXR8XQR1nX2O7DMy_SM" />
 </head>
 <body>
-    <div class="lang-switch">
-        <a href="index.html" style="background: #e5c07b; color: #000;">DE</a>
-        <a href="index-tr.html">TR</a>
-    </div>
-
-    <div class="status-header">[SYSTEM: ONLINE] :: [TEMP: 36.6°C]</div>
-
-    <h1>HAKĪKAT-FESTUNG</h1>
-    <div class="version">V8.1</div>
-
-    <p class="intro-quote">"Der Mensch ist Materie, veredelt durch Geist."</p>
-
-    <div class="master-box">
-        # MASTER ARCHITEKTUR INITIALISIERT<br>
-        CMD_BOOT = "SURE_96 (IQRA)"<br>
-        R_MIN = 0.0 # Supraleitung aktiv<br>
-        STATUS = "VERBUNDEN"
-    </div>
-
-    <a href="fizik.html" class="btn-logbuch">LOGBUCH ÖFFNEN</a>
-
-    <div class="terminal">
-        <div class="term-header"><span>ADMIN@HAKIKAT-FESTUNG:~</span><span>PYTHON 3.9 KERNEL</span></div>
-        <div class="term-body" id="termBody">
-            <div id="initText">HAKIKAT OS V52.0 - BEREIT FÜR EINGABE.<br>KLICKEN SIE AUF EXECUTE ZUM STARTEN.</div>
-            <button id="execBtn" class="exec-btn" onclick="runCheck()">> EXECUTE SYSTEM CHECK</button>
-            <div id="floodContainer"></div>
+    <div class="console">
+        <h1>HAKĪKAT KONSOLE</h1>
+        <div class="menu">
+            <a href="archiv.html" class="btn">ARCHIV</a>
+            <a href="fizik.html" class="btn">PHYSIK / KERNEL</a>
+            <a href="index-tr.html" class="btn" style="font-size: 0.7rem; border-color: #444; color: #444;">TÜRKÇE / TÜRKISCH</a>
         </div>
     </div>
-
-    <div class="root-ziel-box">
-        <h3>SYSTEM-DEFINITION: ROOT-ZIEL</h3>
-        <p style="font-size: 1.1rem; line-height: 1.8; color: #ddd;">
-            Der Koran ist eine <strong>Anleitung zur Bewusstseinserweiterung</strong>. 
-            Er dient dazu, die höchste Bewusstseinsstufe zu erreichen, die der <em>Insan-ı Kamil</em> benötigt, um die <strong>Höchste Intelligenz</strong> noch in diesem Leben zu realisieren.
-        </p>
-    </div>
-
-    <footer>
-        HAKĪKAT-FESTUNG © 2026<br>
-        <span style="color: #e5c07b;">SİSTEM MİMARI: MEHMET ÖRNEK</span><br>
-        QUELLE: RASM-KERNEL (mornek99-hub.github.io)
-    </footer>
-
-    <script>
-        function runCheck() {
-            const container = document.getElementById('floodContainer');
-            const execBtn = document.getElementById('execBtn');
-            const initText = document.getElementById('initText');
-            
-            // Versteckt Text und Button bei Klick
-            if(execBtn) execBtn.style.display = 'none';
-            if(initText) initText.style.display = 'none';
-            
-            const logs = [
-                ">>> HAKĪKAT-FESTUNG OS INITIALISIERT...",
-                "[CHECK] Hardware ID: BESTÄTIGT.",
-                "[CHECK] Ego-Ebene (Nafs): AKTIV.",
-                ">> MODUL 1: BEREINIGUNG...",
-                "... Dogmen werden entfernt...",
-                "[ERFOLGREICH] Reiner Rasm-Code freigelegt.",
-                ">> MODUL 2: WIDERSTANDSMESSUNG...",
-                "> WIDERSTAND: 0.00 Ω (Supraleitung)",
-                "[STATUS] SYSTEM GEKÜHLT. FLOW-MODUS AKTIV.",
-                "===========================================",
-                "█ █ █ ZUGRIFF GEWÄHRT █ █ █",
-                "===========================================",
-                "[SYSTEM FINAL] : DER TROPFEN HAT DAS MEER ERREICHT."
-            ];
-            
-            let i = 0;
-            function printLog() { 
-                if (i < logs.length) { 
-                    container.innerHTML += logs[i] + "<br>"; 
-                    i++; 
-                    const body = document.getElementById('termBody');
-                    body.scrollTop = body.scrollHeight; 
-                    setTimeout(printLog, 150); 
-                } 
-            }
-            printLog();
-        }
-    </script>
 </body>
 </html>
- 
