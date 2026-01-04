@@ -31,7 +31,7 @@
         /* BUTTON STYLE */
         .boot-btn {
             background-color: #1a1a1a;
-            color: #ff3333; /* Çökme Raporu için kırmızı metin */
+            color: #ff3333; /* Çökme raporu için kırmızı metin */
             border: 1px solid #ff3333;
             padding: 15px 30px;
             font-family: 'Courier New', monospace;
@@ -60,7 +60,7 @@
 </head>
 <body>
 
-    <a href="archiv-tr.html" style="text-decoration: none; color: #555;">&larr; ARŞİVE DÖN</a>
+    <a href="kutuphane.html" style="text-decoration: none; color: #555;">&larr; ARŞİVE DÖN</a>
 
     <div style="margin-top: 20px;">
         <h1>SEKANS_06: EL-MESED (TEBBET)</h1>
@@ -82,7 +82,7 @@
         <div class="verse-block">
             <span class="verse-number">AYET 01</span>
             <span class="arabic">تَبَّتْ يَدَا أَبِي لَهَبٍ وَتَبَّ</span>
-            <span class="rasm">تبت يda أبي لهب وتب</span>
+            <span class="rasm">تبت يدا أبي لهb وتب</span>
             <span class="translation">"Aşırı ısınan birimin (Ebū Leheb) Girdi/Çıktı (I/O) süreçleri (Yedā) çöktü ve o 'Kesildi' (Tebbe)."</span>
             <div class="analysis">
                 <span class="keyword">T-B-B (Süreci Durdur):</span> Kesilme, çökme, bağlantının kopması.<br>
@@ -113,7 +113,7 @@
 
         <div class="verse-block">
             <span class="verse-number">AYET 04</span>
-            <span class="arabic">وَامْرَأَتُهُ حَمَّALَةَ الْحَطَبِ</span>
+            <span class="arabic">وَامْرَأَتُهُ حَمَّالَةَ الْحَطَبِ</span>
             <span class="rasm">وامرأته حمالة الحطب</span>
             <span class="translation">"Ve ona bağlı alt süreç (İmra'e), çökme verisi/yakıt (Hatab) yüklemeye devam ediyor."</span>
             <div class="analysis">
@@ -126,7 +126,7 @@
             <span class="verse-number">AYET 05</span>
             <span class="arabic">فِي جِيدِهَا حَبْلٌ مِّن مَّسَدٍ</span>
             <span class="rasm">في جيدها حبل من مسد</span>
-            <span class="translation">"Bağlantı portunda/boynunda (Cīd) sonsuz döngüden (Mesed) oluşan bir kablo/bağ vardır."</span>
+            <span class="translation">"Bağlantı portunda/boynunda (Cīd) sonsuz döngüden (Mesed) oluşan bir kablo vardır."</span>
             <div class="analysis">
                 <span class="keyword">J-Y-D (Port/Boyun):</span> Bağlantı darboğazı.<br>
                 <span class="keyword">M-S-D (Bükülmüş/Döngü):</span> Sonsuz Döngü (Infinite Loop). Sistemin içinden çıkamadığı bir kilitlenme (Deadlock).
@@ -134,8 +134,8 @@
         </div>
 
         <div style="margin-top: 30px;">
-            <a href="dashboard-tr.html" class="btn">ANA MENÜ</a>
-            <a href="tekvir-tr.html" class="btn">SIRADAKİ: SEQ_07 &rarr;</a>
+            <a href="index.html" class="btn">ANA MENÜ</a>
+            <a href="takwir.html" class="btn">SIRADAKİ: SEKANS_07 &rarr;</a>
         </div>
     </div>
 
@@ -143,24 +143,24 @@
         const logs = [
             { txt: "[ SEKANS 06 : EL-MESED (SİSTEM ÇÖKME ANALİZİ) ]", type: "log-sys", delay: 800 },
             { txt: "'ABU_LAHAB (ROOT_OVERHEAT)' durumu kontrol ediliyor...", type: "log-sys", delay: 1000 },
-            { txt: "DECODING T-B-B -> SÜRECİ DURDUR / BAĞLANTI KESİLDİ", type: "log-proc", delay: 600 },
-            { txt: "DECODING L-H-B -> AŞIRI ISINMA / İLTİHAPLANMA", type: "log-proc", delay: 600 },
+            { txt: "DECODING T-B-B -> SÜRECİ DURDUR / BAĞLANTI KESİLDİ", type: "log-diag", delay: 600 },
+            { txt: "DECODING L-H-B -> AŞIRI ISINMA / İLTİHAPLANMA", type: "log-diag", delay: 600 },
             { txt: "KRİTİK HATA: Girdi/Çıktı Araçları (Yeda) yanıt vermiyor.", type: "log-err", delay: 1200 },
             { txt: "DURUM: Süreç çöktü.", type: "log-err", delay: 800 },
             { txt: "----------------------------------------", type: "log-sys", delay: 300 },
             { txt: "Veri kurtarma deneniyor...", type: "log-diag", delay: 800 },
-            { txt: "DECODING M-L -> ÖNBELLEK / VARLIKLAR", type: "log-proc", delay: 600 },
+            { txt: "DECODING M-L -> ÖNBELLEK / VARLIKLAR", type: "log-diag", delay: 600 },
             { txt: "    [RECOVERY] Önbelleğe erişiliyor... BAŞARISIZ", type: "log-err", delay: 400 },
             { txt: "    [RECOVERY] Sonuçlara (KESEB) erişiliyor... BAŞARISIZ", type: "log-err", delay: 400 },
             { txt: "TEŞHİS: Yedekleme bozuk. Sistem kurtarılamaz.", type: "log-warn", delay: 1000 },
             { txt: "----------------------------------------", type: "log-sys", delay: 300 },
             { txt: "Bağımlılıklar analiz ediliyor (DAEMON)...", type: "log-sys", delay: 800 },
-            { txt: "DECODING H-T-B -> YAKIT / HATA VERİSİ", type: "log-proc", delay: 600 },
+            { txt: "DECODING H-T-B -> YAKIT / HATA VERİSİ", type: "log-diag", delay: 600 },
             { txt: "    > DAEMON TESPİT EDİLDİ: HAMMALA_DAEMON", type: "log-warn", delay: 400 },
             { txt: "NEDEN: Alt süreç hatayı beslemeye devam ediyor.", type: "log-warn", delay: 1000 },
             { txt: "----------------------------------------", type: "log-sys", delay: 300 },
             { txt: "Bağlantı portları kontrol ediliyor (CID)...", type: "log-sys", delay: 800 },
-            { txt: "DECODING M-S-D -> BÜKÜLMÜŞ KABLO / SONSUZ DÖNGÜ", type: "log-proc", delay: 800 },
+            { txt: "DECODING M-S-D -> BÜKÜLMÜŞ KABLO / SONSUZ DÖNGÜ", type: "log-diag", delay: 800 },
             { txt: "FİNAL RAPORU: Sistem kilitlenme (Deadlock) döngüsünde asılı kaldı.", type: "log-err", delay: 1200 },
             { txt: "EYLEM: Karantina başlatıldı.", type: "log-sys", delay: 1000 },
             { txt: "HATA ANALİZİ BİTTİ. SÜREÇ İZOLE EDİLDİ.", type: "log-sys", delay: 1000 }
