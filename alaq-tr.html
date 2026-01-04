@@ -3,103 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEQ_01 | EL-ALAK</title>
+    <title>SEQ_01: EL-ALAK | HAKĪKAT-KONSOLU</title>
     <style>
-        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; padding: 20px; max-width: 800px; margin: auto; border-top: 3px solid #00ff41; }
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #00ff41; border-bottom: 2px solid #00ff41; padding-bottom: 10px; }
+        .sub-header { color: #008f11; margin-bottom: 30px; font-size: 0.9em; }
         
-        h1 { color: #00ff41; font-size: 1.2rem; margin-bottom: 5px; letter-spacing: 2px; }
-        .sub-header { color: #666; font-size: 0.8rem; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 10px; }
-        
-        .verse-block { 
-            background: #0a0a0a; 
-            border-left: 2px solid #333; 
-            padding: 15px; 
-            margin-bottom: 20px; 
+        /* TERMINAL STYLES */
+        #terminal-box {
+            background-color: #000;
+            border: 1px solid #333;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+            display: none;
+        }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } /* Yeşil */
+        .log-root { color: #e5c07b; } /* Sarı */
+        .log-proc { color: #00bcd4; } /* Camgöbeği */
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+        /* BUTTON STYLE */
+        .boot-btn {
+            background-color: #1a1a1a;
+            color: #00ff41;
+            border: 1px solid #00ff41;
+            padding: 15px 30px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
             transition: 0.3s;
         }
-        .verse-block:hover { border-left-color: #00ff41; background: #0e0e0e; }
+        .boot-btn:hover { background-color: #00ff41; color: #000; box-shadow: 0 0 15px #00ff41; }
 
-        .verse-number { color: #00ff41; font-weight: bold; font-size: 0.8rem; margin-bottom: 5px; display: block; }
-        .arabic { color: #e5c07b; font-size: 1.1rem; margin-bottom: 10px; display: block; direction: rtl; }
-        .translation { color: #ddd; font-style: italic; margin-bottom: 10px; display: block; }
-        .analysis { color: #888; font-size: 0.85rem; border-top: 1px dashed #333; padding-top: 10px; }
-        
+        /* STANDARD STYLES */
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #00ff41; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[KERNEL]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
         .keyword { color: #e5c07b; font-weight: bold; }
-
-        .nav-buttons { display: flex; justify-content: space-between; margin-top: 50px; }
-        .btn { text-decoration: none; color: #666; border: 1px solid #333; padding: 10px 20px; font-size: 0.8rem; transition: 0.3s; }
-        .btn:hover { color: #e5c07b; border-color: #e5c07b; }
-        .btn-next { border-color: #00ff41; color: #00ff41; }
-        .btn-next:hover { background: #00ff41; color: #000; }
-
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #00ff41; color: #00ff41; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #00ff41; color: #000; }
     </style>
 </head>
 <body>
 
-    <a href="kutuphane.html" style="text-decoration: none; color: #666; font-size: 0.8rem;"> < VERİ TABANINA DÖN</a>
+    <a href="kutuphane.html" style="text-decoration: none; color: #555;">&larr; ARŞİVE DÖN</a>
 
     <div style="margin-top: 20px;">
-        <h1>SEQUENCE_01: EL-ALAK</h1>
+        <h1>SEKANS_01: EL-ALAK</h1>
         <div class="sub-header">
-            DURUM: BAŞLATILIYOR // KOMUT: READ_ONLY<br>
+            DURUM: BAŞLATILIYOR // BAĞLANTI KURULDU<br>
             RASM-ANALİZİ: İLK TEMAS
         </div>
     </div>
-<div style="border: 1px dashed #555; background-color: #0a0a0a; color: #888; font-size: 0.75rem; padding: 10px; margin: 15px 0; font-family: 'Courier New', monospace;">
-    <strong style="color: #e5c07b;">[!] SİSTEM NOTU:</strong> 
-    Bu metin, görsel okuma kolaylığı için standart formatta görüntülenmektedir. 
-    Sistem analizi tamamen <strong>noktasız Rasm-Kodu</strong> (Orijinal Kernel) üzerinden yapılmaktadır.
-</div>
 
-    <div class="verse-block">
-        <span class="verse-number">AYET 01</span>
-        <span class="arabic">اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ</span>
-        <span class="translation">"Yaratan Rabbinin adıyla oku."</span>
-        <div class="analysis">
-            <span class="keyword">SİSTEM MANTIĞI:</span> İlk komut "Konuş" veya "İnan" değil, <span class="keyword">İKRA (Oku/Tara)</span> komutudur. Bilinçten veri alması istenir. Bağlantı soyut bir ilah üzerinden değil, "Rabb" (Yönetici/Sistem Sahibi) üzerinden kurulur. "Halaka" (Yarattı), simülasyonun başlangıç noktasıdır.
-        </div>
+    <button class="boot-btn" onclick="runBootSequence()">[ SİSTEMİ BAŞLAT / ÇEKİRDEĞİ YÜKLE ]</button>
+
+    <div id="terminal-box">
+        <div id="terminal-content"></div>
+        <span class="cursor">_</span>
     </div>
 
-    <div class="verse-block">
-        <span class="verse-number">AYET 02</span>
-        <span class="arabic">خَلَقَ الْإِنسَانَ مِنْ عَلَقٍ</span>
-        <span class="translation">"İnsanı bir 'Alak'tan yarattı."</span>
-        <div class="analysis">
-            <span class="keyword">RASM-ÇÖZÜMLEME:</span> <span class="keyword">ALAK</span> kelime anlamı olarak "asılı duran/yapışan" demektir. Biyolojik: Embriyo. Teknik: Bir Bağımlılık (Dependency). İnsan otonom bir sistem değil, Sunucuya (Server) bağlı yaşayan bir "İstemci"dir (Client).
-        </div>
-    </div>
+    <div id="main-content" style="display:none;">
 
-    <div class="verse-block">
-        <span class="verse-number">AYET 03</span>
-        <span class="arabic">اقْرَأْ وَرَبُّكَ الْأَكْرَمُ</span>
-        <span class="translation">"Oku, senin Rabbin en cömert olandır."</span>
-        <div class="analysis">
-            <span class="keyword">DÖNGÜ (LOOP):</span> "Oku" komutunun tekrarı. Veri tabanına erişim izninin verildiğinin onayı (Ekrem = Cömert/Yüce). Sistem, işlemci için gerekli kaynakları tahsis etmektedir.
-        </div>
-    </div>
-
-    <div class="verse-block">
-        <span class="verse-number">AYET 04</span>
-        <span class="arabic">الَّذِي عَلَّمَ بِالْقَلَمِ</span>
-        <span class="translation">"O, kalemle öğretti."</span>
-        <div class="analysis">
-            <span class="keyword">DONANIM ARAYÜZÜ:</span> Burada araç tanıtılır. <span class="keyword">KALEM</span>, veriyi sabitleme ve kodlama aracıdır. Bilgi sadece "alınmaz", aynı zamanda "yazılır" (kodlanır). Bu, 2. Sekans (Kalem Suresi) için bir geçiş kapısıdır.
-        </div>
-    </div>
-
-    <div class="verse-block">
-        <span class="verse-number">AYET 05</span>
-        <span class="arabic">عَلَّمَ الْإِنسَانَ مَا لَمْ يَعْلَمْ</span>
-        <span class="translation">"İnsana bilmediğini öğretti."</span>
-        <div class="analysis">
-            <span class="keyword">VERİ YÜKLEME (UPLOAD):</span> Yeni yazılım kurulumu. İnsan sisteme boş bir disk olarak gelir ("bilmediği şey") ve Yönetici tarafından başlangıç verisi (Initial Data) yüklenir.
-        </div>
-    </div>
-
-    <div class="nav-buttons">
-        <a href="kutuphane.html" class="btn">KÜTÜPHANE</a>
-        <a href="kalem-tr.html" class="btn btn-next">SONRAKİ SEKANS: KALEM >></a>
-    </div>
-
-</body>
-</html>
+        <div class="verse-block">
+            <span class="verse
