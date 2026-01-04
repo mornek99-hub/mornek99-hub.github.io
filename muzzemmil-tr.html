@@ -3,93 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEQ_03 | EL-MÜZZEMMİL</title>
+    <title>SEKANS_03: EL-MÜZZEMMİL | HAKĪKAT-KONSOLU</title>
     <style>
-        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; padding: 20px; max-width: 800px; margin: auto; border-top: 3px solid #00ff41; }
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #00ff41; border-bottom: 2px solid #00ff41; padding-bottom: 10px; }
+        .sub-header { color: #008f11; margin-bottom: 30px; font-size: 0.9em; }
         
-        h1 { color: #00ff41; font-size: 1.2rem; margin-bottom: 5px; letter-spacing: 2px; }
-        .sub-header { color: #666; font-size: 0.8rem; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 10px; }
-        
-        .verse-block { 
-            background: #0a0a0a; 
-            border-left: 2px solid #333; 
-            padding: 15px; 
-            margin-bottom: 20px; 
+        /* TERMINAL STYLES */
+        #terminal-box {
+            background-color: #000;
+            border: 1px solid #333;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+            display: none;
+        }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } /* Yeşil */
+        .log-root { color: #e5c07b; } /* Sarı */
+        .log-proc { color: #00bcd4; } /* Camgöbeği */
+        .log-warn { color: #ff3333; font-weight: bold; } /* Kırmızı - Ağır Veri */
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+        /* BUTTON STYLE */
+        .boot-btn {
+            background-color: #1a1a1a;
+            color: #00ff41;
+            border: 1px solid #00ff41;
+            padding: 15px 30px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
             transition: 0.3s;
         }
-        .verse-block:hover { border-left-color: #00ff41; background: #0e0e0e; }
+        .boot-btn:hover { background-color: #00ff41; color: #000; box-shadow: 0 0 15px #00ff41; }
 
-        .verse-number { color: #00ff41; font-weight: bold; font-size: 0.8rem; margin-bottom: 5px; display: block; }
-        .arabic { color: #e5c07b; font-size: 1.1rem; margin-bottom: 10px; display: block; direction: rtl; }
-        .translation { color: #ddd; font-style: italic; margin-bottom: 10px; display: block; }
-        .analysis { color: #888; font-size: 0.85rem; border-top: 1px dashed #333; padding-top: 10px; }
-        
+        /* STANDARD STYLES */
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #00ff41; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[ÇEKİRDEK]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
         .keyword { color: #e5c07b; font-weight: bold; }
-
-        .nav-buttons { display: flex; justify-content: space-between; margin-top: 50px; }
-        .btn { text-decoration: none; color: #666; border: 1px solid #333; padding: 10px 20px; font-size: 0.8rem; transition: 0.3s; }
-        .btn:hover { color: #e5c07b; border-color: #e5c07b; }
-        .btn-next { border-color: #00ff41; color: #00ff41; }
-        .btn-next:hover { background: #00ff41; color: #000; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #00ff41; color: #00ff41; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #00ff41; color: #000; }
     </style>
 </head>
 <body>
 
-    <a href="kutuphane.html" style="text-decoration: none; color: #666; font-size: 0.8rem;"> < KÜTÜPHANEYE DÖN</a>
+    <a href="kutuphane.html" style="text-decoration: none; color: #555;">&larr; ARŞİVE DÖN</a>
 
     <div style="margin-top: 20px;">
-        <h1>SEQUENCE_03: EL-MÜZZEMMİL</h1>
+        <h1>SEKANS_03: EL-MÜZZEMMİL</h1>
         <div class="sub-header">
-            DURUM: İŞLENİYOR // EYLEM: SİSTEM YÜKLEME<br>
-            RASM-ANALİZİ: DAHİLİ KONFİGÜRASYON
-        </div>
-    </div>
-<div style="border: 1px dashed #555; background-color: #0a0a0a; color: #888; font-size: 0.75rem; padding: 10px; margin: 15px 0; font-family: 'Courier New', monospace;">
-    <strong style="color: #e5c07b;">[!] SİSTEM NOTU:</strong> 
-    Bu metin, görsel okuma kolaylığı için standart formatta görüntülenmektedir. 
-    Sistem analizi tamamen <strong>noktasız Rasm-Kodu</strong> (Orijinal Kernel) üzerinden yapılmaktadır.
-</div>
-
-    <div class="verse-block">
-        <span class="verse-number">AYET 01</span>
-        <span class="arabic">يَا أَيُّهَا الْمُزَّمِّلُ</span>
-        <span class="translation">"Ey Örtünüp Bürünen (Yüklenen)."</span>
-        <div class="analysis">
-            <span class="keyword">SİSTEM TANIMLAMASI:</span> <span class="keyword">MÜZZEMMİL (Z-M-L)</span> kökü, "yükünü yüklenmiş" veya "sefere hazırlanan" demektir. Teknik: Sistem "Boot" (Açılış) aşamasındadır. RAM'e gerekli modüller yüklenmektedir. Terminal, ağır bir işlem için kendini hazırlamaktadır.
+            DURUM: SİSTEM KONFİGÜRASYONU // İNDİRME HAZIRLIĞI<br>
+            RASM-ANALİZİ: AĞIR VERİ (HEAVY DATA) HAZIRLIĞI
         </div>
     </div>
 
-    <div class="verse-block">
-        <span class="verse-number">AYET 02</span>
-        <span class="arabic">قُمِ اللَّيْلَ إِلَّا قَلِيلًا</span>
-        <span class="translation">"Geceleyin kalk, birazı hariç."</span>
-        <div class="analysis">
-            <span class="keyword">BAKIM PENCERESİ:</span> <span class="keyword">KIYAM (Ayağa Kalkma/Dikilme)</span> gece vakti (Leyl) yapılır. Neden? Çünkü dış parazitler (Güneş ışığı/Kullanıcı girdisi) minimumdur. Server, veri bütünlüğünü sağlamak ve güncellemeleri işlemek için "Gece Modu"nda (Nightly Build) tam kapasite çalışmalıdır.
+    <button class="boot-btn" onclick="runBootSequence()">[ KONFİGÜRASYONU BAŞLAT ]</button>
+
+    <div id="terminal-box">
+        <div id="terminal-content"></div>
+        <span class="cursor">_</span>
+    </div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 01</span>
+            <span class="arabic">يَا أَيُّهَا الْمُزَّمِّلُ</span>
+            <span class="rasm">يا أيها المزمل</span>
+            <span class="translation">"Ey Kapsüllenen/Yükleyici Modundaki (Müzzemmil)."</span>
+            <div class="analysis">
+                <span class="keyword">Z-M-L (Kapsüllü):</span> Güvenli Mod (Safe-Mode). Sistem konfigürasyon yapmak için kendini dış dünyadan izole ediyor.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 02</span>
+            <span class="arabic">قُمِ اللَّيْلَ إِلَّا قَلِيلًا</span>
+            <span class="rasm">قم الليل إلا قليلا</span>
+            <span class="translation">"Yürüt/Kalk (Kum) Arka Plan Modunda (Leyl), çok azı (dinlenme) hariç."</span>
+            <div class="analysis">
+                <span class="keyword">Q-M (Yürüt):</span> İşlemleri başlatma komutu.<br>
+                <span class="keyword">L-Y-L (Gece/Arka Plan):</span> Görsel çıktı en aza indirilir. Odak noktası dahili işlem (Backend) üzerindedir.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 04</span>
+            <span class="arabic">وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا</span>
+            <span class="rasm">ortl القرآن trtyla</span>
+            <span class="translation">"Ve Veri Kümelerini (Kuran) sırasıyla/tertipli (Tertil) düzenle."</span>
+            <div class="analysis">
+                <span class="keyword">R-T-L (Defragmantasyon):</span> Zihni birleştirmek için verilerin yavaş ve sıralı okunması.<br>
+                <span class="keyword">Q-R-N (Kümeler):</span> Veri paketleri (Data Clusters).
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 05</span>
+            <span class="arabic">إِنَّا سَنُلْقِي عَلَيْكَ قَوْلًا ثَقِيلًا</span>
+            <span class="rasm">إنا سنلقي عليك قولا ثقيلا</span>
+            <span class="translation">"Şüphesiz biz sana Ağır bir Söz/Veri (Kavlen Sakîla) enjekte edeceğiz (Sanulki)."</span>
+            <div class="analysis">
+                <span class="keyword">L-Q-Y (Enjekte Et/Yükle):</span> İndirme işleminin başlangıcı.<br>
+                <span class="keyword">Th-Q-L (Ağır/Yoğun):</span> 'Heavy Data'. Muazzam CPU yükü (Bilinç) gerektiren yüksek karmaşıklıkta bilgi.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="index-tr.html" class="btn">ANA MENÜ</a>
+            <a href="muddathir-tr.html" class="btn">İLERİ: SEKANS_04 &rarr;</a>
         </div>
     </div>
 
-    <div class="verse-block">
-        <span class="verse-number">AYET 04</span>
-        <span class="arabic">وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا</span>
-        <span class="translation">"Ve Kur'an'ı tertil ile (dizerek) oku."</span>
-        <div class="analysis">
-            <span class="keyword">VERİ YAPILANDIRMASI:</span> <span class="keyword">TERTİL (R-T-L)</span>, "dişler gibi inci gibi dizmek" demektir. Bu "güzel şarkı söylemek" değil, <span class="keyword">SIRALI İŞLEME (Sequencing)</span> demektir. Veri paketleri (Packets) rastgele değil, belirli bir mimari sıraya göre işlenmelidir.
-        </div>
-    </div>
+    <script>
+        const logs = [
+            { txt: "[ SEKANS 03 : EL-MÜZZEMMİL (SİSTEM KONFİGÜRASYONU) ]", type: "log-sys", delay: 800 },
+            { txt: "İşlem Durumu Tanımlanıyor...", type: "log-sys", delay: 1000 },
+            { txt: "RASM ÇÖZÜMLENİYOR: Z-M-L -> MÜZZEMMİL (KAPSÜLLENMİŞ / YÜKLEYİCİ)", type: "log-proc", delay: 800 },
+            { txt: "DURUM: Sistem izole edildi (Safe Mode). Konfigürasyon hazır.", type: "log-proc", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Bakım Aralığı Başlatılıyor...", type: "log-sys", delay: 800 },
+            { txt: "RASM ÇÖZÜMLENİYOR: Q-M -> KUM (YÜRÜT / ÇALIŞTIR)", type: "log-proc", delay: 600 },
+            { txt: "RASM ÇÖZÜMLENİYOR: L-Y-L -> ARKA PLAN MODU (LEYL)", type: "log-proc", delay: 800 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Bellek Optimizasyonu Başlatılıyor (Tertil)...", type: "log-root", delay: 800 },
+            { txt: "RASM ÇÖZÜMLENİYOR: R-T-L -> DEFRAGMANTASYON", type: "log-proc", delay: 600 },
+            { txt: "    [......] %20", type: "log-sys", delay: 400 },
+            { txt: "    [|||...] %60", type: "log-sys", delay: 400 },
+            { txt: "    [||||||] %100", type: "log-sys", delay: 400 },
+            { txt: "BAŞARILI: Veri blokları mantıksal olarak sıralandı.", type: "log-sys", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "DİKKAT: Yüksek Hızlı İndirme Hazırlanıyor...", type: "log-warn", delay: 1000 },
+            { txt: "RASM ÇÖZÜMLENİYOR: Th-Q-L -> AĞIR VERİ (SAKÎLA)", type: "log-warn", delay: 1000 },
+            { txt: "GELEN VERİ: 'Kavlen Sakîla' (Boyut: SONSUZ)", type: "log-root", delay: 1000 },
+            { txt: "HAZIRLIK: CPU Yükü Artacak.", type: "log-root", delay: 1200 },
+            { txt: "KONFİGÜRASYON TAMAMLANDI.", type: "log-sys", delay: 1000 }
+        ];
 
-    <div class="verse-block">
-        <span class="verse-number">AYET 05</span>
-        <span class="arabic">إِنَّا سَنُلْقِي عَلَيْكَ قَوْلًا ثَقِيلًا</span>
-        <span class="translation">"Doğrusu biz sana ağır bir söz bırakacağız."</span>
-        <div class="analysis">
-            <span class="keyword">VERİ TRANSFERİ (UPLOAD):</span> Gece hazırlığının amacı budur. <span class="keyword">KAVLEN SAKİLEN</span> (Ağır Söz), yüksek yoğunluklu veri paketidir (High Density Data). Sadece gece soğutulmuş ve stabil hale gelmiş bir işlemci bu yükü çökmeden kaldırabilir.
-        </div>
-    </div>
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
 
-    <div class="nav-buttons">
-        <a href="kalem-tr.html" class="btn">< ÖNCEKİ: KALEM</a>
-        <a href="muddessir-tr.html" class="btn btn-next">SONRAKİ: MÜDDESSİR >></a>
-    </div>
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
 
 </body>
 </html>
