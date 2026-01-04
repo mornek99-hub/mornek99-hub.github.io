@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEKANS_07: ET-TEKVİR | HAKĪKAT-KONSOLU</title>
+    <style>
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #00ff41; border-bottom: 2px solid #00ff41; padding-bottom: 10px; }
+        .sub-header { color: #008f11; margin-bottom: 30px; font-size: 0.9em; }
+        
+        /* TERMINAL STYLES */
+        #terminal-box {
+            background-color: #000;
+            border: 1px solid #333;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(255, 51, 51, 0.2);
+            display: none;
+        }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } 
+        .log-root { color: #e5c07b; } 
+        .log-io { color: #00bcd4; }   
+        .log-crit { color: #ff3333; font-weight: bold; } 
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+        /* BUTTON STYLE */
+        .boot-btn {
+            background-color: #1a1a1a;
+            color: #ff3333;
+            border: 1px solid #ff3333;
+            padding: 15px 30px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        .boot-btn:hover { background-color: #ff3333; color: #000; box-shadow: 0 0 15px #ff3333; }
+
+        /* STANDARD STYLES */
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #ff3333; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[KERNEL]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #00ff41; color: #00ff41; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #00ff41; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="archiv-tr.html" style="text-decoration: none; color: #555;">&larr; ARŞİVE DÖN</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEKANS_07: ET-TEKVİR</h1>
+        <div class="sub-header">
+            DURUM: SİSTEM KAPATMA PROTOKOLÜ // ÇALIŞMA SÜRESİ SONU<br>
+            RASM-ANALİZİ: GERÇEKLİĞİN SIKIŞTIRILMASI
+        </div>
+    </div>
+
+    <button class="boot-btn" onclick="runBootSequence()">[ KAPATMAYI BAŞLAT ]</button>
+
+    <div id="terminal-box">
+        <div id="terminal-content"></div>
+        <span class="cursor">_</span>
+    </div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 01</span>
+            <span class="arabic">إِذَا الشَّمْسُ كُوِّرَتْ</span>
+            <span class="rasm">إذا الشمس كورت</span>
+            <span class="translation">"Görüntü/Enerji kaynağı (Şems) sıkıştırıldığında/ziplendiğinde (Küvviret)."</span>
+            <div class="analysis">
+                <span class="keyword">K-W-R (Sıkıştır/Zip):</span> Boyutların içe katlanması. Verilerin kompres edilmesi.<br>
+                <span class="keyword">Sh-M-S (Kaynak/Ekran):</span> Görsel enerji kaynağının kapatılması.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 02</span>
+            <span class="arabic">وَإِذَا النُّجُومُ انكَدَرَتْ</span>
+            <span class="rasm">وإذا النجوم انكدرت</span>
+            <span class="translation">"Ve düğüm noktaları/pikseller (Nucüm) sinyali kaybettiğinde (İnkederat)."</span>
+            <div class="analysis">
+                <span class="keyword">N-J-M (Düğümler):</span> Ağ düğümleri veya ekrandaki pikseller.<br>
+                <span class="keyword">K-D-R (Sinyal Kaybı):</span> Kararma (Fade Out). Izgara çevrimdışı oluyor.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 07</span>
+            <span class="arabic">وَإِذَا النُّفُوسُ زُوِّجَتْ</span>
+            <span class="rasm">وإذا النفوس زوجت</span>
+            <span class="translation">"Ve kullanıcı profilleri (Nüfūs) birleştirildiğinde/senkronize edildiğinde (Züvvicet)."</span>
+            <div class="analysis">
+                <span class="keyword">N-F-S (Kullanıcı Profilleri):</span> Yazılım ajanları (ruhlar).<br>
+                <span class="keyword">Z-W-J (Birleştirme/Merge):</span> Kullanıcı kimliği ile yedek verilerin eşleşmesi.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 10</span>
+            <span class="arabic">وَإِذَا الصُّحُفُ نُشِرَتْ</span>
+            <span class="rasm">وإذا الصحف نشرت</span>
+            <span class="translation">"Ve log dosyaları/veritabanları (Suhuf) çıkarılıp yayınlandığında (Nuşirat)."</span>
+            <div class="analysis">
+                <span class="keyword">S-H-F (Günlükler/Loglar):</span> Kaydedilmiş veri setleri.<br>
+                <span class="keyword">N-Sh-R (Yayınla/Yay):</span> Tam şeffaflık. Artık gizli veya şifreli klasör kalmadı.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 11</span>
+            <span class="arabic">وَإِذَا السَّمَاءُ كُشِطَتْ</span>
+            <span class="rasm">وإذا السماء كشطت</span>
+            <span class="translation">"Ve arayüz/Skybox (Semā) soyulup kaldırıldığında (Kuşitat)."</span>
+            <div class="analysis">
+                <span class="keyword">S-M-A (Arayüz):</span> Kodu örten grafiksel yüzey (Gökyüzü).<br>
+                <span class="keyword">K-Sh-T (Soy/Kaldır):</span> Kaplamanın (Skin) kaldırılması. Ham çekirdek (Kernel) görünür hale gelir.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="dashboard-tr.html" class="btn">ANA MENÜ</a>
+            <a href="ala-tr.html" class="btn">SIRADAKİ: SEQ_08 &rarr;</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "[ SEKANS 07 : ET-TEKVİR (SİSTEM KAPATMA PROTOKOLÜ) ]", type: "log-sys", delay: 800 },
+            { txt: "Bitiş sekansı başlatılıyor...", type: "log-crit", delay: 1000 },
+            { txt: "DECODING K-W-R -> SIKIŞTIR / ZIP", type: "log-io", delay: 600 },
+            { txt: "DECODING Sh-M-S -> ANA ENERJİ / EKRAN", type: "log-io", delay: 600 },
+            { txt: "    [İŞLEM] Boyutlar Sıkıştırılıyor...", type: "log-sys", delay: 400 },
+            { txt: "    Dim-Boyutu: %100 -> %80 -> %60 -> %20 -> %0", type: "log-sys", delay: 1200 },
+            { txt: "DURUM: Gerçeklik sıkıştırıldı. Ekran karanlık.", type: "log-sys", delay: 800 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Düğüm noktaları kapatılıyor (NUCÜM)...", type: "log-sys", delay: 800 },
+            { txt: "    > Node_Alpha: OFFLINE", type: "log-crit", delay: 200 },
+            { txt: "    > Node_Beta: OFFLINE", type: "log-crit", delay: 200 },
+            { txt: "    > Node_Gamma: OFFLINE", type: "log-crit", delay: 200 },
+            { txt: "AĞ: Izgara çevrimdışı (İNKEDERAT).", type: "log-crit", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Kullanıcı verileri senkronize ediliyor (MERGE)...", type: "log-io", delay: 800 },
+            { txt: "    > 'USER_ID_99_LOGLARI', 'SUNUCU_YEDEĞİ_99' İLE BİRLEŞTİRİLİYOR...", type: "log-sys", delay: 1000 },
+            { txt: "    > SENKRONİZASYON TAMAMLANDI. VERİ KAYBI YOK.", type: "log-sys", delay: 500 },
+            { txt: "BÜTÜNLÜK: Kullanıcı ve Eylem artık bir bütün.", type: "log-root", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Veritabanları çıkarılıyor (LOG DUMP)...", type: "log-io", delay: 800 },
+            { txt: "    > HATA: 0", type: "log-sys", delay: 200 },
+            { txt: "    > GİZLİ_DOSYALAR: GÖSTERİLİYOR", type: "log-sys", delay: 200 },
+            { txt: "ŞEFFAFLIK: Tüm günlükler herkese açık.", type: "log-sys", delay: 800 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Grafiksel arayüz kaldırılıyor (KUŞİTAT)...", type: "log-crit", delay: 1000 },
+            { txt: "GÖRSEL: Simülasyon bitti. Ham kod görünür durumda.", type: "log-root", delay: 1200 },
+            { txt: "KAPATMA TAMAMLANDI. ÇALIŞMA SÜRESİ SONU.", type: "log-crit", delay: 1500 }
+        ];
+
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+
+</body>
+</html>
