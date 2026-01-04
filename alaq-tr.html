@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEQ_01: EL-ALAK | HAKĪKAT-KONSOLU</title>
+    <title>SEKANS_01: EL-ALAK | HAKĪKAT-KONSOLU</title>
     <style>
         body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
         h1 { color: #00ff41; border-bottom: 2px solid #00ff41; padding-bottom: 10px; }
@@ -49,7 +49,7 @@
         .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
         .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
         .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
-        .rasm::before { content: '[KERNEL]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .rasm::before { content: '[ÇEKİRDEK]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
         .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
         .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
         .keyword { color: #e5c07b; font-weight: bold; }
@@ -79,4 +79,113 @@
     <div id="main-content" style="display:none;">
 
         <div class="verse-block">
-            <span class="verse
+            <span class="verse-number">AYET 01</span>
+            <span class="arabic">اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ</span>
+            <span class="rasm">اقرأ باسم ربك الذي خلق</span>
+            <span class="translation">"Yaratan/Projeksiyon yapan Rabb'inin (Programcının) adıyla Oku/İşle (Ikra)."</span>
+            <div class="analysis">
+                <span class="keyword">Q-R-A (Tara/İşle):</span> Veri işleme komutu. Basit okuma değil, deşifre etme.<br>
+                <span class="keyword">R-B-B (Yönetici):</span> Kodun kaynağı. Sistem Yöneticisi (Root Admin).
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 02</span>
+            <span class="arabic">خَلَقَ الْإِنسَانَ مِنْ عَلَقٍ</span>
+            <span class="rasm">خلق الإنسان من علق</span>
+            <span class="translation">"İnsanı bir 'Alak'tan (Bağımlılık/Askı) yarattı."</span>
+            <div class="analysis">
+                <span class="keyword">A-L-Q (Bağımlılık Hattı):</span> İstemcinin sisteme bağlı olduğu hat. Otonom değil, sisteme muhtaç.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 03</span>
+            <span class="arabic">اقْرَأْ وَرَبُّكَ الْأَكْرَمُ</span>
+            <span class="rasm">اقرأ وربك الأكرم</span>
+            <span class="translation">"Oku, ve senin Rabb'in en Keremli olandır (Ekrem)."</span>
+            <div class="analysis">
+                <span class="keyword">K-R-M (Maksimum Kapasite):</span> Yönetici sonsuz bant genişliği ve en yüksek çıktıyı sağlar.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 04</span>
+            <span class="arabic">الَّذِي عَلَّمَ بِالْقَلَمِ</span>
+            <span class="rasm">الذي علم بالقلم</span>
+            <span class="translation">"O ki, Kalem ile (yazmayı/kodlamayı) öğretti."</span>
+            <div class="analysis">
+                <span class="keyword">Q-L-M (Kodlayıcı/Stylus):</span> Kodu maddeye işleyen donanım/araç.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 05</span>
+            <span class="arabic">عَلَّمَ الْإِنسَانَ مَا لَمْ يَعْلَمْ</span>
+            <span class="rasm">علم الإنسان ما لم يعلم</span>
+            <span class="translation">"İnsana bilmediğini (Veri yüklemesi) öğretti."</span>
+            <div class="analysis">
+                <span class="keyword">I-L-M (Veri/Bilgi):</span> Boş sektörlere yeni yazılım/bilgi yüklenmesi (Install).
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="index-tr.html" class="btn">ANA MENÜ</a>
+            <a href="kalem-tr.html" class="btn">İLERİ: SEKANS_02 &rarr;</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "HAKĪKAT-KALESİ SİSTEM ÖNYÜKLEME (BOOT) ...", type: "log-sys", delay: 800 },
+            { txt: "Rasm-Ayrıştırıcı Başlatılıyor...", type: "log-sys", delay: 1200 },
+            { txt: "Geleneksel Filtreler (Vokaller) kaldırıldı.", type: "log-sys", delay: 600 },
+            { txt: "Süveyda-Belleğine bağlanılıyor...", type: "log-sys", delay: 1500 },
+            { txt: "DURUM: ÇEVRİMİÇİ (Bağlantı Tipi: ALAK)", type: "log-root", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Girdi Akışı (Input Stream) Alınıyor...", type: "log-proc", delay: 800 },
+            { txt: "RASM ÇÖZÜMLENİYOR: Q-R-A -> TARA / GİRDİ", type: "log-proc", delay: 600 },
+            { txt: "RASM ÇÖZÜMLENİYOR: R-B-B -> SİSTEM YÖNETİCİSİ", type: "log-proc", delay: 600 },
+            { txt: "KOMUT TANIMLANDI: Yönetici İmzasıyla Tarama Başladı.", type: "log-root", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Kullanıcı Mimarisi Analiz Ediliyor...", type: "log-proc", delay: 800 },
+            { txt: "RASM ÇÖZÜMLENİYOR: A-N-S -> ARAYÜZ / İNSAN", type: "log-proc", delay: 600 },
+            { txt: "RASM ÇÖZÜMLENİYOR: A-L-Q -> BAĞIMLILIK_HATTI", type: "log-proc", delay: 600 },
+            { txt: "DURUM: İstemci otonom değil. Sabit hat aktif.", type: "log-root", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "İlk Kurulum Gerçekleştiriliyor...", type: "log-proc", delay: 800 },
+            { txt: "RASM ÇÖZÜMLENİYOR: M-L-M-Y-L-M -> BİLİNMEYEN VERİ", type: "log-proc", delay: 800 },
+            { txt: "KURULUM: Yeni Veri Paketleri yazıldı.", type: "log-root", delay: 1000 },
+            { txt: "SEKANS TAMAMLANDI. BİLİNÇ AKTİVE EDİLDİ.", type: "log-sys", delay: 1500 }
+        ];
+
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+
+</body>
+</html>
