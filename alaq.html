@@ -3,103 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEQ_01 | AL-ALAQ</title>
+    <title>SEQ_01: AL-ALAQ | HAKĪKAT-KONSOLU</title>
     <style>
-        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; padding: 20px; max-width: 800px; margin: auto; border-top: 3px solid #00ff41; }
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #00ff41; border-bottom: 2px solid #00ff41; padding-bottom: 10px; }
+        .sub-header { color: #008f11; margin-bottom: 30px; font-size: 0.9em; }
         
-        h1 { color: #00ff41; font-size: 1.2rem; margin-bottom: 5px; letter-spacing: 2px; }
-        .sub-header { color: #666; font-size: 0.8rem; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 10px; }
-        
-        .verse-block { 
-            background: #0a0a0a; 
-            border-left: 2px solid #333; 
-            padding: 15px; 
-            margin-bottom: 20px; 
+        /* TERMINAL STYLES */
+        #terminal-box {
+            background-color: #000;
+            border: 1px solid #333;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+            display: none; /* Erst unsichtbar */
+        }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } /* Grün */
+        .log-root { color: #e5c07b; } /* Gelb */
+        .log-proc { color: #00bcd4; } /* Cyan */
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+        /* BUTTON STYLE */
+        .boot-btn {
+            background-color: #1a1a1a;
+            color: #00ff41;
+            border: 1px solid #00ff41;
+            padding: 15px 30px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
             transition: 0.3s;
         }
-        .verse-block:hover { border-left-color: #00ff41; background: #0e0e0e; }
+        .boot-btn:hover { background-color: #00ff41; color: #000; box-shadow: 0 0 15px #00ff41; }
 
-        .verse-number { color: #00ff41; font-weight: bold; font-size: 0.8rem; margin-bottom: 5px; display: block; }
-        .arabic { color: #e5c07b; font-size: 1.1rem; margin-bottom: 10px; display: block; direction: rtl; }
-        .translation { color: #ddd; font-style: italic; margin-bottom: 10px; display: block; }
-        .analysis { color: #888; font-size: 0.85rem; border-top: 1px dashed #333; padding-top: 10px; }
-        
+        /* STANDARD STYLES */
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #00ff41; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[KERNEL]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
         .keyword { color: #e5c07b; font-weight: bold; }
-
-        .nav-buttons { display: flex; justify-content: space-between; margin-top: 50px; }
-        .btn { text-decoration: none; color: #666; border: 1px solid #333; padding: 10px 20px; font-size: 0.8rem; transition: 0.3s; }
-        .btn:hover { color: #e5c07b; border-color: #e5c07b; }
-        .btn-next { border-color: #00ff41; color: #00ff41; }
-        .btn-next:hover { background: #00ff41; color: #000; }
-
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #00ff41; color: #00ff41; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #00ff41; color: #000; }
     </style>
 </head>
 <body>
 
-    <a href="archiv.html" style="text-decoration: none; color: #666; font-size: 0.8rem;"> < ZURÜCK ZUR DATENBANK</a>
+    <a href="kutuphane.html" style="text-decoration: none; color: #555;">&larr; BACK TO ARCHIVE</a>
 
     <div style="margin-top: 20px;">
-        <h1>SEQUENCE_01: AL-ALAQ</h1>
+        <h1>SEQUENCE_01: EL-ALAK</h1>
         <div class="sub-header">
-            STATUS: INITIALISIERUNG // BEFEHL: READ_ONLY<br>
+            STATUS: INITIALISIERUNG // CONNECTION ESTABLISHED<br>
             RASM-ANALYSE: DER ERSTE KONTAKT
         </div>
     </div>
-<div style="border: 1px dashed #555; background-color: #0a0a0a; color: #888; font-size: 0.75rem; padding: 10px; margin: 15px 0; font-family: 'Courier New', monospace;">
-    <strong style="color: #e5c07b;">[!] SYSTEM-HINWEIS:</strong> 
-    Dieser Text wird zur visuellen Orientierung im Standard-Format angezeigt. 
-    Die System-Analyse erfolgt ausschließlich am <strong>punktlosen Rasm-Code</strong> (Original-Kernel).
-</div>
 
-    <div class="verse-block">
-        <span class="verse-number">AYAT 01</span>
-        <span class="arabic">اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ</span>
-        <span class="translation">"Lies im Namen deines Herrn, der erschuf."</span>
-        <div class="analysis">
-            <span class="keyword">SYSTEM-LOGIK:</span> Der erste Befehl ist nicht "Sprich" oder "Glaube", sondern <span class="keyword">IQRA (Lies/Scanne)</span>. Das Bewusstsein wird aufgefordert, Daten aufzunehmen. Die Verbindung läuft über den "Rabb" (Administrator/Erhalter), nicht über eine abstrakte Gottheit. "Khalaqa" (Erschuf) definiert den Startpunkt der Simulation.
+    <button class="boot-btn" onclick="runBootSequence()">[ SYSTEM STARTEN / BOOT KERNEL ]</button>
+
+    <div id="terminal-box">
+        <div id="terminal-content"></div>
+        <span class="cursor">_</span>
+    </div>
+
+    <div id="system-note" style="display:none; border: 1px dashed #555; background-color: #0a0a0a; color: #888; font-size: 0.75rem; padding: 10px; margin: 15px 0; font-family: 'Courier New', monospace;">
+        <strong style="color: #e5c07b;">[!] SYSTEM-HINWEIS:</strong> 
+        Dieser Text wird zur visuellen Orientierung im Standard-Format angezeigt. 
+        Die System-Analyse erfolgt ausschließlich am <strong>punktlosen Rasm-Code</strong> (Original-Kernel).
+    </div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01</span>
+            <span class="arabic">اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ</span>
+            <span class="rasm">اقرأ باسم ربك الذي خلق</span>
+            <span class="translation">"Lies/Prozessiere (Iqra) im Namen deines Programmierers (Rabb), der erschuf/projizierte."</span>
+            <div class="analysis">
+                <span class="keyword">I-Q-R (Read/Process):</span> Der Befehl zur Datenverarbeitung. Kein einfaches Lesen, sondern Dekodieren.<br>
+                <span class="keyword">R-B-B (Lord/Programmer):</span> Die Quelle des Codes. Der Erhalter des Systems.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 02</span>
+            <span class="arabic">خَلَقَ الْإِنسَانَ مِنْ عَلَقٍ</span>
+            <span class="rasm">خلق الإنسان من علق</span>
+            <span class="translation">"Erschuf den Menschen aus einer anhängenden Substanz (Alaq)."</span>
+            <div class="analysis">
+                <span class="keyword">A-L-Q (Cling/Hang):</span> Biologische Referenz (Embryo) und psychologische Abhängigkeit (Attachment).
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 03</span>
+            <span class="arabic">اقْرَأْ وَرَبُّكَ الْأَكْرَمُ</span>
+            <span class="rasm">اقرأ وربك الأكرم</span>
+            <span class="translation">"Lies, und dein Programmierer ist der Großzügigste (Akram)."</span>
+            <div class="analysis">
+                <span class="keyword">K-R-M (Generous/Honorable):</span> Bereitstellung unbegrenzter Ressourcen/Daten für das Bewusstsein.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 04</span>
+            <span class="arabic">الَّذِي عَلَّمَ بِالْقَلَمِ</span>
+            <span class="rasm">الذي علم بالقلم</span>
+            <span class="translation">"Der lehrte/programmierten durch den Stift (Qalam)."</span>
+            <div class="analysis">
+                <span class="keyword">Q-L-M (Pen/Tool):</span> Das Werkzeug zur Aufzeichnung und Übertragung von Wissen/Code.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 05</span>
+            <span class="arabic">عَلَّمَ الْإِنسَانَ مَا لَمْ يَعْلَمْ</span>
+            <span class="rasm">علم الإنسان ما لم يعلم</span>
+            <span class="translation">"Lehrte den Menschen, was er nicht wusste (Daten-Upload)."</span>
+            <div class="analysis">
+                <span class="keyword">I-L-M (Knowledge/Data):</span> Die Installation von neuer Software/Wissen in das menschliche System.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="index.html" class="btn">HAUPTMENÜ</a>
+            <a href="qalam.html" class="btn">NEXT: SEQ_02 &rarr;</a>
         </div>
     </div>
 
-    <div class="verse-block">
-        <span class="verse-number">AYAT 02</span>
-        <span class="arabic">خَلَقَ الْإِنسَانَ مِنْ عَلَقٍ</span>
-        <span class="translation">"Erschuf den Menschen aus einer Anhängsel (Alaq)."</span>
-        <div class="analysis">
-            <span class="keyword">RASM-DECODIERUNG:</span> <span class="keyword">ALAQ</span> bedeutet wörtlich "etwas, das hängt/klebt". Biologisch: Der Embryo. Technisch: Eine Abhängigkeit (Dependency). Der Mensch ist kein autonomes System, sondern ein "Client", der am Server hängt.
-        </div>
-    </div>
+    <script>
+        const logs = [
+            { txt: "HAKĪKAT-KALESİ SYSTEM BOOT ...", type: "log-sys", delay: 800 },
+            { txt: "Initialisiere Rasm-Parser...", type: "log-sys", delay: 1200 },
+            { txt: "Traditionelle Filter (Vokale) entfernt.", type: "log-sys", delay: 600 },
+            { txt: "Verbinde mit Suwayda-Speicher...", type: "log-sys", delay: 1500 },
+            { txt: "STATUS: ONLINE (Verbindungstyp: ALAQ)", type: "log-root", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "DECODING Q-R-A -> SCAN / INPUT", type: "log-proc", delay: 800 },
+            { txt: "DECODING R-B-B -> SYS_ADMIN / EVOLVER", type: "log-proc", delay: 800 },
+            { txt: "DECODING A-N-S -> CLIENT (MENSCH)", type: "log-proc", delay: 800 },
+            { txt: "DECODING A-L-Q -> DEPENDENCY_LINK", type: "log-proc", delay: 1200 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "SEQUENZ 01 GELADEN. BEWUSSTSEIN AKTIVIERT.", type: "log-root", delay: 1500 }
+        ];
 
-    <div class="verse-block">
-        <span class="verse-number">AYAT 03</span>
-        <span class="arabic">اقْرَأْ وَرَبُّكَ الْأَكْرَمُ</span>
-        <span class="translation">"Lies, und dein Herr ist der Großzügigste."</span>
-        <div class="analysis">
-            <span class="keyword">LOOP-FUNKTION:</span> Wiederholung des Befehls "Lies". Bestätigung, dass der Zugriff auf die Datenbank gewährt wurde (Akram = Großzügig/Hoch). Das System stellt Ressourcen bereit.
-        </div>
-    </div>
+        function runBootSequence() {
+            // Button verstecken, Terminal zeigen
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
 
-    <div class="verse-block">
-        <span class="verse-number">AYAT 04</span>
-        <span class="arabic">الَّذِي عَلَّمَ بِالْقَلَمِ</span>
-        <span class="translation">"Der lehrte durch den Stift (Qalam)."</span>
-        <div class="analysis">
-            <span class="keyword">HARDWARE-SCHNITTSTELLE:</span> Hier wird das Werkzeug eingeführt. <span class="keyword">QALAM</span> (Stift) ist das Instrument zur Festschreibung von Daten. Wissen wird nicht nur "empfangen", es wird "codiert" (geschrieben). Dies ist der Übergang zu Sequenz 02 (Al-Qalam).
-        </div>
-    </div>
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    
+                    // Auto-Scroll nach unten
+                    window.scrollTo(0, document.body.scrollHeight);
 
-    <div class="verse-block">
-        <span class="verse-number">AYAT 05</span>
-        <span class="arabic">عَلَّمَ الْإِنسَانَ مَا لَمْ يَعْلَمْ</span>
-        <span class="translation">"Lehrte den Menschen, was er nicht wusste."</span>
-        <div class="analysis">
-            <span class="keyword">DATA-UPLOAD:</span> Installation neuer Software. Der Mensch kommt als leere Festplatte ("was er nicht wusste") und erhält initiales Wissen durch den Administrator.
-        </div>
-    </div>
-
-    <div class="nav-buttons">
-        <a href="archiv.html" class="btn">ARCHIV</a>
-        <a href="qalam.html" class="btn btn-next">NÄCHSTE SEQUENZ: QALAM >></a>
-    </div>
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    // Wenn fertig: Inhalt anzeigen
+                    setTimeout(() => {
+                        document.getElementById('system-note').style.display = 'block';
+                        document.getElementById('main-content').style.display = 'block';
+                        
+                        // Alle Verse einblenden
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
 
 </body>
 </html>
