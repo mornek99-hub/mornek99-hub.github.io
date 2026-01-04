@@ -3,93 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEQ_04 | AL-MUDDATHIR</title>
+    <title>SEQ_04: AL-MUDDATHIR | HAKĪKAT-KONSOLU</title>
     <style>
-        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; padding: 20px; max-width: 800px; margin: auto; border-top: 3px solid #00ff41; }
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #00ff41; border-bottom: 2px solid #00ff41; padding-bottom: 10px; }
+        .sub-header { color: #008f11; margin-bottom: 30px; font-size: 0.9em; }
         
-        h1 { color: #00ff41; font-size: 1.2rem; margin-bottom: 5px; letter-spacing: 2px; }
-        .sub-header { color: #666; font-size: 0.8rem; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 10px; }
-        
-        .verse-block { 
-            background: #0a0a0a; 
-            border-left: 2px solid #333; 
-            padding: 15px; 
-            margin-bottom: 20px; 
+        /* TERMINAL STYLES */
+        #terminal-box {
+            background-color: #000;
+            border: 1px solid #333;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+            display: none;
+        }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } /* Grün */
+        .log-root { color: #e5c07b; } /* Gelb */
+        .log-proc { color: #00bcd4; } /* Cyan */
+        .log-sec { color: #d500f9; }  /* Magenta - Security/Firewall */
+        .log-alert { color: #ff3333; font-weight: bold; } /* Rot - Broadcast */
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+        /* BUTTON STYLE */
+        .boot-btn {
+            background-color: #1a1a1a;
+            color: #00ff41;
+            border: 1px solid #00ff41;
+            padding: 15px 30px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
             transition: 0.3s;
         }
-        .verse-block:hover { border-left-color: #00ff41; background: #0e0e0e; }
+        .boot-btn:hover { background-color: #00ff41; color: #000; box-shadow: 0 0 15px #00ff41; }
 
-        .verse-number { color: #00ff41; font-weight: bold; font-size: 0.8rem; margin-bottom: 5px; display: block; }
-        .arabic { color: #e5c07b; font-size: 1.1rem; margin-bottom: 10px; display: block; direction: rtl; }
-        .translation { color: #ddd; font-style: italic; margin-bottom: 10px; display: block; }
-        .analysis { color: #888; font-size: 0.85rem; border-top: 1px dashed #333; padding-top: 10px; }
-        
+        /* STANDARD STYLES */
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #00ff41; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[KERNEL]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
         .keyword { color: #e5c07b; font-weight: bold; }
-
-        .nav-buttons { display: flex; justify-content: space-between; margin-top: 50px; }
-        .btn { text-decoration: none; color: #666; border: 1px solid #333; padding: 10px 20px; font-size: 0.8rem; transition: 0.3s; }
-        .btn:hover { color: #e5c07b; border-color: #e5c07b; }
-        .btn-next { border-color: #00ff41; color: #00ff41; }
-        .btn-next:hover { background: #00ff41; color: #000; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #00ff41; color: #00ff41; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #00ff41; color: #000; }
     </style>
 </head>
 <body>
 
-    <a href="archiv.html" style="text-decoration: none; color: #666; font-size: 0.8rem;"> < ZURÜCK ZUR DATENBANK</a>
+    <a href="kutuphane.html" style="text-decoration: none; color: #555;">&larr; BACK TO ARCHIVE</a>
 
     <div style="margin-top: 20px;">
         <h1>SEQUENCE_04: AL-MUDDATHIR</h1>
         <div class="sub-header">
-            STATUS: ACTIVE // COMMAND: EXECUTE<br>
-            RASM-ANALYSE: EXTERNE AUSFÜHRUNG
+            STATUS: SYSTEM ACTIVATION // WAKE UP CALL<br>
+            RASM-ANALYSE: AKTIVIERUNG DES OPERATORS
         </div>
     </div>
 
- <div style="border: 1px dashed #555; background-color: #0a0a0a; color: #888; font-size: 0.75rem; padding: 10px; margin: 15px 0; font-family: 'Courier New', monospace;">
-    <strong style="color: #e5c07b;">[!] SYSTEM-HINWEIS:</strong> 
-    Dieser Text wird zur visuellen Orientierung im Standard-Format angezeigt. 
-    Die System-Analyse erfolgt ausschließlich am <strong>punktlosen Rasm-Code</strong> (Original-Kernel).
-</div>
-   <div class="verse-block">
-        <span class="verse-number">AYAT 01-02</span>
-        <span class="arabic">يَا أَيُّهَا الْمُدَّثِّرُ ۙ قُمْ فَأَنذِرْ</span>
-        <span class="translation">"O du Bedeckter! Steh auf und warne."</span>
-        <div class="analysis">
-            <span class="keyword">ACTIVATION COMMAND:</span> Nach dem internen Laden (Muzzammil) folgt jetzt die externe Ausgabe. <span class="keyword">QUM (Steh auf)</span> ist der Befehl "Run/Start". <span class="keyword">FA-ANZIR (Warne)</span> ist der Output. Das System geht vom "Standby" in den "Broadcast-Modus". Es sendet Signale an die Umgebung.
+    <button class="boot-btn" onclick="runBootSequence()">[ SYSTEM AKTIVIEREN / GO LIVE ]</button>
+
+    <div id="terminal-box">
+        <div id="terminal-content"></div>
+        <span class="cursor">_</span>
+    </div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01</span>
+            <span class="arabic">يَا أَيُّهَا الْمُدَّثِّرُ</span>
+            <span class="rasm">يا أيها المدثر</span>
+            <span class="translation">"O du im Ruhemodus/Verborgenen (Muddathir)."</span>
+            <div class="analysis">
+                <span class="keyword">D-Th-R (Sleep Mode):</span> Ein Hidden Service. Ein Prozess, der im Hintergrund schläft und nicht sichtbar ist.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 02</span>
+            <span class="arabic">قُمْ فَأَنذِرْ</span>
+            <span class="rasm">قم فأنذر</span>
+            <span class="translation">"Starte den Prozess (Qum) und sende Warnsignal (Andhir)."</span>
+            <div class="analysis">
+                <span class="keyword">Q-M (Execute):</span> Befehl zum Hochfahren.<br>
+                <span class="keyword">N-Dh-R (Broadcast):</span> Senden eines Alerts an alle verfügbaren Netzwerkknoten (Menschen).
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 03</span>
+            <span class="arabic">وَرَبَّكَ فَكَبِّرْ</span>
+            <span class="rasm">وربك فكبر</span>
+            <span class="translation">"Und skaliere/priorisiere deinen Programmierer (Kabbir)."</span>
+            <div class="analysis">
+                <span class="keyword">K-B-R (Scale Up):</span> Takbir bedeutet hier "Zoom In" oder "Priorität erhöhen". Der Admin-Prozess (Rabb) erhält Realtime-Priority.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 04</span>
+            <span class="arabic">وَثِيَابَكَ فَطَهِّرْ</span>
+            <span class="rasm">وثيابك فطهر</span>
+            <span class="translation">"Und bereinige dein Interface/Gewand (Thiyab)."</span>
+            <div class="analysis">
+                <span class="keyword">Th-Y-B (Interface):</span> Das, was nach außen sichtbar ist (UI / Wrapper).<br>
+                <span class="keyword">T-H-R (Sanitize):</span> Cache leeren, temporäre Dateien löschen, Reinheit herstellen.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 05</span>
+            <span class="arabic">وَالرُّجْزَ فَاهْجُرْ</span>
+            <span class="rasm">والرجز فاهجر</span>
+            <span class="translation">"Und blockiere die Malware/den Schmutz (Rujz)."</span>
+            <div class="analysis">
+                <span class="keyword">R-J-Z (Malware):</span> Korrupte Daten, Götzen, Ego-Programme.<br>
+                <span class="keyword">H-J-R (Firewall):</span> Blockieren, Quarantäne, Verbindung trennen.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="index.html" class="btn">HAUPTMENÜ</a>
+            <a href="masad.html" class="btn">NEXT: SEQ_06 &rarr;</a>
         </div>
     </div>
 
-    <div class="verse-block">
-        <span class="verse-number">AYAT 03</span>
-        <span class="arabic">وَرَبَّكَ فَكَبِّرْ</span>
-        <span class="translation">"Und deinen Herrn verherrliche."</span>
-        <div class="analysis">
-            <span class="keyword">PRIORITY SETTING:</span> <span class="keyword">KABBIR (Vergrößern)</span> bedeutet technisch: Priorität erhöhen. Der "Rabb" (Administrator) muss im System die höchste Prozess-Priorität (High Priority) bekommen. Alle anderen Prozesse (User, Ego, Welt) werden nachrangig.
-        </div>
-    </div>
+    <script>
+        const logs = [
+            { txt: "[ SEQUENZ 04 : AL-MUDDATHIR (SYSTEM AKTIVIERUNG) ]", type: "log-sys", delay: 800 },
+            { txt: "Pinge Prozess 'MUDDATHIR_DAEMON'...", type: "log-sys", delay: 1000 },
+            { txt: "DECODING D-Th-R -> SLEEP MODE / HIDDEN SERVICE", type: "log-proc", delay: 800 },
+            { txt: "STATUS ÄNDERUNG: Prozess ist jetzt WACH (ACTIVE).", type: "log-proc", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Führe Start-Skript aus (QUM)...", type: "log-root", delay: 800 },
+            { txt: "Initiiere Network Broadcast (ANDHIR)...", type: "log-alert", delay: 1000 },
+            { txt: "    [ NETWORK BROADCAST ]", type: "log-sys", delay: 200 },
+            { txt: "    > SIGNAL: PUBLIC WARNING", type: "log-sys", delay: 200 },
+            { txt: "    > RECIPIENTS: ALL NODES", type: "log-sys", delay: 200 },
+            { txt: "SIGNAL GESENDET.", type: "log-alert", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Skaliere Admin-Rechte (KABBIR)...", type: "log-sys", delay: 800 },
+            { txt: "CPU-SCHEDULER: 'RABB' hat jetzt höchste Priorität.", type: "log-root", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Prüfe Interface-Integrität (THIYAB)...", type: "log-proc", delay: 800 },
+            { txt: "DECODING T-H-R -> SANITIZE / PURGE CACHE", type: "log-proc", delay: 800 },
+            { txt: "MAINTENANCE: Interface bereinigt.", type: "log-proc", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Scanne nach Legacy-Malware (RUJZ)...", type: "log-sec", delay: 1000 },
+            { txt: "    > BLOCKING PORT: 666 (IDOLATRY)", type: "log-sec", delay: 400 },
+            { txt: "    > BLOCKING PORT: 80 (EGO)", type: "log-sec", delay: 400 },
+            { txt: "FIREWALL: Alle schädlichen Verbindungen getrennt.", type: "log-sec", delay: 1200 },
+            { txt: "SYSTEM IST LIVE. DER OPERATOR SENDET.", type: "log-sys", delay: 1000 }
+        ];
 
-    <div class="verse-block">
-        <span class="verse-number">AYAT 04</span>
-        <span class="arabic">وَثِيَابَكَ فَطَهِّرْ</span>
-        <span class="translation">"Und deine Kleider reinige."</span>
-        <div class="analysis">
-            <span class="keyword">INTERFACE CLEANING:</span> <span class="keyword">THIYAB (Kleidung)</span> ist das, was das System nach außen bedeckt (das Interface / die Hülle). <span class="keyword">TAHHIR (Reinigen)</span> bedeutet: Entferne Bugs, Glitches und Datenmüll aus der Benutzeroberfläche. Das Terminal muss "clean" sein, um die Botschaft fehlerfrei zu senden.
-        </div>
-    </div>
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
 
-    <div class="verse-block">
-        <span class="verse-number">AYAT 05</span>
-        <span class="arabic">وَالرُّجْزَ فَاهْجُرْ</span>
-        <span class="translation">"Und das Unreine meide."</span>
-        <div class="analysis">
-            <span class="keyword">FIREWALL REGEL:</span> <span class="keyword">RUJZ (Schmutz/Plage)</span> steht für korrupte Daten oder Viren. <span class="keyword">HAJR (Verlassen/Meiden)</span> ist die Blockade-Funktion. Das System isoliert sich aktiv von fehlerhaften Datenquellen, um die Stabilität während der Ausführung zu sichern.
-        </div>
-    </div>
-
-    <div class="nav-buttons">
-        <a href="muzzammil.html" class="btn">< VORHERIGE: MUZZAMMIL</a>
-        <a href="fatiha.html" class="btn btn-next">NÄCHSTE SEQUENZ: FATIHA >></a>
-    </div>
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
 
 </body>
 </html>
