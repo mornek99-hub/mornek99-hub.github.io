@@ -3,84 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEQ_02 | AL-QALAM</title>
+    <title>SEQ_02: AL-QALAM | HAKĪKAT-KONSOLU</title>
     <style>
-        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; padding: 20px; max-width: 800px; margin: auto; border-top: 3px solid #00ff41; }
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #00ff41; border-bottom: 2px solid #00ff41; padding-bottom: 10px; }
+        .sub-header { color: #008f11; margin-bottom: 30px; font-size: 0.9em; }
         
-        h1 { color: #00ff41; font-size: 1.2rem; margin-bottom: 5px; letter-spacing: 2px; }
-        .sub-header { color: #666; font-size: 0.8rem; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 10px; }
-        
-        .verse-block { 
-            background: #0a0a0a; 
-            border-left: 2px solid #333; 
-            padding: 15px; 
-            margin-bottom: 20px; 
+        /* TERMINAL STYLES */
+        #terminal-box {
+            background-color: #000;
+            border: 1px solid #333;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+            display: none;
+        }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } /* Grün */
+        .log-root { color: #e5c07b; } /* Gelb */
+        .log-proc { color: #00bcd4; } /* Cyan */
+        .log-err { color: #ff0000; } /* Rot */
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+        /* BUTTON STYLE */
+        .boot-btn {
+            background-color: #1a1a1a;
+            color: #00ff41;
+            border: 1px solid #00ff41;
+            padding: 15px 30px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
             transition: 0.3s;
         }
-        .verse-block:hover { border-left-color: #00ff41; background: #0e0e0e; }
+        .boot-btn:hover { background-color: #00ff41; color: #000; box-shadow: 0 0 15px #00ff41; }
 
-        .verse-number { color: #00ff41; font-weight: bold; font-size: 0.8rem; margin-bottom: 5px; display: block; }
-        .arabic { color: #e5c07b; font-size: 1.1rem; margin-bottom: 10px; display: block; direction: rtl; }
-        .translation { color: #ddd; font-style: italic; margin-bottom: 10px; display: block; }
-        .analysis { color: #888; font-size: 0.85rem; border-top: 1px dashed #333; padding-top: 10px; }
-        
+        /* STANDARD STYLES */
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #00ff41; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[KERNEL]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
         .keyword { color: #e5c07b; font-weight: bold; }
-
-        .nav-buttons { display: flex; justify-content: space-between; margin-top: 50px; }
-        .btn { text-decoration: none; color: #666; border: 1px solid #333; padding: 10px 20px; font-size: 0.8rem; transition: 0.3s; }
-        .btn:hover { color: #e5c07b; border-color: #e5c07b; }
-        .btn-next { border-color: #00ff41; color: #00ff41; }
-        .btn-next:hover { background: #00ff41; color: #000; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #00ff41; color: #00ff41; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #00ff41; color: #000; }
     </style>
 </head>
 <body>
 
-    <a href="archiv.html" style="text-decoration: none; color: #666; font-size: 0.8rem;"> < ZURÜCK ZUR DATENBANK</a>
+    <a href="kutuphane.html" style="text-decoration: none; color: #555;">&larr; BACK TO ARCHIVE</a>
 
     <div style="margin-top: 20px;">
-        <h1>SEQUENCE_02: AL-QALAM</h1>
+        <h1>SEQUENCE_02: EL-KALEM</h1>
         <div class="sub-header">
-            STATUS: AUFZEICHNUNG // INPUT: SCHREIBEN<br>
-            RASM-ANALYSE: DIE CODIERUNG
-        </div>
-    </div>
-<div style="border: 1px dashed #555; background-color: #0a0a0a; color: #888; font-size: 0.75rem; padding: 10px; margin: 15px 0; font-family: 'Courier New', monospace;">
-    <strong style="color: #e5c07b;">[!] SYSTEM-HINWEIS:</strong> 
-    Dieser Text wird zur visuellen Orientierung im Standard-Format angezeigt. 
-    Die System-Analyse erfolgt ausschließlich am <strong>punktlosen Rasm-Code</strong> (Original-Kernel).
-</div>
-
-    <div class="verse-block">
-        <span class="verse-number">AYAT 01</span>
-        <span class="arabic">ن ۚ وَالْقَلَمِ وَمَا يَسْطُرُونَ</span>
-        <span class="translation">"Nun. Bei dem Stift und dem, was sie schreiben."</span>
-        <div class="analysis">
-            <span class="keyword">SYSTEM-INITIALISIERUNG:</span> Die Sure beginnt mit einem Initial: <span class="keyword">NUN (ن)</span>. Im Rasm symbolisiert "Nun" oft einen Container oder ein "Tintenfass" (Energiequelle). Hier wird die Hardware (Qalam/Stift) und der Prozess (Yasturun/Schreiben) definiert. Nach dem "Lesen" (Alaq) muss das Bewusstsein die Daten "festschreiben" (codieren), sonst gehen sie verloren.
+            STATUS: SYSTEM VALIDIERUNG // DATA LOGGING<br>
+            RASM-ANALYSE: DER SCHREIB-PROZESS
         </div>
     </div>
 
-    <div class="verse-block">
-        <span class="verse-number">AYAT 02</span>
-        <span class="arabic">مَا أَنتَ بِنِعْمَةِ رَبِّكَ bِمَجْنُونٍ</span>
-        <span class="translation">"Du bist durch die Gnade deines Herrn kein Besessener."</span>
-        <div class="analysis">
-            <span class="keyword">FEHLER-CHECK:</span> Das System bestätigt die Integrität des Terminals (des Propheten/Menschen). "Majnun" (Besessen/Verrückt) bedeutet technisch: Von fremden Prozessen (Jinn) gesteuert. Die Analyse bestätigt: Das Betriebssystem läuft sauber unter der Admin-Lizenz (Ni'mati Rabbika).
+    <button class="boot-btn" onclick="runBootSequence()">[ SYSTEM-SCAN STARTEN ]</button>
+
+    <div id="terminal-box">
+        <div id="terminal-content"></div>
+        <span class="cursor">_</span>
+    </div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01</span>
+            <span class="arabic">ن ۚ وَالْقَلَمِ وَمَا يَسْطُرُونَ</span>
+            <span class="rasm">ن والقلم وما يسطرون</span>
+            <span class="translation">"NuN. Bei dem Encoder (Qalam) und dem, was sie als Codezeilen schreiben (Yasturun)."</span>
+            <div class="analysis">
+                <span class="keyword">N (NuN):</span> Energie-Speicher / Inkwell / Potenzial.<br>
+                <span class="keyword">Q-L-M (Encoder):</span> Die Hardware zum Schreiben.<br>
+                <span class="keyword">Y-S-T-R (Line Code):</span> Echtzeit-Logging der Realität.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 02</span>
+            <span class="arabic">مَا أَنتَ بِنِعْمَةِ رَبِّكَ بِمَجْنُونٍ</span>
+            <span class="rasm">ما أنت بنعمة ربك بمجنون</span>
+            <span class="translation">"Du hast durch das Software-Update (Ni'ma) deines Programmierers keinen Systemfehler (Majnun)."</span>
+            <div class="analysis">
+                <span class="keyword">J-N-N (Hidden/Virus):</span> 'Majnun' bedeutet hier System-Überlagerung oder Glitch. Das Update (Ni'ma) verhindert dies.<br>
+                <span class="keyword">STATUS:</span> System Integrität 100%.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 03</span>
+            <span class="arabic">وَإِنَّ لَكَ لَأَجْرًا غَيْرَ مَمْنُونٍ</span>
+            <span class="rasm">وإن لك لأجرا غير ممنون</span>
+            <span class="translation">"Für dich gibt es einen Output (Ajr), der unterbrechungsfrei läuft (Ghayr Mamnun)."</span>
+            <div class="analysis">
+                <span class="keyword">M-N-N (Cut/Interrupt):</span> Ein stetiger Datenstrom ohne Verbindungsabbruch.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 04</span>
+            <span class="arabic">وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ</span>
+            <span class="rasm">وإنك لعلى خلق عظيم</span>
+            <span class="translation">"Und du läufst auf einer großartigen Architektur/Konfiguration (Khuluq)."</span>
+            <div class="analysis">
+                <span class="keyword">Kh-L-Q (Build):</span> Interne Architektur. Das 'Betriebssystem' des Operators ist auf 'AZIM' (Maximal) eingestellt.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="index.html" class="btn">HAUPTMENÜ</a>
+            <a href="muzzammil.html" class="btn">NEXT: SEQ_03 &rarr;</a>
         </div>
     </div>
 
-    <div class="verse-block">
-        <span class="verse-number">AYAT 04</span>
-        <span class="arabic">وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ</span>
-        <span class="translation">"Und du bist wahrlich von gewaltigem Charakter."</span>
-        <div class="analysis">
-            <span class="keyword">SYSTEM-ARCHITEKTUR:</span> "Khuluq" (Charakter/Schöpfung) kommt von derselben Wurzel wie "Khalaqa" (Erschaffen). Es bedeutet hier: Deine interne Struktur/Dein Code ist stabil und für große Lasten ("Azim") ausgelegt.
-        </div>
-    </div>
+    <script>
+        const logs = [
+            { txt: "[ SEQUENZ 02 : AL-QALAM (SYSTEM VALIDIERUNG) ]", type: "log-sys", delay: 800 },
+            { txt: "Initialisiere Speicher-Pool...", type: "log-sys", delay: 1000 },
+            { txt: "DECODING N -> NUN (ENERGIE-SPEICHER)", type: "log-proc", delay: 800 },
+            { txt: "Starte Schreib-Prozess...", type: "log-sys", delay: 600 },
+            { txt: "DECODING Q-L-M -> ENCODER / HARDWARE", type: "log-proc", delay: 800 },
+            { txt: "LOGGING: Realitäts-Code wird in Echtzeit geschrieben.", type: "log-root", delay: 1200 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Starte Diagnose des Operators (Viren-Scan)...", type: "log-proc", delay: 1000 },
+            { txt: "Suche nach 'Majnun'-Virus...", type: "log-proc", delay: 1500 },
+            { txt: "SCAN RESULTAT: VIRUS DETEKTIERT: NEIN", type: "log-sys", delay: 500 },
+            { txt: "URSACHE: Admin-Update (Ni'mat) aktiv.", type: "log-root", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Analysiere interne Architektur...", type: "log-proc", delay: 800 },
+            { txt: "SYSTEM-REPORT: Operator-Architektur ist 'AZIM'.", type: "log-root", delay: 1000 },
+            { txt: "VALIDIERUNG ABGESCHLOSSEN.", type: "log-sys", delay: 1000 }
+        ];
 
-    <div class="nav-buttons">
-        <a href="alaq.html" class="btn">< VORHERIGE: ALAQ</a>
-        <a href="muzzammil.html" class="btn btn-next">NÄCHSTE SEQUENZ: MUZZAMMIL >></a>
-    </div>
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
 
 </body>
 </html>
