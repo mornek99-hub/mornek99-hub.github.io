@@ -3,117 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAKĪKAT-KONSOLU | KÜTÜPHANE</title>
+    <title>VERİ TABANI: SURE ANALİZLERİ</title>
     <style>
-        body { 
-            background-color: #000; 
-            color: #00ff41; 
-            font-family: 'Courier New', monospace; 
-            padding: 20px; 
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .header-box {
-            width: 100%;
-            max-width: 800px;
-            border-bottom: 2px solid #00ff41;
-            margin-bottom: 30px;
-            padding-bottom: 10px;
-        }
-        h1 { margin: 0; font-size: 1.8em; letter-spacing: 2px; }
-        .sub-header { color: #008f11; font-size: 0.8em; }
-
-        .archive-grid {
-            width: 100%;
-            max-width: 800px;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-
-        .archive-item {
-            background-color: #0a0a0a;
-            border: 1px solid #333;
-            padding: 15px;
-            text-decoration: none;
-            color: #00ff41;
-            transition: 0.3s;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .archive-item:hover {
-            border-color: #00ff41;
-            background-color: #1a1a1a;
-            box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
-        }
-
-        .seq-num { color: #555; font-size: 0.8em; margin-right: 15px; }
-        .seq-title { font-weight: bold; }
-        .seq-status { color: #008f11; font-size: 0.7em; text-transform: uppercase; }
-
-        .back-btn {
-            margin-top: 40px;
-            color: #555;
-            text-decoration: none;
-            font-size: 0.9em;
-        }
-        .back-btn:hover { color: #00ff41; }
+        body { background-color: #0a0a0a; color: #d4af37; font-family: 'Courier New', monospace; padding: 20px; }
+        .header { border-bottom: 2px solid #d4af37; padding-bottom: 10px; margin-bottom: 30px; }
+        .file-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 800px; margin: 0 auto; }
+        .file-card { background: #111; border: 1px solid #333; padding: 20px; text-decoration: none; color: inherit; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
+        .file-card:hover { border-color: #00ff41; box-shadow: 0 0 10px rgba(0,255,65,0.2); }
+        .file-info { display: flex; flex-direction: column; }
+        .file-id { font-size: 0.7em; color: #666; }
+        .file-name { font-size: 1.2em; font-weight: bold; margin: 5px 0; }
+        .file-desc { font-size: 0.8em; color: #888; }
+        .status-badge { padding: 5px 10px; font-size: 0.7em; border: 1px solid #00ff41; color: #00ff41; }
+        .btn-back { display: inline-block; margin-bottom: 20px; color: #666; text-decoration: none; }
     </style>
 </head>
 <body>
 
-    <div class="header-box">
-        <h1>VERİ ARŞİVİ // KÜTÜPHANE</h1>
-        <div class="sub-header">ERİŞİM YETKİSİ: OPERATÖR // RASM-KATALOGLARI</div>
+    <a href="index-tr.html" class="btn-back">&larr; KONSOLA DÖN</a>
+
+    <div class="header">
+        <h1>VERİ TABANI: SURE ANALİZLERİ</h1>
+        <div style="font-size: 0.8em; color: #888;">ERİŞİM SEVİYESİ: YETKİLİ | İÇERİK: RASM-DEŞİFRE</div>
     </div>
 
-    <div class="archive-grid">
-        <a href="alak-tr.html" class="archive-item">
-            <span><span class="seq-num">01</span> <span class="seq-title">EL-ALAK</span></span>
-            <span class="seq-status">[ ÇÖZÜLDÜ ]</span>
+    <div class="file-grid">
+        <a href="alak-tr.html" class="file-card">
+            <div class="file-info">
+                <span class="file-id">SEQ_01 // SURE 96</span>
+                <span class="file-name">EL-ALAK</span>
+                <span class="file-desc">İnit_Command: "Oku". Veri transferi başlar.</span>
+            </div>
+            <span class="status-badge">[ SİSTEMİ BAŞLAT ]</span>
         </a>
 
-        <a href="kalem-tr.html" class="archive-item">
-            <span><span class="seq-num">02</span> <span class="seq-title">EL-KALEM</span></span>
-            <span class="seq-status">[ ÇÖZÜLDÜ ]</span>
+        <a href="kalem-tr.html" class="file-card">
+            <div class="file-info">
+                <span class="file-id">SEQ_02 // SURE 68</span>
+                <span class="file-name">EL-KALEM</span>
+                <span class="file-desc">Input: "Kalem". Kodlama süreci.</span>
+            </div>
+            <span class="status-badge">[ ERİŞİM AKTİF ]</span>
         </a>
 
-        <a href="muzzemil-tr.html" class="archive-item">
-            <span><span class="seq-num">03</span> <span class="seq-title">EL-MÜZZEMMİL</span></span>
-            <span class="seq-status">[ ÇÖZÜLDÜ ]</span>
+        <a href="muzzemmil-tr.html" class="file-card">
+            <div class="file-info">
+                <span class="file-id">SEQ_03 // SURE 73</span>
+                <span class="file-name">EL-MÜZZEMMİL</span>
+                <span class="file-desc">Process: Dahili sistem yüklemesi.</span>
+            </div>
+            <span class="status-badge">[ ERİŞİM AKTİF ]</span>
         </a>
 
-        <a href="muddesir-tr.html" class="archive-item">
-            <span><span class="seq-num">04</span> <span class="seq-title">EL-MÜDDESSİR</span></span>
-            <span class="seq-status">[ ÇÖZÜLDÜ ]</span>
+        <a href="muddesir-tr.html" class="file-card">
+            <div class="file-info">
+                <span class="file-id">SEQ_04 // SURE 74</span>
+                <span class="file-name">EL-MÜDDESSİR</span>
+                <span class="file-desc">Aktivasyon: Uyarı ve temizlik.</span>
+            </div>
+            <span class="status-badge">[ ERİŞİM AKTİF ]</span>
         </a>
 
-        <a href="fatiha-tr.html" class="archive-item">
-            <span><span class="seq-num">05</span> <span class="seq-title">EL-FATİHA</span></span>
-            <span class="seq-status">[ ÇÖZÜLDÜ ]</span>
+        <a href="fatiha-tr.html" class="file-card">
+            <div class="file-info">
+                <span class="file-id">SEQ_05 // SURE 01</span>
+                <span class="file-name">EL-FATİHA</span>
+                <span class="file-desc">Handshake: Ana bağlantı protokolü.</span>
+            </div>
+            <span class="status-badge">[ ERİŞİM AKTİF ]</span>
         </a>
 
-        <a href="tebbet-tr.html" class="archive-item">
-            <span><span class="seq-num">06</span> <span class="seq-title">EL-MESED</span></span>
-            <span class="seq-status">[ ÇÖZÜLDÜ ]</span>
+        <a href="tebbet-tr.html" class="file-card">
+            <div class="file-info">
+                <span class="file-id">SEQ_06 // SURE 111</span>
+                <span class="file-name">EL-MESED</span>
+                <span class="file-desc">Error_Log: Sistem çöküş analizi.</span>
+            </div>
+            <span class="status-badge" style="color: #ff3333; border-color: #ff3333;">[ HATA ANALİZİ ]</span>
         </a>
 
-        <a href="tekvir-tr.html" class="archive-item">
-            <span><span class="seq-num">07</span> <span class="seq-title">ET-TEKVİR</span></span>
-            <span class="seq-status">[ ÇÖZÜLDÜ ]</span>
-        </a>
-
-        <a href="ala-tr.html" class="archive-item">
-            <span><span class="seq-num">08</span> <span class="seq-title">EL-A'LÂ</span></span>
-            <span class="seq-status">[ ANALİZ EDİLİYOR ]</span>
+        <a href="tekvir-tr.html" class="file-card">
+            <div class="file-info">
+                <span class="file-id">SEQ_07 // SURE 81</span>
+                <span class="file-name">ET-TEKVİR</span>
+                <span class="file-desc">Shutdown: Kapanış sekansı.</span>
+            </div>
+            <span class="status-badge" style="color: #ff3333; border-color: #ff3333;">[ KRİTİK VERİ ]</span>
         </a>
     </div>
-
-    <a href="index-tr.html" class="back-btn">&larr; ANA TERMİNALE DÖN</a>
 
 </body>
 </html>
