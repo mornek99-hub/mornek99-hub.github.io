@@ -3,139 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAKİKAT KÜTÜPHANESİ | VERİ TABANI</title>
+    <title>VERİ TABANI: SURE ANALİZLERİ</title>
     <style>
-        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; padding: 20px; max-width: 800px; margin: auto; border-top: 3px solid #e5c07b; }
-        
-        h1 { color: #e5c07b; font-size: 1.5rem; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 2px; }
-        .subtitle { color: #666; font-size: 0.8rem; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 20px; }
-        
-        .nav-back { text-decoration: none; color: #666; font-size: 0.8rem; border: 1px solid #333; padding: 5px 10px; transition: 0.3s; }
-        .nav-back:hover { color: #e5c07b; border-color: #e5c07b; }
-
-        /* DOSYA GRID SİSTEMİ */
-        .file-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
-        
-        .file-card { 
-            background: #0a0a0a; 
-            border: 1px solid #222; 
-            padding: 20px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            text-decoration: none;
-            transition: 0.3s ease;
-        }
-
-        .file-card:hover { 
-            border-color: #e5c07b; 
-            background: #0f0f0f; 
-            transform: translateX(5px);
-        }
-
+        body { background-color: #0a0a0a; color: #d4af37; font-family: 'Courier New', monospace; padding: 20px; }
+        .header { border-bottom: 2px solid #d4af37; padding-bottom: 10px; margin-bottom: 30px; }
+        .file-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 800px; margin: 0 auto; }
+        .file-card { background: #111; border: 1px solid #333; padding: 20px; text-decoration: none; color: inherit; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
+        .file-card:hover { border-color: #00ff41; box-shadow: 0 0 10px rgba(0,255,65,0.2); }
         .file-info { display: flex; flex-direction: column; }
-        .file-id { color: #666; font-size: 0.7rem; margin-bottom: 5px; }
-        .file-name { color: #ddd; font-weight: bold; font-size: 1.1rem; letter-spacing: 1px; }
-        .file-desc { color: #888; font-size: 0.8rem; margin-top: 5px; }
-
-        .status-badge { 
-            font-size: 0.65rem; 
-            padding: 3px 8px; 
-            border: 1px solid; 
-            text-transform: uppercase; 
-            letter-spacing: 1px;
-        }
-
-        .status-ready { color: #00ff41; border-color: #00ff41; }
-        .status-lock { color: #ff3333; border-color: #ff3333; opacity: 0.5; }
-
-        footer { margin-top: 60px; text-align: center; color: #444; font-size: 0.7rem; }
+        .file-id { font-size: 0.7em; color: #666; }
+        .file-name { font-size: 1.2em; font-weight: bold; margin: 5px 0; }
+        .file-desc { font-size: 0.8em; color: #888; }
+        .status-badge { padding: 5px 10px; font-size: 0.7em; border: 1px solid #00ff41; color: #00ff41; }
+        .status-locked { border-color: #ff3333; color: #ff3333; }
+        .btn-back { display: inline-block; margin-bottom: 20px; color: #666; text-decoration: none; }
     </style>
 </head>
 <body>
 
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
-        <a href="index-tr.html" class="nav-back">< KONSOLA DÖN</a>
-        <div style="font-size: 0.7rem; color: #444;">ID: LIB-TR-99</div>
-    </div>
+    <a href="index-tr.html" class="btn-back">&larr; KONSOLA DÖN</a>
 
-    <h1>VERİ TABANI: SURE ANALİZLERİ</h1>
-    <div class="subtitle">
-        ERİŞİM SEVİYESİ: YETKİLİ<br>
-        İÇERİK: RASM-DEŞİFRE & SİSTEM MANTIĞI
+    <div class="header">
+        <h1>VERİ TABANI: SURE ANALİZLERİ</h1>
+        <div style="font-size: 0.8em; color: #888;">ERİŞİM SEVİYESİ: YETKİLİ | İÇERİK: RASM-DEŞİFRE</div>
     </div>
 
     <div class="file-grid">
-        
         <a href="sequence_01_alak-tr.html" class="file-card">
             <div class="file-info">
                 <span class="file-id">SEQ_01 // SURE 96</span>
                 <span class="file-name">EL-ALAK</span>
-                <span class="file-desc">INIT_COMMAND: "Oku". Veri transferi ve okuma başlar.</span>
+                <span class="file-desc">İnit_Command: "Oku". Veri transferi başlar.</span>
             </div>
-            <span class="status-badge status-ready">[ SİSTEM BAŞLAT ]</span>
+            <span class="status-badge">[ SİSTEMİ BAŞLAT ]</span>
         </a>
 
         <a href="kalem-tr.html" class="file-card">
             <div class="file-info">
                 <span class="file-id">SEQ_02 // SURE 68</span>
                 <span class="file-name">EL-KALEM</span>
-                <span class="file-desc">INPUT: "Kalem". Algılanan verinin Rasm ile kodlanması.</span>
+                <span class="file-desc">Input: "Kalem". Algılanan verinin kodlanması.</span>
             </div>
-            <span class="status-badge status-lock">[ KİLİTLİ ]</span>
+            <span class="status-badge">[ ERİŞİM AKTİF ]</span>
         </a>
 
         <a href="muzzemmil-tr.html" class="file-card">
             <div class="file-info">
                 <span class="file-id">SEQ_03 // SURE 73</span>
                 <span class="file-name">EL-MÜZZEMMİL</span>
-                <span class="file-desc">PROCESS: "Örtünüp Bürünen". Dahili sistem yüklemesi ve ağır söz.</span>
+                <span class="file-desc">Process: "Örtünüp Bürünen". Dahili sistem yüklemesi.</span>
             </div>
-            <span class="status-badge status-lock">[ KİLİTLİ ]</span>
+            <span class="status-badge">[ ERİŞİM AKTİF ]</span>
         </a>
 
         <a href="muddessir-tr.html" class="file-card">
             <div class="file-info">
                 <span class="file-id">SEQ_04 // SURE 74</span>
                 <span class="file-name">EL-MÜDDESSİR</span>
-                <span class="file-desc">EXECUTE: "Bürünüp Kalkan". Uyarı protokollerinin aktivasyonu.</span>
+                <span class="file-desc">Aktivasyon: Uyarı ve sistem temizliği.</span>
             </div>
-            <span class="status-badge status-lock">[ KİLİTLİ ]</span>
+            <span class="status-badge">[ ERİŞİM AKTİF ]</span>
         </a>
 
         <a href="fatiha-tr.html" class="file-card">
             <div class="file-info">
-                <span class="file-id">SEQ_05 // SURE 1</span>
+                <span class="file-id">SEQ_05 // SURE 01</span>
                 <span class="file-name">EL-FATİHA</span>
-                <span class="file-desc">ACCESS: "Açılış". Yönetici (Rabb) ile doğrudan bağlantı arayüzü.</span>
+                <span class="file-desc">Handshake: Sunucu ile ana bağlantı protokolü.</span>
             </div>
-            <span class="status-badge status-ready">[ ONLİNE ]</span>
+            <span class="status-badge">[ ERİŞİM AKTİF ]</span>
         </a>
 
         <a href="tebbet-tr.html" class="file-card">
             <div class="file-info">
                 <span class="file-id">SEQ_06 // SURE 111</span>
-                <span class="file-name">TEBBET (MESED)</span>
-                <span class="file-desc">ERROR_LOG: "Lif". Bozuk veri paketlerinin (Virus) tespiti.</span>
+                <span class="file-name">EL-MESED</span>
+                <span class="file-desc">Error_Log: Sistem aşırı ısınma ve çöküş analizi.</span>
             </div>
-            <span class="status-badge status-lock">[ KİLİTLİ ]</span>
+            <span class="status-badge" style="color: #ff3333; border-color: #ff3333;">[ HATA ANALİZİ ]</span>
         </a>
 
         <a href="tekvir-tr.html" class="file-card">
             <div class="file-info">
                 <span class="file-id">SEQ_07 // SURE 81</span>
-                <span class="file-name">EL-TEKVİR</span>
-                <span class="file-desc">ZIP_ALGO: "Dürülme". Simülasyonun sıkıştırılıp sonlandırılması.</span>
+                <span class="file-name">ET-TEKVİR</span>
+                <span class="file-desc">Shutdown: Evrensel sistem kapanış sekansı.</span>
             </div>
-            <span class="status-badge status-lock">[ KİLİTLİ ]</span>
+            <span class="status-badge" style="color: #ff3333; border-color: #ff3333;">[ KRİTİK VERİ ]</span>
         </a>
-
     </div>
-
-    <footer>
-        HAKİKAT-ARCHIV SYSTEM v2.0<br>
-        Harici erişim engellendi.
-    </footer>
 
 </body>
 </html>
