@@ -3,102 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEQ_06 | AL-MASAD</title>
+    <title>SEQ_06: AL-MASAD | HAKĪKAT-KONSOLU</title>
     <style>
-        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; padding: 20px; max-width: 800px; margin: auto; border-top: 3px solid #ff3333; }
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #00ff41; border-bottom: 2px solid #00ff41; padding-bottom: 10px; }
+        .sub-header { color: #008f11; margin-bottom: 30px; font-size: 0.9em; }
         
-        h1 { color: #ff3333; font-size: 1.2rem; margin-bottom: 5px; letter-spacing: 2px; }
-        .sub-header { color: #666; font-size: 0.8rem; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 10px; }
-        
-        .verse-block { 
-            background: #0a0a0a; 
-            border-left: 2px solid #333; 
-            padding: 15px; 
-            margin-bottom: 20px; 
+        /* TERMINAL STYLES */
+        #terminal-box {
+            background-color: #000;
+            border: 1px solid #333;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(255, 51, 51, 0.2); /* Roter Glow für Error */
+            display: none;
+        }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } /* Grün */
+        .log-diag { color: #00bcd4; } /* Cyan - Diagnose */
+        .log-warn { color: #e5c07b; } /* Gelb - Warnung */
+        .log-err { color: #ff3333; font-weight: bold; } /* Rot - Critical Error */
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+        /* BUTTON STYLE */
+        .boot-btn {
+            background-color: #1a1a1a;
+            color: #ff3333; /* Roter Text für Crash Report */
+            border: 1px solid #ff3333;
+            padding: 15px 30px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
             transition: 0.3s;
         }
-        .verse-block:hover { border-left-color: #ff3333; background: #1a0505; }
+        .boot-btn:hover { background-color: #ff3333; color: #000; box-shadow: 0 0 15px #ff3333; }
 
-        .verse-number { color: #ff3333; font-weight: bold; font-size: 0.8rem; margin-bottom: 5px; display: block; }
-        .arabic { color: #e5c07b; font-size: 1.1rem; margin-bottom: 10px; display: block; direction: rtl; }
-        .translation { color: #ddd; font-style: italic; margin-bottom: 10px; display: block; }
-        .analysis { color: #888; font-size: 0.85rem; border-top: 1px dashed #333; padding-top: 10px; }
-        
-        .keyword { color: #ff3333; font-weight: bold; }
-
-        .nav-buttons { display: flex; justify-content: space-between; margin-top: 50px; }
-        .btn { text-decoration: none; color: #666; border: 1px solid #333; padding: 10px 20px; font-size: 0.8rem; transition: 0.3s; }
-        .btn:hover { color: #ff3333; border-color: #ff3333; }
-        .btn-next { border-color: #ff3333; color: #ff3333; }
-        .btn-next:hover { background: #ff3333; color: #000; }
+        /* STANDARD STYLES */
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #ff3333; opacity: 0; transition: opacity 1s; } /* Roter Rand */
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[KERNEL]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #00ff41; color: #00ff41; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #00ff41; color: #000; }
     </style>
 </head>
 <body>
 
-    <a href="archiv.html" style="text-decoration: none; color: #666; font-size: 0.8rem;"> < ZURÜCK ZUR DATENBANK</a>
+    <a href="kutuphane.html" style="text-decoration: none; color: #555;">&larr; BACK TO ARCHIVE</a>
 
     <div style="margin-top: 20px;">
-        <h1>SEQUENCE_06: AL-MASAD</h1>
+        <h1>SEQUENCE_06: EL-MESED</h1>
         <div class="sub-header">
-            STATUS: CRITICAL ERROR // DETECTION: VIRUS<br>
-            RASM-ANALYSE: ERROR_LOG & ISOLATION
+            STATUS: CRITICAL ERROR // SYSTEM CRASH ANALYSIS<br>
+            RASM-ANALYSE: FEHLER-PROTOKOLL (ABU LAHAB)
         </div>
     </div>
 
-  <div style="border: 1px dashed #555; background-color: #0a0a0a; color: #888; font-size: 0.75rem; padding: 10px; margin: 15px 0; font-family: 'Courier New', monospace;">
-    <strong style="color: #e5c07b;">[!] SYSTEM-HINWEIS:</strong> 
-    Dieser Text wird zur visuellen Orientierung im Standard-Format angezeigt. 
-    Die System-Analyse erfolgt ausschließlich am <strong>punktlosen Rasm-Code</strong> (Original-Kernel).
-</div>
-  <div class="verse-block">
-        <span class="verse-number">AYAT 01</span>
-        <span class="arabic">تَبَّتْ يَدَا أَبِي لَهَبٍ وَتَبَّ</span>
-        <span class="translation">"Zugrunde gehen die Hände von Abu Lahab, und er geht zugrunde."</span>
-        <div class="analysis">
-            <span class="keyword">SYSTEM FAILURE:</span> <span class="keyword">ABU LAHAB</span> (Vater der Flamme) ist der "Root-Process" der Überhitzung. Er repräsentiert korrupte Daten, die das System zum Absturz bringen ("Leheb" = Überhitzung/Flamme). "Hände zugrunde gehen" bedeutet technisch: Die Input/Output-Controller (I/O) dieses Prozesses werden deaktiviert.
+    <button class="boot-btn" onclick="runBootSequence()">[ ANALYZE CRASH DUMP ]</button>
+
+    <div id="terminal-box">
+        <div id="terminal-content"></div>
+        <span class="cursor">_</span>
+    </div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01</span>
+            <span class="arabic">تَبَّتْ يَدَا أَبِي لَهَبٍ وَتَبَّ</span>
+            <span class="rasm">تبت يدا أبي لهب وتب</span>
+            <span class="translation">"Abgestürzt sind die I/O-Prozesse (Yada) des Überhitzten (Abu Lahab), und er ist 'Cut Off' (Tabba)."</span>
+            <div class="analysis">
+                <span class="keyword">T-B-B (Process Kill):</span> Abschneiden, Absturz, Verbindungstrennung.<br>
+                <span class="keyword">L-H-B (Overheat):</span> Entflammung/Hitze. Ein System, das durch Ego/Last überhitzt ist.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 02</span>
+            <span class="arabic">مَا أَغْنَىٰ عَنْهُ مَالُهُ وَمَا كَسَبَ</span>
+            <span class="rasm">ما أغنى عنه ماله وما كسب</span>
+            <span class="translation">"Sein Cache/Speicher (Mal) und seine berechneten Resultate (Kasab) konnten das System nicht retten."</span>
+            <div class="analysis">
+                <span class="keyword">M-L (Cache/Assets):</span> Gespeicherte Ressourcen.<br>
+                <span class="keyword">K-S-B (Earned/Computed):</span> Die Ergebnisse der bisherigen Prozessor-Arbeit. Backup fehlgeschlagen.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 03</span>
+            <span class="arabic">سَيَصْلَىٰ نَارًا ذَاتَ لَهَبٍ</span>
+            <span class="rasm">سيصلى نارا ذات لهب</span>
+            <span class="translation">"Er wird einer Umgebung von kritischer Hochspannung/Feuer (Nar) ausgesetzt sein."</span>
+            <div class="analysis">
+                <span class="keyword">N-R (Fire/High Voltage):</span> Die ultimative Stress-Test-Umgebung für fehlerhafte Systeme.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 04</span>
+            <span class="arabic">وَامْرَأَتُهُ حَمَّالَةَ الْحَطَبِ</span>
+            <span class="rasm">وامرأته حمالة الحطب</span>
+            <span class="translation">"Und sein abhängiger Sub-Prozess (Imra'a), der Glitch-Daten/Brennstoff (Hatab) lädt."</span>
+            <div class="analysis">
+                <span class="keyword">M-R-A (Sub-Process):</span> Ein Daemon oder angehängter Prozess.<br>
+                <span class="keyword">H-T-B (Fuel/Glitch):</span> Datenmüll, der den Absturz (das Feuer) weiter nährt.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 05</span>
+            <span class="arabic">فِي جِيدِهَا حَبْلٌ مِّن مَّسَدٍ</span>
+            <span class="rasm">في جيدها حبل من مسد</span>
+            <span class="translation">"An seinem Port/Hals (Jid) ist ein Kabel aus Endlosschleifen/Palmfaser (Masad)."</span>
+            <div class="analysis">
+                <span class="keyword">J-Y-D (Port/Neck):</span> Der Verbindungsengpass.<br>
+                <span class="keyword">M-S-D (Twisted/Loop):</span> Infinite Loop. Ein Deadlock, aus dem das System nicht mehr rauskommt.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="index.html" class="btn">HAUPTMENÜ</a>
+            <a href="takwir.html" class="btn">NEXT: SEQ_07 &rarr;</a>
         </div>
     </div>
 
-    <div class="verse-block">
-        <span class="verse-number">AYAT 02</span>
-        <span class="arabic">مَا أَغْنَىٰ عَنْهُ مَالُهُ وَمَا كَسَبَ</span>
-        <span class="translation">"Nichts nützt ihm sein Besitz und das, was er erworben hat."</span>
-        <div class="analysis">
-            <span class="keyword">RESOURCE FLUSH:</span> Der Virus hat Speicher (RAM) und Daten (Besitz) angesammelt. Das System erkennt diese als ungültig. Egal wie viele Ressourcen der Prozess reserviert hat ("erworben hat"), sie werden beim Purge-Vorgang (Bereinigung) ignoriert und gelöscht.
-        </div>
-    </div>
+    <script>
+        const logs = [
+            { txt: "[ SEQUENZ 06 : AL-MASAD (SYSTEM CRASH ANALYSIS) ]", type: "log-sys", delay: 800 },
+            { txt: "Prüfe Status von 'ABU_LAHAB (ROOT_OVERHEAT)'...", type: "log-sys", delay: 1000 },
+            { txt: "DECODING T-B-B -> PROCESS KILL / CUT OFF", type: "log-proc", delay: 600 },
+            { txt: "DECODING L-H-B -> OVERHEATING / INFLAMMATION", type: "log-proc", delay: 600 },
+            { txt: "CRITICAL ERROR: I/O-Tools (Yada) reagieren nicht mehr.", type: "log-err", delay: 1200 },
+            { txt: "STATUS: Prozess abgestürzt.", type: "log-err", delay: 800 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Versuche Datenwiederherstellung...", type: "log-diag", delay: 800 },
+            { txt: "DECODING M-L -> CACHE / ASSETS", type: "log-proc", delay: 600 },
+            { txt: "    [RECOVERY] Accessing Cache... FAILED", type: "log-err", delay: 400 },
+            { txt: "    [RECOVERY] Accessing Results (KASAB)... FAILED", type: "log-err", delay: 400 },
+            { txt: "DIAGNOSE: Backup korrupt. System nicht rettbar.", type: "log-warn", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Analysiere Abhängigkeiten (DAEMON)...", type: "log-sys", delay: 800 },
+            { txt: "DECODING H-T-B -> FUEL / GLITCH-DATA", type: "log-proc", delay: 600 },
+            { txt: "    > DAEMON DETECTED: HAMMALA_DAEMON", type: "log-warn", delay: 400 },
+            { txt: "URSACHE: Sub-Prozess füttert den Fehler weiter.", type: "log-warn", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Prüfe Verbindungs-Ports (JID)...", type: "log-sys", delay: 800 },
+            { txt: "DECODING M-S-D -> TWISTED CABLE / INFINITE LOOP", type: "log-proc", delay: 800 },
+            { txt: "FINAL REPORT: System hängt in Endlosschleife (Deadlock).", type: "log-err", delay: 1200 },
+            { txt: "ACTION: Quarantäne eingeleitet.", type: "log-sys", delay: 1000 },
+            { txt: "FEHLER-ANALYSE BEENDET. PROZESS ISOLIERT.", type: "log-sys", delay: 1000 }
+        ];
 
-    <div class="verse-block">
-        <span class="verse-number">AYAT 03</span>
-        <span class="arabic">سَيَصْلَىٰ نَارًا ذَاتَ لَهَبٍ</span>
-        <span class="translation">"Er wird in einem flammenden Feuer brennen."</span>
-        <div class="analysis">
-            <span class="keyword">DATA DELETION:</span> Der fehlerhafte Code wird isoliert und formatriert. Das "Feuer" ist hier der Löschvorgang, bei dem die Datenstruktur zerstört wird.
-        </div>
-    </div>
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
 
-    <div class="verse-block">
-        <span class="verse-number">AYAT 04</span>
-        <span class="arabic">وَامْرَأَتُهُ حَمَّالَةَ الْحَطَبِ</span>
-        <span class="translation">"Und seine Frau, die Trägerin des Brennholzes."</span>
-        <div class="analysis">
-            <span class="keyword">MALWARE / TROJANER:</span> Die "Frau" ist der Begleitprozess (Sub-Routine). Sie ist <span class="keyword">HAMMALAT AL-HATAB</span> (Trägerin des Brennstoffs). Technisch ist das ein Trojaner oder Wurm, der ständig neuen "Datenmüll" (Brennholz) nachlädt, um die Systemlast (Feuer) zu erhöhen.
-        </div>
-    </div>
-
-    <div class="verse-block">
-        <span class="verse-number">AYAT 05</span>
-        <span class="arabic">fِي جِيدِهَا حَبْلٌ مِّن مَّسَدٍ</span>
-        <span class="translation">"Um ihren Hals ein Seil aus Palmfasern."</span>
-        <div class="analysis">
-            <span class="keyword">INFINITE LOOP (KILL):</span> <span class="keyword">MASAD</span> (Faser/Seil) ist ein gedrehter Code-Strang. Das "Seil um den Hals" symbolisiert eine Drosselung (Throttling) oder eine Endlosschleife, in der sich der Virus selbst aufhängt und neutralisiert wird.
-        </div>
-    </div>
-
-    <div class="nav-buttons">
-        <a href="fatiha.html" class="btn">< VORHERIGE: FATIHA</a>
-        <a href="takwir.html" class="btn btn-next">NÄCHSTE SEQUENZ: TAKWIR (ZIP) >></a>
-    </div>
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
 
 </body>
 </html>
