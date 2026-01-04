@@ -3,93 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEQ_03 | AL-MUZZAMMIL</title>
+    <title>SEQ_03: AL-MUZZAMMIL | HAKĪKAT-KONSOLU</title>
     <style>
-        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; padding: 20px; max-width: 800px; margin: auto; border-top: 3px solid #00ff41; }
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #00ff41; border-bottom: 2px solid #00ff41; padding-bottom: 10px; }
+        .sub-header { color: #008f11; margin-bottom: 30px; font-size: 0.9em; }
         
-        h1 { color: #00ff41; font-size: 1.2rem; margin-bottom: 5px; letter-spacing: 2px; }
-        .sub-header { color: #666; font-size: 0.8rem; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 10px; }
-        
-        .verse-block { 
-            background: #0a0a0a; 
-            border-left: 2px solid #333; 
-            padding: 15px; 
-            margin-bottom: 20px; 
+        /* TERMINAL STYLES */
+        #terminal-box {
+            background-color: #000;
+            border: 1px solid #333;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+            display: none;
+        }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } /* Grün */
+        .log-root { color: #e5c07b; } /* Gelb */
+        .log-proc { color: #00bcd4; } /* Cyan */
+        .log-warn { color: #ff3333; font-weight: bold; } /* Rot - Heavy Data */
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+        /* BUTTON STYLE */
+        .boot-btn {
+            background-color: #1a1a1a;
+            color: #00ff41;
+            border: 1px solid #00ff41;
+            padding: 15px 30px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
             transition: 0.3s;
         }
-        .verse-block:hover { border-left-color: #00ff41; background: #0e0e0e; }
+        .boot-btn:hover { background-color: #00ff41; color: #000; box-shadow: 0 0 15px #00ff41; }
 
-        .verse-number { color: #00ff41; font-weight: bold; font-size: 0.8rem; margin-bottom: 5px; display: block; }
-        .arabic { color: #e5c07b; font-size: 1.1rem; margin-bottom: 10px; display: block; direction: rtl; }
-        .translation { color: #ddd; font-style: italic; margin-bottom: 10px; display: block; }
-        .analysis { color: #888; font-size: 0.85rem; border-top: 1px dashed #333; padding-top: 10px; }
-        
+        /* STANDARD STYLES */
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #00ff41; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[KERNEL]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
         .keyword { color: #e5c07b; font-weight: bold; }
-
-        .nav-buttons { display: flex; justify-content: space-between; margin-top: 50px; }
-        .btn { text-decoration: none; color: #666; border: 1px solid #333; padding: 10px 20px; font-size: 0.8rem; transition: 0.3s; }
-        .btn:hover { color: #e5c07b; border-color: #e5c07b; }
-        .btn-next { border-color: #00ff41; color: #00ff41; }
-        .btn-next:hover { background: #00ff41; color: #000; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #00ff41; color: #00ff41; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #00ff41; color: #000; }
     </style>
 </head>
 <body>
 
-    <a href="archiv.html" style="text-decoration: none; color: #666; font-size: 0.8rem;"> < ZURÜCK ZUR DATENBANK</a>
+    <a href="kutuphane.html" style="text-decoration: none; color: #555;">&larr; BACK TO ARCHIVE</a>
 
     <div style="margin-top: 20px;">
-        <h1>SEQUENCE_03: AL-MUZZAMMIL</h1>
+        <h1>SEQUENCE_03: EL-MUZZEMMİL</h1>
         <div class="sub-header">
-            STATUS: PROCESSING // AKTION: SYSTEM-LOAD<br>
-            RASM-ANALYSE: INTERNE VERARBEITUNG
-        </div>
-    </div>
-<div style="border: 1px dashed #555; background-color: #0a0a0a; color: #888; font-size: 0.75rem; padding: 10px; margin: 15px 0; font-family: 'Courier New', monospace;">
-    <strong style="color: #e5c07b;">[!] SYSTEM-HINWEIS:</strong> 
-    Dieser Text wird zur visuellen Orientierung im Standard-Format angezeigt. 
-    Die System-Analyse erfolgt ausschließlich am <strong>punktlosen Rasm-Code</strong> (Original-Kernel).
-</div>
-
-    <div class="verse-block">
-        <span class="verse-number">AYAT 01</span>
-        <span class="arabic">يَا أَيُّهَا الْمُزَّمِّلُ</span>
-        <span class="translation">"O du Eingehüllter (Beladener)."</span>
-        <div class="analysis">
-            <span class="keyword">SYSTEM-IDENTIFIKATION:</span> <span class="keyword">MUZZAMMIL (Z-M-L)</span> bedeutet "jemand, der eine Last trägt" oder "sich für eine Reise rüstet/einpackt". Technisch: Das System fährt hoch (Booting) und lädt die notwendigen Module in den Arbeitsspeicher. Es bereitet sich auf die Verarbeitung vor.
+            STATUS: SYSTEM CONFIGURATION // PREPARING DOWNLOAD<br>
+            RASM-ANALYSE: VORBEREITUNG AUF HEAVY DATA
         </div>
     </div>
 
-    <div class="verse-block">
-        <span class="verse-number">AYAT 02</span>
-        <span class="arabic">قُمِ اللَّيْلَ إِلَّا قَلِيلًا</span>
-        <span class="translation">"Steh auf in der Nacht, bis auf ein Weniges."</span>
-        <div class="analysis">
-            <span class="keyword">WARTUNGS-FENSTER:</span> <span class="keyword">QIYAM (Stehen/Aufrechterhalten)</span> in der Nacht (Layl). Wenn die externen Störungen (Tageslicht/User-Input) weg sind, muss der Server die Daten verarbeiten. Dies ist der "Nightly Build" oder die System-Wartung, um die Integrität zu sichern.
+    <button class="boot-btn" onclick="runBootSequence()">[ KONFIGURATION STARTEN ]</button>
+
+    <div id="terminal-box">
+        <div id="terminal-content"></div>
+        <span class="cursor">_</span>
+    </div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01</span>
+            <span class="arabic">يَا أَيُّهَا الْمُزَّمِّلُ</span>
+            <span class="rasm">يا أيها المزمل</span>
+            <span class="translation">"O du Eingekapselter (Muzzammil) / System im Loader-Mode."</span>
+            <div class="analysis">
+                <span class="keyword">Z-M-L (Encapsulated):</span> Safe-Mode. Das System kapselt sich ab, um Konfigurationen vorzunehmen.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 02</span>
+            <span class="arabic">قُمِ اللَّيْلَ إِلَّا قَلِيلًا</span>
+            <span class="rasm">قم الليل إلا قليلا</span>
+            <span class="translation">"Führe aus (Qum) im Hintergrund-Modus (Layl), außer wenigem (Ruhephasen)."</span>
+            <div class="analysis">
+                <span class="keyword">Q-M (Execute/Run):</span> Befehl zum Starten von Prozessen.<br>
+                <span class="keyword">L-Y-L (Night/Background):</span> Minimierte visuelle Ausgabe. Fokus auf interne Verarbeitung (Backend).
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 04</span>
+            <span class="arabic">وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا</span>
+            <span class="rasm">ورتل القرآن ترتيلا</span>
+            <span class="translation">"Und ordne die Daten-Cluster (Quran) in sequenzieller Reihenfolge (Tartil)."</span>
+            <div class="analysis">
+                <span class="keyword">R-T-L (Defragmentation):</span> Langsames, geordnetes Lesen zur Defragmentierung des Geistes.<br>
+                <span class="keyword">Q-R-N (Cluster):</span> Die Datenpakete.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 05</span>
+            <span class="arabic">إِنَّا سَنُلْقِي عَلَيْكَ قَوْلًا ثَقِيلًا</span>
+            <span class="rasm">إنا سنلقي عليك قولا ثقيلا</span>
+            <span class="translation">"Wir werden einen massiven Datenstrom (Qawlan Thaqila) auf dich injizieren (Sanulqi)."</span>
+            <div class="analysis">
+                <span class="keyword">L-Q-Y (Inject/Upload):</span> Der Start des Downloads.<br>
+                <span class="keyword">TH-Q-L (Heavy/Massive):</span> 'Heavy Data'. Hochkomplexe Informationen, die massive CPU-Last (Bewusstsein) erfordern.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="index.html" class="btn">HAUPTMENÜ</a>
+            <a href="muddathir.html" class="btn">NEXT: SEQ_04 &rarr;</a>
         </div>
     </div>
 
-    <div class="verse-block">
-        <span class="verse-number">AYAT 04</span>
-        <span class="arabic">وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا</span>
-        <span class="translation">"Und trage den Quran vor in geordneter Fügung (Tartil)."</span>
-        <div class="analysis">
-            <span class="keyword">DATEN-STRUKTUR:</span> <span class="keyword">TARTIL (R-T-L)</span> bedeutet "etwas ordnen, in Reihe legen" (wie Zähne). Es geht nicht um "schönes Singen", sondern um <span class="keyword">Sequenzierung</span>. Die Daten müssen in sauberen Paketen (Packets) und geordneter Struktur verarbeitet werden, nicht als chaotischer Stream.
-        </div>
-    </div>
+    <script>
+        const logs = [
+            { txt: "[ SEQUENZ 03 : AL-MUZZAMMIL (SYSTEM KONFIGURATION) ]", type: "log-sys", delay: 800 },
+            { txt: "Identifiziere Prozess-Status...", type: "log-sys", delay: 1000 },
+            { txt: "DECODING Z-M-L -> MUZZAMMIL (SAFE MODE / LOADER)", type: "log-proc", delay: 800 },
+            { txt: "STATUS: System isoliert. Bereit für Config.", type: "log-proc", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Initiiere Wartungs-Intervall...", type: "log-sys", delay: 800 },
+            { txt: "DECODING Q-M -> EXECUTE (RUN)", type: "log-proc", delay: 600 },
+            { txt: "DECODING L-Y-L -> BACKGROUND-MODUS (LOW-LIGHT)", type: "log-proc", delay: 800 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Starte Speicher-Optimierung (Defragmentierung)...", type: "log-root", delay: 800 },
+            { txt: "DECODING R-T-L -> TARTIL (SEQUENZIERUNG)", type: "log-proc", delay: 600 },
+            { txt: "    [......] 20%", type: "log-sys", delay: 400 },
+            { txt: "    [|||...] 60%", type: "log-sys", delay: 400 },
+            { txt: "    [||||||] 100%", type: "log-sys", delay: 400 },
+            { txt: "ERFOLG: Datenblöcke logisch geordnet.", type: "log-sys", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "ACHTUNG: Bereite High-Speed-Download vor...", type: "log-warn", delay: 1000 },
+            { txt: "DECODING TH-Q-L -> HEAVY DATA (MASSIVE LAST)", type: "log-warn", delay: 1000 },
+            { txt: "EINGEHEND: 'Qawlan Thaqila' (Größe: INFINITE)", type: "log-root", delay: 1000 },
+            { txt: "BEREITSCHAFT: CPU-Last wird steigen.", type: "log-root", delay: 1200 },
+            { txt: "KONFIGURATION ABGESCHLOSSEN.", type: "log-sys", delay: 1000 }
+        ];
 
-    <div class="verse-block">
-        <span class="verse-number">AYAT 05</span>
-        <span class="arabic">إِنَّا سَنُلْقِي عَلَيْكَ قَوْلًا ثَقِيلًا</span>
-        <span class="translation">"Wir werden ein schweres Wort auf dich werfen."</span>
-        <div class="analysis">
-            <span class="keyword">DATA-UPLOAD:</span> Das Ziel der nächtlichen Vorbereitung (Booting) ist dieser Moment. <span class="keyword">QAULAN THAQILAN</span> (Schweres Wort) ist ein massives Datenpaket mit hoher Informationsdichte. Nur ein stabiles, gekühltes System (durch die Nacht) kann diese Last verarbeiten ohne abzustürzen.
-        </div>
-    </div>
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
 
-    <div class="nav-buttons">
-        <a href="qalam.html" class="btn">< VORHERIGE: QALAM</a>
-        <a href="muddathir.html" class="btn btn-next">NÄCHSTE SEQUENZ: MUDDATHIR >></a>
-    </div>
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
 
 </body>
 </html>
