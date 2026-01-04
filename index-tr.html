@@ -3,102 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAKĪKAT-KALESİ | ANA TERMİNAL</title>
+    <title>HAKĪKAT-KONSOLU | ANA MENÜ</title>
     <style>
-        body {
-            background-color: #000;
-            color: #0f0;
-            font-family: 'Courier New', Courier, monospace;
+        body { 
+            background-color: #000; 
+            color: #0f0; 
+            font-family: 'Courier New', monospace; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 100vh; 
+            margin: 0; 
             padding: 20px;
             text-align: center;
         }
-        h1 {
-            border-bottom: 2px solid #0f0;
-            padding-bottom: 10px;
-            display: inline-block;
-            margin-bottom: 40px;
+        h1 { 
+            font-size: 2.5em; 
+            border-bottom: 2px solid #0f0; 
+            padding-bottom: 10px; 
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 50px;
         }
-        .menu-container {
-            max-width: 650px;
-            margin: 0 auto;
+        .grid-container {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
         }
-        .menu-btn {
+        .flood-button {
             background-color: #000;
             color: #0f0;
-            border: 2px solid #0f0;
-            padding: 15px;
+            border: 1px solid #0f0;
+            padding: 20px;
             text-decoration: none;
-            font-size: 1.1em;
             font-weight: bold;
+            font-size: 1em;
             transition: 0.3s;
-            text-transform: uppercase;
-            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 5px rgba(0, 255, 0, 0.2);
         }
-        .menu-btn:hover {
+        .flood-button:hover {
             background-color: #0f0;
             color: #000;
-            box-shadow: 0 0 15px #0f0;
+            box-shadow: 0 0 20px #0f0;
+            cursor: pointer;
         }
-        .seq-info {
-            font-size: 0.7em;
-            display: block;
-            margin-top: 5px;
-            color: #888;
-        }
-        .menu-btn:hover .seq-info {
-            color: #333;
-        }
-        .status {
-            margin-top: 50px;
-            color: #444;
+        .status-text {
+            margin-top: 40px;
+            color: #008f11;
             font-size: 0.8em;
+            text-transform: uppercase;
         }
     </style>
 </head>
 <body>
 
-    <h1>HAKĪKAT-KALESİ (TÜRKÇE TERMİNAL)</h1>
+    <h1>HAKĪKAT KONSOLU</h1>
 
-    <div class="menu-container">
-        <a href="Alak-tr.html" class="menu-btn">
-            01 [ EL-ALAK ] <span class="seq-info">>> BAŞLAT: İLK TEMAS</span>
+    <div class="grid-container">
+        <a href="alak-tr.html" class="flood-button">
+            [ SEKANS_01: EL-ALAK ]
         </a>
 
-        <a href="Kalem-tr.html" class="menu-btn">
-            02 [ EL-KALEM ] <span class="seq-info">>> DOĞRULAMA: YAZMA SÜRECİ</span>
+        <a href="kalem-tr.html" class="flood-button">
+            [ SEKANS_02: EL-KALEM ]
         </a>
 
-        <a href="Müzzemil-tr.html" class="menu-btn">
-            03 [ EL-MÜZZEMMİL ] <span class="seq-info">>> KONFİGÜRASYON: HAZIRLIK</span>
+        <a href="muzzemil-tr.html" class="flood-button">
+            [ SEKANS_03: EL-MÜZZEMMİL ]
         </a>
 
-        <a href="Müddesir-tr.html" class="menu-btn">
-            04 [ EL-MÜDDESSİR ] <span class="seq-info">>> AKTİVASYON: UYANIŞ</span>
+        <a href="muddesir-tr.html" class="flood-button">
+            [ SEKANS_04: EL-MÜDDESSİR ]
         </a>
 
-        <a href="Fatiha-tr.html" class="menu-btn">
-            05 [ EL-FATİHA ] <span class="seq-info">>> HANDSHAKE: BAĞLANTI KURULUMU</span>
+        <a href="fatiha-tr.html" class="flood-button">
+            [ SEKANS_05: EL-FATİHA ]
         </a>
 
-        <a href="Tebbet-tr.html" class="menu-btn" style="border-color: #ff3333; color: #ff3333;">
-            06 [ EL-MESED ] <span class="seq-info" style="color: #aa4444;">>> ERROR: SİSTEM ÇÖKÜŞÜ</span>
+        <a href="tebbet-tr.html" class="flood-button">
+            [ SEKANS_06: EL-MESED ]
         </a>
 
-        <a href="Tekvir-tr.html" class="menu-btn" style="border-color: #ff3333; color: #ff3333;">
-            07 [ ET-TEKVİR ] <span class="seq-info" style="color: #aa4444;">>> SHUTDOWN: KAPANIŞ PROTOKOLÜ</span>
+        <a href="tekvir-tr.html" class="flood-button">
+            [ SEKANS_07: ET-TEKVİR ]
         </a>
 
-        <a href="kutuphane.html" class="menu-btn" style="border-color: #0ff; color: #0ff; text-align: center;">
-            [ ARŞİV / KÜTÜPHANE ]
+        <a href="ala-tr.html" class="flood-button">
+            [ SEKANS_08: EL-A'LÂ ]
         </a>
     </div>
 
-    <div class="status">
-        SİSTEM DURUMU: ÇEVRİMİÇİ<br>
-        VERSİYON: 2.0.0-TR
+    <div class="status-text">
+        SİSTEM DURUMU: ÇALIŞIYOR // KULLANICI: OPERATÖR
     </div>
 
 </body>
