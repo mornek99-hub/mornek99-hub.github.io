@@ -1,1 +1,213 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEKANS_05: EL-FATİHA | HAKĪKAT-KONSOLU</title>
+    <style>
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #00ff41; border-bottom: 2px solid #00ff41; padding-bottom: 10px; }
+        .sub-header { color: #008f11; margin-bottom: 30px; font-size: 0.9em; }
+        
+        /* TERMINAL STYLES */
+        #terminal-box {
+            background-color: #000;
+            border: 1px solid #333;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+            display: none;
+        }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } 
+        .log-root { color: #e5c07b; } 
+        .log-net { color: #00bcd4; }  
+        .log-err { color: #ff3333; }  
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+        /* BUTTON STYLE */
+        .boot-btn {
+            background-color: #1a1a1a;
+            color: #00ff41;
+            border: 1px solid #00ff41;
+            padding: 15px 30px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        .boot-btn:hover { background-color: #00ff41; color: #000; box-shadow: 0 0 15px #00ff41; }
+
+        /* STANDARD STYLES */
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #00ff41; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[KERNEL]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #00ff41; color: #00ff41; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #00ff41; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="archiv-tr.html" style="text-decoration: none; color: #555;">&larr; ARŞİVE DÖN</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEKANS_05: EL-FATİHA</h1>
+        <div class="sub-header">
+            DURUM: BAĞLANTI EL SIKIŞMASI // YÖNLENDİRME YAPILANDIRMASI<br>
+            RASM-ANALİZİ: ADMİN İLE BAĞLANTI KURULUMU
+        </div>
+    </div>
+
+    <button class="boot-btn" onclick="runBootSequence()">[ SUNUCUYA BAĞLAN ]</button>
+
+    <div id="terminal-box">
+        <div id="terminal-content"></div>
+        <span class="cursor">_</span>
+    </div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 01</span>
+            <span class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+            <span class="rasm">بسم الله الرحمن الرحيم</span>
+            <span class="translation">"Programcının (Allah), kaynağın (Rahman) ve yürütenin (Rahim) imzasıyla (İsm)."</span>
+            <div class="analysis">
+                <span class="keyword">B-S-M (İmza):</span> Kimlik doğrulama belirteci (Token).<br>
+                <span class="keyword">R-H-M-N (Kaynak):</span> Evrensel enerji kaynağı (Veritabanı).
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 02</span>
+            <span class="arabic">الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ</span>
+            <span class="rasm">الحمد لله رب العالمين</span>
+            <span class="translation">"Sistem durumu (Hamd), tüm birimlerin/kümelenmelerin (Alemin) yöneticisi için uygundur."</span>
+            <div class="analysis">
+                <span class="keyword">H-M-D (Geri Bildirim):</span> Pozitif sistem kontrolü. Her şey nominal çalışıyor.<br>
+                <span class="keyword">A-L-M-Y-N (Alemler):</span> Ağın tüm boyutları ve kümeleri.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 04</span>
+            <span class="arabic">مَالِكِ يَوْمِ الدِّينِ</span>
+            <span class="rasm">مالك يوم الدين</span>
+            <span class="translation">"Denetim sürecinin (Din) asıl sahibi (Malik)."</span>
+            <div class="analysis">
+                <span class="keyword">M-L-K (Sahip):</span> Sadece 'Kral' (Melik) değil, yazma haklarına sahip asıl malik.<br>
+                <span class="keyword">D-Y-N (Denetim):</span> Hesaplaşma/derleme günü.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 05</span>
+            <span class="arabic">إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ</span>
+            <span class="rasm">إياك نعبد وإياك نستعين</span>
+            <span class="translation">"Yalnızca Sana kulluk eder (İstemci Modu) ve yalnızca Senden yardım (Kaynak) dileriz."</span>
+            <div class="analysis">
+                <span class="keyword">A-B-D (Hizmet/Yürütme):</span> Bir istemci (Client) olarak komutları yerine getirme.<br>
+                <span class="keyword">A-W-N (Yardım/Kaynak):</span> Kaynak veya destek talebi.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 06</span>
+            <span class="arabic">اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ</span>
+            <span class="rasm">اهدنا الصراط المستقيم</span>
+            <span class="translation">"Bizi optimize edilmiş veri yoluna (Sırat-ı Müstakim) yönlendir."</span>
+            <div class="analysis">
+                <span class="keyword">S-R-T (Yol/Bus):</span> Veri yolu (Data Bus).<br>
+                <span class="keyword">Q-W-M (Doğru/Optimize):</span> Gecikmesiz, doğrudan, sapmasız.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 07</span>
+            <span class="arabic">صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ</span>
+            <span class="rasm">صراط الذين أنعmet عليهم غير المغضوب عليهم ولا الضالين</span>
+            <span class="translation">"Üst sürüm yüklenebilenlerin (En'amte) yoluna; veri bozulmasına uğrayanların (Mağdub) veya bağlantısı kopanların (Dallin) yoluna değil."</span>
+            <div class="analysis">
+                <span class="keyword">Gh-D-B (Bozulmuş):</span> Hatalı düğümler.<br>
+                <span class="keyword">D-L-L (Kayıp):</span> Bağlantısı olmayan düğümler (404).
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="dashboard-tr.html" class="btn">ANA MENÜ</a>
+            <a href="tebbet-tr.html" class="btn">SIRADAKİ: SEQ_06 &rarr;</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "[ SEKANS 05 : EL-FATİHA (BAĞLANTI EL SIKIŞMASI) ]", type: "log-sys", delay: 800 },
+            { txt: "Kimlik doğrulama belirteci gönderiliyor...", type: "log-net", delay: 800 },
+            { txt: "DECODING B-S-M -> İMZA", type: "log-sys", delay: 600 },
+            { txt: "DECODING R-H-M-N -> KAYNAK / ENERJİ", type: "log-sys", delay: 600 },
+            { txt: "LOGIN: Root sunucuda kimlik doğrulandı.", type: "log-sys", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Sistem günlükleri okunuyor (HAMD)...", type: "log-sys", delay: 800 },
+            { txt: "DURUM: Tüm alt sistemler (ALAMIN) nominal çalışıyor.", type: "log-sys", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Mülkiyet hakları kontrol ediliyor (MALIK)...", type: "log-root", delay: 800 },
+            { txt: "    [KONTROL] Admin 'Kral' (Melik) mi? -> FALSE", type: "log-net", delay: 400 },
+            { txt: "    [KONTROL] Admin 'Sahip' (Malik) mi? -> TRUE", type: "log-sys", delay: 400 },
+            { txt: "YETKİ: Yazma erişimi onaylandı.", type: "log-root", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "İstemci tüneli kuruluyor (NA'BUDU)...", type: "log-net", delay: 800 },
+            { txt: "BAĞLANTI: Özel kanal (İyyake). Proxy yok.", type: "log-net", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Yönlendirme tablosu yapılandırılıyor (SIRAT-I MÜSTAKİM)...", type: "log-net", delay: 800 },
+            { txt: "ROUTING: Paket kaybı minimize edildi.", type: "log-sys", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Filtreleme kuralları ayarlanıyor...", type: "log-sys", delay: 600 },
+            { txt: "    > ENGELENEN TRAFİK: BOZULMUŞ (MAGHDUB)", type: "log-err", delay: 400 },
+            { txt: "    > ENGELENEN TRAFİK: BAĞLANTISI KOPUK (DALLIN)", type: "log-err", delay: 400 },
+            { txt: "EL SIKIŞMASI BAŞARILI. VERİ AKIŞI BAŞLIYOR.", type: "log-root", delay: 1200 },
+            { txt: "SİSTEM KULLANICI GİRDİSİNE HAZIR.", type: "log-sys", delay: 1000 }
+        ];
+
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+
+</body>
+</html>
 
