@@ -3,84 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEQ_02 | EL-KALEM</title>
+    <title>SEKANS_02: EL-KALEM | HAKĪKAT-KONSOLU</title>
     <style>
-        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; padding: 20px; max-width: 800px; margin: auto; border-top: 3px solid #00ff41; }
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #00ff41; border-bottom: 2px solid #00ff41; padding-bottom: 10px; }
+        .sub-header { color: #008f11; margin-bottom: 30px; font-size: 0.9em; }
         
-        h1 { color: #00ff41; font-size: 1.2rem; margin-bottom: 5px; letter-spacing: 2px; }
-        .sub-header { color: #666; font-size: 0.8rem; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 10px; }
-        
-        .verse-block { 
-            background: #0a0a0a; 
-            border-left: 2px solid #333; 
-            padding: 15px; 
-            margin-bottom: 20px; 
+        /* TERMINAL STYLES */
+        #terminal-box {
+            background-color: #000;
+            border: 1px solid #333;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+            display: none;
+        }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } /* Yeşil */
+        .log-root { color: #e5c07b; } /* Sarı */
+        .log-proc { color: #00bcd4; } /* Camgöbeği/Kontrol */
+        .log-err { color: #ff0000; } /* Kırmızı/Hata */
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+        /* BUTTON STYLE */
+        .boot-btn {
+            background-color: #1a1a1a;
+            color: #00ff41;
+            border: 1px solid #00ff41;
+            padding: 15px 30px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
             transition: 0.3s;
         }
-        .verse-block:hover { border-left-color: #00ff41; background: #0e0e0e; }
+        .boot-btn:hover { background-color: #00ff41; color: #000; box-shadow: 0 0 15px #00ff41; }
 
-        .verse-number { color: #00ff41; font-weight: bold; font-size: 0.8rem; margin-bottom: 5px; display: block; }
-        .arabic { color: #e5c07b; font-size: 1.1rem; margin-bottom: 10px; display: block; direction: rtl; }
-        .translation { color: #ddd; font-style: italic; margin-bottom: 10px; display: block; }
-        .analysis { color: #888; font-size: 0.85rem; border-top: 1px dashed #333; padding-top: 10px; }
-        
+        /* STANDARD STYLES */
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #00ff41; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[ÇEKİRDEK]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
         .keyword { color: #e5c07b; font-weight: bold; }
-
-        .nav-buttons { display: flex; justify-content: space-between; margin-top: 50px; }
-        .btn { text-decoration: none; color: #666; border: 1px solid #333; padding: 10px 20px; font-size: 0.8rem; transition: 0.3s; }
-        .btn:hover { color: #e5c07b; border-color: #e5c07b; }
-        .btn-next { border-color: #00ff41; color: #00ff41; }
-        .btn-next:hover { background: #00ff41; color: #000; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #00ff41; color: #00ff41; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #00ff41; color: #000; }
     </style>
 </head>
 <body>
 
-    <a href="kutuphane.html" style="text-decoration: none; color: #666; font-size: 0.8rem;"> < KÜTÜPHANEYE DÖN</a>
+    <a href="kutuphane.html" style="text-decoration: none; color: #555;">&larr; ARŞİVE DÖN</a>
 
     <div style="margin-top: 20px;">
-        <h1>SEQUENCE_02: EL-KALEM</h1>
+        <h1>SEKANS_02: EL-KALEM</h1>
         <div class="sub-header">
-            DURUM: KAYIT (LOGGING) // GİRDİ: YAZMA<br>
-            RASM-ANALİZİ: KODLAMA SÜRECİ
-        </div>
-    </div>
-<div style="border: 1px dashed #555; background-color: #0a0a0a; color: #888; font-size: 0.75rem; padding: 10px; margin: 15px 0; font-family: 'Courier New', monospace;">
-    <strong style="color: #e5c07b;">[!] SİSTEM NOTU:</strong> 
-    Bu metin, görsel okuma kolaylığı için standart formatta görüntülenmektedir. 
-    Sistem analizi tamamen <strong>noktasız Rasm-Kodu</strong> (Orijinal Kernel) üzerinden yapılmaktadır.
-</div>
-
-    <div class="verse-block">
-        <span class="verse-number">AYET 01</span>
-        <span class="arabic">ن ۚ وَالْقَلَمِ وَمَا يَسْطُرُونَ</span>
-        <span class="translation">"Nun. Kaleme ve satır satır yazdıklarına (kodladıklarına) andolsun."</span>
-        <div class="analysis">
-            <span class="keyword">SİSTEM BAŞLATMA:</span> Sure bir "Initial" ile başlar: <span class="keyword">NUN (ن)</span>. Rasm dilinde bu bir enerji haznesi veya "Mürekkep hokkası"dır. <span class="keyword">YESTURUN (S-T-R)</span> kökü, "satır dizmek" demektir. Geleneksel çevirideki "kitap yazmak" değil, teknik anlamda "Kod Satırı" (Line of Code) oluşturmaktır. Okunan (Alak) verinin kaybolmaması için sabit diske yazılmasıdır.
+            DURUM: SİSTEM DOĞRULAMA // VERİ LOGLAMA<br>
+            RASM-ANALİZİ: YAZMA SÜRECİ
         </div>
     </div>
 
-    <div class="verse-block">
-        <span class="verse-number">AYET 02</span>
-        <span class="arabic">مَا أَنتَ بِنِعْمَةِ رَبِّكَ bِمَجْنُونٍ</span>
-        <span class="translation">"Sen, Rabbinin nimeti sayesinde bir Mecnun (kontrol dışı) değilsin."</span>
-        <div class="analysis">
-            <span class="keyword">GÜVENLİK KONTROLÜ:</span> <span class="keyword">MECNUN (J-N-N)</span> kökü, "örtülü/gizli" demektir. Teknik dilde: Arka planda çalışan gizli bir süreç (Hidden Process) tarafından ele geçirilmek (Hijack). Ayet şunu doğrular: Senin işletim sistemin temiz, Admin (Rabb) lisansı altında çalışıyorsun, virüs yok.
+    <button class="boot-btn" onclick="runBootSequence()">[ SİSTEM TARAMASINI BAŞLAT ]</button>
+
+    <div id="terminal-box">
+        <div id="terminal-content"></div>
+        <span class="cursor">_</span>
+    </div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 01</span>
+            <span class="arabic">ن ۚ وَالْقَلَمِ وَمَا يَسْطُرُونَ</span>
+            <span class="rasm">ن والقلم وما يسطرون</span>
+            <span class="translation">"Nun. Kaleme (Kodlayıcıya) ve satır satır yazdıklarına (Yesturun) andolsun."</span>
+            <div class="analysis">
+                <span class="keyword">N (Nun):</span> Enerji Deposu / Mürekkep Hokkası / Potansiyel.<br>
+                <span class="keyword">Q-L-M (Kalem):</span> Kodlayıcı Donanım.<br>
+                <span class="keyword">Y-S-T-R (Yesturun):</span> Gerçeklik kodunun anlık olarak loglanması (yazılması).
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 02</span>
+            <span class="arabic">مَا أَنتَ بِنِعْمَةِ رَبِّكَ بِمَجْنُونٍ</span>
+            <span class="rasm">ما أنت بنعمة ربك بمجنون</span>
+            <span class="translation">"Sen, Rabb'inin nimeti (Yazılım Güncellemesi) sayesinde bir 'Mecnun' (Sistem Hatası) değilsin."</span>
+            <div class="analysis">
+                <span class="keyword">J-N-N (Mecnun/Gizli):</span> Burada "Virüs" veya "Sistem Hatası" anlamına gelir. Nimet (Ni'mat) güncellemesi bunu engeller.<br>
+                <span class="keyword">DURUM:</span> Sistem Bütünlüğü %100.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 03</span>
+            <span class="arabic">وَإِنَّ لَكَ لَأَجْرًا غَيْرَ مَمْنُونٍ</span>
+            <span class="rasm">وإن لك لأجرا غير ممنون</span>
+            <span class="translation">"Ve şüphesiz senin için kesintiye uğramayan (Gayri Memnun) bir çıktı (Ecir) vardır."</span>
+            <div class="analysis">
+                <span class="keyword">M-N-N (Kesik/Memnun):</span> Veri akışında kopukluk yok. Kesintisiz stream.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 04</span>
+            <span class="arabic">وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ</span>
+            <span class="rasm">وإنك لعلى خلق عظيم</span>
+            <span class="translation">"Ve sen, muazzam bir mimari/yapı (Huluk) üzerindesin."</span>
+            <div class="analysis">
+                <span class="keyword">Kh-L-Q (Huluk/Yaratılış):</span> Dahili Mimari. Operatörün 'İşletim Sistemi' AZİM (Maksimum) seviyesinde yapılandırılmıştır.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="index-tr.html" class="btn">ANA MENÜ</a>
+            <a href="muzzammil-tr.html" class="btn">İLERİ: SEKANS_03 &rarr;</a>
         </div>
     </div>
 
-    <div class="verse-block">
-        <span class="verse-number">AYET 04</span>
-        <span class="arabic">وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ</span>
-        <span class="translation">"Ve şüphesiz sen, muazzam bir yapı üzeresin."</span>
-        <div class="analysis">
-            <span class="keyword">SİSTEM MİMARİSİ:</span> <span class="keyword">HULUK (Kh-L-Q)</span> kelimesi, "ahlak" değil, "yaratılış/yapı" (Khalaqa ile aynı kök) demektir. Burada terminalin (insanın) donanım kalitesi vurgulanır. "Azim" (Muazzam), sistemin yüksek voltaja ve ağır veri yüküne dayanıklı olduğunu belirtir.
-        </div>
-    </div>
+    <script>
+        const logs = [
+            { txt: "[ SEKANS 02 : EL-KALEM (SİSTEM DOĞRULAMA) ]", type: "log-sys", delay: 800 },
+            { txt: "Bellek Havuzu (Pool) Başlatılıyor...", type: "log-sys", delay: 1000 },
+            { txt: "RASM ÇÖZÜMLENİYOR: N -> NUN (ENERJİ DEPOSU)", type: "log-proc", delay: 800 },
+            { txt: "Yazma Süreci Başlatılıyor...", type: "log-sys", delay: 600 },
+            { txt: "RASM ÇÖZÜMLENİYOR: Q-L-M -> KALEM (KODLAYICI)", type: "log-proc", delay: 800 },
+            { txt: "LOGLAMA: Gerçeklik Kodu gerçek zamanlı yazılıyor.", type: "log-root", delay: 1200 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Operatör Tanılaması (Diagnostic) Başlatılıyor...", type: "log-proc", delay: 1000 },
+            { txt: "'Mecnun' (Sistem Örtücü) Virüsü aranıyor...", type: "log-sys", delay: 1500 },
+            { txt: "TARAMA SONUCU: VİRÜS TESPİTİ: HAYIR", type: "log-sys", delay: 500 },
+            { txt: "SEBEP: Yönetici Güncellemesi (Nimet) aktif.", type: "log-root", delay: 1000 },
+            { txt: "TANI: Operatör stabil çalışıyor.", type: "log-root", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Dahili Yapı Analiz Ediliyor...", type: "log-proc", delay: 800 },
+            { txt: "SİSTEM RAPORU: Operatör Mimarisi 'AZİM' sınıfında.", type: "log-root", delay: 1000 },
+            { txt: "DOĞRULAMA TAMAMLANDI.", type: "log-sys", delay: 1000 }
+        ];
 
-    <div class="nav-buttons">
-        <a href="alaq-tr.html" class="btn">< ÖNCEKİ: ALAK</a>
-        <a href="muzzemmil-tr.html" class="btn btn-next">SONRAKİ: MÜZZEMMİL >></a>
-    </div>
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
 
 </body>
 </html>
