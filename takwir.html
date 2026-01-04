@@ -3,102 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEQ_07 | AT-TAKWIR</title>
+    <title>SEQ_07: AT-TAKWIR | HAKĪKAT-KONSOLU</title>
     <style>
-        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; padding: 20px; max-width: 800px; margin: auto; border-top: 3px solid #e5c07b; }
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #00ff41; border-bottom: 2px solid #00ff41; padding-bottom: 10px; }
+        .sub-header { color: #008f11; margin-bottom: 30px; font-size: 0.9em; }
         
-        h1 { color: #e5c07b; font-size: 1.2rem; margin-bottom: 5px; letter-spacing: 2px; }
-        .sub-header { color: #666; font-size: 0.8rem; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 10px; }
-        
-        .verse-block { 
-            background: #0a0a0a; 
-            border-left: 2px solid #333; 
-            padding: 15px; 
-            margin-bottom: 20px; 
+        /* TERMINAL STYLES */
+        #terminal-box {
+            background-color: #000;
+            border: 1px solid #333;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(255, 51, 51, 0.2);
+            display: none;
+        }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } /* Grün */
+        .log-root { color: #e5c07b; } /* Gelb */
+        .log-io { color: #00bcd4; }   /* Cyan - IO */
+        .log-crit { color: #ff3333; font-weight: bold; } /* Rot - Shutdown Critical */
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+        /* BUTTON STYLE */
+        .boot-btn {
+            background-color: #1a1a1a;
+            color: #ff3333;
+            border: 1px solid #ff3333;
+            padding: 15px 30px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
             transition: 0.3s;
         }
-        .verse-block:hover { border-left-color: #e5c07b; background: #0f0f0f; }
+        .boot-btn:hover { background-color: #ff3333; color: #000; box-shadow: 0 0 15px #ff3333; }
 
-        .verse-number { color: #e5c07b; font-weight: bold; font-size: 0.8rem; margin-bottom: 5px; display: block; }
-        .arabic { color: #e5c07b; font-size: 1.1rem; margin-bottom: 10px; display: block; direction: rtl; }
-        .translation { color: #ddd; font-style: italic; margin-bottom: 10px; display: block; }
-        .analysis { color: #888; font-size: 0.85rem; border-top: 1px dashed #333; padding-top: 10px; }
-        
+        /* STANDARD STYLES */
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #ff3333; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[KERNEL]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
         .keyword { color: #e5c07b; font-weight: bold; }
-
-        .nav-buttons { display: flex; justify-content: space-between; margin-top: 50px; }
-        .btn { text-decoration: none; color: #666; border: 1px solid #333; padding: 10px 20px; font-size: 0.8rem; transition: 0.3s; }
-        .btn:hover { color: #e5c07b; border-color: #e5c07b; }
-        .btn-home { border-color: #e5c07b; color: #e5c07b; }
-        .btn-home:hover { background: #e5c07b; color: #000; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #00ff41; color: #00ff41; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #00ff41; color: #000; }
     </style>
 </head>
 <body>
 
-    <a href="archiv.html" style="text-decoration: none; color: #666; font-size: 0.8rem;"> < ZURÜCK ZUR DATENBANK</a>
+    <a href="kutuphane.html" style="text-decoration: none; color: #555;">&larr; BACK TO ARCHIVE</a>
 
     <div style="margin-top: 20px;">
         <h1>SEQUENCE_07: AT-TAKWIR</h1>
         <div class="sub-header">
-            STATUS: SHUTDOWN // ACTION: COMPRESS (ZIP)<br>
-            RASM-ANALYSE: SIMULATION END
-        </div>
-    </div>
-<div style="border: 1px dashed #555; background-color: #0a0a0a; color: #888; font-size: 0.75rem; padding: 10px; margin: 15px 0; font-family: 'Courier New', monospace;">
-    <strong style="color: #e5c07b;">[!] SYSTEM-HINWEIS:</strong> 
-    Dieser Text wird zur visuellen Orientierung im Standard-Format angezeigt. 
-    Die System-Analyse erfolgt ausschließlich am <strong>punktlosen Rasm-Code</strong> (Original-Kernel).
-</div>
-
-    <div class="verse-block">
-        <span class="verse-number">AYAT 01</span>
-        <span class="arabic">إِذَا الشَّمْسُ كُوِّرَتْ</span>
-        <span class="translation">"Wenn die Sonne eingewickelt (gefaltet) wird."</span>
-        <div class="analysis">
-            <span class="keyword">COMPRESSION ALGORITHM:</span> <span class="keyword">KUWWIRAT</span> (Einwickeln/Rollen) beschreibt technisch das Zusammenfalten von Dimensionen. Die Lichtquelle der Simulation (Sonne/Display) wird ausgeschaltet und der Raum komprimiert (wie eine ZIP-Datei).
+            STATUS: SYSTEM SHUTDOWN PROTOKOLL // END OF RUNTIME<br>
+            RASM-ANALYSE: KOMPRIMIERUNG DER REALITÄT
         </div>
     </div>
 
-    <div class="verse-block">
-        <span class="verse-number">AYAT 02</span>
-        <span class="arabic">وَإِذَا النُّجُومُ انكَدَرَتْ</span>
-        <span class="translation">"Und wenn die Sterne herabstürzen (trübe werden)."</span>
-        <div class="analysis">
-            <span class="keyword">PIXEL LOSS / POWER DOWN:</span> <span class="keyword">INKADARAT</span> bedeutet "trübe werden" oder "Struktur verlieren". Die Hintergrund-Assets der Simulation (Sterne) verlieren ihre Auflösung und werden schwarz. Das System fährt herunter.
+    <button class="boot-btn" onclick="runBootSequence()">[ INITIATE SHUTDOWN ]</button>
+
+    <div id="terminal-box">
+        <div id="terminal-content"></div>
+        <span class="cursor">_</span>
+    </div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01</span>
+            <span class="arabic">إِذَا الشَّمْسُ كُوِّرَتْ</span>
+            <span class="rasm">إذا الشمس كورت</span>
+            <span class="translation">"Wenn das Display/die Energiequelle (Shams) komprimiert/gezippt wird (Kuwwirat)."</span>
+            <div class="analysis">
+                <span class="keyword">K-W-R (Compress/Zip):</span> Das Einfalten der Dimensionen. Komprimierung von Daten.<br>
+                <span class="keyword">Sh-M-S (Source/Display):</span> Die visuelle Energiequelle wird abgeschaltet.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 02</span>
+            <span class="arabic">وَإِذَا النُّجُومُ انكَدَرَتْ</span>
+            <span class="rasm">وإذا النجوم انكدرت</span>
+            <span class="translation">"Und wenn die Knotenpunkte/Pixel (Nujum) das Signal verlieren (Inkadarat)."</span>
+            <div class="analysis">
+                <span class="keyword">N-J-M (Nodes):</span> Netzwerk-Knoten oder Pixel auf dem Screen.<br>
+                <span class="keyword">K-D-R (Signal Loss):</span> Fade Out. Das Grid geht offline.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 07</span>
+            <span class="arabic">وَإِذَا النُّفُوسُ زُوِّجَتْ</span>
+            <span class="rasm">وإذا النفوس زوجت</span>
+            <span class="translation">"Und wenn die User-Profile (Nufus) gemerged/synchronisiert werden (Zuwwijat)."</span>
+            <div class="analysis">
+                <span class="keyword">N-F-S (User Profiles):</span> Die Software-Agenten (Seelen).<br>
+                <span class="keyword">Z-W-J (Merge):</span> Zusammenführung von User-ID und Backup-Daten.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 10</span>
+            <span class="arabic">وَإِذَا الصُّحُفُ نُشِرَتْ</span>
+            <span class="rasm">وإذا الصحف نشرت</span>
+            <span class="translation">"Und wenn die Log-Files/Datenbanken (Suhuf) extrahiert/veröffentlicht werden (Nushirat)."</span>
+            <div class="analysis">
+                <span class="keyword">S-H-F (Logs):</span> Die aufgezeichneten Datensätze.<br>
+                <span class="keyword">N-Sh-R (Publish/Spread):</span> Volle Transparenz. Keine verschlüsselten Ordner mehr.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 11</span>
+            <span class="arabic">وَإِذَا السَّمَاءُ كُشِطَتْ</span>
+            <span class="rasm">وإذا السماء كشطت</span>
+            <span class="translation">"Und wenn das Interface/Skybox (Sama) entfernt/gestripped wird (Kushitat)."</span>
+            <div class="analysis">
+                <span class="keyword">S-M-A (Interface):</span> Die grafische Oberfläche (Himmel), die den Code verdeckt.<br>
+                <span class="keyword">K-Sh-T (Strip/Remove):</span> Das Entfernen der Skin. Der rohe Kernel wird sichtbar.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="index.html" class="btn">HAUPTMENÜ</a>
+            <a href="ala.html" class="btn">NEXT: SEQ_08 &rarr;</a>
         </div>
     </div>
 
-    <div class="verse-block">
-        <span class="verse-number">AYAT 03</span>
-        <span class="arabic">وَإِذَا الْجِبَالُ سُيِّرَتْ</span>
-        <span class="translation">"Und wenn die Berge bewegt werden."</span>
-        <div class="analysis">
-            <span class="keyword">STATIC OBJECT DELETION:</span> Berge sind die "Anker" der Physik-Engine (statische Objekte). <span class="keyword">SUYYIRAT</span> (in Bewegung setzen) bedeutet, dass diese festen Parameter gelöscht oder verschoben werden. Die physische Realität löst sich auf.
-        </div>
-    </div>
+    <script>
+        const logs = [
+            { txt: "[ SEQUENZ 07 : AT-TAKWIR (SYSTEM SHUTDOWN PROTOKOLL) ]", type: "log-sys", delay: 800 },
+            { txt: "Initiiere End-Sequenz...", type: "log-crit", delay: 1000 },
+            { txt: "DECODING K-W-R -> COMPRESS / ZIP", type: "log-io", delay: 600 },
+            { txt: "DECODING Sh-M-S -> HAUPT-ENERGIE / DISPLAY", type: "log-io", delay: 600 },
+            { txt: "    [PROCESS] Compressing Dimensions...", type: "log-sys", delay: 400 },
+            { txt: "    Dim-Size: 100% -> 80% -> 60% -> 20% -> 0%", type: "log-sys", delay: 1200 },
+            { txt: "STATUS: Realität komprimiert. Display dunkel.", type: "log-sys", delay: 800 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Fahre Knotenpunkte herunter (NUJUM)...", type: "log-sys", delay: 800 },
+            { txt: "    > Node_Alpha: OFFLINE", type: "log-crit", delay: 200 },
+            { txt: "    > Node_Beta: OFFLINE", type: "log-crit", delay: 200 },
+            { txt: "    > Node_Gamma: OFFLINE", type: "log-crit", delay: 200 },
+            { txt: "NETZWERK: Grid ist offline (INKADARAT).", type: "log-crit", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Synchronisiere User-Daten (MERGE)...", type: "log-io", delay: 800 },
+            { txt: "    > MERGING 'USER_ID_99_LOGS' WITH 'SERVER_BACKUP_99'...", type: "log-sys", delay: 1000 },
+            { txt: "    > SYNC COMPLETE. NO DATA LOSS.", type: "log-sys", delay: 500 },
+            { txt: "INTEGRITÄT: User und Tat sind jetzt eins.", type: "log-root", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Extrahiere Datenbanken (LOG DUMP)...", type: "log-io", delay: 800 },
+            { txt: "    > ERROR: 0", type: "log-sys", delay: 200 },
+            { txt: "    > HIDDEN_FILES: SHOWN", type: "log-sys", delay: 200 },
+            { txt: "TRANSPARENZ: Alle Logs sind öffentlich.", type: "log-sys", delay: 800 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Entferne Grafische Oberfläche (KUSHITAT)...", type: "log-crit", delay: 1000 },
+            { txt: "VISUALS: Simulation beendet. Roher Code sichtbar.", type: "log-root", delay: 1200 },
+            { txt: "SHUTDOWN COMPLETE. END OF RUNTIME.", type: "log-crit", delay: 1500 }
+        ];
 
-    <div class="verse-block">
-        <span class="verse-number">AYAT 07</span>
-        <span class="arabic">وَإِذَا النُّفُوسُ زُوِّجَتْ</span>
-        <span class="translation">"Und wenn die Seelen gepaart werden."</span>
-        <div class="analysis">
-            <span class="keyword">DATA MERGING:</span> <span class="keyword">ZUWWIJAT</span> (Paarung/Zusammenfügung) ist der Prozess, bei dem der User (Nafs) mit seinen gespeicherten Daten (Backup/Log-File) endgültig verschmolzen wird. Identität + Taten werden eins.
-        </div>
-    </div>
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
 
-    <div class="verse-block">
-        <span class="verse-number">AYAT 10</span>
-        <span class="arabic">وَإِذَا الصُّحُفُ نُشِرَتْ</span>
-        <span class="translation">"Und wenn die Blätter (Seiten) ausgebreitet werden."</span>
-        <div class="analysis">
-            <span class="keyword">LOG FILE REVIEW:</span> Die "Suhuf" (Blätter/Datenträger) sind die Logs, die wir in Sequenz 02 (Qalam) geschrieben haben. Jetzt werden sie "ausgebreitet" (entpackt/gelesen). Der Code wird validiert.
-        </div>
-    </div>
-
-    <div class="nav-buttons">
-        <a href="masad.html" class="btn">< VORHERIGE: MASAD</a>
-        <a href="index.html" class="btn btn-home">SYSTEM NEUSTART (HOME)</a>
-    </div>
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
 
 </body>
 </html>
