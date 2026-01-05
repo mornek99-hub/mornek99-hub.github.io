@@ -10,14 +10,11 @@
         h1 { color: #00ff41; border-bottom: 2px solid #00ff41; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
         h2 { color: #e5c07b; border-bottom: 1px solid #333; padding-bottom: 15px; margin-top: 40px; text-transform: uppercase; }
         .status-bar { background: #111; color: #00ff41; padding: 10px; font-size: 0.8rem; border: 1px solid #333; margin-bottom: 40px; }
-        
-        /* Grid Layout für die Module */
         .module-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 20px; }
         .module-card { border: 1px solid #333; padding: 15px; background: #0a0a0a; transition: 0.3s; text-decoration: none; display: block; }
         .module-card:hover { border-color: #00ff41; box-shadow: 0 0 10px rgba(0, 255, 65, 0.2); }
         .module-card strong { color: #00ff41; display: block; margin-bottom: 5px; font-size: 1rem; }
         .module-card p { color: #888; font-size: 0.85rem; margin: 0; }
-
         .reboot-btn { display: inline-block; border: 1px solid #00ff41; color: #00ff41; padding: 10px 20px; text-decoration: none; transition: 0.3s; margin-top: 40px; text-transform: uppercase; }
         .reboot-btn:hover { background: #00ff41; color: #000; }
     </style>
@@ -26,18 +23,14 @@
 
     <header>
         <h1>HAKĪKAT-ARCHIV</h1>
-        <div style="color: #666; font-size: 0.9rem; margin-bottom: 20px;">
-            DEUTSCHE SEKTION // SYSTEM-ARCHITEKT: <span style="color: #e5c07b;">MEHMET ÖRNEK</span>
-        </div>
-        <div class="status-bar">
-            BEREICH: ARCHIV | ZUGRIFF: AUTORISIERT | STATUS: <span style="color: #e5c07b;">ONLINE</span>
-        </div>
+        <div style="color: #666; font-size: 0.9rem; margin-bottom: 20px;">SYSTEM-ARCHITEKT: MEHMET ÖRNEK</div>
+        <div class="status-bar">BEREICH: ARCHIV | STATUS: <span style="color: #e5c07b;">FIX_APPLIED (ALAQ_LINK)</span></div>
     </header>
 
     <section>
         <h2>Suren-Sequenzen (Deutsch)</h2>
         <div class="module-grid">
-            <a href="alak.html" class="module-card"><strong>[ SEQ_01: ALAK ]</strong><p>Der Lese-Befehl und Systemstart.</p></a>
+            <a href="alaq.html" class="module-card"><strong>[ SEQ_01: ALAQ ]</strong><p>Der Lese-Befehl und Systemstart.</p></a>
             <a href="qalam.html" class="module-card"><strong>[ SEQ_02: QALAM ]</strong><p>Die Kodierung der Realität.</p></a>
             <a href="muzzammil.html" class="module-card"><strong>[ SEQ_03: MUZZAMMIL ]</strong><p>Prozessorkühlung im Nachtmodus.</p></a>
             <a href="muddathir.html" class="module-card"><strong>[ SEQ_04: MUDDATHIR ]</strong><p>Das Warnsystem-Protokoll.</p></a>
@@ -64,9 +57,7 @@
     </section>
 
     <footer style="margin-top: 60px; text-align: center; border-top: 1px solid #333; padding-top: 40px;">
-        <a href="index.html" class="reboot-btn">
-            [ ZURÜCK ZUM PORTAL ]
-        </a>
+        <a href="index.html" class="reboot-btn">[ ZURÜCK ZUM PORTAL ]</a>
     </footer>
 
 </body>
