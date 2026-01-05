@@ -3,138 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAKĪKAT-ARCHIV | DATENBANK</title>
+    <title>HAKĪKAT-KALESİ | DEUTSCHES ARCHIV</title>
     <style>
-        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; padding: 20px; max-width: 800px; margin: auto; border-top: 3px solid #e5c07b; }
-        
-        h1 { color: #e5c07b; font-size: 1.5rem; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 2px; }
-        .subtitle { color: #666; font-size: 0.8rem; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 20px; }
-        
-        .nav-back { text-decoration: none; color: #666; font-size: 0.8rem; border: 1px solid #333; padding: 5px 10px; transition: 0.3s; }
-        .nav-back:hover { color: #e5c07b; border-color: #e5c07b; }
-
-        /* DATEN-GRID */
-        .file-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
-        
-        .file-card { 
-            background: #0a0a0a; 
-            border: 1px solid #222; 
+        /* Übernahme der exakten Styles aus deiner fizik.html */
+        body { 
+            background-color: #050505; 
+            color: #c0c0c0; 
+            font-family: 'Courier New', Courier, monospace; 
+            line-height: 1.6; 
+            margin: 0; 
             padding: 20px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            text-decoration: none;
-            transition: 0.3s ease;
+            max-width: 800px; 
+            margin-left: auto; 
+            margin-right: auto; 
         }
-
-        .file-card:hover { 
-            border-color: #e5c07b; 
-            background: #0f0f0f; 
-            transform: translateX(5px);
-        }
-
-        .file-info { display: flex; flex-direction: column; }
-        .file-id { color: #666; font-size: 0.7rem; margin-bottom: 5px; }
-        .file-name { color: #ddd; font-weight: bold; font-size: 1.1rem; letter-spacing: 1px; }
-        .file-desc { color: #888; font-size: 0.8rem; margin-top: 5px; }
-
-        .status-badge { 
-            font-size: 0.65rem; 
-            padding: 3px 8px; 
-            border: 1px solid; 
+        h1 { 
+            color: #00ff41; 
+            border-bottom: 2px solid #00ff41; 
+            padding-bottom: 10px; 
             text-transform: uppercase; 
-            letter-spacing: 1px;
+            letter-spacing: 2px; 
+        }
+        h2 { 
+            color: #e5c07b; 
+            border-bottom: 1px solid #333; 
+            padding-bottom: 15px; 
+            margin-top: 40px; 
+            text-transform: uppercase; 
+        }
+        .status-bar { 
+            background: #111; 
+            color: #00ff41; 
+            padding: 10px; 
+            font-size: 0.8rem; 
+            border: 1px solid #333; 
+            margin-bottom: 40px; 
+        }
+        
+        /* Grid für die Beitrags-Auswahl */
+        .module-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+            margin-top: 30px; 
+        }
+        .module-card { 
+            border: 1px solid #333; 
+            padding: 20px; 
+            background: #0a0a0a; 
+            transition: 0.3s; 
+            text-decoration: none; 
+            display: block; 
+        }
+        .module-card:hover { 
+            border-color: #e5c07b; 
+            box-shadow: 0 0 15px rgba(229, 192, 123, 0.15); 
+        }
+        .module-card strong { 
+            color: #e5c07b; 
+            display: block; 
+            margin-bottom: 10px; 
+            font-size: 1.1rem; 
+            text-transform: uppercase;
+        }
+        .module-card p { 
+            color: #888; 
+            font-size: 0.9rem; 
+            margin: 0; 
         }
 
-        .status-ready { color: #00ff41; border-color: #00ff41; }
-        .status-lock { color: #ff3333; border-color: #ff3333; opacity: 0.5; }
-
-        footer { margin-top: 60px; text-align: center; color: #444; font-size: 0.7rem; }
+        .reboot-btn { 
+            display: inline-block; 
+            border: 1px solid #00ff41; 
+            color: #00ff41; 
+            padding: 10px 20px; 
+            text-decoration: none; 
+            transition: 0.3s; 
+            margin-top: 40px; 
+            font-family: 'Courier New', monospace; 
+            text-transform: uppercase;
+        }
+        .reboot-btn:hover { 
+            background: #00ff41; 
+            color: #000; 
+        }
     </style>
 </head>
 <body>
 
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
-        <a href="index.html" class="nav-back">< ZURÜCK ZUR KONSOLE</a>
-        <div style="font-size: 0.7rem; color: #444;">ID: ARCH-99</div>
-    </div>
+    <header>
+        <h1>HAKĪKAT-ARCHIV</h1>
+        <div style="color: #666; font-size: 0.9rem; margin-bottom: 20px;">
+            DEUTSCHE SEKTION // SYSTEM-ARCHITEKT: <span style="color: #e5c07b;">MEHMET ÖRNEK</span>
+        </div>
+        <div class="status-bar">
+            BEREICH: ARCHIV | ZUGRIFF: AUTORISIERT | STATUS: <span style="color: #e5c07b;">ONLINE</span>
+        </div>
+    </header>
 
-    <h1>DATENBANK: SUREN-ANALYSEN</h1>
-    <div class="subtitle">
-        ZUGRIFFS-LEVEL: AUTORISIERT<br>
-        INHALT: RASM-DECODIERUNG & SYSTEM-LOGIK
-    </div>
+    <section>
+        <h2>System-Module (Beiträge)</h2>
+        <p>Wählen Sie ein Datenpaket aus, um die Analyse zu starten:</p>
 
-    <div class="file-grid">
-        
-        <a href="alaq.html" class="file-card">
-            <div class="file-info">
-                <span class="file-id">SEQ_01 // SURA 96</span>
-                <span class="file-name">AL-ALAQ</span>
-                <span class="file-desc">INIT_COMMAND: "Lies". Der Datentransfer beginnt.</span>
-            </div>
-            <span class="status-badge status-ready">[ SYSTEM START ]</span>
+        <div class="module-grid">
+            <a href="fizik.html" class="module-card">
+                <strong>[ MODUL: PHYSIK ]</strong>
+                <p>Analyse der Supraleitung des Bewusstseins und des Ego-Widerstands.</p>
+            </a>
+
+            <a href="kernel.html" class="module-card">
+                <strong>[ MODUL: KERNEL ]</strong>
+                <p>Die Axiome der Existenz. Referenz-Check des Rasm-Konsonantengerüsts.</p>
+            </a>
+
+            <a href="mission.html" class="module-card">
+                <strong>[ MODUL: MISSION ]</strong>
+                <p>System-Manifesto und die Architektur des Operators.</p>
+            </a>
+        </div>
+    </section>
+
+    <footer style="margin-top: 80px; text-align: center; border-top: 1px solid #333; padding-top: 40px;">
+        <a href="index.html" class="reboot-btn">
+            [ ZURÜCK ZUM PORTAL ]
         </a>
-
-        <a href="qalam.html" class="file-card">
-            <div class="file-info">
-                <span class="file-id">SEQ_02 // SURA 68</span>
-                <span class="file-name">AL-QALAM</span>
-                <span class="file-desc">INPUT: "Der Stift". Codierung der gelesenen Daten.</span>
-            </div>
-            <span class="status-badge status-lock">[ LOCKED ]</span>
-        </a>
-
-        <a href="muzzammil.html" class="file-card">
-            <div class="file-info">
-                <span class="file-id">SEQ_03 // SURA 73</span>
-                <span class="file-name">AL-MUZZAMMIL</span>
-                <span class="file-desc">PROCESS: "Der Eingehüllte". Interne System-Ladung (Qiyam).</span>
-            </div>
-            <span class="status-badge status-lock">[ LOCKED ]</span>
-        </a>
-
-        <a href="muddathir.html" class="file-card">
-            <div class="file-info">
-                <span class="file-id">SEQ_04 // SURA 74</span>
-                <span class="file-name">AL-MUDDATHIR</span>
-                <span class="file-desc">EXECUTE: "Der Bedeckte". Aktivierung der Warn-Protokolle.</span>
-            </div>
-            <span class="status-badge status-lock">[ LOCKED ]</span>
-        </a>
-
-        <a href="fatiha.html" class="file-card">
-            <div class="file-info">
-                <span class="file-id">SEQ_05 // SURA 1</span>
-                <span class="file-name">AL-FATIHA</span>
-                <span class="file-desc">ACCESS: "Die Öffnung". Verbindung zum Administrator (Rabb).</span>
-            </div>
-            <span class="status-badge status-ready">[ ONLINE ]</span>
-        </a>
-
-        <a href="masad.html" class="file-card">
-            <div class="file-info">
-                <span class="file-id">SEQ_06 // SURA 111</span>
-                <span class="file-name">AL-MASAD</span>
-                <span class="file-desc">ERROR_LOG: "Faser". Identifikation korrupter Daten (Virus).</span>
-            </div>
-            <span class="status-badge status-lock">[ LOCKED ]</span>
-        </a>
-
-        <a href="takwir.html" class="file-card">
-            <div class="file-info">
-                <span class="file-id">SEQ_07 // SURA 81</span>
-                <span class="file-name">AT-TAKWIR</span>
-                <span class="file-desc">ZIP_ALGO: "Das Einhüllen". Komprimierung der Simulation.</span>
-            </div>
-            <span class="status-badge status-lock">[ LOCKED ]</span>
-        </a>
-
-    </div>
-
-    <footer>
-        HAKĪKAT-ARCHIV SYSTEM v2.0<br>
-        Keine externen Zugriffe erlaubt.
     </footer>
 
 </body>
