@@ -3,147 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAKĪKAT-KONSOLU | ARŞİV</title>
+    <title>HAKĪKAT-KONSOLU | KÜTÜPHANE</title>
     <style>
-        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
-        h1 { color: #00ff41; border-bottom: 2px solid #00ff41; padding-bottom: 10px; text-transform: uppercase; }
-        .sub-header { color: #008f11; margin-bottom: 30px; font-size: 0.9em; }
-        
-        .archive-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 30px;
-        }
-
-        .archive-item {
-            background-color: #1a1a1a;
-            border: 1px solid #333;
-            margin-bottom: 10px;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: 0.3s;
-        }
-
-        .archive-item:hover {
-            border-color: #00ff41;
-            box-shadow: 0 0 10px rgba(0, 255, 65, 0.1);
-        }
-
-        .seq-info {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .seq-id { color: #00ff41; font-weight: bold; font-size: 0.8em; }
-        .seq-title { color: #fff; font-size: 1.1em; margin-top: 5px; }
-        
-        .status-tag {
-            font-size: 0.75em;
-            padding: 3px 8px;
-            border-radius: 3px;
-            text-transform: uppercase;
-        }
-        
-        .status-decoded { background-color: rgba(0, 255, 65, 0.2); color: #00ff41; border: 1px solid #00ff41; }
-
-        .btn-open {
-            color: #00ff41;
-            text-decoration: none;
-            border: 1px solid #00ff41;
-            padding: 5px 15px;
-            font-size: 0.8em;
-            transition: 0.3s;
-        }
-
-        .btn-open:hover {
-            background-color: #00ff41;
-            color: #000;
-        }
-
-        .back-link { display: inline-block; margin-bottom: 20px; color: #555; text-decoration: none; }
-        .back-link:hover { color: #00ff41; }
+        body { background-color: #0d0d0d; color: #00ff41; font-family: 'Courier New', monospace; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; }
+        .portal-box { border: 2px solid #00ff41; padding: 40px; text-align: center; box-shadow: 0 0 20px rgba(0, 255, 65, 0.2); background: black; max-width: 600px; width: 100%; }
+        h1 { font-size: 1.2em; margin-bottom: 30px; letter-spacing: 2px; border-bottom: 1px solid #00ff41; padding-bottom: 10px; }
+        .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .btn { display: block; padding: 15px; border: 1px solid #00ff41; color: #00ff41; text-decoration: none; font-weight: bold; transition: 0.3s; text-transform: uppercase; text-align: center; font-size: 0.8em; }
+        .btn:hover { background-color: #00ff41; color: #000; }
+        .full-width { grid-column: span 2; }
     </style>
 </head>
 <body>
-
-    <a href="index-tr.html" class="back-link">&larr; ANA TERMİNAL</a>
-
-    <h1>VERİ ARŞİVİ // KÜTÜPHANE</h1>
-    <div class="sub-header">
-        ERİŞİM DÜZEYİ: OPERATÖR<br>
-        DEPOLANAN SEKANS: 07
+    <div class="portal-box">
+        <h1>SİSTEM_KÜTÜPHANESİ</h1>
+        <div class="btn-grid">
+            <a href="alak-tr.html" class="btn">SEK_01: ALAK</a>
+            <a href="kalem-tr.html" class="btn">SEK_02: KALEM</a>
+            <a href="muzzemil-tr.html" class="btn">SEK_03: MÜZZEMMİL</a>
+            <a href="muddesir-tr.html" class="btn">SEK_04: MÜDDESSİR</a>
+            <a href="fatiha-tr.html" class="btn">SEK_05: FATİHA</a>
+            <a href="tebbet-tr.html" class="btn">SEK_06: TEBBET</a>
+            <a href="tekvir-tr.html" class="btn full-width">SEK_07: TEKVİR</a>
+            <a href="kernel-tr.html" class="btn full-width" style="margin-top: 10px; border-color: #fff; color: #fff;">[ KERNEL_TR ]</a>
+        </div>
+        <a href="index.html" class="btn full-width" style="margin-top: 30px; border-style: dashed;">[ ANA PORTAL ]</a>
     </div>
-
-    <ul class="archive-list">
-        <li class="archive-item">
-            <div class="seq-info">
-                <span class="seq-id">SEKANS_01</span>
-                <span class="seq-title">EL-ALAK (İLK TEMAS)</span>
-            </div>
-            <span class="status-tag status-decoded">DEKODE EDİLDİ</span>
-            <a href="alak-tr.html" class="btn-open">AÇ</a>
-        </li>
-
-        <li class="archive-item">
-            <div class="seq-info">
-                <span class="seq-id">SEKANS_02</span>
-                <span class="seq-title">EL-KALEM (LOG YAZIMI)</span>
-            </div>
-            <span class="status-tag status-decoded">DEKODE EDİLDİ</span>
-            <a href="kalem-tr.html" class="btn-open">AÇ</a>
-        </li>
-
-        <li class="archive-item">
-            <div class="seq-info">
-                <span class="seq-id">SEKANS_03</span>
-                <span class="seq-title">EL-MÜZZEMMİL (GÜÇ TASARRUFU)</span>
-            </div>
-            <span class="status-tag status-decoded">DEKODE EDİLDİ</span>
-            <a href="muzzemil-tr.html" class="btn-open">AÇ</a>
-        </li>
-
-        <li class="archive-item">
-            <div class="seq-info">
-                <span class="seq-id">SEKANS_04</span>
-                <span class="seq-title">EL-MÜDDESSİR (SİSTEM UYANDIRMA)</span>
-            </div>
-            <span class="status-tag status-decoded">DEKODE EDİLDİ</span>
-            <a href="muddesir-tr.html" class="btn-open">AÇ</a>
-        </li>
-
-        <li class="archive-item">
-            <div class="seq-info">
-                <span class="seq-id">SEKANS_05</span>
-                <span class="seq-title">EL-FATİHA (EL SIKIŞMASI)</span>
-            </div>
-            <span class="status-tag status-decoded">DEKODE EDİLDİ</span>
-            <a href="fatiha-tr.html" class="btn-open">AÇ</a>
-        </li>
-
-        <li class="archive-item">
-            <div class="seq-info">
-                <span class="seq-id">SEKANS_06</span>
-                <span class="seq-title">EL-MESED (SİSTEM ÇÖKMESİ)</span>
-            </div>
-            <span class="status-tag status-decoded">DEKODE EDİLDİ</span>
-            <a href="tebbet-tr.html" class="btn-open">AÇ</a>
-        </li>
-
-        <li class="archive-item">
-            <div class="seq-info">
-                <span class="seq-id">SEKANS_07</span>
-                <span class="seq-title">ET-TEKVİR (KAPATMA PROTOKOLÜ)</span>
-            </div>
-            <span class="status-tag status-decoded">DEKODE EDİLDİ</span>
-            <a href="tekvir-tr.html" class="btn-open">AÇ</a>
-        </li>
-    </ul>
-
-    <div style="margin-top: 50px; text-align: center; color: #333; font-size: 0.7em;">
-        HAKĪKAT-KONSOLU © 2024 // TÜM VERİLER ŞİFRELENDİ
-    </div>
-
 </body>
 </html>
