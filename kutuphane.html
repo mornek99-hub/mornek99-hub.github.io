@@ -3,35 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAKĪKAT-KONSOLU | KÜTÜPHANE</title>
+    <title>HAKĪKAT-KÜTÜPHANESİ | TÜRKÇE</title>
     <style>
-        body { background-color: #0d0d0d; color: #00ff41; font-family: 'Courier New', monospace; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; }
-        .portal-box { border: 2px solid #00ff41; padding: 40px; text-align: center; box-shadow: 0 0 20px rgba(0, 255, 65, 0.2); background: black; max-width: 600px; width: 100%; }
-        h1 { font-size: 1.2em; margin-bottom: 30px; letter-spacing: 2px; border-bottom: 1px solid #00ff41; padding-bottom: 10px; }
-        .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .btn { display: block; padding: 15px; border: 1px solid #00ff41; color: #00ff41; text-decoration: none; font-weight: bold; transition: 0.3s; text-transform: uppercase; text-align: center; font-size: 0.8em; }
-        .btn:hover { background-color: #00ff41; color: #000; }
-        .full-width { grid-column: span 2; }
+        /* Matrix-Green Design für die türkische Seite */
+        body { background-color: #050505; color: #00ff41; font-family: 'Courier New', Courier, monospace; line-height: 1.6; margin: 0; padding: 20px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        
+        h1 { color: #00ff41; border-bottom: 2px solid #00ff41; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: #fff; border-bottom: 1px solid #333; padding-bottom: 15px; margin-top: 40px; text-transform: uppercase; }
+        
+        .status-bar { background: #000; color: #00ff41; padding: 10px; font-size: 0.8rem; border: 1px solid #00ff41; margin-bottom: 40px; }
+        
+        .module-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 20px; }
+        
+        .module-card { border: 1px solid #333; padding: 15px; background: #0a0a0a; transition: 0.3s; text-decoration: none; display: block; }
+        .module-card:hover { border-color: #00ff41; box-shadow: 0 0 10px rgba(0, 255, 65, 0.2); background: #000; }
+        
+        .module-card strong { color: #00ff41; display: block; margin-bottom: 5px; font-size: 1rem; }
+        .module-card p { color: #888; font-size: 0.85rem; margin: 0; }
+        
+        .reboot-btn { display: inline-block; border: 1px solid #00ff41; color: #00ff41; padding: 10px 20px; text-decoration: none; transition: 0.3s; margin-top: 40px; text-transform: uppercase; }
+        .reboot-btn:hover { background: #00ff41; color: #000; }
     </style>
 </head>
 <body>
-    <div class="portal-box">
-        <h1>SİSTEM_KÜTÜPHANESİ</h1>
-        <div class="btn-grid">
-            <a href="alak-tr.html" class="btn">SEK_01: ALAK</a>
-            <a href="kalem-tr.html" class="btn">SEK_02: KALEM</a>
-            <a href="muzzemil-tr.html" class="btn">SEK_03: MÜZZEMMİL</a>
-            <a href="muddesir-tr.html" class="btn">SEK_04: MÜDDESSİR</a>
-            <a href="fatiha-tr.html" class="btn">SEK_05: FATİHA</a>
-            <a href="tebbet-tr.html" class="btn">SEK_06: TEBBET</a>
-            <a href="tekvir-tr.html" class="btn full-width">SEK_07: TEKVİR</a>
-            
-            <a href="kernel-tr.html" class="btn full-width" style="margin-top: 10px; border-color: #fff; color: #fff;">[ KERNEL_TR: VARLIĞIN AKSİYOMLARI ]</a>
-            
-            <a href="fizik-tr.html" class="btn full-width" style="margin-top: 5px; border-color: #e5c07b; color: #e5c07b;">[ FİZİK_TR: RUHUN FİZİĞİ ]</a>
+
+    <header>
+        <h1>HAKĪKAT-KÜTÜPHANESİ</h1>
+        <div style="color: #666; font-size: 0.9rem; margin-bottom: 20px;">SİSTEM-MİMARI: MEHMET ÖRNEK</div>
+        <div class="status-bar">BÖLGE: TÜRKİYE | DURUM: <span style="color: #fff;">AKTİF</span></div>
+    </header>
+
+    <section>
+        <h2>Süre Sekansları (Sıralı)</h2>
+        <div class="module-grid">
+            <a href="alak-tr.html" class="module-card"><strong>[ SEKANS_01: ALAK ]</strong><p>Oku emri ve Sistem Başlangıcı.</p></a>
+            <a href="kalem-tr.html" class="module-card"><strong>[ SEKANS_02: KALEM ]</strong><p>Gerçekliğin Kodlanması (Nun).</p></a>
+            <a href="muzzemil-tr.html" class="module-card"><strong>[ SEKANS_03: MÜZZEMMİL ]</strong><p>Gece Modu ve İşlemci Soğutma.</p></a>
+            <a href="muddesir-tr.html" class="module-card"><strong>[ SEKANS_04: MÜDDESSİR ]</strong><p>Uyarı Sistemi Protokolü.</p></a>
+            <a href="fatiha-tr.html" class="module-card"><strong>[ SEKANS_05: FATİHA ]</strong><p>Ana Bağlantı Protokolü.</p></a>
+            <a href="tebbet-tr.html" class="module-card"><strong>[ SEKANS_06: TEBBET ]</strong><p>Ego Sisteminin Hata Analizi.</p></a>
+            <a href="tekvir-tr.html" class="module-card"><strong>[ SEKANS_07: TEKVİR ]</strong><p>Sistem Kapanışı ve Sıkıştırma.</p></a>
         </div>
-        
-        <a href="index.html" class="btn full-width" style="margin-top: 30px; border-style: dashed;">[ ANA PORTAL ]</a>
-    </div>
+
+        <h2>Temel Modüller</h2>
+        <div class="module-grid">
+            <a href="fizik-tr.html" class="module-card" style="border-color: #00ff41;">
+                <strong style="color: #00ff41;">[ MODÜL: FİZİK ]</strong>
+                <p>Bilincin Süperiletkenlik Analizi.</p>
+            </a>
+            <a href="kernel-tr.html" class="module-card" style="border-color: #00ff41;">
+                <strong style="color: #00ff41;">[ MODÜL: ÇEKİRDEK ]</strong>
+                <p>Varoluş Aksiyomları (Rasm-Kernel).</p>
+            </a>
+            
+            <a href="transzendenz-tr.html" class="module-card" style="border: 1px dashed #00ff41;">
+                <strong style="color: #fff;">[ PROTOKOL: AŞKINLIK ]</strong>
+                <p>Ego direncinden Süperiletkenliğe (Beka Modu).</p>
+            </a>
+        </div>
+    </section>
+
+    <footer style="margin-top: 60px; text-align: center; border-top: 1px solid #333; padding-top: 40px;">
+        <a href="index.html" class="reboot-btn">[ PORTALA DÖN ]</a>
+    </footer>
+
 </body>
 </html>
