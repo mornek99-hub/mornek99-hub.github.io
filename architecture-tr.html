@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAKĪKAT-KALESİ | SİSTEM MİMARİSİ</title>
+    <style>
+        /* CORE SYSTEM STYLES */
+        body { 
+            background-color: #050505; 
+            color: #c0c0c0; 
+            font-family: 'Courier New', monospace; 
+            padding: 20px; 
+            line-height: 1.4; 
+        }
+
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            border: 1px solid #333; 
+            padding: 20px; 
+            background: #0a0a0a; 
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.05); 
+        }
+
+        /* HEADER SECTION */
+        h1 { 
+            color: #00ff41; 
+            text-transform: uppercase; 
+            border-bottom: 2px solid #333; 
+            padding-bottom: 10px; 
+            letter-spacing: 2px; 
+            margin-bottom: 5px;
+        }
+        
+        .subtitle {
+            color: #d4af37;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* NAVIGATION BUTTON */
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.8rem;
+            border: 1px solid #333;
+            padding: 5px 10px;
+            transition: 0.3s;
+        }
+        .back-btn:hover { color: #00ff41; border-color: #00ff41; }
+
+        /* THE SYSTEM REGISTRY TABLE */
+        .registry-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-top: 20px;
+        }
+
+        .registry-table th {
+            text-align: left;
+            padding: 12px;
+            background-color: #111;
+            color: #d4af37; /* Goldene Header */
+            border-bottom: 2px solid #00ff41;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .registry-table td {
+            padding: 10px;
+            border-bottom: 1px solid #222;
+            vertical-align: top;
+        }
+
+        /* ZEILEN-HOVER EFFEKT (SCANNER) */
+        .registry-table tr:hover {
+            background-color: #0f1a0f;
+            color: #fff;
+        }
+
+        /* SPALTEN SPEZIFIKA */
+        .col-seq { color: #666; width: 50px; }
+        .col-sure { color: #fff; font-weight: bold; width: 180px; }
+        .col-header { color: #00ff41; font-weight: bold; width: 150px; letter-spacing: 1px; }
+        .col-decode { color: #d4af37; font-weight: bold; width: 200px; }
+        .col-logic { color: #aaa; font-style: italic; }
+
+        /* MOBILE OPTIMIERUNG */
+        @media (max-width: 768px) {
+            .registry-table, .registry-table tbody, .registry-table tr, .registry-table td, .registry-table th {
+                display: block; 
+            }
+            .registry-table thead { display: none; }
+            .registry-table tr { 
+                margin-bottom: 20px; 
+                border: 1px solid #333; 
+                padding: 10px; 
+                background: #080808;
+            }
+            .registry-table td { 
+                padding: 5px 0; 
+                border: none; 
+            }
+            .col-seq::before { content: "SIRA: "; color: #666; }
+            .col-header::before { content: "KOD: "; color: #666; }
+            .col-decode::before { content: "KOMUT: "; color: #666; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">< ANA ÜSSE DÖN</a>
+
+        <h1>SİSTEM MİMARİSİ</h1>
+        <div class="subtitle">>> Modül: MUKATTAA_KAYITLARI // Çekirdek: RASM-V52.0</div>
+
+        <div style="border-left: 3px solid #00ff41; padding-left: 15px; margin-bottom: 30px; color: #888; font-size: 0.9rem;">
+            <strong style="color: #fff;">SİSTEM MANTIĞI:</strong><br>
+            Bu tablo, 29 "Başlangıç İmzasını" (Mukattaa) kronolojik Önyükleme Sırasına (Nüzul) göre deşifre eder.<br>
+            Her başlık, takip eden veri paketini (Sure) tanımlayan atomik bir sistem komutudur.
+        </div>
+
+        <table class="registry-table">
+            <thead>
+                <tr>
+                    <th class="col-seq">SIRA</th>
+                    <th class="col-sure">VERİ PAKETİ (SURE)</th>
+                    <th class="col-header">BAŞLIK KODU</th>
+                    <th class="col-decode">SİSTEM KOMUTU</th>
+                    <th class="col-logic">MANTIK & İŞLEV</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-seq">02</td>
+                    <td class="col-sure">Al-Qalam (68)</td>
+                    <td class="col-header">N</td>
+                    <td class="col-decode">POTENTIAL_INIT</td>
+                    <td class="col-logic">'Batarya' (Nun/Hokka). Kodlamadan önce enerjinin depolanması.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">34</td>
+                    <td class="col-sure">Qaf (50)</td>
+                    <td class="col-header">Q</td>
+                    <td class="col-decode">ROOT_ACCESS</td>
+                    <td class="col-logic">Kaynak koduna (Qudrah) doğrudan erişim. Maksimum yetki.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">38</td>
+                    <td class="col-sure">Sad (38)</td>
+                    <td class="col-header">S</td>
+                    <td class="col-decode">SOLID_TRUTH</td>
+                    <td class="col-logic">Sarsılmaz Hakikat (Sidq) ile doğrulama. Validasyon.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">39</td>
+                    <td class="col-sure">Al-A'raf (7)</td>
+                    <td class="col-header">A-L-M-S</td>
+                    <td class="col-decode">FULL_STACK_VALID</td>
+                    <td class="col-logic">Kaynak (A) > Bağlantı (L) > Madde (M) > Hakikat (S) ile doğrulandı.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">41</td>
+                    <td class="col-sure">Yasin (36)</td>
+                    <td class="col-header">Y-S</td>
+                    <td class="col-decode">USER_INTERRUPT</td>
+                    <td class="col-logic">Gizli insan bilincine (S) Ping (Y) atılması. Egonun atlanması.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">44</td>
+                    <td class="col-sure">Maryam (19)</td>
+                    <td class="col-header">K-H-Y-E-S</td>
+                    <td class="col-decode">EXECUTION_STRING</td>
+                    <td class="col-logic">Komut (K) > Rehberlik (H) > Ping (Y) > Vizyon (E) > Hakikat (S). Karmaşık bir 'Rahmet' derleniyor.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">45</td>
+                    <td class="col-sure">Taha (20)</td>
+                    <td class="col-header">T-H</td>
+                    <td class="col-decode">CALIBRATION</td>
+                    <td class="col-logic">Topraklan (T) ve Rehberliği al (H). Musa verileri için stabilizasyon.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">47</td>
+                    <td class="col-sure">Ash-Shu'ara (26)</td>
+                    <td class="col-header">T-S-M</td>
+                    <td class="col-decode">HIST_MANIFEST</td>
+                    <td class="col-logic">Sağlamlık (T) > Öz (S) > Tarihsel yapıya (M) dönüşüyor.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">48</td>
+                    <td class="col-sure">An-Naml (27)</td>
+                    <td class="col-header">T-S</td>
+                    <td class="col-decode">SOLID_CORE</td>
+                    <td class="col-logic">Katı gerçeklik (T) ile saf bilincin (S) bağlantısı.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">49</td>
+                    <td class="col-sure">Al-Qasas (28)</td>
+                    <td class="col-header">T-S-M</td>
+                    <td class="col-decode">HIST_MANIFEST_II</td>
+                    <td class="col-logic">Desen tekrarı: Bilincin maddeleşerek tarihe dönüşmesi.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">51</td>
+                    <td class="col-sure">Yunus (10)</td>
+                    <td class="col-header">A-L-R</td>
+                    <td class="col-decode">VISUAL_STREAM</td>
+                    <td class="col-logic">Kaynak (A) > Bağlantı (L) > Görünür olur/Yansıtılır (R).</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">52</td>
+                    <td class="col-sure">Hud (11)</td>
+                    <td class="col-header">A-L-R</td>
+                    <td class="col-decode">VISUAL_STREAM</td>
+                    <td class="col-logic">Eski medeniyetlerin görselleştirilmesi için veri akışı.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">53</td>
+                    <td class="col-sure">Yusuf (12)</td>
+                    <td class="col-header">A-L-R</td>
+                    <td class="col-decode">DREAM_PROJECTION</td>
+                    <td class="col-logic">Kaynak (A) > Bağlantı (L) > Rüya/Vizyon (R). Kıssaların en güzeli.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">54</td>
+                    <td class="col-sure">Al-Hijr (15)</td>
+                    <td class="col-header">A-L-R</td>
+                    <td class="col-decode">PROTECTED_STREAM</td>
+                    <td class="col-logic">Kaosa karşı ilahi düzenin projeksiyonu (R).</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">57</td>
+                    <td class="col-sure">Luqman (31)</td>
+                    <td class="col-header">A-L-M</td>
+                    <td class="col-decode">STD_DOWNLOAD</td>
+                    <td class="col-logic">Kaynak > Bağlantı > Madde (Hikmet). Temel mimari.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">60</td>
+                    <td class="col-sure">Ghafir (40)</td>
+                    <td class="col-header">H-M</td>
+                    <td class="col-decode">LIVING_STRUCT_I</td>
+                    <td class="col-logic">Canlı enerji (H) Kanun (M) olur. 7 Arşiv (Ha-Mim) serisinin başlangıcı.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">61</td>
+                    <td class="col-sure">Fussilat (41)</td>
+                    <td class="col-header">H-M</td>
+                    <td class="col-decode">LIVING_STRUCT_II</td>
+                    <td class="col-logic">Sistem kanunlarının detaylandırılması.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">62</td>
+                    <td class="col-sure">Ash-Shura (42)</td>
+                    <td class="col-header">H-M E-S-Q</td>
+                    <td class="col-decode">MULTI_LAYER_ACC</td>
+                    <td class="col-logic">Yapı (HM) ile Vizyon (E), Öz (S) ve Kod (Q) buluşuyor. En derin erişim.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">63</td>
+                    <td class="col-sure">Az-Zukhruf (43)</td>
+                    <td class="col-header">H-M</td>
+                    <td class="col-decode">LIVING_STRUCT_IV</td>
+                    <td class="col-logic">Yapı içindeki Altın Kod (Zuhruf).</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">64</td>
+                    <td class="col-sure">Ad-Dukhan (44)</td>
+                    <td class="col-header">H-M</td>
+                    <td class="col-decode">LIVING_STRUCT_V</td>
+                    <td class="col-logic">Yapı içindeki sistem hatası (Duman) uyarısı.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">65</td>
+                    <td class="col-sure">Al-Jathiya (45)</td>
+                    <td class="col-header">H-M</td>
+                    <td class="col-decode">LIVING_STRUCT_VI</td>
+                    <td class="col-logic">Diz Çökmüş Yapı. Kanun karşısında tevazu.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">66</td>
+                    <td class="col-sure">Al-Ahqaf (46)</td>
+                    <td class="col-header">H-M</td>
+                    <td class="col-decode">LIVING_STRUCT_VII</td>
+                    <td class="col-logic">Ha-Mim serisinin sonu. Gerçeklik Kontrolü.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">72</td>
+                    <td class="col-sure">Ibrahim (14)</td>
+                    <td class="col-header">A-L-R</td>
+                    <td class="col-decode">LIGHT_PROJECT</td>
+                    <td class="col-logic">Karanlıklardan aydınlığa çıkış (Projeksiyon R).</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">84</td>
+                    <td class="col-sure">Ar-Rum (30)</td>
+                    <td class="col-header">A-L-M</td>
+                    <td class="col-decode">GEOPOL_MANIFEST</td>
+                    <td class="col-logic">Kaynak > Bağlantı > Madde. Fiziksel dünyaya müdahale (Zafer).</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">85</td>
+                    <td class="col-sure">Al-Ankabut (29)</td>
+                    <td class="col-header">A-L-M</td>
+                    <td class="col-decode">TEST_PROTOCOL</td>
+                    <td class="col-logic">İnancın testler yoluyla tezahürü (M).</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">87</td>
+                    <td class="col-sure">Al-Baqarah (2)</td>
+                    <td class="col-header">A-L-M</td>
+                    <td class="col-decode">MASTER_BOOT_REC</td>
+                    <td class="col-logic">Tam indirme (Download). Sistem El Kitabı. Kendisinde şüphe olmayan Kitap.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">89</td>
+                    <td class="col-sure">Al-Imran (3)</td>
+                    <td class="col-header">A-L-M</td>
+                    <td class="col-decode">SYSTEM_MAINT</td>
+                    <td class="col-logic">İndirmenin onayı. Maddede ayırt etme (Furkan).</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">96</td>
+                    <td class="col-sure">Ar-Ra'd (13)</td>
+                    <td class="col-header">A-L-M-R</td>
+                    <td class="col-decode">TOTAL_SYNTHESIS</td>
+                    <td class="col-logic">Yapı (M) ve Vizyonun (R) sentezi. Topyekün idrak.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 40px; text-align: center; font-size: 0.8rem; color: #444;">
+            /// END OF REGISTRY /// RASM-KERNEL V52.0 ///
+        </div>
+    </div>
+
+</body>
+</html>
