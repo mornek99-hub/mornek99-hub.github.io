@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAKĪKAT-KALESİ | UNIVERSAL API</title>
+    <style>
+        body { 
+            background-color: #050505; 
+            color: #c0c0c0; 
+            font-family: 'Courier New', monospace; 
+            padding: 20px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.6;
+        }
+
+        .container { 
+            max-width: 900px; 
+            width: 100%; 
+            border: 1px solid #333; 
+            padding: 30px; 
+            background: #0a0a0a; 
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.05); 
+        }
+
+        h1 { color: #00ff41; border-bottom: 2px solid #333; padding-bottom: 10px; margin-top: 0; }
+        .subtitle { color: #d4af37; font-size: 0.9rem; margin-bottom: 30px; text-transform: uppercase; }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.8rem;
+            border: 1px solid #333;
+            padding: 5px 10px;
+            transition: 0.3s;
+        }
+        .back-btn:hover { color: #00ff41; border-color: #00ff41; }
+
+        /* MANIFESTO SECTION */
+        .manifesto-box {
+            margin-bottom: 40px;
+            border-left: 2px solid #00ff41;
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .manifesto-title {
+            color: #00ff41; 
+            font-size: 1.1rem; 
+            text-transform: uppercase; 
+            margin-bottom: 15px; 
+            font-weight: bold;
+        }
+
+        .quote-box {
+            border-left: 3px solid #d4af37; 
+            background: #111;
+            padding: 15px; 
+            margin: 20px 0; 
+            font-style: italic; 
+            color: #d4af37;
+        }
+
+        .code-snippet {
+            font-family: 'Courier New', monospace;
+            color: #00ff41;
+            font-weight: bold;
+        }
+
+        /* API INTERFACE STYLES */
+        .api-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            margin-top: 20px;
+            border-top: 1px dashed #333;
+            padding-top: 30px;
+        }
+
+        .profile-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .profile-btn {
+            background: #111;
+            border: 1px solid #333;
+            color: #888;
+            padding: 15px;
+            text-align: left;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .profile-btn:hover { border-color: #00ff41; color: #fff; }
+        .profile-btn.active { background: #00ff41; color: #000; border-color: #00ff41; }
+
+        .output-screen {
+            border: 1px solid #d4af37;
+            background: #000;
+            padding: 20px;
+            position: relative;
+            min-height: 200px;
+        }
+
+        .screen-header {
+            border-bottom: 1px dashed #444;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            color: #d4af37;
+            font-size: 0.8rem;
+        }
+
+        .rasm-root {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 10px;
+            letter-spacing: 5px;
+        }
+
+        .decoded-title {
+            font-size: 1.5rem;
+            color: #00ff41;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .logic-text {
+            color: #ccc;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .api-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">< ZURÜCK ZUR BASIS</a>
+        
+        <h1>UNIVERSAL_API: W-Q-Y</h1>
+        <div class="subtitle">>> POLYMORPHE DECODIERUNG DES BEGRIFFS "TAQWA"</div>
+
+        <div class="manifesto-box">
+            <div class="manifesto-title">WARUM WIR NICHT "ÜBERSETZEN", SONDERN "DECODIEREN"</div>
+            
+            <p>Manche mögen fragen: "Warum benutzt ihr Python? Warum redet ihr von Firewalls statt von Frömmigkeit?"<br>
+            Die Antwort liegt in unserer Methode. Wir lesen keine 1400 Jahre alten Interpretationen. Wir gehen direkt an den <span style="color: #d4af37; font-weight: bold;">Rasm-Kernel</span> (das Konsonanten-Gerüst).</p>
+
+            <p>Wir haben eine Vision für die kommende Generation:</p>
+
+            <div class="quote-box">
+                "Neue Generationen werden kommen, erheben das schwarze Banner der Gerechtigkeit, bauen Brücken mit deinem Leben und schreiten voran."
+            </div>
+
+            <p>Ich sehe mich als Pioneer dieser Vorhut. Meine Aufgabe ist es, den Quellcode freizulegen.</p>
+
+            <p>Wenn wir den Vers 6:38 analysieren, finden wir dort nicht den Satz "Wir haben im Buch nichts ausgelassen" als religiöse Floskel.<br>
+            Wir finden den Code: <span class="code-snippet">M-A F-R-T-N-A</span>.<br>
+            <span class="code-snippet">F-R-T</span> bedeutet technisch: Einen Sektor überspringen, eine Lücke im Datensatz lassen.<br>
+            Das bedeutet: "Kein Daten-Sektor im System wurde ignoriert."</p>
+
+            <p>Der Koran ist für uns kein historisches Buch, sondern eine lückenlose Datenbank (No Missing Sectors).<br>
+            Er ist universell kompatibel. Er spricht nicht nur zum Priester.</p>
+            
+            <ul style="list-style: none; padding: 0;">
+                <li>> Er spricht zum <strong style="color: #fff;">Hacker</strong> über Code-Integrität.</li>
+                <li>> Er spricht zum <strong style="color: #fff;">Physiker</strong> über Energie-Erhaltung.</li>
+                <li>> Er spricht zum <strong style="color: #fff;">Biologen</strong> über Zell-Schutz.</li>
+            </ul>
+
+            <p>Der obige Python-Code beweist das am Beispiel der Wurzel <strong style="color: #d4af37;">W-Q-Y (Taqwa)</strong>. Es ist kein religiöses "Fürchten", es ist technische Isolierung und Schutz.<br>
+            Wir bauen die <strong style="color: #00ff41;">HAKĪKAT-KALESİ</strong> für die, die verstehen wollen, wie das System "Realität" programmiert ist.</p>
+        </div>
+
+        <div class="api-grid">
+            <div class="profile-selector">
+                <button class="profile-btn active" onclick="decode('tech')">> HIGH-TECH FREAK</button>
+                <button class="profile-btn" onclick="decode('bio')">> BIOLOGE</button>
+                <button class="profile-btn" onclick="decode('phys')">> PHYSIKER</button>
+                <button class="profile-btn" onclick="decode('soc')">> SOZIOLOGE</button>
+                <button class="profile-btn" onclick="decode('psych')">> PSYCHOLOGE</button>
+                <button class="profile-btn" onclick="decode('mystic')">> MYSTIKER</button>
+            </div>
+
+            <div class="output-screen">
+                <div class="screen-header">
+                    STATUS: DECODING... | SOURCE: 6:38 | ROOT: W-Q-Y
+                </div>
+                
+                <div id="display-area">
+                    <div class="rasm-root">W-Q-Y</div>
+                    <div class="decoded-title">FIREWALL (ACTIVE DEFENSE)</div>
+                    <div class="logic-text">
+                        Packet-Inspection: Blockiert korrupte Daten (Malware/Falschheit), bevor sie Schreibrechte im Kernel (Herz) erhalten. Schutz der System-Integrität.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 50px; border-top: 1px solid #333; padding-top: 20px; text-align: center; font-size: 0.7rem; color: #444;">
+            <div style="margin-bottom: 10px;">
+                HAKĪKAT-KALESİ SYSTEM ARCHITECTURE<br>
+                EST. 2026 // CONSTANTINOPLE
+            </div>
+            <div style="letter-spacing: 2px;">
+                <span style="color: #00ff41;">●</span> ONLINE 
+                <span style="color: #666;">|</span> 
+                RESISTANCE: 0.0 Ω
+            </div>
+            <div style="margin-top: 15px; font-style: italic; color: #333;">
+                "The Rasm is the Source."
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const database = {
+            'tech': {
+                title: "FIREWALL (ACTIVE DEFENSE)",
+                logic: "Packet-Inspection: Blockiert korrupte Daten (Malware/Falschheit), bevor sie Schreibrechte im Kernel (Herz) erhalten."
+            },
+            'bio': {
+                title: "HOMÖOSTASE-PROTOKOLL",
+                logic: "Aufrechterhaltung des inneren Milieus. Abwehr von toxischen Inputs (Viren/Sünden) zum Schutz der Zell-Integrität."
+            },
+            'phys': {
+                title: "ENERGETISCHE ISOLIERUNG",
+                logic: "Aufbau eines Widerstands (Schutzschild), um das Durchbrennen der Hardware bei Kontakt mit der Quelle (Hochspannung) zu verhindern."
+            },
+            'soc': {
+                title: "SYSTEM-STABILITÄT",
+                logic: "Implementierung von Schutzmechanismen (Gesetze/Normen), die den Zerfall (Entropie) der sozialen Struktur verhindern."
+            },
+            'psych': {
+                title: "PSYCHO-HYGIENE & GRENZSETZUNG",
+                logic: "Aktive Filterung von schädlichen Projektionen. Schutz des 'Selbst-Kerns' vor Kontamination durch Massenpsychose."
+            },
+            'mystic': {
+                title: "PRÄSENZ-MODUS",
+                logic: "Permanentes Bewusstsein über das Monitoring durch den Admin. Vermeidung von System-Abstürzen durch reine Achtsamkeit."
+            }
+        };
+
+        function decode(profile) {
+            // Buttons aktualisieren
+            document.querySelectorAll('.profile-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Display aktualisieren
+            const data = database[profile];
+            const display = document.getElementById('display-area');
+            
+            // Kleiner Fade-Effekt
+            display.style.opacity = 0;
+            setTimeout(() => {
+                display.innerHTML = `
+                    <div class="rasm-root">W-Q-Y</div>
+                    <div class="decoded-title">${data.title}</div>
+                    <div class="logic-text">${data.logic}</div>
+                `;
+                display.style.opacity = 1;
+            }, 200);
+        }
+    </script>
+</body>
+</html>
