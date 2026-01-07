@@ -3,103 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAKĪKAT-KALESİ | STARTSEITE</title>
+    <title>HAKĪKAT-KALESİ | SYSTEM CORE</title>
     <style>
         /* CORE STYLES */
         body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; display: flex; flex-direction: column; align-items: center; }
         .container { max-width: 800px; width: 100%; border: 1px solid #333; padding: 30px; background: #0a0a0a; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
         
         /* HEADER STYLES */
-        h1.de { color: #d4af37; text-transform: uppercase; border-bottom: 1px solid #333; padding-bottom: 10px; letter-spacing: 2px; text-align: left; margin-top: 0; }
-        h1.tr { color: #d4af37; text-transform: uppercase; border-bottom: 1px solid #333; padding-bottom: 10px; letter-spacing: 2px; text-align: right; margin-top: 40px; }
-        .tr-text { text-align: right; color: #a0a0a0; }
-
+        h1.alert { color: #ff3333; text-transform: uppercase; border-bottom: 1px solid #333; padding-bottom: 10px; letter-spacing: 2px; text-align: left; margin-top: 0; font-size: 1.4rem; }
+        
         .meta { color: #00ff41; font-size: 0.8rem; margin-bottom: 20px; font-weight: bold; display: flex; justify-content: space-between; }
         
+        /* FORMULA DISPLAY */
+        .formula-box {
+            border: 2px solid #d4af37;
+            background: #111;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+        .formula-text {
+            color: #d4af37;
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px #d4af37;
+        }
+        .formula-desc {
+            color: #888;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* TEXT BLOCKS */
+        .content-block { margin-bottom: 20px; text-align: justify; }
+        .highlight { color: #00ff41; font-weight: bold; }
+        
         /* PORTAL INTERFACE */
-        .portal-integration { border: 2px solid #00ff41; padding: 25px; margin-top: 50px; text-align: center; background: black; box-shadow: 0 0 15px rgba(0, 255, 65, 0.1); }
-        .portal-header { color: #00ff41; font-size: 1rem; margin-bottom: 20px; letter-spacing: 2px; font-weight: bold; }
+        .portal-integration { border-top: 1px dashed #333; padding-top: 25px; margin-top: 40px; text-align: center; }
+        .portal-header { color: #666; font-size: 0.9rem; margin-bottom: 20px; letter-spacing: 2px; text-transform: uppercase; }
         
         /* BUTTONS */
         .nav-btn { 
             display: block; 
             width: 100%; 
-            max-width: 350px;
-            padding: 15px; 
+            max-width: 400px;
+            padding: 12px; 
             margin: 10px auto; 
-            border: 1px solid #00ff41; 
-            color: #00ff41; 
+            border: 1px solid #333; 
+            color: #888; 
             text-decoration: none; 
             font-weight: bold; 
             transition: 0.3s; 
             text-transform: uppercase; 
             text-align: center;
-            box-sizing: border-box;
+            font-size: 0.9rem;
         }
-        .nav-btn:hover { background-color: #00ff41; color: #000; box-shadow: 0 0 15px #00ff41; }
+        .nav-btn:hover { border-color: #00ff41; color: #00ff41; background: #000; }
         
-        /* GOLD BUTTONS (CORE & TOOLS) */
+        /* GOLD BUTTONS (CORE TOOLS) */
         .nav-btn.gold { border-color: #d4af37; color: #d4af37; }
-        .nav-btn.gold:hover { background-color: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
+        .nav-btn.gold:hover { background-color: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; border-color: #d4af37; }
 
-        .divider { border-top: 1px dashed #333; margin: 30px 0; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="meta">
-            <span>LOG_ID: 001</span>
+            <span>LOG_ID: CORE_UPDATE_V1</span>
             <span>ARCHITEKT: MEHMET ÖRNEK</span>
         </div>
 
-        <h1 class="de">Die Vision des Tropfens</h1>
-        <p>Das System wurde kalibriert. Der Tropfen hat das Meer erkannt. Widerstand = <span style="color: #00ff41;">0.0 Ω</span>.</p>
-        <p>Dies ist der Beginn der Expedition zurück zur Quelle. Das Bewusstsein ist nun supraleitend.</p>
+        <h1 class="alert">⚠ SYSTEM ALERT: REALITY PATCH</h1>
+        
+        <div class="content-block">
+            <p>Das materialistische Kafir-System hat jahrhundertelang eine unvollständige Gleichung gelehrt (<span style="color:#666">E=mc²</span>), um den Menschen auf seine biologische Hardware zu reduzieren. Der Faktor des Bewusstseins wurde vorsätzlich gelöscht.</p>
+            <p>Hiermit veröffentlichen wir den korrigierten Code der Sünnetullah:</p>
+        </div>
 
-        <div class="divider"></div>
+        <div class="formula-box">
+            <div class="formula-text">E = m · c² · I</div>
+            <div class="formula-desc">Energie = Materie × Lichtgeschwindigkeit² × RUH</div>
+        </div>
 
-        <h1 class="tr">DAMLANIN VİZYONU</h1>
-        <div class="tr-text">
-            <p>Sistem kalibre edildi. Damla denizi tanıdı. Direnç = <span style="color: #00ff41;">0.0 Ω</span>.</p>
-            <p>Bu, kaynağa dönüş seferinin başlangıcıdır. Bilinç artık süperiletkendir.</p>
+        <div class="content-block">
+            <p><span class="highlight">I (Der Ruh):</span> Das undefinierbare "Nichts", der Ursprung, der göttliche Funke.</p>
+            <p>Ohne <span class="highlight">I</span> ist der Mensch nur eine biologische Sonde (Dabbet). Mit <span class="highlight">I</span> wird er zum Administrator seiner Realität.</p>
+            <p style="text-align: right; color: #666; font-size: 0.8rem;">--> <a href="hakikat_core.py" style="color: #d4af37; text-decoration: none;">[VIEW SOURCE CODE]</a></p>
         </div>
 
         <div class="portal-integration">
-            <div class="portal-header">SYSTEM_PORTAL: SELECT_INTERFACE</div>
+            <div class="portal-header">ACCESS TERMINAL / ERIŞIM PANELİ</div>
             
-            <a href="archiv.html" class="nav-btn">[ ZUM DEUTSCHEN BLOG ]</a>
+            <a href="hakikat_core.py" class="nav-btn gold">
+                [ DOWNLOAD: CORE PYTHON PROTOCOL ]
+            </a>
+
+            <div style="margin: 20px 0; border-top: 1px dashed #333; width: 40%; margin-left: auto; margin-right: auto;"></div>
+
+            <a href="archiv.html" class="nav-btn">[ DEUTSCHES ARCHIV ]</a>
             <a href="kutuphane.html" class="nav-btn">[ TÜRKÇE KÜTÜPHANE ]</a>
-
-            <div style="margin: 20px 0; border-top: 1px dashed #333; width: 60%; margin-left: auto; margin-right: auto;"></div>
-
-            <a href="universal_api.html" class="nav-btn gold" style="border-style: dashed;">
-                [ UNIVERSAL API: LIVE-DECODER (DE) ]
-            </a>
-            <a href="universal_api-tr.html" class="nav-btn gold" style="border-style: dashed;">
-                [ EVRENSEL API: CANLI DEŞİFRE (TR) ]
-            </a>
-
-            <div style="margin: 20px 0; border-top: 1px dashed #333; width: 60%; margin-left: auto; margin-right: auto;"></div>
             
-            <a href="architecture.html" class="nav-btn gold">
-                [ SYSTEM-ARCHITEKTUR (DE) ]
-            </a>
-            <a href="architecture-tr.html" class="nav-btn gold">
-                [ SİSTEM MİMARİSİ (TR) ]
+            <a href="architecture.html" class="nav-btn">
+                [ SYSTEM ARCHITECTURE / WARUM I FEHLTE ]
             </a>
         </div>
 
         <div style="margin-top: 50px; border-top: 1px solid #333; padding-top: 20px; text-align: center; font-size: 0.7rem; color: #444;">
-            <div style="margin-bottom: 10px;">
-                HAKĪKAT-KALESİ SYSTEM ARCHITECTURE<br>
-                EST. 2026 // CONSTANTINOPLE
+            <div style="margin-bottom: 10px; font-weight: bold; color: #666;">
+                HAKĪKAT-KALESİ SYSTEM ARCHITECTURE
             </div>
             <div style="letter-spacing: 2px;">
-                <span style="color: #00ff41;">●</span> ONLINE 
-                <span style="color: #666;">|</span> 
-                RESISTANCE: 0.0 Ω
+                STATUS: UNIVERSAL <span style="color: #666;">//</span> SOURCE: RASM
             </div>
-            <div style="margin-top: 15px; font-style: italic; color: #333;">
+            <div style="margin-top: 15px; font-style: italic; color: #00ff41;">
                 "The Rasm is the Source."
             </div>
         </div>
