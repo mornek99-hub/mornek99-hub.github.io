@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQ_08: AL-A'LA | HAKİKAT-KONSOLU</title>
+    <style>
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; } /* Gold - En Yüce */
+        .sub-header { color: #888; margin-bottom: 30px; font-size: 0.9em; }
+        
+        /* TERMINAL STYLES */
+        #terminal-box {
+            background-color: #000;
+            border: 1px solid #333;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            margin-bottom: 30px;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+            display: none;
+        }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } /* Yeşil - Sistem OK */
+        .log-root { color: #d4af37; font-weight: bold; } /* Gold - Admin/Rabb */
+        .log-io { color: #00bcd4; }   /* Mavi - Veri Akışı */
+        .log-warn { color: #ff9800; } /* Turuncu - İşlem Sürüyor */
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+        /* BUTTON STYLE */
+        .boot-btn {
+            background-color: #1a1a1a;
+            color: #d4af37;
+            border: 1px solid #d4af37;
+            padding: 15px 30px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        .boot-btn:hover { background-color: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
+
+        /* STANDARD STYLES */
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #d4af37; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[KERNEL]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #d4af37; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="kutuphane.html" style="text-decoration: none; color: #555;">&larr; KÜTÜPHANEYE DÖN</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQUENCE_08: AL-A'LA</h1>
+        <div class="sub-header">
+            DURUM: SİSTEM KALİBRASYONU // YÜKSEK SEVİYE ERİŞİM<br>
+            RASM-ANALİZİ: MİMARİ & GÜNCELLEME
+        </div>
+    </div>
+
+    <button class="boot-btn" onclick="runBootSequence()">[ KALİBRASYONU BAŞLAT ]</button>
+
+    <div id="terminal-box">
+        <div id="terminal-content"></div>
+        <span class="cursor">_</span>
+    </div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01</span>
+            <span class="arabic">سَبِّحِ اسْمَ رَبِّكَ الْأَعْلَى</span>
+            <span class="rasm">سبح اسم ربك الأعلى</span>
+            <span class="translation">"En Yüce (A'la) olan Rabbinin (Yönetici/Admin) ismini/işlevini Programla/Akışa sok (Sebbih)."</span>
+            <div class="analysis">
+                <span class="keyword">S-B-H (Flow/Execute):</span> Komutu dirençsizce uygulamak (Sistem akışı).<br>
+                <span class="keyword">R-B-B (Root Admin):</span> Sistemin programlayıcısı ve sürdürücüsü.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 02</span>
+            <span class="arabic">الَّذِي خَلَقَ فَسَوَّىٰ</span>
+            <span class="rasm">الذي خلق فسوى</span>
+            <span class="translation">"O ki (donanımı) yarattı (Halaka) ve (işletim sistemini) dengeleyip kalibre etti (Sevva)."</span>
+            <div class="analysis">
+                <span class="keyword">Kh-L-Q (Create):</span> Maddenin/Donanımın başlatılması.<br>
+                <span class="keyword">S-W-Y (Calibrate):</span> İnce ayar. Sistemin stabil hale getirilmesi (Bug-Free).
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 03</span>
+            <span class="arabic">وَالَّذِي قَدَّرَ فَهَدَىٰ</span>
+            <span class="rasm">والذي قدر فهدى</span>
+            <span class="translation">"Ve O ki (parametreleri) tayin etti/kodladı (Kaddera) ve (navigasyonu/yolu) yükledi (Heda)."</span>
+            <div class="analysis">
+                <span class="keyword">Q-D-R (Measure/Code):</span> Sünnetullah yasalarının/ölçülerinin programlanması.<br>
+                <span class="keyword">H-D-Y (Guide/GPS):</span> Rehberlik sürücüsünün Kernele yüklenmesi.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 06</span>
+            <span class="arabic">سَنُقْرِئُكَ فَلَا تَنسَىٰ</span>
+            <span class="rasm">سنقرئك فلا تنسى</span>
+            <span class="translation">"Biz sana (kodu) okutacağız/yükleyeceğiz (Senukri-uke), böylece veri kaybı olmayacak/unutmayacaksın (Fela Tensa)."</span>
+            <div class="analysis">
+                <span class="keyword">Q-R-A (Read/Process):</span> Bilince doğrudan veri yüklemesi (Upload).<br>
+                <span class="keyword">N-S-Y (Forget/Data Loss):</span> Hafıza bozulmasına karşı koruma. Kalıcı bilgi.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 14</span>
+            <span class="arabic">قَدْ أَفْلَحَ مَن تَزَكَّىٰ</span>
+            <span class="rasm">قد أفلح من تزكى</span>
+            <span class="translation">"Kim (virüslerden/egodan) arınırsa (Tezekka) sistem maksimum verimle çalışır/kurtulur (Eflaha)."</span>
+            <div class="analysis">
+                <span class="keyword">F-L-H (Success):</span> Sistemin hatasız çalışması.<br>
+                <span class="keyword">Z-K-W (Purify):</span> Antivirüs protokolü. Ego cüruflarının temizlenmesi.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="index.html" class="btn">ANA MENÜ</a>
+            <a href="#" class="btn" style="border-color: #333; color: #333;">NEXT: SEQ_09 (KİLİTLİ)</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "[ SEQUENCE 08 : AL-A'LA (SİSTEM KALİBRASYONU) ]", type: "log-root", delay: 800 },
+            { txt: "ROOT ADMIN (Rabb) bağlantısı kuruluyor...", type: "log-sys", delay: 1000 },
+            { txt: "DEŞİFRE: Kh-L-Q -> DONANIM BAŞLATMA", type: "log-io", delay: 600 },
+            { txt: "DEŞİFRE: S-W-Y -> SİSTEM DENGELEME", type: "log-io", delay: 600 },
+            { txt: "    [İŞLEM] Geometri inşa ediliyor...", type: "log-warn", delay: 400 },
+            { txt: "    [İŞLEM] Biyoloji kalibre ediliyor...", type: "log-warn", delay: 400 },
+            { txt: "DURUM: Donanım stabil. Hata yok.", type: "log-sys", delay: 800 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Kader Parametreleri yükleniyor (QADAR)...", type: "log-io", delay: 800 },
+            { txt: "    > Sınırlar tanımlanıyor (c, m, E)...", type: "log-warn", delay: 200 },
+            { txt: "    > Navigasyon Sürücüsü yükleniyor (HADA)...", type: "log-warn", delay: 500 },
+            { txt: "AĞ: GPS / Rehberlik Sistemi ÇEVRİMİÇİ.", type: "log-sys", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "UPLOAD Protokolü Başlatıldı (SENUKRİ-UKE)...", type: "log-root", delay: 800 },
+            { txt: "    > Ana Belleğe yazılıyor...", type: "log-io", delay: 1000 },
+            { txt: "    > Sektörler Veri Kaybına karşı korunuyor (LA TENSA)...", type: "log-io", delay: 500 },
+            { txt: "BÜTÜNLÜK: Veriler kalıcı olarak kaydedildi.", type: "log-sys", delay: 1000 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "Temizlik Başlatılıyor (TEZEKKA)...", type: "log-warn", delay: 800 },
+            { txt: "    > Ego_Script.exe siliniyor...", type: "log-sys", delay: 300 },
+            { txt: "    > Korku_Modülü.dll siliniyor...", type: "log-sys", delay: 300 },
+            { txt: "SONUÇ: Sistem başarıyla optimize edildi (EFLAHA).", type: "log-sys", delay: 800 },
+            { txt: "KALİBRASYON TAMAMLANDI. ÇALIŞMA ZAMANI BAŞLIYOR.", type: "log-root", delay: 1500 }
+        ];
+
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+
+</body>
+</html>
