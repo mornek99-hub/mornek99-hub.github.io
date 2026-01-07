@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAKĪKAT | RUNTIME MONITOR</title>
+    <style>
+        /* PHASE 2 DESIGN: AMBER MONITOR */
+        body { 
+            background-color: #050200; /* Sehr dunkles Braun/Schwarz */
+            color: #ffb300; /* Amber / Bernstein */
+            font-family: 'Consolas', 'Courier New', monospace; 
+            padding: 20px; 
+            margin: 0;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* SCANLINE EFFECT (LIVE MONITOR) */
+        body::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding-bottom: 50px; position: relative; z-index: 3; }
+
+        /* HEADER */
+        header { 
+            border-bottom: 2px solid #ffb300; 
+            padding-bottom: 20px; 
+            margin-bottom: 40px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+        }
+        .sys-title { font-size: 1.5rem; font-weight: bold; letter-spacing: 4px; }
+        .sys-status { border: 1px solid #ffb300; padding: 5px 15px; font-size: 0.8rem; animation: pulse 2s infinite; }
+
+        /* ANIMATIONS */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 179, 0, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 179, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 179, 0, 0); }
+        }
+
+        /* DASHBOARD GRID */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* MONITOR CARDS */
+        .monitor-card {
+            background: #0f0a00;
+            border: 1px solid #553a00;
+            padding: 20px;
+            position: relative;
+        }
+        .monitor-card h3 {
+            margin-top: 0;
+            border-bottom: 1px dashed #553a00;
+            padding-bottom: 10px;
+            font-size: 0.9rem;
+            color: #cc8f00;
+        }
+
+        /* CODE & TEXT */
+        .seq-tag { 
+            background: #ffb300; color: #000; padding: 2px 6px; font-weight: bold; font-size: 0.7rem; 
+            position: absolute; top: 20px; right: 20px;
+        }
+        .variable { color: #fff; font-weight: bold; }
+        .logic-true { color: #00ff41; } /* Grün bleibt für 'Erfolg' */
+        .logic-false { color: #ff3333; } /* Rot für 'Fehler' */
+
+        /* INTERACTIVE ELEMENTS (VISUAL ONLY) */
+        .progress-bar { width: 100%; height: 10px; background: #332200; margin-top: 10px; }
+        .fill-flow { width: 90%; height: 100%; background: #00ff41; }
+        .fill-resist { width: 85%; height: 100%; background: #ff3333; }
+
+        /* NAV */
+        .nav-link { color: #888; text-decoration: none; border: 1px solid #333; padding: 10px; display: inline-block; margin-top: 20px; }
+        .nav-link:hover { border-color: #ffb300; color: #ffb300; }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="sys-title">HAKĪKAT // RUNTIME</div>
+            <div class="sys-status">LIVE MONITORING</div>
+        </header>
+
+        <div style="margin-bottom: 30px; border-left: 4px solid #ffb300; padding-left: 15px;">
+            <strong>PHASE 2: DER STRESS-TEST (DUNYA)</strong><br>
+            <span style="color: #888;">Das System ist gebootet. Jetzt beginnt der Datenverkehr (Traffic).<br>
+            Prüfung von Widerstand (Ego) und Leitfähigkeit (Herz).</span>
+        </div>
+
+        <div class="dashboard-grid">
+            
+            <div class="monitor-card">
+                <span class="seq-tag">SEQ_09</span>
+                <h3>INPUT / ENERGIE-CHECK (AL-LAIL)</h3>
+                <p>Messung des User-Verhaltens bei Ressourcen-Input.</p>
+                
+                <div style="margin-top: 20px;">
+                    <span class="variable">IF (Geben & Taqwa)</span><br>
+                    <span class="logic-true">>> PATH: YUSRA (Supraleitung)</span>
+                    <div class="progress-bar"><div class="fill-flow"></div></div>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <span class="variable">ELSE (Geiz & Istaghna)</span><br>
+                    <span class="logic-false">>> PATH: USRA (Widerstand)</span>
+                    <div class="progress-bar"><div class="fill-resist"></div></div>
+                </div>
+            </div>
+
+            <div class="monitor-card" style="border-color: #550000; background: #0a0000;">
+                <span class="seq-tag" style="background: #ff3333; color: #fff;">SEQ_10</span>
+                <h3 style="color: #ff3333;">SYSTEM CRASH (AL-FAJR)</h3>
+                <p>Konsequenz des Widerstands. Historische Löschung.</p>
+                <ul>
+                    <li>TARGET: <span class="logic-false">AD.exe (Ego-Säulen)</span> [DELETED]</li>
+                    <li>TARGET: <span class="logic-false">THAMUD.bin (Ego-Fels)</span> [DELETED]</li>
+                    <li>TARGET: <span class="logic-false">PHARAOH.sys (Gott-Komplex)</span> [DELETED]</li>
+                </ul>
+                <div style="text-align: center; margin-top: 15px; color: #ff3333; border: 1px solid #ff3333; padding: 5px;">
+                    ⚠ CONNECTION LOST
+                </div>
+            </div>
+
+            <div class="monitor-card" style="border-color: #fff; background: #0a0a0a;">
+                <span class="seq-tag" style="background: #fff;">SEQ_11</span>
+                <h3 style="color: #fff;">RECOVERY (AD-DUHA)</h3>
+                <p>Notfall-Wiederherstellung nach Absturz.</p>
+                
+                <div style="font-family: monospace; font-size: 0.85rem;">
+                    > PING SERVER... <span class="logic-true">CONNECTED (Ma Wadda'aka)</span><br>
+                    > CHECKING BACKUP 1... <span class="variable">SCHUTZ (Waise)</span><br>
+                    > CHECKING BACKUP 2... <span class="variable">GUIDANCE (Irregehend)</span><br>
+                    > CHECKING BACKUP 3... <span class="variable">RESOURCE (Arm)</span><br>
+                    > REBOOTING... 100%
+                </div>
+            </div>
+
+            <div class="monitor-card">
+                <span class="seq-tag">SEQ_12</span>
+                <h3>MEMORY EXPANSION (INSHIRAH)</h3>
+                <p>Erweiterung der Kapazität durch Lasten-Entfernung.</p>
+                <div style="text-align: center; font-size: 2rem; margin: 20px 0;">
+                    ∞
+                </div>
+                <div style="text-align: center; font-size: 0.8rem;">
+                    "Mit der Erschwernis ist die Erleichterung."<br>
+                    (Code-Redundanz)
+                </div>
+            </div>
+
+        </div>
+
+        <div style="margin-top: 50px; text-align: center;">
+            <a href="index.html" class="nav-link">< LOGOUT (ZUR STARTSEITE)</a>
+            <a href="archiv.html" class="nav-link">< BACKEND (ARCHIV)</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
