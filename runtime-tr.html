@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAKİKAT | ÇALIŞMA ZAMANI (RUNTIME)</title>
+    <style>
+        /* PHASE 2 DESIGN: AMBER MONITOR */
+        body { 
+            background-color: #050200; /* Çok koyu Kahve/Siyah */
+            color: #ffb300; /* Amber / Kehribar */
+            font-family: 'Consolas', 'Courier New', monospace; 
+            padding: 20px; 
+            margin: 0;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* SCANLINE EFFECT (LIVE MONITOR) */
+        body::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding-bottom: 50px; position: relative; z-index: 3; }
+
+        /* HEADER */
+        header { 
+            border-bottom: 2px solid #ffb300; 
+            padding-bottom: 20px; 
+            margin-bottom: 40px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+        }
+        .sys-title { font-size: 1.5rem; font-weight: bold; letter-spacing: 4px; }
+        .sys-status { border: 1px solid #ffb300; padding: 5px 15px; font-size: 0.8rem; animation: pulse 2s infinite; }
+
+        /* ANIMATIONS */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 179, 0, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 179, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 179, 0, 0); }
+        }
+
+        /* DASHBOARD GRID */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* MONITOR CARDS */
+        .monitor-card {
+            background: #0f0a00;
+            border: 1px solid #553a00;
+            padding: 20px;
+            position: relative;
+        }
+        .monitor-card h3 {
+            margin-top: 0;
+            border-bottom: 1px dashed #553a00;
+            padding-bottom: 10px;
+            font-size: 0.9rem;
+            color: #cc8f00;
+        }
+
+        /* CODE & TEXT */
+        .seq-tag { 
+            background: #ffb300; color: #000; padding: 2px 6px; font-weight: bold; font-size: 0.7rem; 
+            position: absolute; top: 20px; right: 20px;
+        }
+        .variable { color: #fff; font-weight: bold; }
+        .logic-true { color: #00ff41; } /* Yeşil: Başarı */
+        .logic-false { color: #ff3333; } /* Kırmızı: Hata */
+
+        /* INTERACTIVE ELEMENTS (VISUAL ONLY) */
+        .progress-bar { width: 100%; height: 10px; background: #332200; margin-top: 10px; }
+        .fill-flow { width: 90%; height: 100%; background: #00ff41; }
+        .fill-resist { width: 85%; height: 100%; background: #ff3333; }
+
+        /* NAV */
+        .nav-link { color: #888; text-decoration: none; border: 1px solid #333; padding: 10px; display: inline-block; margin-top: 20px; }
+        .nav-link:hover { border-color: #ffb300; color: #ffb300; }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="sys-title">HAKİKAT // RUNTIME</div>
+            <div class="sys-status">CANLI İZLEME AKTİF</div>
+        </header>
+
+        <div style="margin-bottom: 30px; border-left: 4px solid #ffb300; padding-left: 15px;">
+            <strong>FAZ 2: STRES TESTİ (DÜNYA)</strong><br>
+            <span style="color: #888;">Sistem başlatıldı (Boot Complete). Veri trafiği ve İmtihan döngüsü başladı.<br>
+            Direnç (Ego) ve İletkenlik (Kalp) anlık olarak izleniyor.</span>
+        </div>
+
+        <div class="dashboard-grid">
+            
+            <div class="monitor-card">
+                <span class="seq-tag">SEKANS_09</span>
+                <h3>GİRDİ / ENERJİ KONTROLÜ (LEYL)</h3>
+                <p>Kaynak (Mal/Enerji) kullanımı sırasında kullanıcı davranışı.</p>
+                
+                <div style="margin-top: 20px;">
+                    <span class="variable">EĞER (Verme & Takva)</span><br>
+                    <span class="logic-true">>> ROTA: YUSRA (Akış/Kolaylık)</span>
+                    <div class="progress-bar"><div class="fill-flow"></div></div>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <span class="variable">DEĞİLSE (Cimrilik & İstiğna)</span><br>
+                    <span class="logic-false">>> ROTA: USRA (Direnç/Zorluk)</span>
+                    <div class="progress-bar"><div class="fill-resist"></div></div>
+                </div>
+            </div>
+
+            <div class="monitor-card" style="border-color: #550000; background: #0a0000;">
+                <span class="seq-tag" style="background: #ff3333; color: #fff;">SEKANS_10</span>
+                <h3 style="color: #ff3333;">SİSTEM ÇÖKÜŞÜ (FECR)</h3>
+                <p>Direncin sonucu. Tarihsel Ego yapılarının silinmesi.</p>
+                <ul>
+                    <li>HEDEF: <span class="logic-false">AD.exe (Sütun Egosu)</span> [SİLİNDİ]</li>
+                    <li>HEDEF: <span class="logic-false">SEMUD.bin (Kaya Egosu)</span> [SİLİNDİ]</li>
+                    <li>HEDEF: <span class="logic-false">FİRAVUN.sys (Tanrılık)</span> [SİLİNDİ]</li>
+                </ul>
+                <div style="text-align: center; margin-top: 15px; color: #ff3333; border: 1px solid #ff3333; padding: 5px;">
+                    ⚠ BAĞLANTI KOPTU (OFFLINE)
+                </div>
+            </div>
+
+            <div class="monitor-card" style="border-color: #fff; background: #0a0a0a;">
+                <span class="seq-tag" style="background: #fff;">SEKANS_11</span>
+                <h3 style="color: #fff;">KURTARMA / DUHA</h3>
+                <p>Çöküş sonrası acil durum geri yükleme protokolü.</p>
+                
+                <div style="font-family: monospace; font-size: 0.85rem;">
+                    > SUNUCU PING... <span class="logic-true">BAĞLANDI (Ma Wadda'aka)</span><br>
+                    > YEDEK 1 KONTROL... <span class="variable">KORUMA (Yetim)</span><br>
+                    > YEDEK 2 KONTROL... <span class="variable">REHBERLİK (Dalalet)</span><br>
+                    > YEDEK 3 KONTROL... <span class="variable">KAYNAK (Fakir)</span><br>
+                    > YENİDEN BAŞLATILIYOR... 100%
+                </div>
+            </div>
+
+            <div class="monitor-card">
+                <span class="seq-tag">SEKANS_12</span>
+                <h3>HAFIZA GENİŞLETME (İNŞİRAH)</h3>
+                <p>Yüklerin (System Load) kaldırılması ve kapasite artışı.</p>
+                <div style="text-align: center; font-size: 2rem; margin: 20px 0;">
+                    ∞
+                </div>
+                <div style="text-align: center; font-size: 0.8rem;">
+                    "Muhakkak zorlukla (Usr)<br>
+                    beraber bir kolaylık (Yusr) vardır."
+                </div>
+            </div>
+
+        </div>
+
+        <div style="margin-top: 50px; text-align: center;">
+            <a href="index.html" class="nav-link">< ÇIKIŞ (ANA SAYFA)</a>
+            <a href="kutuphane.html" class="nav-link">< BACKEND (KÜTÜPHANE)</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
