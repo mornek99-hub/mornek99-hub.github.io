@@ -69,9 +69,14 @@
         }
         .nav-btn:hover { border-color: #00ff41; color: #00ff41; background: #000; box-shadow: 0 0 10px rgba(0, 255, 65, 0.2); }
         
-        /* GOLD BUTTON (SOURCE CODE) */
+        /* SPECIAL BUTTONS */
         .nav-btn.gold { border-color: #d4af37; color: #d4af37; }
         .nav-btn.gold:hover { background-color: #d4af37; color: #000; box-shadow: 0 0 20px rgba(212, 175, 55, 0.6); }
+
+        .nav-btn.green { border-color: #00ff41; color: #00ff41; }
+        
+        .nav-btn.amber { border-color: #ffb300; color: #ffb300; background: #0f0a00; }
+        .nav-btn.amber:hover { box-shadow: 0 0 15px rgba(255, 179, 0, 0.3); background: #1a1100; }
 
         /* SEPARATOR */
         .lang-separator { border-top: 1px dashed #333; margin: 30px 0; }
@@ -128,14 +133,26 @@
             <a href="kutuphane.html" class="nav-btn">[ 🇹🇷 TÜRKÇE KÜTÜPHANE ]</a>
             
             <div style="margin-top: 30px;">
-                <a href="architecture.html" class="nav-btn" style="color: #00ff41; border-color: #00ff41;">
+                <div style="text-align: center; margin-bottom: 5px; color: #00ff41; font-size: 0.7rem;">>>> PHASE I: ARCHITECTURE</div>
+                
+                <a href="architecture.html" class="nav-btn green">
                     [ SYSTEM ARCHITECTURE / MUKATTAA REGISTRY ]
                 </a>
                 
-                <a href="architecture-tr.html" class="nav-btn" style="color: #00ff41; border-color: #00ff41;">
+                <a href="architecture-tr.html" class="nav-btn green">
                     [ SİSTEM MİMARİSİ / MUKATTAA KAYITLARI ]
                 </a>
             </div>
+
+            <div style="margin: 30px 0; border-top: 1px dashed #ffb300; opacity: 0.5;"></div>
+
+            <div style="text-align: center; margin-bottom: 10px; color: #ffb300; font-size: 0.8rem; letter-spacing: 2px;">
+                >>> PHASE II: LIVE SYSTEM
+            </div>
+
+            <a href="runtime.html" class="nav-btn amber">
+                [ ⚠ RUNTIME MONITOR / STRESS-TEST ]
+            </a>
 
         </div>
 
