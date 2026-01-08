@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTOKOL: DABBET ANALİZİ | 27:82</title>
+    <style>
+        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; max-width: 900px; margin: 0 auto; }
+        
+        h1 { color: #ff3333; border-bottom: 2px solid #ff3333; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+        .subtitle { color: #888; margin-bottom: 30px; border-left: 3px solid #ff3333; padding-left: 15px; }
+
+        /* CODE BLOCK DESIGN */
+        .code-container {
+            background: #111;
+            border: 1px solid #333;
+            padding: 20px;
+            overflow-x: auto;
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        pre { margin: 0; }
+        code { color: #00ff41; font-size: 0.85rem; }
+        .comment { color: #666; font-style: italic; }
+        .keyword { color: #d4af37; font-weight: bold; }
+        .string { color: #ce9178; }
+
+        /* FAZIT BOX */
+        .fazit-box {
+            border: 2px solid #ff3333;
+            background: #0f0505;
+            padding: 25px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 0 30px rgba(255, 51, 51, 0.1);
+        }
+        .fazit-title { color: #ff3333; font-weight: bold; font-size: 1.2rem; text-transform: uppercase; display: block; margin-bottom: 15px; }
+        .mirror-question { margin-top: 20px; color: #fff; font-weight: bold; letter-spacing: 1px; animation: pulse 2s infinite; }
+
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; text-shadow: 0 0 10px #fff; }
+            100% { opacity: 0.8; }
+        }
+
+        .back-btn { display: inline-block; padding: 10px 20px; border: 1px solid #333; color: #666; text-decoration: none; margin-top: 30px; transition: 0.3s; }
+        .back-btn:hover { border-color: #ff3333; color: #ff3333; }
+    </style>
+</head>
+<body>
+
+    <a href="kutuphane.html" class="back-btn">&larr; KÜTÜPHANEYE DÖN</a>
+
+    <h1>MODÜL 27:82 - DABBET ANALİZİ</h1>
+    <div class="subtitle">
+        TANI: 'KİNETİK BİYO-KÜTLE' VE 'BİLİNÇ' ARASINDAKİ AYRIM.<br>
+        KOD TABANI: PYTHON PROTOKOL SINIFI
+    </div>
+
+    <div class="code-container">
+<pre><code><span class="keyword">class</span> DabbetProtokolu:
+    <span class="string">"""
+    MODÜL 27:82 - DABBET-ÜL ARZ ANALİZİ
+    Sistem Tanımı: 'Kinetik Biyo-Kütle' (Dabbet) ile 'Bilinçli İnsan' (İnsan)
+    arasındaki ayrımın Bilinç Faktörü (I) üzerinden yapılması.
+    """</span>
+    
+    <span class="keyword">def</span> __init__(self):
+        self.c = 299792458  <span class="comment"># Işık Hızı (Sünnetullah Sabiti)</span>
+
+    <span class="keyword">def</span> varlik_tarama(self, kutle_kg, i_faktoru):
+        <span class="string">"""
+        Biyolojik birimi tarar.
+        Formül: E = m * c^2 * I
+        """</span>
+        
+        <span class="comment"># Gerçek Etki Gücünün Hesaplanması</span>
+        gercek_enerji = kutle_kg * (self.c ** 2) * i_faktoru
+        
+        <span class="comment"># MANTIK KAPISI: DABBET vs. İNSAN</span>
+        <span class="keyword">if</span> i_faktoru <= 0.15:
+            <span class="keyword">return</span> self._dabbet_statusu_don()
+        <span class="keyword">else</span>:
+            <span class="keyword">return</span> self._insan_statusu_don(gercek_enerji)
+
+    <span class="keyword">def</span> _dabbet_statusu_don(self):
+        <span class="keyword">return</span> {
+            <span class="string">"TİP"</span>: <span class="string">"DABBET (Kinetik Biyo-Kütle)"</span>,
+            <span class="string">"RASM_ANALIZI"</span>: {
+                <span class="string">"D-B-B"</span>: <span class="string">"Bilinçsiz Hareket (Dürtüsel / Debelenme)"</span>,
+                <span class="string">"A-R-D"</span>: <span class="string">"Köken: Sadece Madde/Arz (Ruhsuz)"</span>,
+                <span class="string">"K-L-M"</span>: <span class="string">"Çıktı: Konuşur/Veri İletir, ancak Yakîn (Bilinç) yok"</span>
+            },
+            <span class="string">"TANI"</span>: <span class="string">"SİSTEM HATASI. Kullanıcı otopilotta çalışıyor."</span>,
+            <span class="string">"DURUM"</span>: <span class="string">"TEHLİKE (Deccal Matrisi ile uyumlu)"</span>
+        }
+</code></pre>
+    </div>
+
+    <div class="fazit-box">
+        <span class="fazit-title">⚠ SİSTEM SONUCU</span>
+        <p>
+            "Dabbet" gelecekte çıkacak bir canavar değildir.<br>
+            O, <strong>I (Bilinç)</strong> değişkeni sıfıra düşen bir insanın fiziksel durumudur.<br>
+            Sadece konuşan maddedir.
+        </p>
+        <div class="mirror-question">
+            >>> AYNAYA BAK: BUGÜN SENİN I FAKTÖRÜN KAÇ? <<<
+        </div>
+    </div>
+
+    <a href="kutuphane.html" class="back-btn">[ TANIYI KAPAT ]</a>
+
+</body>
+</html>
