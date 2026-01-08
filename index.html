@@ -1,174 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HAKĪKAT-KALESİ | SYSTEM ROOT</title>
     <style>
-        body { 
-            background-color: #050505; 
-            color: #c0c0c0; 
-            font-family: 'Courier New', monospace; 
-            margin: 0; 
-            padding: 20px;
-            text-align: center; 
-        }
-
-        h1 { 
-            font-size: 1.8rem; 
-            margin-top: 40px;
-            margin-bottom: 20px; 
-            color: #e5c07b; /* Gold */
-            text-transform: uppercase; 
-            letter-spacing: 4px;
-            font-weight: bold;
-        }
-
-        .formula {
-            font-size: 1.1rem;
-            color: #00ff41; /* Matrix Green */
-            margin-bottom: 50px;
-            font-weight: bold;
-            border: 1px solid #00ff41;
-            padding: 10px 20px;
-            display: inline-block;
-            box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
-            background-color: #000;
-        }
-
-        .section-header {
-            color: #555;
-            font-size: 0.75rem;
-            margin: 0 auto 15px auto;
-            letter-spacing: 2px;
-            border-bottom: 1px dashed #333;
-            padding-bottom: 5px;
-            width: 100%;
-            max-width: 450px;
-            text-transform: uppercase;
-        }
-
-        /* BUTTONS */
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            max-width: 450px;
-            padding: 15px;
-            margin: 12px auto;
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: 0.2s;
-            background: transparent;
-            text-transform: uppercase;
-            font-weight: bold;
-            box-sizing: border-box;
-            position: relative;
-        }
-
-        /* 1. GOLD BUTTON (PYTHON) */
-        .btn-gold {
-            border: 1px solid #e5c07b;
-            color: #e5c07b;
-        }
-        .btn-gold:hover { background-color: rgba(229, 192, 123, 0.1); }
-
-        /* 2. MANUAL BUTTONS (BLUE ICON) */
-        .btn-manual {
-            border: 1px solid #444;
-            color: #ddd;
-            justify-content: flex-start; /* Linksbündig für Text */
-            padding-left: 20px;
-        }
-        .blue-icon {
-            display: inline-block;
-            width: 8px;
-            height: 15px;
-            background-color: #00bcd4; /* Cyan Blue */
-            margin-right: 15px;
-            box-shadow: 0 0 5px #00bcd4;
-        }
-        .btn-manual:hover { border-color: #fff; color: #fff; background-color: rgba(255, 255, 255, 0.05); }
-
-        /* 3. ARCHIVE BUTTONS (GREEN) */
-        .btn-green {
-            border: 1px solid #00ff41;
-            color: #00ff41;
-            justify-content: center;
-        }
+        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; margin: 0; padding: 20px; text-align: center; }
+        h1 { font-size: 1.8rem; margin-top: 20px; margin-bottom: 15px; color: #e5c07b; text-transform: uppercase; letter-spacing: 4px; font-weight: bold; }
+        .formula { font-size: 1.1rem; color: #00ff41; margin-bottom: 30px; font-weight: bold; border: 1px solid #00ff41; padding: 10px 20px; display: inline-block; box-shadow: 0 0 10px rgba(0, 255, 65, 0.2); background-color: #000; }
+        .section-header { color: #555; font-size: 0.75rem; margin: 20px auto 10px auto; letter-spacing: 2px; border-bottom: 1px dashed #333; padding-bottom: 5px; width: 100%; max-width: 450px; text-transform: uppercase; }
+        .btn { display: flex; align-items: center; justify-content: center; width: 100%; max-width: 450px; padding: 15px; margin: 10px auto; text-decoration: none; font-size: 0.85rem; transition: 0.2s; background: transparent; text-transform: uppercase; font-weight: bold; box-sizing: border-box; }
+        .btn-missing { border: 1px solid #ff4444; color: #ff4444; }
+        .btn-gold { border: 1px solid #e5c07b; color: #e5c07b; }
+        .btn-manual { border: 1px solid #444; color: #ddd; justify-content: flex-start; padding-left: 20px; }
+        .blue-icon { display: inline-block; width: 8px; height: 15px; background-color: #00bcd4; margin-right: 15px; box-shadow: 0 0 5px #00bcd4; }
+        .btn-green { border: 1px solid #00ff41; color: #00ff41; }
         .flag { margin-right: 10px; font-size: 1.2em; filter: grayscale(30%); }
-        .btn-green:hover { background-color: rgba(0, 255, 65, 0.1); box-shadow: 0 0 15px rgba(0, 255, 65, 0.2); }
-
-        .separator {
-            margin: 30px auto; 
-            border-bottom: 1px dashed #333; 
-            width: 100%; 
-            max-width: 450px;
-        }
-
-        /* FOOTER */
-        .phase-label {
-            color: #008f11;
-            font-size: 0.7rem;
-            margin-top: 50px;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-        .arch-link {
-            display: block; width: 100%; max-width: 450px;
-            border: 1px solid #005f0b; padding: 10px;
-            color: #00cc33; text-decoration: none;
-            font-size: 0.7rem; margin: 5px auto;
-            text-transform: uppercase;
-        }
-        .arch-link:hover { background: #001100; border-color: #00ff41; }
-
+        .separator { margin: 25px auto; border-bottom: 1px dashed #333; width: 100%; max-width: 450px; }
+        .phase-label { color: #008f11; font-size: 0.7rem; margin-top: 40px; margin-bottom: 10px; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
     <h1>HAKĪKAT-<br>KALESİ</h1>
-    
-    <a href="hakikat_core.py" style="text-decoration: none;">
-        <div class="formula">E = m · c² · I</div>
-    </a>
+    <div class="formula">E = m · c² · I</div>
+
+    <div class="section-header">CRITICAL: MISSING PROTOCOLS</div>
+    <a href="missing.html" class="btn btn-missing">[ ⚠️ MISSING PROTOCOL: DEUTSCH ]</a>
+    <a href="missing-tr.html" class="btn btn-missing">[ ⚠️ KAYIP PROTOKOL: TÜRKÇE ]</a>
 
     <div class="section-header">ACCESS TERMINAL / ERİŞİM PANELİ</div>
+    
+    <a href="kernel.html" class="btn btn-gold">[ 👁 VIEW SOURCE: PYTHON PROTOCOL ]</a>
 
-    <a href="hakikat_core.py" class="btn btn-gold">
-        [ 👁 VIEW SOURCE: PYTHON PROTOCOL ]
-    </a>
-
-    <a href="manual.html" class="btn btn-manual">
-        <span class="blue-icon"></span>
-        MANUELLES UPDATE: RESONANZ (HANDBUCH)
-    </a>
-
-    <a href="kilavuz.html" class="btn btn-manual">
-        <span class="blue-icon"></span>
-        MANUEL GÜNCELLEME: REZONANS (KILAVUZ)
-    </a>
+    <a href="manual.html" class="btn btn-manual"><span class="blue-icon"></span>MANUELLES UPDATE: RESONANZ (HANDBUCH)</a>
+    <a href="kilavuz.html" class="btn btn-manual"><span class="blue-icon"></span>MANUEL GÜNCELLEME: REZONANS (KILAVUZ)</a>
 
     <div class="separator"></div>
 
-    <a href="index-de.html" class="btn btn-green">
-        <span class="flag">🇩🇪</span> DEUTSCHES ARCHIV
-    </a>
+    <a href="archiv.html" class="btn btn-green"><span class="flag">🇩🇪</span> DEUTSCHES ARCHIV</a>
     
-    <a href="kutuphane.html" class="btn btn-green">
-        <span class="flag">🇹🇷</span> TÜRKÇE KÜTÜPHANE
-    </a>
+    <a href="kutuphane.html" class="btn btn-green"><span class="flag">🇹🇷</span> TÜRKÇE KÜTÜPHANE</a>
 
     <div class="phase-label">>>> PHASE I: ARCHITECTURE</div>
-
-    <a href="architecture.html" class="arch-link">
-        [ SYSTEM ARCHITECTURE / REGISTRY ]
-    </a>
-
-    <a href="architecture-tr.html" class="arch-link">
-        [ SİSTEM MİMARİSİ / KAYITLAR ]
-    </a>
+    
+    <a href="fizik.html" class="btn btn-green">[ SYSTEM ARCHITECTURE / MUKATTAA REGISTRY ]</a>
+    <a href="fizik-tr.html" class="btn btn-green">[ SİSTEM MİMARİSİ / MUKATTAA KAYITLARI ]</a>
 
 </body>
 </html>
