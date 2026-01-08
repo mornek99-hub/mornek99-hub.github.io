@@ -1,20 +1,132 @@
-        <span class="arabic">يَا أَيُّهَا الْمُزَّمِّلُ</span>
-        <p>"Ey örtüsüne bürünen (içine kapanan/izole olan)!"</p>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEKANS_03: MÜZZEMMİL | HAKĪKAT-KONSOLU</title>
+    <style>
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #00ff41; border-bottom: 2px solid #00ff41; padding-bottom: 10px; }
+        .sub-header { color: #008f11; margin-bottom: 30px; font-size: 0.9em; }
         
-        <span class="root-word">Z-M-L (Zeml):</span>
-        <p>Yükü taşımak, dış dünyadan izolasyon, sistem soğutması, gece modu.</p>
+        #terminal-box { background-color: #000; border: 1px solid #333; padding: 15px; font-family: 'Courier New', monospace; font-size: 0.85em; margin-bottom: 30px; box-shadow: 0 0 10px rgba(0, 255, 65, 0.2); display: none; }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } 
+        .log-root { color: #e5c07b; } 
+        .log-proc { color: #00bcd4; } 
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+        .boot-btn { background-color: #1a1a1a; color: #00ff41; border: 1px solid #00ff41; padding: 15px 30px; font-family: 'Courier New', monospace; font-weight: bold; cursor: pointer; width: 100%; text-align: center; margin-bottom: 20px; transition: 0.3s; }
+        .boot-btn:hover { background-color: #00ff41; color: #000; box-shadow: 0 0 15px #00ff41; }
+
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #00ff41; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[KERNEL]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #00ff41; color: #00ff41; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #00ff41; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="kutuphane.html" style="text-decoration: none; color: #555;">&larr; ARŞİVE DÖN</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEKANS_03: MÜZZEMMİL</h1>
+        <div class="sub-header">
+            DURUM: GECE MODU // İŞLEMCİ SOĞUTMA<br>
+            RASM-ANALİZİ: AĞIR SÖZÜN YÜKLENMESİ
+        </div>
     </div>
 
-    <div class="verse-box">
-        <span class="arabic">إِنَّا سَنُلْقِي عَلَيْكَ قَوْلًا ثَقِيلًا</span>
-        <p>"Şüphesiz biz sana 'ağır bir söz' (Data) yükleyeceğiz."</p>
-        
-        <p style="color: #888; font-style: italic;">
-            Sistem Notu: "Gece kalkışı" (Teheccüd), işlemciyi soğutmak ve ağır veriyi işlemek içindir. Gündüz sistem meşguldür (Sabhan), gece veri işlenir.
-        </p>
+    <button class="boot-btn" onclick="runBootSequence()">[ SOĞUTMA SİSTEMİNİ BAŞLAT ]</button>
+
+    <div id="terminal-box">
+        <div id="terminal-content"></div>
+        <span class="cursor">_</span>
     </div>
 
-    <a href="kutuphane.html" class="back-btn">[ KÜTÜPHANEYE DÖN ]</a>
+    <div id="main-content" style="display:none;">
 
+        <div class="verse-block">
+            <span class="verse-number">AYET 01</span>
+            <span class="arabic">يَا أَيُّهَا الْمُزَّمِّلُ</span>
+            <span class="rasm">يا أيها المزمل</span>
+            <span class="translation">"Ey örtüsüne bürünen (Sistemi izole eden)!"</span>
+            <div class="analysis">
+                <span class="keyword">Z-M-L (Zeml):</span> Dış dünyadan kopmak, yükü taşımak, sistem kaynaklarını içe odaklamak.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 05</span>
+            <span class="arabic">إِنَّا سَنُلْقِي عَلَيْكَ قَوْلًا ثَقِيلًا</span>
+            <span class="rasm">إنا سنلقي عليك قولا ثقيلا</span>
+            <span class="translation">"Biz sana 'ağır bir söz' (Büyük Veri Paketi) yükleyeceğiz."</span>
+            <div class="analysis">
+                <span class="keyword">Th-Q-L (Ağır):</span> Yoğun data. Bilincin kaldırabileceği maksimum yük.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYET 06</span>
+            <span class="arabic">إِنَّ نَاشِئَةَ اللَّيْلِ هِيَ أَشَدُّ وَطْئًا</span>
+            <span class="rasm">إن ناشئة الليل هي أشد وطئا</span>
+            <span class="translation">"Şüphesiz gece kalkışı (sistem sessizliği), etki bakımından daha güçlüdür."</span>
+            <div class="analysis">
+                <span class="keyword">L-Y-L (Gece):</span> Parazitsiz ortam. Veri transferi için en uygun zaman dilimi.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="index.html" class="btn">ANA MENÜ</a>
+            <a href="muddesir-tr.html" class="btn">İLERİ: SEKANS_04 &rarr;</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "SEKANS 03 YÜKLENİYOR...", type: "log-sys", delay: 800 },
+            { txt: "Gündüz modu (Sabhan) kapatılıyor...", type: "log-sys", delay: 1000 },
+            { txt: "Gece Protokolü: AKTİF", type: "log-root", delay: 800 },
+            { txt: "Veri akışı 'Ağır Söz' başlatılıyor...", type: "log-proc", delay: 1200 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "ANALİZ: Gündüz uğraş, gece yükseliş.", type: "log-proc", delay: 800 },
+            { txt: "Sistem sıcaklığı: STABİL.", type: "log-proc", delay: 800 },
+            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
+            { txt: "MODÜL MÜZZEMMİL AKTİF.", type: "log-root", delay: 1500 }
+        ];
+
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
 </body>
 </html>
