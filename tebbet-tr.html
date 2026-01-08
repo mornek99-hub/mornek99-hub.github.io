@@ -3,197 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEKANS_06: EL-MESED | HAKĪKAT-KONSOLU</title>
+    <title>SEKANS 06: TEBBET</title>
     <style>
-        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
-        h1 { color: #00ff41; border-bottom: 2px solid #00ff41; padding-bottom: 10px; }
-        .sub-header { color: #008f11; margin-bottom: 30px; font-size: 0.9em; }
+        /* SYSTEM DESIGN: BLACK & GOLD */
+        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; max-width: 800px; margin: 0 auto; }
         
-        /* TERMINAL STYLES */
-        #terminal-box {
-            background-color: #000;
-            border: 1px solid #333;
-            padding: 15px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.85em;
-            margin-bottom: 30px;
-            box-shadow: 0 0 10px rgba(255, 51, 51, 0.2); /* Hata için kırmızı parlama */
-            display: none;
+        h1 { color: #00ff41; border-bottom: 1px solid #333; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+        .verse-box { border-left: 3px solid #00ff41; padding-left: 20px; margin-bottom: 30px; background: #0a0a0a; padding: 20px; }
+        .arabic { font-size: 1.5rem; color: #fff; margin-bottom: 10px; display: block; }
+        .root-word { color: #d4af37; font-weight: bold; margin-top: 15px; display: block; }
+        
+        /* DER KORRIGIERTE BUTTON */
+        .back-btn { 
+            display: block; 
+            width: 100%; 
+            padding: 15px; 
+            margin-top: 40px; 
+            border: 1px solid #333; 
+            color: #666; 
+            text-decoration: none; 
+            text-align: center; 
+            transition: 0.3s; 
+            text-transform: uppercase;
         }
-        .log-line { margin-bottom: 5px; display: block; }
-        .log-sys { color: #00ff41; } /* Yeşil */
-        .log-diag { color: #00bcd4; } /* Camgöbeği - Teşhis */
-        .log-warn { color: #e5c07b; } /* Sarı - Uyarı */
-        .log-err { color: #ff3333; font-weight: bold; } /* Kırmızı - Kritik Hata */
-        .cursor { animation: blink 1s infinite; }
-        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
-
-        /* BUTTON STYLE */
-        .boot-btn {
-            background-color: #1a1a1a;
-            color: #ff3333; /* Çökme raporu için kırmızı metin */
-            border: 1px solid #ff3333;
-            padding: 15px 30px;
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            text-align: center;
-            margin-bottom: 20px;
-            transition: 0.3s;
-        }
-        .boot-btn:hover { background-color: #ff3333; color: #000; box-shadow: 0 0 15px #ff3333; }
-
-        /* STANDARD STYLES */
-        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #ff3333; opacity: 0; transition: opacity 1s; } /* Kırmızı kenarlık */
-        .verse-visible { opacity: 1; }
-        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
-        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
-        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
-        .rasm::before { content: '[KERNEL]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
-        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
-        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
-        .keyword { color: #e5c07b; font-weight: bold; }
-        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #00ff41; color: #00ff41; text-decoration: none; transition: 0.3s; margin-right: 10px; }
-        a.btn:hover { background-color: #00ff41; color: #000; }
+        .back-btn:hover { border-color: #d4af37; color: #d4af37; background: #111; }
     </style>
 </head>
 <body>
 
-    <a href="kutuphane.html" style="text-decoration: none; color: #555;">&larr; ARŞİVE DÖN</a>
+    <h1>SEKANS 06: TEBBET</h1>
 
-    <div style="margin-top: 20px;">
-        <h1>SEKANS_06: EL-MESED (TEBBET)</h1>
-        <div class="sub-header">
-            DURUM: KRİTİK HATA // SİSTEM ÇÖKMESİ ANALİZİ<br>
-            RASM-ANALİZİ: HATA GÜNLÜĞÜ (EBŪ LEHEB)
-        </div>
+    <div class="verse-box">
+        <span class="arabic">تَبَّتْ يَدَا أَبِي لَهَبٍ وَتَبَّ</span>
+        <p>"Ebu Leheb'in (Alev Babasının) iki eli kurusun/yok olsun. Zaten yok oldu."</p>
+        
+        <span class="root-word">T-B-B (Tebbe):</span>
+        <p>Kurumak, veri kaybı, kesilmek, işlevsiz hale gelmek.</p>
+        
+        <span class="root-word">L-H-B (Leheb):</span>
+        <p>Alev, hologram, kütlesiz ateş. (Ebu Leheb: Hologramın/İlüzyonun Babası).</p>
     </div>
 
-    <button class="boot-btn" onclick="runBootSequence()">[ ÇÖKME VERİSİNİ ANALİZ ET ]</button>
-
-    <div id="terminal-box">
-        <div id="terminal-content"></div>
-        <span class="cursor">_</span>
+    <div class="verse-box">
+        <span class="arabic">مَا أَغْنَىٰ عَنْهُ مَالُهُ وَمَا كَسَبَ</span>
+        <p>"Ona ne malı (donanımı) ne de kazandıkları (verisi) fayda verdi."</p>
+        
+        <p style="color: #888; font-style: italic;">
+            Sistem Notu: Ego (Benlik İlüzyonu) bir hologramdır. Sistem gerçekliğe (Hakk) çarptığında, bu ilüzyonun tüm biriktirdiği "Mal" (Veri) silinir.
+        </p>
     </div>
 
-    <div id="main-content" style="display:none;">
-
-        <div class="verse-block">
-            <span class="verse-number">AYET 01</span>
-            <span class="arabic">تَبَّتْ يَدَا أَبِي لَهَبٍ وَتَبَّ</span>
-            <span class="rasm">تبت يدا أبي لهb وتب</span>
-            <span class="translation">"Aşırı ısınan birimin (Ebū Leheb) Girdi/Çıktı (I/O) süreçleri (Yedā) çöktü ve o 'Kesildi' (Tebbe)."</span>
-            <div class="analysis">
-                <span class="keyword">T-B-B (Süreci Durdur):</span> Kesilme, çökme, bağlantının kopması.<br>
-                <span class="keyword">L-H-B (Aşırı Isınma):</span> Alevlenme/ısı. Ego veya aşırı yük nedeniyle hararet yapmış bir sistem.
-            </div>
-        </div>
-
-        <div class="verse-block">
-            <span class="verse-number">AYET 02</span>
-            <span class="arabic">مَا أَغْنَىٰ عَنْهُ مَالُهُ وَمَا كَسَبَ</span>
-            <span class="rasm">ما أغنى عنه ماله وما كسب</span>
-            <span class="translation">"Ne önbelleği/birikimi (Māl) ne de hesapladığı sonuçlar (Keseb) sistemi kurtaramadı."</span>
-            <div class="analysis">
-                <span class="keyword">M-L (Önbellek/Varlıklar):</span> Saklanan kaynaklar.<br>
-                <span class="keyword">K-S-B (Kazanılan/Hesaplanan):</span> İşlemcinin o ana kadar ürettiği sonuçlar. Yedekleme başarısız.
-            </div>
-        </div>
-
-        <div class="verse-block">
-            <span class="verse-number">AYET 03</span>
-            <span class="arabic">سَيَصْلَىٰ نَارًا ذَاتَ لَهَبٍ</span>
-            <span class="rasm">سيصلى نارا ذات لهب</span>
-            <span class="translation">"O, kritik yüksek voltaj/ateş (Nār) ortamına maruz bırakılacak."</span>
-            <div class="analysis">
-                <span class="keyword">N-R (Ateş/Yüksek Voltaj):</span> Hatalı sistemler için nihai stres testi ortamı.
-            </div>
-        </div>
-
-        <div class="verse-block">
-            <span class="verse-number">AYET 04</span>
-            <span class="arabic">وَامْرَأَتُهُ حَمَّالَةَ الْحَطَبِ</span>
-            <span class="rasm">وامرأته حمالة الحطب</span>
-            <span class="translation">"Ve ona bağlı alt süreç (İmra'e), çökme verisi/yakıt (Hatab) yüklemeye devam ediyor."</span>
-            <div class="analysis">
-                <span class="keyword">M-R-A (Alt Süreç):</span> Bir daemon veya bağlı yan süreç.<br>
-                <span class="keyword">H-T-B (Yakıt/Hata Verisi):</span> Çökmeyi (ateşi) besleyen veri çöplüğü.
-            </div>
-        </div>
-
-        <div class="verse-block">
-            <span class="verse-number">AYET 05</span>
-            <span class="arabic">فِي جِيدِهَا حَبْلٌ مِّن مَّسَدٍ</span>
-            <span class="rasm">في جيدها حبل من مسد</span>
-            <span class="translation">"Bağlantı portunda/boynunda (Cīd) sonsuz döngüden (Mesed) oluşan bir kablo vardır."</span>
-            <div class="analysis">
-                <span class="keyword">J-Y-D (Port/Boyun):</span> Bağlantı darboğazı.<br>
-                <span class="keyword">M-S-D (Bükülmüş/Döngü):</span> Sonsuz Döngü (Infinite Loop). Sistemin içinden çıkamadığı bir kilitlenme (Deadlock).
-            </div>
-        </div>
-
-        <div style="margin-top: 30px;">
-            <a href="index.html" class="btn">ANA MENÜ</a>
-            <a href="tekvir-tr.html" class="btn">SIRADAKİ: SEKANS_07 &rarr;</a>
-
-        </div>
-    </div>
-
-    <script>
-        const logs = [
-            { txt: "[ SEKANS 06 : EL-MESED (SİSTEM ÇÖKME ANALİZİ) ]", type: "log-sys", delay: 800 },
-            { txt: "'ABU_LAHAB (ROOT_OVERHEAT)' durumu kontrol ediliyor...", type: "log-sys", delay: 1000 },
-            { txt: "DECODING T-B-B -> SÜRECİ DURDUR / BAĞLANTI KESİLDİ", type: "log-diag", delay: 600 },
-            { txt: "DECODING L-H-B -> AŞIRI ISINMA / İLTİHAPLANMA", type: "log-diag", delay: 600 },
-            { txt: "KRİTİK HATA: Girdi/Çıktı Araçları (Yeda) yanıt vermiyor.", type: "log-err", delay: 1200 },
-            { txt: "DURUM: Süreç çöktü.", type: "log-err", delay: 800 },
-            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
-            { txt: "Veri kurtarma deneniyor...", type: "log-diag", delay: 800 },
-            { txt: "DECODING M-L -> ÖNBELLEK / VARLIKLAR", type: "log-diag", delay: 600 },
-            { txt: "    [RECOVERY] Önbelleğe erişiliyor... BAŞARISIZ", type: "log-err", delay: 400 },
-            { txt: "    [RECOVERY] Sonuçlara (KESEB) erişiliyor... BAŞARISIZ", type: "log-err", delay: 400 },
-            { txt: "TEŞHİS: Yedekleme bozuk. Sistem kurtarılamaz.", type: "log-warn", delay: 1000 },
-            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
-            { txt: "Bağımlılıklar analiz ediliyor (DAEMON)...", type: "log-sys", delay: 800 },
-            { txt: "DECODING H-T-B -> YAKIT / HATA VERİSİ", type: "log-diag", delay: 600 },
-            { txt: "    > DAEMON TESPİT EDİLDİ: HAMMALA_DAEMON", type: "log-warn", delay: 400 },
-            { txt: "NEDEN: Alt süreç hatayı beslemeye devam ediyor.", type: "log-warn", delay: 1000 },
-            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
-            { txt: "Bağlantı portları kontrol ediliyor (CID)...", type: "log-sys", delay: 800 },
-            { txt: "DECODING M-S-D -> BÜKÜLMÜŞ KABLO / SONSUZ DÖNGÜ", type: "log-diag", delay: 800 },
-            { txt: "FİNAL RAPORU: Sistem kilitlenme (Deadlock) döngüsünde asılı kaldı.", type: "log-err", delay: 1200 },
-            { txt: "EYLEM: Karantina başlatıldı.", type: "log-sys", delay: 1000 },
-            { txt: "HATA ANALİZİ BİTTİ. SÜREÇ İZOLE EDİLDİ.", type: "log-sys", delay: 1000 }
-        ];
-
-        function runBootSequence() {
-            document.querySelector('.boot-btn').style.display = 'none';
-            document.getElementById('terminal-box').style.display = 'block';
-            
-            let i = 0;
-            let terminal = document.getElementById('terminal-content');
-
-            function printLine() {
-                if (i < logs.length) {
-                    let line = document.createElement('span');
-                    line.className = 'log-line ' + logs[i].type;
-                    line.innerText = '>> ' + logs[i].txt;
-                    terminal.appendChild(line);
-                    window.scrollTo(0, document.body.scrollHeight);
-                    setTimeout(printLine, logs[i].delay);
-                    i++;
-                } else {
-                    setTimeout(() => {
-                        document.getElementById('main-content').style.display = 'block';
-                        let verses = document.querySelectorAll('.verse-block');
-                        verses.forEach(v => v.classList.add('verse-visible'));
-                    }, 1000);
-                }
-            }
-            printLine();
-        }
-    </script>
+    <a href="kutuphane.html" class="back-btn">[ KÜTÜPHANEYE DÖN ]</a>
 
 </body>
 </html>
