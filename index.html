@@ -16,19 +16,19 @@
             min-height: 100vh; 
             margin: 0; 
             text-align: center; 
-            padding: 20px;
+            padding: 20px; 
         }
 
         h1 { 
-            font-size: 2rem; 
+            font-size: 1.8rem; 
             margin-bottom: 10px; 
             color: #e5c07b; /* Gold */
             text-transform: uppercase; 
-            letter-spacing: 4px;
+            letter-spacing: 3px;
         }
 
         .formula {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #00ff41; /* Matrix Green */
             margin-bottom: 30px;
             font-weight: bold;
@@ -38,29 +38,34 @@
             box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
         }
 
-        .section-title {
-            color: #444;
-            font-size: 0.8rem;
+        .section-header {
+            color: #555;
+            font-size: 0.75rem;
+            margin-top: 20px;
             margin-bottom: 15px;
             letter-spacing: 2px;
             border-bottom: 1px dashed #333;
             padding-bottom: 5px;
             width: 100%;
-            max-width: 400px;
+            max-width: 450px;
+            text-transform: uppercase;
         }
 
         /* BUTTON STYLES */
         .btn {
             display: block;
             width: 100%;
-            max-width: 400px;
-            padding: 12px;
-            margin: 10px auto;
+            max-width: 450px;
+            padding: 15px;
+            margin: 12px auto;
             text-decoration: none;
             font-size: 0.85rem;
             transition: 0.3s;
             background: transparent;
             text-transform: uppercase;
+            font-weight: bold;
+            box-sizing: border-box;
+            position: relative;
         }
 
         /* 1. GOLD BUTTON (PYTHON) */
@@ -70,10 +75,16 @@
         }
         .btn-gold:hover { background-color: rgba(229, 192, 123, 0.1); box-shadow: 0 0 10px rgba(229, 192, 123, 0.3); }
 
-        /* 2. MANUAL BUTTONS (WHITE/BLUE) */
+        /* 2. MANUAL BUTTONS (BLUE/WHITE ICON STYLE) */
         .btn-manual {
             border: 1px solid #aaa;
-            color: #ddd;
+            color: #eee;
+            text-align: center;
+        }
+        /* Kleines Icon-Quadrat links simulieren */
+        .btn-manual::before {
+            content: "📘"; 
+            margin-right: 10px;
         }
         .btn-manual:hover { border-color: #fff; color: #fff; background-color: rgba(255, 255, 255, 0.05); }
 
@@ -81,20 +92,79 @@
         .btn-green {
             border: 1px solid #00ff41;
             color: #00ff41;
-            font-weight: bold;
         }
+        /* Flaggen Icons simulieren */
+        .btn-de::before { content: "🇩🇪 "; }
+        .btn-tr::before { content: "🇹🇷 "; }
+
         .btn-green:hover { background-color: rgba(0, 255, 65, 0.1); box-shadow: 0 0 15px rgba(0, 255, 65, 0.3); }
 
         .phase-label {
             color: #008f11;
             font-size: 0.7rem;
-            margin-top: 30px;
+            margin-top: 40px;
             margin-bottom: 10px;
+            letter-spacing: 1px;
         }
+
+        /* ARCHITECTURE LINKS (BOTTOM) */
+        .arch-link {
+            display: block;
+            width: 100%;
+            max-width: 450px;
+            border: 1px solid #008f11;
+            padding: 10px;
+            color: #00ff41;
+            text-decoration: none;
+            font-size: 0.7rem;
+            margin: 5px auto;
+            text-transform: uppercase;
+        }
+        .arch-link:hover { background: #001100; border-color: #00ff41; }
 
     </style>
 </head>
 <body>
 
-    <h1>HAKĪKAT-KALESİ</h1>
-    <div
+    <h1>HAKĪKAT-<br>KALESİ</h1>
+    
+    <a href="https://mornek99-hub.github.io/" style="text-decoration: none;">
+        <div class="formula">E = m · c² · I</div>
+    </a>
+
+    <div class="section-header">ACCESS TERMINAL / ERİŞİM PANELİ</div>
+
+    <a href="hakikat_core.py" class="btn btn-gold">
+        [ 👁 VIEW SOURCE: PYTHON PROTOCOL ]
+    </a>
+
+    <a href="manual.html" class="btn btn-manual">
+        MANUELLES UPDATE: RESONANZ<br><span style="font-size:0.8em; opacity:0.7;">(HANDBUCH)</span>
+    </a>
+
+    <a href="kilavuz.html" class="btn btn-manual">
+        MANUEL GÜNCELLEME: REZONANS<br><span style="font-size:0.8em; opacity:0.7;">(KILAVUZ)</span>
+    </a>
+
+    <div style="margin: 20px 0; border-bottom: 1px dashed #333; width: 100%; max-width: 450px;"></div>
+
+    <a href="index-de.html" class="btn btn-green btn-de">
+        DEUTSCHES ARCHIV
+    </a>
+    
+    <a href="kutuphane.html" class="btn btn-green btn-tr">
+        TÜRKÇE KÜTÜPHANE
+    </a>
+
+    <div class="phase-label">>>> PHASE I: ARCHITECTURE</div>
+
+    <a href="architecture.html" class="arch-link">
+        [ SYSTEM ARCHITECTURE / MUKATTAA REGISTRY ]
+    </a>
+
+    <a href="architecture-tr.html" class="arch-link">
+        [ SİSTEM MİMARİSİ / MUKATTAA KAYITLARI ]
+    </a>
+
+</body>
+</html>
