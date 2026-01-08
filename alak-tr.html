@@ -3,188 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEQ_01: AL-ALAQ | HAKĪKAT-KONSOLU</title>
+    <title>SEKANS 01: ALAK</title>
     <style>
-        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
-        h1 { color: #00ff41; border-bottom: 2px solid #00ff41; padding-bottom: 10px; }
-        .sub-header { color: #008f11; margin-bottom: 30px; font-size: 0.9em; }
+        /* SYSTEM DESIGN: BLACK & GOLD */
+        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; max-width: 800px; margin: 0 auto; }
         
-        /* TERMINAL STYLES */
-        #terminal-box {
-            background-color: #000;
-            border: 1px solid #333;
-            padding: 15px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.85em;
-            margin-bottom: 30px;
-            box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
-            display: none; /* Erst unsichtbar */
+        h1 { color: #00ff41; border-bottom: 1px solid #333; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+        .verse-box { border-left: 3px solid #00ff41; padding-left: 20px; margin-bottom: 30px; background: #0a0a0a; padding: 20px; }
+        .arabic { font-size: 1.5rem; color: #fff; margin-bottom: 10px; display: block; }
+        .root-word { color: #d4af37; font-weight: bold; margin-top: 15px; display: block; }
+        
+        /* DER KORRIGIERTE BUTTON */
+        .back-btn { 
+            display: block; 
+            width: 100%; 
+            padding: 15px; 
+            margin-top: 40px; 
+            border: 1px solid #333; 
+            color: #666; 
+            text-decoration: none; 
+            text-align: center; 
+            transition: 0.3s; 
+            text-transform: uppercase;
         }
-        .log-line { margin-bottom: 5px; display: block; }
-        .log-sys { color: #00ff41; } /* Grün */
-        .log-root { color: #e5c07b; } /* Gelb */
-        .log-proc { color: #00bcd4; } /* Cyan */
-        .cursor { animation: blink 1s infinite; }
-        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
-
-        /* BUTTON STYLE */
-        .boot-btn {
-            background-color: #1a1a1a;
-            color: #00ff41;
-            border: 1px solid #00ff41;
-            padding: 15px 30px;
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            text-align: center;
-            margin-bottom: 20px;
-            transition: 0.3s;
-        }
-        .boot-btn:hover { background-color: #00ff41; color: #000; box-shadow: 0 0 15px #00ff41; }
-
-        /* STANDARD STYLES */
-        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #00ff41; opacity: 0; transition: opacity 1s; }
-        .verse-visible { opacity: 1; }
-        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
-        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
-        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
-        .rasm::before { content: '[KERNEL]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
-        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
-        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
-        .keyword { color: #e5c07b; font-weight: bold; }
-        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #00ff41; color: #00ff41; text-decoration: none; transition: 0.3s; margin-right: 10px; }
-        a.btn:hover { background-color: #00ff41; color: #000; }
+        .back-btn:hover { border-color: #d4af37; color: #d4af37; background: #111; }
     </style>
 </head>
 <body>
 
-    <a href="kutuphane.html" style="text-decoration: none; color: #555;">&larr; ARŞİVE DÖN</a>
+    <h1>SEKANS 01: EL-ALAK</h1>
 
-    <div style="margin-top: 20px;">
-        <h1>SEKANS_01: EL-ALAK</h1>
-        <div class="sub-header">
-            DURUM: BAŞLATILIYOR // BAĞLANTI KURULDU<br>
-            RASM-ANALİZİ: İLK TEMAS
-        </div>
+    <div class="verse-box">
+        <span class="arabic">اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ</span>
+        <p>"Yaratan Rabbinin adıyla (Bismillah) Oku."</p>
+        
+        <span class="root-word">A-L-K (Alak):</span>
+        <p>Yapışıp asılan, genetik kod, embriyo, sevgi bağı.</p>
+        
+        <span class="root-word">I-Q-R-A (Oku):</span>
+        <p>Veriyi deşifre et, desenleri gör, kainatı bir kitap gibi tara.</p>
     </div>
 
-    <button class="boot-btn" onclick="runBootSequence()">[ SİSTEMİ BAŞLAT / BOOT KERNEL ]</button>
-
-    <div id="terminal-box">
-        <div id="terminal-content"></div>
-        <span class="cursor">_</span>
+    <div class="verse-box">
+        <span class="arabic">خَلَقَ الْإِنسَانَ مِنْ عَلَقٍ</span>
+        <p>"O, insanı bir 'Alak'tan (embriyo/yapışkan hücre) yarattı."</p>
+        
+        <p style="color: #888; font-style: italic;">
+            Sistem Notu: İnsan biyolojik donanım (Dabbet) olarak başlar. "Okumak" (İkra) yazılım güncellemesidir.
+        </p>
     </div>
 
-    <div id="main-content" style="display:none;">
-
-        <div class="verse-block">
-            <span class="verse-number">AYET 01</span>
-            <span class="arabic">اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ</span>
-            <span class="rasm">اقرأ باسم ربك الذي خلق</span>
-            <span class="translation">"Oku/İşle (İkra), yaratan/iz düşüren Programcının (Rabb) ismiyle."</span>
-            <div class="analysis">
-                <span class="keyword">I-Q-R (Oku/İşle):</span> Veri işleme komutu. Sadece okuma değil, deşifre etme.<br>
-                <span class="keyword">R-B-B (Rabb/Programcı):</span> Kodun kaynağı. Sistemin koruyucusu.
-            </div>
-        </div>
-
-        <div class="verse-block">
-            <span class="verse-number">AYET 02</span>
-            <span class="arabic">خَلَقَ الْإِنسَانَ مِنْ عَلَقٍ</span>
-            <span class="rasm">خلق الإنسان من علق</span>
-            <span class="translation">"İnsanı asılı duran bir maddeden (Alak) yarattı."</span>
-            <div class="analysis">
-                <span class="keyword">A-L-Q (Yapışmak/Asılmak):</span> Biyolojik referans (embriyo) ve psikolojik bağımlılık (eklenti).
-            </div>
-        </div>
-
-        <div class="verse-block">
-            <span class="verse-number">AYET 03</span>
-            <span class="arabic">اقْرَأْ وَرَبُّكَ الْأَكْرَمُ</span>
-            <span class="rasm">اقرأ وربك الأكرم</span>
-            <span class="translation">"Oku, senin Programcın en büyük kerem sahibidir (Akram)."</span>
-            <div class="analysis">
-                <span class="keyword">K-R-M (Cömert/Onurlu):</span> Bilinç için sınırsız kaynak/veri sağlanması.
-            </div>
-        </div>
-
-        <div class="verse-block">
-            <span class="verse-number">AYET 04</span>
-            <span class="arabic">الَّذِي عَلَّمَ بِالْقَلEMِ</span>
-            <span class="rasm">الذي علم بالقلم</span>
-            <span class="translation">"O ki, kalemle (donanım/araç) öğretmiş/kodlamıştır."</span>
-            <div class="analysis">
-                <span class="keyword">Q-L-M (Kalem/Araç):</span> Bilginin/kodun kaydedilmesi ve aktarılması için kullanılan araç.
-            </div>
-        </div>
-
-        <div class="verse-block">
-            <span class="verse-number">AYET 05</span>
-            <span class="arabic">عَلَّمَ الْإِنسَانَ مَا لَمْ يَعْلَمْ</span>
-            <span class="rasm">علم الإنسان ما لم يعلم</span>
-            <span class="translation">"İnsana bilmediğini (veri yüklemesi) öğretti."</span>
-            <div class="analysis">
-                <span class="keyword">I-L-M (İlim/Veri):</span> İnsan sistemine yeni yazılım/bilgi kurulumu.
-            </div>
-        </div>
-
-        <div style="margin-top: 30px;">
-            <a href="index-tr.html" class="btn">ANA MENÜ</a>
-            <a href="kalem-tr.html" class="btn">SIRADAKİ: SEQ_02 &rarr;</a>
-        </div>
-    </div>
-
-    <script>
-        const logs = [
-            { txt: "HAKĪKAT-KALESİ SİSTEM ÖNYÜKLEME ...", type: "log-sys", delay: 800 },
-            { txt: "Rasm-Parser başlatılıyor...", type: "log-sys", delay: 1200 },
-            { txt: "Geleneksel filtreler (vokaller) kaldırıldı.", type: "log-sys", delay: 600 },
-            { txt: "Suwayda belleğine bağlanılıyor...", type: "log-sys", delay: 1500 },
-            { txt: "DURUM: ONLINE (Bağlantı tipi: ALAK)", type: "log-root", delay: 1000 },
-            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
-            { txt: "DECODING Q-R-A -> TARA / GİRDİ", type: "log-proc", delay: 800 },
-            { txt: "DECODING R-B-B -> SİSTEM_ADMİN / EVRİMCİ", type: "log-proc", delay: 800 },
-            { txt: "DECODING A-N-S -> İSTEMCİ (İNSAN)", type: "log-proc", delay: 800 },
-            { txt: "DECODING A-L-Q -> BAĞIMLILIK_HATTI", type: "log-proc", delay: 1200 },
-            { txt: "----------------------------------------", type: "log-sys", delay: 300 },
-            { txt: "SEKANS 01 YÜKLENDİ. BİLİNÇ AKTİF.", type: "log-root", delay: 1500 }
-        ];
-
-        function runBootSequence() {
-            // Button verstecken, Terminal zeigen
-            document.querySelector('.boot-btn').style.display = 'none';
-            document.getElementById('terminal-box').style.display = 'block';
-            
-            let i = 0;
-            let terminal = document.getElementById('terminal-content');
-
-            function printLine() {
-                if (i < logs.length) {
-                    let line = document.createElement('span');
-                    line.className = 'log-line ' + logs[i].type;
-                    line.innerText = '>> ' + logs[i].txt;
-                    terminal.appendChild(line);
-                    
-                    // Auto-Scroll nach unten
-                    window.scrollTo(0, document.body.scrollHeight);
-
-                    setTimeout(printLine, logs[i].delay);
-                    i++;
-                } else {
-                    // Wenn fertig: Inhalt anzeigen
-                    setTimeout(() => {
-                        document.getElementById('main-content').style.display = 'block';
-                        
-                        // Alle Verse einblenden
-                        let verses = document.querySelectorAll('.verse-block');
-                        verses.forEach(v => v.classList.add('verse-visible'));
-                    }, 1000);
-                }
-            }
-            printLine();
-        }
-    </script>
+    <a href="kutuphane.html" class="back-btn">[ KÜTÜPHANEYE DÖN ]</a>
 
 </body>
 </html>
