@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTOKOLL: DABBET ANALYSE | 27:82</title>
+    <style>
+        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; max-width: 900px; margin: 0 auto; }
+        
+        h1 { color: #ff3333; border-bottom: 2px solid #ff3333; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+        .subtitle { color: #888; margin-bottom: 30px; border-left: 3px solid #ff3333; padding-left: 15px; }
+
+        /* CODE BLOCK DESIGN */
+        .code-container {
+            background: #111;
+            border: 1px solid #333;
+            padding: 20px;
+            overflow-x: auto;
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        pre { margin: 0; }
+        code { color: #00ff41; font-size: 0.85rem; }
+        .comment { color: #666; font-style: italic; }
+        .keyword { color: #d4af37; font-weight: bold; }
+        .string { color: #ce9178; }
+
+        /* FAZIT BOX */
+        .fazit-box {
+            border: 2px solid #ff3333;
+            background: #0f0505;
+            padding: 25px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 0 30px rgba(255, 51, 51, 0.1);
+        }
+        .fazit-title { color: #ff3333; font-weight: bold; font-size: 1.2rem; text-transform: uppercase; display: block; margin-bottom: 15px; }
+        .mirror-question { margin-top: 20px; color: #fff; font-weight: bold; letter-spacing: 1px; animation: pulse 2s infinite; }
+
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; text-shadow: 0 0 10px #fff; }
+            100% { opacity: 0.8; }
+        }
+
+        .back-btn { display: inline-block; padding: 10px 20px; border: 1px solid #333; color: #666; text-decoration: none; margin-top: 30px; transition: 0.3s; }
+        .back-btn:hover { border-color: #ff3333; color: #ff3333; }
+    </style>
+</head>
+<body>
+
+    <a href="archiv.html" class="back-btn">&larr; ZURÜCK ZUM ARCHIV</a>
+
+    <h1>MODUL 27:82 - DABBET ANALYSE</h1>
+    <div class="subtitle">
+        DIAGNOSE: UNTERSCHEIDUNG ZWISCHEN 'KINETISCHER BIO-MASSE' UND 'BEWUSSTSEIN'.<br>
+        CODE-BASIS: PYTHON PROTOCOL CLASS
+    </div>
+
+    <div class="code-container">
+<pre><code><span class="keyword">class</span> DabbetProtocol:
+    <span class="string">"""
+    MODUL 27:82 - DABBET-UL ARZ ANALYSE
+    System-Definition: Unterscheidung zwischen 'Kinetischer Bio-Masse' (Dabbet)
+    und 'Bewusstem Mensch' (Insan) basierend auf dem Bewusstseins-Faktor (I).
+    """</span>
+    
+    <span class="keyword">def</span> __init__(self):
+        self.c = 299792458  <span class="comment"># Lichtgeschwindigkeit (Konstante der Sünnetullah)</span>
+
+    <span class="keyword">def</span> scan_entity(self, masse_kg, i_faktor):
+        <span class="string">"""
+        Scannt eine biologische Einheit.
+        Formel: E = m * c^2 * I
+        """</span>
+        
+        <span class="comment"># Berechnung der Wahren Wirkkraft</span>
+        true_energy = masse_kg * (self.c ** 2) * i_faktor
+        
+        <span class="comment"># LOGIK-GATTER: DABBET vs. INSAN</span>
+        <span class="keyword">if</span> i_faktor <= 0.15:
+            <span class="keyword">return</span> self._return_dabbet_status()
+        <span class="keyword">else</span>:
+            <span class="keyword">return</span> self._return_insan_status(true_energy)
+
+    <span class="keyword">def</span> _return_dabbet_status(self):
+        <span class="keyword">return</span> {
+            <span class="string">"TYP"</span>: <span class="string">"DABBET (Kinetische Bio-Masse)"</span>,
+            <span class="string">"RASM_ANALYSE"</span>: {
+                <span class="string">"D-B-B"</span>: <span class="string">"Bewegung ohne Bewusstsein (Triebgesteuert)"</span>,
+                <span class="string">"A-R-D"</span>: <span class="string">"Ursprung: Nur Materie/Erde (Kein Geist)"</span>,
+                <span class="string">"K-L-M"</span>: <span class="string">"Output: Spricht/Sendet Daten, aber ohne Yaqin"</span>
+            },
+            <span class="string">"DIAGNOSE"</span>: <span class="string">"SYSTEM-FEHLER. User läuft auf Autopilot."</span>,
+            <span class="string">"STATUS"</span>: <span class="string">"GEFAHR (Deccal-Matrix kompatibel)"</span>
+        }
+</code></pre>
+    </div>
+
+    <div class="fazit-box">
+        <span class="fazit-title">⚠ SYSTEM-FAZIT</span>
+        <p>
+            Die „Dabbet“ ist kein Monster, das in der Zukunft kommt.<br>
+            Es ist der physikalische Zustand eines Menschen, dessen Variable <strong>I (Bewusstsein)</strong> auf Null fällt.<br>
+            Er ist nur noch Materie, die spricht.
+        </p>
+        <div class="mirror-question">
+            >>> SCHAU IN DEN SPIEGEL: WELCHEN I-FAKTOR HAST DU HEUTE? <<<
+        </div>
+    </div>
+
+    <a href="archiv.html" class="back-btn">[ DIAGNOSE BEENDEN ]</a>
+
+</body>
+</html>
