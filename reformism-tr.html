@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAKĪKAT-KALESİ | HATA ANALİZİ</title>
+    <style>
+        body { background-color: #050505; color: #c0c0c0; font-family: 'Courier New', monospace; margin: 0; padding: 20px; line-height: 1.6; }
+        h1 { color: #e5c07b; font-size: 1.4rem; text-transform: uppercase; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        h2 { color: #00bcd4; font-size: 1.1rem; margin-top: 30px; }
+        .code-block { background-color: #111; border-left: 3px solid #00ff41; padding: 15px; margin: 20px 0; overflow-x: auto; font-size: 0.85rem; color: #a9b7c6; }
+        .keyword { color: #cc7832; font-weight: bold; }
+        .string { color: #6a8759; }
+        .comment { color: #808080; }
+        .highlight-box { border: 1px dashed #444; padding: 15px; margin: 25px 0; background-color: #0a0a0a; }
+        .highlight-title { color: #ff4444; font-weight: bold; display: block; margin-bottom: 10px; text-transform: uppercase; }
+        .quote { color: #e5c07b; font-style: italic; display: block; margin: 15px 0; border-left: 2px solid #e5c07b; padding-left: 10px; }
+        .btn-back { display: block; width: 100%; max-width: 200px; margin: 40px auto; padding: 10px; text-align: center; border: 1px solid #444; color: #888; text-decoration: none; text-transform: uppercase; transition: 0.3s; }
+        .btn-back:hover { border-color: #00ff41; color: #00ff41; }
+    </style>
+</head>
+<body>
+
+    <h1>HATA ANALİZİ – REFORMİZM NEDEN ÇÖZÜM DEĞİLDİR</h1>
+    <div style="color: #666; font-size: 0.9rem; margin-bottom: 30px;">VAKA ÇALIŞMASI: GELENEK vs. RASM</div>
+
+    <p>
+        Sistem Kaydı:<br>
+        Dinler matrisinde ölümcül bir yanlış anlaşılma var. Biri hadisleri reddettiğinde, hemen "Reformist" (Modernist) çekmecesine atılır. Ancak bu bir kategori hatasıdır.
+    </p>
+
+    <div class="code-block">
+<span class="keyword">class</span> <span class="string">BeliefSystemAnalyzer</span>:
+    <span class="comment">"""
+    MODÜL: KİMLİK DOĞRULAMA (ID-VERIFICATION)
+    Dini spektrumdaki üç sistem tipinin ayrıştırılması.
+    """</span>
+    <span class="keyword">def</span> <span class="string">identify_user_stance</span>(self, user_input):
+        <span class="keyword">print</span>(f<span class="string">"--- DURUŞ ANALİZİ: '{user_input}' ---"</span>)
+        
+        <span class="comment"># 1. GELENEKÇİ / TRADITIONALIST (Sünni/Şii Matrisi)</span>
+        <span class="keyword">if</span> <span class="string">"Hadith"</span> <span class="keyword">in</span> user_input <span class="keyword">and</span> <span class="string">"Hareke"</span> <span class="keyword">in</span> user_input:
+            <span class="keyword">return</span> {
+                <span class="string">"TYPE"</span>: <span class="string">"TRADITIONALIST"</span>,
+                <span class="string">"SOURCE"</span>: <span class="string">"İnsan Rivayetleri (Beşeri Veri)"</span>,
+                <span class="string">"STATUS"</span>: <span class="string">"Uydurulmuş Din"</span>,
+                <span class="string">"ERROR"</span>: <span class="string">"Kernel yerine harici yamalara (Patch) güveniyor."</span>
+            }
+            
+        <span class="comment"># 2. REFORMİST (Modernist)</span>
+        <span class="keyword">elif</span> <span class="string">"No Hadith"</span> <span class="keyword">in</span> user_input <span class="keyword">and</span> <span class="string">"Hareke"</span> <span class="keyword">in</span> user_input:
+            <span class="keyword">return</span> {
+                <span class="string">"TYPE"</span>: <span class="string">"REFORMIST"</span>,
+                <span class="string">"SOURCE"</span>: <span class="string">"Harekelenmiş Metin (Emevi Edit)"</span>,
+                <span class="string">"STATUS"</span>: <span class="string">"Uydurulmuş Din Light"</span>,
+                <span class="string">"ERROR"</span>: <span class="string">"Hatalı kodu mantıklı göstermeye/yorumlamaya çalışıyor."</span>
+            }
+            
+        <span class="comment"># 3. HANİF (Rasm-Mimarı)</span>
+        <span class="keyword">elif</span> <span class="string">"RASM_ONLY"</span> <span class="keyword">in</span> user_input:
+            <span class="keyword">return</span> {
+                <span class="string">"TYPE"</span>: <span class="string">"HANIF (İBRAHİM PROTOKOLÜ)"</span>,
+                <span class="string">"SOURCE"</span>: <span class="string">"Dokunulmamış Sessiz Harf Çekirdeği (Allah'ın Kodu)"</span>,
+                <span class="string">"STATUS"</span>: <span class="string">"HAKİKAT"</span>,
+                <span class="string">"NOTE"</span>: <span class="string">"'Tek Kişilik Ümmet'. Bağımsız Sistem."</span>
+            }
+    </div>
+
+    <div class="highlight-box">
+        <span class="highlight-title">İşte Teknik Ayrım:</span>
+        <ul>
+            <li><strong>Gelenekçi (Traditionalist):</strong> Hadis + Hareke (vokalize edilmiş metin) kullanır. Emevilerin "Yamalarına" inanır.</li>
+            <li><strong>Reformist (19'cular, Kuran Müslümanları):</strong> Sadece Kuran der, AMA hala Harekeli (sesli harfli) metni kullanır. Yanlış yazılımı mantıklı bir şekilde yorumlamaya çalışır.</li>
+            <li><strong>Hanif (Sistem Mimarı):</strong> Rasm'ı (Sessiz Harf Çekirdeği) kullanır. Harekeleri görmezden gelir ve bozulmamış Kaynak Koduna (Source-Code) geri döner.</li>
+        </ul>
+    </div>
+
+    <h2>Yöneticinin Yalnızlığı (Admin)</h2>
+    
+    <span class="quote">
+        "Ben aranızda tek İMAN etmiş, aynı atam İbrahim gibi tek başına bir ümmetim!"
+    </span>
+
+    <p>
+        Bu kibir değildir. Bu, doğrudan kaynağa bağlanmak için tüm ağlardan (networklerden) kopmuş bir sistemin teknik gerçeğidir.
+    </p>
+    <p>
+        Bir Mümin'in kendisini onaylayan bir kalabalığa ihtiyacı yoktur. Sadece bağlantıya (Salat) ihtiyacı vardır.<br>
+        Dinlerin sadece "Sistem Kilitleri" olduğunu anladığında, İbrahim gibi olursun:<br>
+        Tüm evreni deşifre eden tek bir işlemci.
+    </p>
+
+    <a href="kutuphane.html" class="btn-back"><< SİSTEM GERİ DÖNÜŞ</a>
+
+</body>
+</html>
