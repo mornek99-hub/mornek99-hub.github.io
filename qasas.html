@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQMUK_10: AL-QASAS | HAKĪKAT-KONSOLU</title>
+    <style>
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+        .sub-header { color: #888; margin-bottom: 30px; font-size: 0.9em; }
+        #terminal-box { background-color: #000; border: 1px solid #333; padding: 15px; font-family: 'Courier New', monospace; font-size: 0.85em; margin-bottom: 30px; box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); display: none; }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } .log-root { color: #d4af37; font-weight: bold; } .log-io { color: #00bcd4; } .log-warn { color: #ff9800; }
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+        .boot-btn { background-color: #1a1a1a; color: #d4af37; border: 1px solid #d4af37; padding: 15px 30px; font-family: 'Courier New', monospace; font-weight: bold; cursor: pointer; width: 100%; text-align: center; margin-bottom: 20px; transition: 0.3s; }
+        .boot-btn:hover { background-color: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #d4af37; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[RASM]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        .domain-tag { display: inline-block; background: #222; color: #888; padding: 2px 5px; font-size: 0.7em; border-radius: 3px; margin-right: 5px; margin-bottom: 5px; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #d4af37; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="naml.html" style="text-decoration: none; color: #555;">&larr; ZURÜCK ZU AN-NAML (SEQ_09)</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQMUK_10: AL-QASAS (طسم)</h1>
+        <div class="sub-header">
+            ORT: SURAH 28 [1-5, 30, 78, 88]<br>
+            MODELL: MACHT-INVERSION & QUELLEN-ATTRIBUTION
+        </div>
+    </div>
+
+    <button class="boot-btn" onclick="runBootSequence()">[ PROTOKOLL STARTEN: T-S-M ]</button>
+
+    <div id="terminal-box"><div id="terminal-content"></div><span class="cursor">_</span></div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01-03</span>
+            <span class="arabic">طسم ... نَتْلُو عَلَيْكَ مِن نَّبَإِ مُوسَىٰ وَفِرْعَوْنَ بِالْحَقِّ</span>
+            <span class="rasm">طسم ... نتلو عليك من نبإ موسى وفرعون بالحق</span>
+            <span class="translation">"Ta-Sin-Mim. Wir streamen (Natlu) dir Daten über Musa und Pharao in Real-Time/Wahrheit (Haqq)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">DATEN-WIEDERHERSTELLUNG:</span> "Qasas" bedeutet Spurensuche. Das System rekonstruiert korrumpierte historische Daten. Es ist kein Märchen, sondern eine forensische Analyse der Machtdynamik.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">ARCHETYPE-SCAN:</span> Musa (Revolution) vs. Pharao (Tyrannis). Diese zwei Prozesse laufen in jeder Gesellschaftsschicht.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 05</span>
+            <span class="arabic">وَنُرِيدُ أَن نَّمُنَّ عَلَى الَّذِينَ اسْتُضْعِفُوا فِي الْأَرْضِ وَنَجْعَلَهُمْ أَئِمَّةً ...</span>
+            <span class="rasm">ونريد أن نمن على الذين استضعفوا في الأرض ونجعلهم أئمة ...</span>
+            <span class="translation">"Wir wollen den Unterdrückten/Schwachen (Mustad'afin) ein Upgrade geben (Nammuna) und sie zu Kern-Prozessoren (Imame/Führer) machen."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">MACHT-INVERSION:</span> Das System dreht die Polarität um. Potentialenergie (die Schwachen) wird in kinetische Energie (Führer) umgewandelt. Das "Root-Verzeichnis" wird neu geschrieben.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">SYSTEM-RESET:</span> Wenn Machtstrukturen zu starr (Pharao) werden, initiiert das System einen Reset von unten. Die Marginalisierten erben die Erde (Warithin).
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 30</span>
+            <span class="arabic">... نُودِيَ مِن شَاطِئِ الْوَادِ الْأَيْمَنِ فِي الْبُقْعَةِ الْمُبَارَكَةِ مِنَ الشَّجَرَةِ</span>
+            <span class="rasm">... نودي من شطئ الواد الأيمن في البقعة المبركة من الشجرة</span>
+            <span class="translation">"Er wurde angepingt vom rechten Rand des Tals, im gesegneten Sektor (Buq'a), aus dem Baum."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">NODE (Knotenpunkt):</span> Die "Buq'a Mubarakah" ist ein energetischer Hotspot. Der Baum ist die Antenne (Fraktale Struktur). Feuer ohne Brennstoff = Plasma/Licht. Direkte Datenübertragung.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">KONTAKT-PUNKT:</span> Erleuchtung findet nicht in Palästen statt, sondern in der Wildnis. Man muss die Komfortzone verlassen, um das Signal zu empfangen.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 78</span>
+            <span class="arabic">قَالَ إِنَّمَا أُوتِيتُهُ عَلَىٰ عِلْمٍ عِندِي</span>
+            <span class="rasm">قال إنما أوتيته على علم عندي</span>
+            <span class="translation">"Er (Qarun) sagte: Dies (der Reichtum) wurde mir nur aufgrund von Wissen, das 'bei mir' (Indi) ist, gegeben."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">SOURCE-ATTRIBUTION ERROR:</span> Der fatalste Systemfehler. Ein Sub-Prozess (Qarun) denkt, er sei der Creator. Er leugnet die Abhängigkeit vom Mainframe.
+                Resultat: <strong>Implosion</strong> (Erde verschluckt ihn).<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">DATEN-KAPITALISMUS:</span> Die Arroganz der Tech-Elite oder Oligarchen. "Ich habe es selbst gebaut." Das Leugnen von kollektiven Ressourcen und göttlicher Fügung führt zum Systemkollaps.
+            </div>
+        </div>
+        
+        <div class="verse-block">
+            <span class="verse-number">AYAT 88 (EOF)</span>
+            <span class="arabic">كُلُّ شَيْءٍ هَالِكٌ إِلَّا وَجْهَهُ</span>
+            <span class="rasm">كل شيء هالك إلا وجهه</span>
+            <span class="translation">"Jedes Ding/Objekt ist dem Untergang (Halik) geweiht, außer Seinem 'Face' (Wajh/Interface)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">ABSOLUTE ENTROPIE:</span> Alles in der Simulation (jedes "Ding") zerfällt. Nur die Konstante (das Gesicht des Admins / die Quelle) bleibt bestehen.<br>
+                <span class="keyword">WAJH (Interface):</span> Die einzige Richtung, die Existenz garantiert. Alles andere ist Rauschen und zerfällt.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="architecture.html" class="btn">ARCHITEKTUR MENÜ</a>
+            <a href="#" class="btn" style="border-color: #333; color: #333;">NEXT: SEQMUK_11 (LOCKED)</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "[ SEQMUK 10 : AL-QASAS (SYSTEM REBOOT) ]", type: "log-root", delay: 800 },
+            { txt: "SCANNE HISTORISCHE DATEN (T-S-M)...", type: "log-sys", delay: 1000 },
+            { txt: "MACHT-ANALYSE (PHARAO vs MUSA)...", type: "log-io", delay: 600 },
+            { txt: "    > HIERARCHIE-FEHLER ENTDECKT.", type: "log-warn", delay: 400 },
+            { txt: "    > INITIIERE INVERSION (MUSTAD'AFIN -> IMAME).", type: "log-sys", delay: 600 },
+            { txt: "PRÜFE QUELLEN-INTEGRITÄT (QARUN)...", type: "log-io", delay: 500 },
+            { txt: "    > FEHLER: 'ILM INDI' (EGO-ATTRIBUTION).", type: "log-warn", delay: 400 },
+            { txt: "    > FOLGE: SYSTEM-ABSTURZ (IMPLOSION).", type: "log-warn", delay: 600 },
+            { txt: "ENTROPIE-CHECK (VERS 88)...", type: "log-root", delay: 800 },
+            { txt: "    > OBJEKTE: ZERFALLEND.", type: "log-warn", delay: 400 },
+            { txt: "    > WAJH (SOURCE): KONSTANT.", type: "log-sys", delay: 600 },
+            { txt: "BOOT COMPLETE.", type: "log-sys", delay: 1000 }
+        ];
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+</body>
+</html>
