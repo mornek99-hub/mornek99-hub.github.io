@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQMUK_01: NUN | HAKĪKAT-KONSOLU</title>
+    <style>
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+        .sub-header { color: #888; margin-bottom: 30px; font-size: 0.9em; }
+        #terminal-box { background-color: #000; border: 1px solid #333; padding: 15px; font-family: 'Courier New', monospace; font-size: 0.85em; margin-bottom: 30px; box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); display: none; }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } .log-root { color: #d4af37; font-weight: bold; } .log-io { color: #00bcd4; } .log-warn { color: #ff9800; }
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+        .boot-btn { background-color: #1a1a1a; color: #d4af37; border: 1px solid #d4af37; padding: 15px 30px; font-family: 'Courier New', monospace; font-weight: bold; cursor: pointer; width: 100%; text-align: center; margin-bottom: 20px; transition: 0.3s; }
+        .boot-btn:hover { background-color: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #d4af37; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[KERNEL]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #d4af37; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="architecture.html" style="text-decoration: none; color: #555;">&larr; ZURÜCK ZUR ARCHITEKTUR</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQMUK_01: NUN (ن)</h1>
+        <div class="sub-header">
+            ORT: SURAH 68 [1-7]<br>
+            STATUS: INITIALISIERUNG & ARCHITEKTUR-CHECK
+        </div>
+    </div>
+
+    <button class="boot-btn" onclick="runBootSequence()">[ PROTOKOLL STARTEN: NUN ]</button>
+
+    <div id="terminal-box"><div id="terminal-content"></div><span class="cursor">_</span></div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01</span>
+            <span class="arabic">ن ۚ وَالْقَلَمِ وَمَا يَسْطُرُونَ</span>
+            <span class="rasm">ن والقلم وما يسطرون</span>
+            <span class="translation">"NUN (Potential). Bei dem Encoder (Qalam) und dem Code, den sie zeilenweise schreiben (Yasturun)."</span>
+            <div class="analysis">
+                <span class="keyword">NUN (Start-Befehl):</span> Das Tintenfass. Die Energie vor dem Kollaps der Wellenfunktion.<br>
+                <span class="keyword">YASTURUN (Coding):</span> Das Schreiben von Befehlszeilen (Satr) in die Realität.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 02</span>
+            <span class="arabic">مَا أَنتَ بِنِعْمَةِ رَبِّكَ بِمَجْنُونٍ</span>
+            <span class="rasm">ما أنت بنعمة ربك بمجنون</span>
+            <span class="translation">"Du bist – durch die System-Optimierung (Ni'ma) deines Admins – nicht fremdgesteuert (Majnun)."</span>
+            <div class="analysis">
+                <span class="keyword">NI'MA (Optimierung):</span> Reibungsloser Systemablauf (Softness/Flow).<br>
+                <span class="keyword">MAJNUN (Hacked):</span> Von verdeckten Prozessen (Jinn) kontrolliert. Hier: System ist Clean/Secure.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 03</span>
+            <span class="arabic">وَإِنَّ لَكَ لَأَجْرًا غَيْرَ مَمْنُونٍ</span>
+            <span class="rasm">وإن لك لأجرا غير ممنون</span>
+            <span class="translation">"Und für dich existiert ein Energie-Rückfluss (Ajr), der nicht gekappt wird (Ghayra Mamnun)."</span>
+            <div class="analysis">
+                <span class="keyword">AJR (Return-Value):</span> Der Output deiner Arbeit.<br>
+                <span class="keyword">G-MAMNUN (Uninterrupted):</span> Eine permanente Standleitung. Keine Signalunterbrechung.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 04</span>
+            <span class="arabic">وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ</span>
+            <span class="rasm">وإنك لعلى خلق عظيم</span>
+            <span class="translation">"Und du basierst wahrlich auf einer gewaltigen Architektur (Khuluq)."</span>
+            <div class="analysis">
+                <span class="keyword">KHULUQ (Architektur):</span> Von 'Khalaqa' (Konstruieren). Dein System-Build und deine interne Konfiguration sind auf höchstem Standard (Azim).
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 05-06</span>
+            <span class="arabic">فَسَتُبْصِرُ وَيُبْصِرُونَ . بِأَييِّكُمُ الْمَفْتُونُ</span>
+            <span class="rasm">فستبصر ويبصرون . بأييكم المفتون</span>
+            <span class="translation">"Du wirst rendern (visualisieren), und sie werden rendern... in wem von euch der System-Fehler (Maftun) liegt."</span>
+            <div class="analysis">
+                <span class="keyword">MAFTUN (Failed):</span> 'Fitna' ist der Stresstest (Schmelzen). Maftun ist das System, das im Stresstest versagt hat (Crash/Bug).
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="architecture.html" class="btn">ARCHITEKTUR MENÜ</a>
+            <a href="qaf.html" class="btn" style="border-color: #333; color: #333;">NEXT: SEQMUK_02 (QAF)</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "[ SEQMUK 01 : NUN (SYSTEM BOOT) ]", type: "log-root", delay: 800 },
+            { txt: "INITIIERE NUN-PROTOKOLL...", type: "log-sys", delay: 800 },
+            { txt: "INTEGRITÄTS-CHECK (MAJNUN-SCAN)...", type: "log-io", delay: 600 },
+            { txt: "    > ERGEBNIS: CLEAN. KEINE FREMDSTEUERUNG.", type: "log-sys", delay: 600 },
+            { txt: "PRÜFE VERBINDUNG (AJR)...", type: "log-io", delay: 500 },
+            { txt: "    > STATUS: PERMANENT (GHAYRA MAMNUN).", type: "log-root", delay: 600 },
+            { txt: "ANALYSIERE ARCHITEKTUR (KHULUQ)...", type: "log-io", delay: 500 },
+            { txt: "    > CONFIG: AZIM (MAXIMALE STABILITÄT).", type: "log-sys", delay: 600 },
+            { txt: "DIAGNOSE-MODUS (MAFTUN-TEST)...", type: "log-warn", delay: 800 },
+            { txt: "    > RENDERE WAHREIT...", type: "log-warn", delay: 400 },
+            { txt: "BOOT ABGESCHLOSSEN.", type: "log-sys", delay: 1000 }
+        ];
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+</body>
+</html>
