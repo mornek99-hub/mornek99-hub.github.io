@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQMUK_16: LUQMAN | HAKĪKAT-KONSOLU</title>
+    <style>
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+        .sub-header { color: #888; margin-bottom: 30px; font-size: 0.9em; }
+        #terminal-box { background-color: #000; border: 1px solid #333; padding: 15px; font-family: 'Courier New', monospace; font-size: 0.85em; margin-bottom: 30px; box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); display: none; }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } .log-root { color: #d4af37; font-weight: bold; } .log-io { color: #00bcd4; } .log-warn { color: #ff9800; }
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+        .boot-btn { background-color: #1a1a1a; color: #d4af37; border: 1px solid #d4af37; padding: 15px 30px; font-family: 'Courier New', monospace; font-weight: bold; cursor: pointer; width: 100%; text-align: center; margin-bottom: 20px; transition: 0.3s; }
+        .boot-btn:hover { background-color: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #d4af37; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[RASM]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        .domain-tag { display: inline-block; background: #222; color: #888; padding: 2px 5px; font-size: 0.7em; border-radius: 3px; margin-right: 5px; margin-bottom: 5px; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #d4af37; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="ibrahim.html" style="text-decoration: none; color: #555;">&larr; ZURÜCK ZU IBRAHIM (SEQ_15)</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQMUK_16: LUQMAN (الم)</h1>
+        <div class="sub-header">
+            ORT: SURAH 31 [1-2, 10, 16, 27]<br>
+            MODELL: GRAVITATIONS-PHYSIK & DATEN-UNENDLICHKEIT
+        </div>
+    </div>
+
+    <button class="boot-btn" onclick="runBootSequence()">[ PROTOKOLL STARTEN: A-L-M ]</button>
+
+    <div id="terminal-box"><div id="terminal-content"></div><span class="cursor">_</span></div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01-02</span>
+            <span class="arabic">الم ۚ تِلْكَ آيَاتُ الْكِتَابِ الْحَكِيمِ</span>
+            <span class="rasm">الم تلك ءايت الكتب الحكيم</span>
+            <span class="translation">"A-L-M. Das sind die Zeichen des optimierten/weisen (Hakim) Codes."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">A-L-M (Masse-Generierung):</span> Der Übergang von Energie (A) in Materie (M). 
+                <span class="keyword">HAKIM (Algorithmus):</span> Ein System ist "Hakim", wenn es keine Energie verschwendet. Maximale Effizienz. Naturgesetze sind der Ausdruck dieser perfekten Programmierung.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">PRAGMATISMUS:</span> Weisheit (Hikmah) bedeutet, Dinge an ihren richtigen Platz zu setzen. Ein Führer muss "Hakim" sein: Effizient, logisch und zweckgebunden.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 10</span>
+            <span class="arabic">خَلَقَ السَّمَاوَاتِ بِغَيْرِ عَمَدٍ تَرَوْنَهَا وَأَلْقَىٰ فِي الْأَرْضِ رَوَاسِيَ ...</span>
+            <span class="rasm">خلق السموت بغير عمد ترونها ...</span>
+            <span class="translation">"Er strukturierte die Himmel ohne Stützen (Amad), die ihr sehen könnt (renderbar sind)..."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">GRAVITATION / DUNKLE MATERIE:</span> "Amad" (Säulen) stehen für tragende Strukturen. "Ohne Säulen, die ihr seht" beschreibt **unsichtbare Kraftfelder**. Die Architektur des Universums wird nicht durch feste Materie, sondern durch Gravitation und Dunkle Materie gehalten.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">UNSICHTBARE ORDNUNG:</span> Eine Gesellschaft wird nicht durch Mauern (Sichtbares) zusammengehalten, sondern durch unsichtbare Werte und Verträge (Gravitation), die die Ordnung bewahren.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 16</span>
+            <span class="arabic">يَا بُنَيَّ إِنَّهَا إِن تَكُ مِثْقَالَ حَبَّةٍ مِّنْ خَرْدَلٍ ... يَأْتِ بِهَا اللَّهُ</span>
+            <span class="rasm">... إن تك مثقال حبة من خردل ... يأت بها الله ...</span>
+            <span class="translation">"O mein Sohn, wäre es auch nur das Gewicht eines Senfkorns (Atom)... Allah bringt es (den Datensatz) herbei. Er ist Latif (Subtil/Quanten)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">QUANTEN-TRACKING:</span> 
+                <strong>Mithqal Habbah:</strong> Subatomare Masse.
+                <strong>Latif:</strong> Der Zugriff auf die feinstoffliche Ebene.
+                Das System hat keinen Datenverlust. Selbst Informationen auf Quantenebene sind abrufbar.<br>
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 27</span>
+            <span class="arabic">وَلَوْ أَنَّمَا فِي الْأَرْضِ مِن شَجَرَةٍ أَقْلَامٌ وَالْبَحْرُ يَمُدُّهُ ... مَّا نَفِدَتْ كَلِمَاتُ اللَّهِ</span>
+            <span class="rasm">... ما نفدت كلمت الله ...</span>
+            <span class="translation">"Und wären alle Bäume Stifte (Hardware) und das Meer Tinte (Speicher)... die Worte (Daten) Allahs würden nicht enden."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">INFINITE DATA:</span> Der Unterschied zwischen Hardware (endlich) und Software/Information (unendlich).
+                Information ist nicht an Materie gebunden. Der Quellcode der Realität (Kalimat Allah) ist unerschöpflich.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">WISSENS-EXPANSION:</span> Egal wie viel wir entdecken, das Unbekannte bleibt unendlich. Demut vor der Komplexität des Systems.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="architecture.html" class="btn">ARCHITEKTUR MENÜ</a>
+            <a href="#" class="btn" style="border-color: #333; color: #333;">NEXT: SEQMUK_17 (LOCKED)</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "[ SEQMUK 16 : LUQMAN (GRAVITY & DATA) ]", type: "log-root", delay: 800 },
+            { txt: "A-L-M SYSTEM INITIALISIERT.", type: "log-sys", delay: 1000 },
+            { txt: "STRUKTUR-ANALYSE (AMAD)...", type: "log-io", delay: 600 },
+            { txt: "    > PHYSISCHE SÄULEN: KEINE.", type: "log-warn", delay: 400 },
+            { txt: "    > GRAVITATIONS-FELDER: AKTIV.", type: "log-sys", delay: 400 },
+            { txt: "QUANTEN-SCAN (MITHQAL HABBAH)...", type: "log-io", delay: 600 },
+            { txt: "    > ZIEL: SUBATOMAR.", type: "log-sys", delay: 400 },
+            { txt: "    > DATENABRUF (LATIF): ERFOLGREICH.", type: "log-sys", delay: 400 },
+            { txt: "SPEICHER-KAPAZITÄT PRÜFUNG...", type: "log-root", delay: 800 },
+            { txt: "    > HARDWARE: LIMITIERT.", type: "log-warn", delay: 600 },
+            { txt: "    > QUELLCODE (KALIMAT): INFINITE.", type: "log-sys", delay: 600 },
+            { txt: "SYSTEM LÄUFT OPTIMIERT (HAKIM).", type: "log-sys", delay: 1000 }
+        ];
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+</body>
+</html>
