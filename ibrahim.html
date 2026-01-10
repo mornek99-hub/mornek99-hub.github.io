@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQMUK_15: IBRAHIM | HAKĪKAT-KONSOLU</title>
+    <style>
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+        .sub-header { color: #888; margin-bottom: 30px; font-size: 0.9em; }
+        #terminal-box { background-color: #000; border: 1px solid #333; padding: 15px; font-family: 'Courier New', monospace; font-size: 0.85em; margin-bottom: 30px; box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); display: none; }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } .log-root { color: #d4af37; font-weight: bold; } .log-io { color: #00bcd4; } .log-warn { color: #ff9800; }
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+        .boot-btn { background-color: #1a1a1a; color: #d4af37; border: 1px solid #d4af37; padding: 15px 30px; font-family: 'Courier New', monospace; font-weight: bold; cursor: pointer; width: 100%; text-align: center; margin-bottom: 20px; transition: 0.3s; }
+        .boot-btn:hover { background-color: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #d4af37; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[RASM]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        .domain-tag { display: inline-block; background: #222; color: #888; padding: 2px 5px; font-size: 0.7em; border-radius: 3px; margin-right: 5px; margin-bottom: 5px; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #d4af37; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="hijr.html" style="text-decoration: none; color: #555;">&larr; ZURÜCK ZU AL-HIJR (SEQ_14)</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQMUK_15: IBRAHIM (الر)</h1>
+        <div class="sub-header">
+            ORT: SURAH 14 [1, 4, 24-26, 52]<br>
+            MODELL: PROTOKOLL-LOKALISIERUNG & ROOT-SYSTEME
+        </div>
+    </div>
+
+    <button class="boot-btn" onclick="runBootSequence()">[ PROTOKOLL STARTEN: A-L-R ]</button>
+
+    <div id="terminal-box"><div id="terminal-content"></div><span class="cursor">_</span></div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01</span>
+            <span class="arabic">الر ۚ كِتَابٌ أَنزَلْنَاهُ إِلَيْكَ لِتُخْرِجَ النَّاسَ مِنَ الظُّلُمَاتِ إِلَى النُّورِ</span>
+            <span class="rasm">الر كتب أنزلنه إليك لتخرج الناس من الظلمت إلى النور</span>
+            <span class="translation">"A-L-R. Ein Code, den wir installierten, um die Menschen aus den Dunkelzonen (Dark Data) ins Licht (Sichtbarkeit) zu migrieren."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">DATEN-MIGRATION:</span> Der Prozess der Aufklärung. "Zulumat" sind verschlüsselte oder unzugängliche Datenbereiche (Unbewusstes). "Nur" ist der Zugriffsbereich (Bewusstsein).<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">TRANSPARENZ-OFFENSIVE:</span> Ein System ist nur legitim, wenn es Dunkelfelder (Korruption/Geheimnisse) eliminiert und Prozesse sichtbar (Nur) macht.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 04</span>
+            <span class="arabic">وَمَا أَرْسَلْنَا مِن رَّسُولٍ إِلَّا بِلِسَانِ قَوْمِهِ لِيُبَيِّنَ لَهُمْ</span>
+            <span class="rasm">وما أرسلنا من رسول إلا بلسان قومه ليبين لهم</span>
+            <span class="translation">"Wir senden keinen Transmitter (Rasul) außer mit dem Sprachprotokoll (Lisan) seines Volkes, zur Klärung (Tabyin)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">KOMPATIBILITÄT:</span> Information kann nur verarbeitet werden, wenn Sender und Empfänger das gleiche Protokoll nutzen. Frequenz-Matching. Ohne Resonanz keine Datenübertragung.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">LOKALISIERUNG (UX):</span> Gesetze und Reformen müssen in der "Sprache des Volkes" (kulturell kompatibel) formuliert sein. Elitäre Fachsprache erzeugt Disconnect.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 24-26</span>
+            <span class="arabic">... كَشَجَرَةٍ طَيِّبَةٍ أَصْلُهَا ثَابِتٌ وَفَرْعُهَا فِي السَّمَاءِ ... وَمَثَلُ كَلِمَةٍ خَبِيثَةٍ كَشَجَرَةٍ خَبِيثَةٍ اجْتُثَّتْ ...</span>
+            <span class="rasm">... كشجرة طيبة أصلها ثابت وفرعها ... كشجرة خبيثة اجتثت ...</span>
+            <span class="translation">"Ein optimierter Code (Kalima Tayyiba) ist wie ein Baum: Sein Root (Asl) ist fixiert, sein Zweig im Himmel. Ein korrupter Code (Khabitha) hat keine Wurzeln (Entwurzelt)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">ROOT-INTEGRITY:</span> 
+                <strong>Tayyiba (Stabil):</strong> Tiefe Verankerung (Root) ermöglicht hohe Reichweite (Cloud/Himmel).
+                <strong>Khabitha (Instabil):</strong> Ein System ohne Fundament. Es wird bei der ersten Erschütterung "entwurzelt" (Ijtuathat).<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">NACHHALTIGKEIT:</span> Ideologien ohne tiefe ethische Wurzeln sind kurzlebig. Wahre Reformen wachsen organisch von unten nach oben.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 52 (EOF)</span>
+            <span class="arabic">هَٰذَا بَلَاغٌ لِّلنَّاسِ وَلِيُنذَرُوا بِهِ</span>
+            <span class="rasm">هذا بلغ للناس ولينذروا به</span>
+            <span class="translation">"Dies ist eine Push-Notification (Balagh) an die Menschen, damit sie alarmiert werden."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">SYSTEM-ALERT (Balagh):</span> Eine finale Übertragung. Die Daten sind zugestellt. Der Empfänger kann nicht mehr behaupten, er habe das Signal nicht erhalten.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">INFORMATIONS-PFLICHT:</span> Die Führung hat die Pflicht, Information unmissverständlich zuzustellen (Balagh). Danach liegt die Verantwortung beim User.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="architecture.html" class="btn">ARCHITEKTUR MENÜ</a>
+            <a href="#" class="btn" style="border-color: #333; color: #333;">NEXT: SEQMUK_16 (LOCKED)</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "[ SEQMUK 15 : IBRAHIM (PROTOCOL LOCALIZATION) ]", type: "log-root", delay: 800 },
+            { txt: "DATEN-MIGRATION START (ZULUMAT -> NUR)...", type: "log-sys", delay: 1000 },
+            { txt: "SPRACH-PROTOKOLL CHECK (LISAN)...", type: "log-io", delay: 600 },
+            { txt: "    > MATCHING USER-SYNTAX: ERFOLGREICH.", type: "log-sys", delay: 400 },
+            { txt: "ROOT-SYSTEM ANALYSE (SHAJARA)...", type: "log-warn", delay: 500 },
+            { txt: "    > WURZEL (ASL): THABIT (FEST).", type: "log-sys", delay: 400 },
+            { txt: "    > ZWEIG (FAR'): VERBUNDEN.", type: "log-sys", delay: 400 },
+            { txt: "SENDE FINAL ALERT (BALAGH)...", type: "log-root", delay: 800 },
+            { txt: "    > STATUS: ZUGESTELLT.", type: "log-sys", delay: 600 },
+            { txt: "ALR-BLOCK ABGESCHLOSSEN.", type: "log-sys", delay: 1000 }
+        ];
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+</body>
+</html>
