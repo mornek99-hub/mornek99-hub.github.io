@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQMUK_08: ASH-SHU'ARA | HAKĪKAT-KONSOLU</title>
+    <style>
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+        .sub-header { color: #888; margin-bottom: 30px; font-size: 0.9em; }
+        #terminal-box { background-color: #000; border: 1px solid #333; padding: 15px; font-family: 'Courier New', monospace; font-size: 0.85em; margin-bottom: 30px; box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); display: none; }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } .log-root { color: #d4af37; font-weight: bold; } .log-io { color: #00bcd4; } .log-warn { color: #ff9800; }
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+        .boot-btn { background-color: #1a1a1a; color: #d4af37; border: 1px solid #d4af37; padding: 15px 30px; font-family: 'Courier New', monospace; font-weight: bold; cursor: pointer; width: 100%; text-align: center; margin-bottom: 20px; transition: 0.3s; }
+        .boot-btn:hover { background-color: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #d4af37; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[RASM]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        .domain-tag { display: inline-block; background: #222; color: #888; padding: 2px 5px; font-size: 0.7em; border-radius: 3px; margin-right: 5px; margin-bottom: 5px; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #d4af37; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="taha.html" style="text-decoration: none; color: #555;">&larr; ZURÜCK ZU TA-HA (SEQ_07)</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQMUK_08: ASH-SHU'ARA (طسم)</h1>
+        <div class="sub-header">
+            ORT: SURAH 26 [1-2, 192-194, 224-226]<br>
+            MODELL: SIGNAL-TRANSMISSION & DATEN-INTEGRITÄT
+        </div>
+    </div>
+
+    <button class="boot-btn" onclick="runBootSequence()">[ PROTOKOLL STARTEN: T-S-M ]</button>
+
+    <div id="terminal-box"><div id="terminal-content"></div><span class="cursor">_</span></div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01-02</span>
+            <span class="arabic">طسم . تِلْكَ آيَاتُ الْكِتَابِ الْمُبِينِ</span>
+            <span class="rasm">طسم . تلك ءايت الكتب المبين</span>
+            <span class="translation">"Ta (Grund) Sin (Sinn) Mim (Matrix). Das sind die Zeichen des Mubeen (HD/Klar) Skripts."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">T-S-M (Manifestation):</span> Die Erdung (Ta) des Bewusstseins (Sin) in der Matrix (Mim).<br>
+                <span class="keyword">MUBEEN (High Definition):</span> Das Signal ist rauschfrei. Absolute Klarheit. Keine Kompression, keine Artefakte. Das System zeigt die unverschleierte Wahrheit.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">TRANSPARENZ:</span> Ein gerechtes Gesetzbuch muss "Mubeen" sein – für jeden verständlich, ohne versteckte Klauseln oder esoterische Geheimnisse.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 192-194</span>
+            <span class="arabic">وَإِنَّهُ لَتَنزِيلُ رَبِّ الْعَالَمِينَ . نَزَلَ بِهِ الرُّوحُ الْأَمِينُ . عَلَىٰ قَلْبِكَ ...</span>
+            <span class="rasm">... نزل به الروح الأمين . على قلبك ...</span>
+            <span class="translation">"Es ist ein Download (Tanzil)... übertragen durch den gesicherten Geist (Ruh al-Amin) auf dein Herz (Qalb/Empfänger)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">SECURE PROTOCOL (Ruh Amin):</span> Eine verschlüsselte, fehlerfreie Übertragung. "Amin" bedeutet sicher/vertrauenswürdig. Keine Packet-Losses.<br>
+                <span class="keyword">QALB (Herz-Resonanz):</span> Der Empfänger ist nicht der intellektuelle Cortex (Gehirn), sondern das Herz-Nervensystem (Cardio-Ception). Intuitive Datenverarbeitung ist schneller als logische.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">INTEGRITÄT DER QUELLE:</span> Information ist nur so gut wie ihr Übertragungskanal. Wahres Wissen erfordert einen ethisch reinen (Amin) Träger.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 224-226</span>
+            <span class="arabic">وَالشُّعَرَاءُ يَتَّبِعُهُمُ الْغَاوُونَ ...</span>
+            <span class="rasm">والشعراء يتبعهم الغاون ...</span>
+            <span class="translation">"Und die Poeten (Simulator)... ihnen folgen die Ghawun (die im Rauschen Irrenden). Siehst du nicht, wie sie in jedem Tal (Wadi) ziellos umherirren?"</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">SIGNAL VS. NOISE:</span> 
+                <strong>Poeten:</strong> Erzeuger von Interferenzen/Illusionen. Subjektive Realität ohne Substanz.
+                <strong>Ghawun:</strong> Jene, die im Rauschen (Noise) gefangen sind und keine klare Frequenz finden.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">MEDIEN-MANIPULATION:</span> Die Unterscheidung zwischen "Content" (Unterhaltung/Ablenkung/Poesie) und "Code" (Gesetz/Wahrheit). Eine Gesellschaft, die Narzissten und Phantasten (Poeten) folgt, verliert die Orientierung.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="architecture.html" class="btn">ARCHITEKTUR MENÜ</a>
+            <a href="#" class="btn" style="border-color: #333; color: #333;">NEXT: SEQMUK_09 (LOCKED)</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "[ SEQMUK 08 : ASH-SHU'ARA (SIGNAL CLARITY) ]", type: "log-root", delay: 800 },
+            { txt: "DECODIERE T-S-M (MATRIX GROUNDING)...", type: "log-sys", delay: 1000 },
+            { txt: "PRÜFE SIGNAL-QUALITÄT (MUBEEN)...", type: "log-io", delay: 600 },
+            { txt: "    > AUFLÖSUNG: HD / VERLUSTFREI.", type: "log-sys", delay: 500 },
+            { txt: "DOWNLOAD-PFAD ANALYSE (TANZIL)...", type: "log-io", delay: 600 },
+            { txt: "    > PROTOKOLL: RUH-AMIN (SECURE).", type: "log-sys", delay: 400 },
+            { txt: "    > ZIEL-PORT: QALB (HERZ-RESONANZ).", type: "log-sys", delay: 400 },
+            { txt: "FILTERE INTERFERENZEN (POETEN)...", type: "log-warn", delay: 800 },
+            { txt: "    > RAUSCHEN (GHAWUN) IGNORIERT.", type: "log-warn", delay: 400 },
+            { txt: "DATEN-INTEGRITÄT BESTÄTIGT.", type: "log-sys", delay: 1000 }
+        ];
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+</body>
+</html>
