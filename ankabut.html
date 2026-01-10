@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQMUK_17: AL-ANKABUT | HAKĪKAT-KONSOLU</title>
+    <style>
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+        .sub-header { color: #888; margin-bottom: 30px; font-size: 0.9em; }
+        #terminal-box { background-color: #000; border: 1px solid #333; padding: 15px; font-family: 'Courier New', monospace; font-size: 0.85em; margin-bottom: 30px; box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); display: none; }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } .log-root { color: #d4af37; font-weight: bold; } .log-io { color: #00bcd4; } .log-warn { color: #ff9800; }
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+        .boot-btn { background-color: #1a1a1a; color: #d4af37; border: 1px solid #d4af37; padding: 15px 30px; font-family: 'Courier New', monospace; font-weight: bold; cursor: pointer; width: 100%; text-align: center; margin-bottom: 20px; transition: 0.3s; }
+        .boot-btn:hover { background-color: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #d4af37; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[RASM]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        .domain-tag { display: inline-block; background: #222; color: #888; padding: 2px 5px; font-size: 0.7em; border-radius: 3px; margin-right: 5px; margin-bottom: 5px; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #d4af37; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="luqman.html" style="text-decoration: none; color: #555;">&larr; ZURÜCK ZU LUQMAN (SEQ_16)</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQMUK_17: AL-ANKABUT (الم)</h1>
+        <div class="sub-header">
+            ORT: SURAH 29 [1-2, 41, 49, 64]<br>
+            MODELL: NETZWERK-TOPOLOGIE & LOAD-TESTING
+        </div>
+    </div>
+
+    <button class="boot-btn" onclick="runBootSequence()">[ PROTOKOLL STARTEN: A-L-M ]</button>
+
+    <div id="terminal-box"><div id="terminal-content"></div><span class="cursor">_</span></div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01-02</span>
+            <span class="arabic">الم . أَحَسِبَ النَّاسُ أَن يُتْرَكُوا أَن يَقُولُوا آمَنَّا وَهُمْ لَا يُفْتَنُونَ</span>
+            <span class="rasm">الم . أحسب الناس أن يتركوا ... وهم لا يفتنون</span>
+            <span class="translation">"A-L-M. Berechnen die Menschen, dass sie im Zustand 'Wir sind synchronisiert (Iman)' belassen werden, ohne einem Stresstest (Fitnah) unterzogen zu werden?"</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">LOAD TESTING (Fitnah):</span> Ein System ist erst verifiziert, wenn es unter Druck (Hitze/Last) stabil bleibt. "Fitnah" ist der Schmelzprozess, der Gold von Schlacke trennt. Glaube ohne Test ist nur eine unbestätigte Variable.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">SYSTEM-AUDIT:</span> Behauptungen ("Wir sind demokratisch/gerecht") sind wertlos. Die Realität (Krise) ist der Auditor. Wer hält stand?
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 41</span>
+            <span class="arabic">مَثَلُ الَّذِينَ اتَّخَذُوا مِن دُونِ اللَّهِ أَوْلِيَاءَ كَمَثَلِ الْعَنكَبُوتِ اتَّخَذَتْ بَيْتًا ...</span>
+            <span class="rasm">مثل الذين اتخذوا من دون الله أولياء كمثل العنكبوت ...</span>
+            <span class="translation">"Die Topologie jener, die sich andere Admins (Awliya) nehmen, ist wie die des Spinnen-Netzwerks (Ankabut)... das fragilste aller Häuser."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">FRAGILE INFRASTRUKTUR:</span> Das Spinnennetz ist eine Falle, kein Schutz. Es hat hohe Zugfestigkeit, aber keine strukturelle Integrität gegen äußere Einflüsse (Wind/Regen). Ein System, das auf falschen Parametern (Geld/Ego) basiert, kollabiert sofort.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">NETZWERK-ABHÄNGIGKEIT:</span> Wer sich auf Seilschaften (Korruption) verlässt statt auf Prinzipien (Allah), baut ein System mit einem "Single Point of Failure".
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 49</span>
+            <span class="arabic">بَلْ هُوَ آيَاتٌ بَيِّنَاتٌ فِي صُدُورِ الَّذِينَ أُوتُوا الْعِلْمَ</span>
+            <span class="rasm">بل هو ءايت بينت في صدور الذين أوتوا العلم</span>
+            <span class="translation">"Nein, es sind klare Algorithmen (Ayat) in den Prozessoren (Sudur) derer, denen das Wissen gegeben wurde."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">INTERNAL RAM (Sudur):</span> Wahres Wissen liegt nicht auf externen Festplatten (Büchern), sondern im Arbeitsspeicher (Brust/Herz). Es ist aktive, verarbeitete Information (Runtime Environment).<br>
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 64</span>
+            <span class="arabic">وَمَا هَٰذِهِ الْحَيَاةُ الدُّنْيَا إِلَّا لَهْوٌ وَلَعِبٌ ۚ وَإِنَّ الدَّارَ الْآخِرَةَ لَهِيَ الْحَيَوَانُ</span>
+            <span class="rasm">... لهو ولعب ... لهي الحيوان</span>
+            <span class="translation">"Diese niedrige Ebene (Dunya) ist nur Simulation/Unterhaltung (Lahw)... die nächste Ebene (Akhira) ist das Hyper-Leben (Hayawan)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">SIMULATION VS. REALITY:</span> 
+                <strong>Lahw (Game):</strong> Diese Welt ist eine Trainingsumgebung mit niedriger Auflösung.
+                <strong>Hayawan (Hyper-Life):</strong> "Hayawan" ist gesteigertes Leben. Maximale Intensität und Realität. Das Verlassen der Simulation hin zur "
