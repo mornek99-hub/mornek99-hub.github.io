@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQMUK_14: AL-HIJR | HAKĪKAT-KONSOLU</title>
+    <style>
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+        .sub-header { color: #888; margin-bottom: 30px; font-size: 0.9em; }
+        #terminal-box { background-color: #000; border: 1px solid #333; padding: 15px; font-family: 'Courier New', monospace; font-size: 0.85em; margin-bottom: 30px; box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); display: none; }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } .log-root { color: #d4af37; font-weight: bold; } .log-io { color: #00bcd4; } .log-warn { color: #ff9800; }
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+        .boot-btn { background-color: #1a1a1a; color: #d4af37; border: 1px solid #d4af37; padding: 15px 30px; font-family: 'Courier New', monospace; font-weight: bold; cursor: pointer; width: 100%; text-align: center; margin-bottom: 20px; transition: 0.3s; }
+        .boot-btn:hover { background-color: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #d4af37; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[RASM]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        .domain-tag { display: inline-block; background: #222; color: #888; padding: 2px 5px; font-size: 0.7em; border-radius: 3px; margin-right: 5px; margin-bottom: 5px; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #d4af37; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="yusuf.html" style="text-decoration: none; color: #555;">&larr; ZURÜCK ZU YUSUF (SEQ_13)</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQMUK_14: AL-HIJR (الر)</h1>
+        <div class="sub-header">
+            ORT: SURAH 15 [1, 9, 19, 26]<br>
+            MODELL: DATEN-INTEGRITÄT & BIO-CHEMIE
+        </div>
+    </div>
+
+    <button class="boot-btn" onclick="runBootSequence()">[ PROTOKOLL STARTEN: A-L-R ]</button>
+
+    <div id="terminal-box"><div id="terminal-content"></div><span class="cursor">_</span></div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01</span>
+            <span class="arabic">الر ۚ تِلْكَ آيَاتُ الْكِتَابِ وَقُرْآنٍ مُّبِينٍ</span>
+            <span class="rasm">الر تلك ءايت الكتب وقرءان مبين</span>
+            <span class="translation">"A-L-R. Zeichen des Code-Skripts (Kitab) und eines transparenten Datensatzes (Quran Mubeen)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">A-L-R (Sichtbarkeit):</span> Der Code (Kitab) ist nicht versteckt. Er ist "Mubeen" (High-Def/Offen). Das System basiert auf Open-Source Prinzipien für diejenigen mit Root-Zugriff.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">RECHTSSTAATLICHKEIT:</span> Gesetze müssen für jeden lesbar und verständlich sein. Keine Geheimjustiz.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 09</span>
+            <span class="arabic">إِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ وَإِنَّا لَهُ لَحَافِظُونَ</span>
+            <span class="rasm">إنا نحن نزلنا الذكر وإنا له لحفظون</span>
+            <span class="translation">"Wir haben den Speicher/Code (Dhikr) installiert und wir fungieren als sein Schutz/Backup (Hafizun)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">DATA INTEGRITY:</span> Das System ist gegen Korruption gesichert. "Hafizun" ist der aktive Virenschutz. Der Code kann nicht von außen gehackt oder verändert werden. Unveränderliche Naturgesetze.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">WAHRHEITS-GARANTIE:</span> Lügen mögen kurzfristig florieren, aber die historische Wahrheit (Dhikr) wird systemisch bewahrt und setzt sich durch.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 19</span>
+            <span class="arabic">وَالْأَرْضَ مَدَدْنَاهَا وَأَلْقَيْنَا فِيهَا رَوَاسِيَ ...</span>
+            <span class="rasm">والأرض مددناها وألقينا فيها روسي ...</span>
+            <span class="translation">"Und die Erde haben wir ausgedehnt (Madadnaha) und Stabilisatoren/Anker (Rawasi) in ihr platziert."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">GEO-ENGINEERING:</span> "Madd" (Ausdehnung) der Kruste. "Rawasi" (Berge/Wurzeln) dienen als isostatische Stabilisatoren gegen tektonische Rotation/Vibration. Planetare Balance.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">INFRASTRUKTUR:</span> Eine Gesellschaft braucht "Rawasi" – feste Institutionen (Verfassung, Justiz), die als Anker dienen, wenn sich die politische Landschaft (Erde) ausdehnt oder verändert.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 26</span>
+            <span class="arabic">وَلَقَدْ خَلَقْنَا الْإِنسَانَ مِن صَلْصَالٍ مِّن
