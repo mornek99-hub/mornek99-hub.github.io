@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQMUK_07: TA-HA | HAKĪKAT-KONSOLU</title>
+    <style>
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+        .sub-header { color: #888; margin-bottom: 30px; font-size: 0.9em; }
+        #terminal-box { background-color: #000; border: 1px solid #333; padding: 15px; font-family: 'Courier New', monospace; font-size: 0.85em; margin-bottom: 30px; box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); display: none; }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } .log-root { color: #d4af37; font-weight: bold; } .log-io { color: #00bcd4; } .log-warn { color: #ff9800; }
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+        .boot-btn { background-color: #1a1a1a; color: #d4af37; border: 1px solid #d4af37; padding: 15px 30px; font-family: 'Courier New', monospace; font-weight: bold; cursor: pointer; width: 100%; text-align: center; margin-bottom: 20px; transition: 0.3s; }
+        .boot-btn:hover { background-color: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #d4af37; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[RASM]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        .domain-tag { display: inline-block; background: #222; color: #888; padding: 2px 5px; font-size: 0.7em; border-radius: 3px; margin-right: 5px; margin-bottom: 5px; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #d4af37; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="maryam.html" style="text-decoration: none; color: #555;">&larr; ZURÜCK ZU MARYAM (SEQ_06)</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQMUK_07: TA-HA (طه)</h1>
+        <div class="sub-header">
+            ORT: SURAH 20 [1-2, 12, 17-20]<br>
+            MODELL: SYSTEM-EFFIZIENZ & ERDUNG
+        </div>
+    </div>
+
+    <button class="boot-btn" onclick="runBootSequence()">[ PROTOKOLL STARTEN: TA-HA ]</button>
+
+    <div id="terminal-box"><div id="terminal-content"></div><span class="cursor">_</span></div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01</span>
+            <span class="arabic">طه</span>
+            <span class="rasm">طه</span>
+            <span class="translation">"Ta (Grund) Ha (Leben). Grounding established."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">TA-HA (Interface):</span> Der Punkt, an dem das Bewusstsein (Ha) auf die Materie (Ta) trifft. 
+                Es ist der Code für **Erdung** und direkte Interaktion.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">REALISMUS:</span> Die Verbindung von Vision und Bodenständigkeit. Eine Ideologie darf nicht schweben, sie muss den Boden berühren.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 02</span>
+            <span class="arabic">مَا أَنزَلْنَا عَلَيْكَ الْقُرْآنَ لِتَشْقَىٰ</span>
+            <span class="rasm">ما أنزلنا عليك القرءان لتشقى</span>
+            <span class="translation">"Wir haben den Code (Quran) nicht geladen, damit du einen Energieverlust/Leiden (Tashqa) erleidest."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">ANTI-SHAQA (Effizienz):</span> "Shaqa" ist Mühsal, Reibungswärme, Burnout. 
+                Das System ist für **minimale Entropie** designt. Wenn Religion/Leben schwerfällt, läuft der falsche Code (Bug). Wahrheit erzeugt Leichtigkeit (Flow).<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">USER EXPERIENCE (UX):</span> Ein gerechtes Gesetz darf die Gesellschaft nicht belasten (Shaqa), sondern muss Prozesse optimieren.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 12</span>
+            <span class="arabic">... فَاخْلَعْ نَعْلَيْكَ إِنَّكَ بِالْوَادِ الْمُقَدَّسِ طُوًى</span>
+            <span class="rasm">... فاخلع نعليك إنك بالواد المقدس طوى</span>
+            <span class="translation">"Entferne deine Isolatoren (Na'layk), denn du bist im Resonanz-Feld (Tuwa)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">GROUNDING (Erdung):</span> Sandalen sind Isolatoren. Um elektrische Ladung (Wahrheit) auszutauschen, muss der direkte Kontakt zum Boden (Realität) hergestellt werden.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">STATUS-ABBAU:</span> "Schuhe ausziehen" bedeutet, weltlichen Status/Ego abzulegen, bevor man die heilige Domäne des Wissens betritt. Direkter Zugang ohne künstliche Barrieren.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 17-20</span>
+            <span class="arabic">... أَلْقِهَا يَا مُوسَىٰ ... فَإِذَا هِيَ حَيَّةٌ تَسْعَىٰ</span>
+            <span class="rasm">... ألقها يا موسى ... فإذا هي حية تسعى</span>
+            <span class="translation">"Wirf das statische Werkzeug (Stock) weg... und plötzlich ist es eine dynamische Schlange (Hayya), die strebt."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">MATERIE-ENERGIE KONVERSION:</span> Der Stock (totes Holz/Struktur) wird durch den Befehl zu lebendiger Plasma-Energie (Schlange/Leben). Die Transformation von Starrheit zu Agilität.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">EMPOWERMENT:</span> Ein Werkzeug (Gesetz/Technologie) ist tot, bis es von einem visionären Bewusstsein "geworfen" (aktiviert) wird. Dann wird es zur lebendigen Kraft.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="architecture.html" class="btn">ARCHITEKTUR MENÜ</a>
+            <a href="#" class="btn" style="border-color: #333; color: #333;">NEXT: SEQMUK_08 (LOCKED)</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "[ SEQMUK 07 : TA-HA (SYSTEM EFFICIENCY) ]", type: "log-root", delay: 800 },
+            { txt: "INTERFACE CHECK: [ T-H ] (GROUNDING)...", type: "log-sys", delay: 1000 },
+            { txt: "ENERGIE-EFFIZIENZ ANALYSE (SHAQA)...", type: "log-io", delay: 600 },
+            { txt: "    > REIBUNGSVERLUSTE: KRITISCH.", type: "log-warn", delay: 400 },
+            { txt: "    > OPTIMIERUNG: EINGELEITET (ANTI-BURN).", type: "log-sys", delay: 500 },
+            { txt: "PRÜFE ISOLATION (NA'LAYK)...", type: "log-io", delay: 600 },
+            { txt: "    > BEFEHL: REMOVE LAYERS.", type: "log-warn", delay: 400 },
+            { txt: "    > KONTAKT MIT RESONANZFELD (TUWA): HERGESTELLT.", type: "log-sys", delay: 600 },
+            { txt: "TRANSFORMATION (STOCK -> SCHLANGE)...", type: "log-root", delay: 800 },
+            { txt: "    > STATUS: DYNAMISCH (ALIVE).", type: "log-sys", delay: 1000 }
+        ];
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+</body>
+</html>
