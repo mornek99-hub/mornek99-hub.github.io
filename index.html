@@ -73,6 +73,19 @@
         .btn-gold { border: 1px solid #e5c07b; color: #e5c07b; }
         .btn-gold:hover { background-color: rgba(229, 192, 123, 0.1); }
 
+        /* PHASE 2 SPECIAL (GOLD GLOW) */
+        .btn-phase2 { 
+            border: 1px solid #d4af37; 
+            color: #050505; 
+            background-color: #d4af37;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+        .btn-phase2:hover { 
+            background-color: #fff; 
+            color: #000;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+        }
+
         /* MANUALS (BLAU ICON) */
         .btn-manual {
             border: 1px solid #444;
@@ -90,13 +103,17 @@
         }
         .btn-manual:hover { border-color: #fff; color: #fff; background-color: rgba(255, 255, 255, 0.05); }
 
-        /* GREEN BUTTONS (ARCHIV & ARCHITECTURE) */
+        /* GREEN BUTTONS (PHASE 1) */
         .btn-green { border: 1px solid #00ff41; color: #00ff41; }
         .flag { margin-right: 10px; font-size: 1.2em; filter: grayscale(30%); }
         .btn-green:hover { background-color: rgba(0, 255, 65, 0.1); box-shadow: 0 0 15px rgba(0, 255, 65, 0.2); }
 
         .separator { margin: 25px auto; border-bottom: 1px dashed #333; width: 100%; max-width: 450px; }
-        .phase-label { color: #008f11; font-size: 0.7rem; margin-top: 40px; margin-bottom: 10px; letter-spacing: 1px; }
+        
+        .phase-label { color: #888; font-size: 0.7rem; margin-top: 30px; margin-bottom: 10px; letter-spacing: 1px; }
+        .phase-label-active { color: #d4af37; font-size: 0.7rem; margin-top: 40px; margin-bottom: 10px; letter-spacing: 2px; font-weight: bold; animation: pulse 2s infinite; }
+
+        @keyframes pulse { 0% { opacity: 0.7; } 50% { opacity: 1; } 100% { opacity: 0.7; } }
     </style>
 </head>
 <body>
@@ -132,23 +149,31 @@
 
     <div class="separator"></div>
 
+    <div class="phase-label">>>> PHASE I: CALIBRATION (SEQ 01-08)</div>
+
     <a href="archiv.html" class="btn btn-green">
-        <span class="flag">🇩🇪</span> DEUTSCHES ARCHIV
+        <span class="flag">🇩🇪</span> DEUTSCHES ARCHIV (PHASE I)
     </a>
     
     <a href="kutuphane.html" class="btn btn-green">
-        <span class="flag">🇹🇷</span> TÜRKÇE KÜTÜPHANE
+        <span class="flag">🇹🇷</span> TÜRKÇE KÜTÜPHANE (FAZ I)
     </a>
 
-    <div class="phase-label">>>> PHASE I: ARCHITECTURE</div>
+    <div class="separator"></div>
 
-    <a href="architecture.html" class="btn btn-green">
-        [ SYSTEM ARCHITECTURE / MUKATTAA REGISTRY ]
+    <div class="phase-label-active">>>> PHASE II: THE MUKATTA'A GRID (ACTIVE)</div>
+
+    <a href="phase2_master_index.html" class="btn btn-phase2">
+        <span class="flag">🇩🇪</span> MUKATTA'A MASTER INDEX
     </a>
 
-    <a href="architecture-tr.html" class="btn btn-green">
-        [ SİSTEM MİMARİSİ / MUKATTAA KAYITLARI ]
+    <a href="phase2_master_index_tr.html" class="btn btn-phase2">
+        <span class="flag">🇹🇷</span> MUKATTA'A ANA TABLO
     </a>
+
+    <div style="margin-top: 40px; color: #444; font-size: 0.6em;">
+        SYSTEM STATUS: ONLINE
+    </div>
 
 </body>
 </html>
