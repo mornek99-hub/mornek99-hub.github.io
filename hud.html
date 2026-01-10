@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQMUK_12: HUD | HAKĪKAT-KONSOLU</title>
+    <style>
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+        .sub-header { color: #888; margin-bottom: 30px; font-size: 0.9em; }
+        #terminal-box { background-color: #000; border: 1px solid #333; padding: 15px; font-family: 'Courier New', monospace; font-size: 0.85em; margin-bottom: 30px; box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); display: none; }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } .log-root { color: #d4af37; font-weight: bold; } .log-io { color: #00bcd4; } .log-warn { color: #ff9800; }
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+        .boot-btn { background-color: #1a1a1a; color: #d4af37; border: 1px solid #d4af37; padding: 15px 30px; font-family: 'Courier New', monospace; font-weight: bold; cursor: pointer; width: 100%; text-align: center; margin-bottom: 20px; transition: 0.3s; }
+        .boot-btn:hover { background-color: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #d4af37; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[RASM]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        .domain-tag { display: inline-block; background: #222; color: #888; padding: 2px 5px; font-size: 0.7em; border-radius: 3px; margin-right: 5px; margin-bottom: 5px; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #d4af37; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="yunus.html" style="text-decoration: none; color: #555;">&larr; ZURÜCK ZU YUNUS (SEQ_11)</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQMUK_12: HUD (الر)</h1>
+        <div class="sub-header">
+            ORT: SURAH 11 [1, 41, 112, 114]<br>
+            MODELL: NAVIGATION & STRUKTURELLE INTEGRITÄT
+        </div>
+    </div>
+
+    <button class="boot-btn" onclick="runBootSequence()">[ PROTOKOLL STARTEN: A-L-R ]</button>
+
+    <div id="terminal-box"><div id="terminal-content"></div><span class="cursor">_</span></div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01</span>
+            <span class="arabic">الر ۚ كِتَابٌ أُحْكِمَتْ آيَاتُهُ ثُمَّ فُصِّلَتْ مِن لَّدُنْ حَكِيمٍ خَبِيرٍ</span>
+            <span class="rasm">الر كتب أحكمت ءايته ثم فصلت ...</span>
+            <span class="translation">"A-L-R. Ein Code (Kitab), dessen Zeilen kompiliert/verfestigt (Uhkimat) und dann ausgeführt/detailliert (Fussilat) wurden."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">UHKIMAT (Compiler-Phase):</span> Bevor das Programm läuft (Fussilat), muss der Code "fest" (Ihkam) sein. Keine Bugs, keine Lücken. Maximale Dichte und strukturelle Integrität.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">PRINZIPIEN-TREUE:</span> Eine Verfassung muss "Uhkimat" (unerschütterlich) sein, bevor sie in Gesetze (Fussilat) ausdifferenziert wird. Ohne festen Kern zerfällt das Detail.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 41</span>
+            <span class="arabic">... بِسْمِ اللَّهِ مَجْرَاهَا وَمُرْسَاهَا</span>
+            <span class="rasm">... بسم الله مجرها ومرسها</span>
+            <span class="translation">"Im Namen des Systems (Allah) ist sein Flow/Kurs (Majra) und sein Anker/Halt (Mursa)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">FLUID DYNAMICS:</span> Das System kontrolliert sowohl die Kinetik (Bewegung im Fluss) als auch die Statik (das Ankern). Perfekte Balance zwischen Beschleunigung und Stabilität.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">KRISEN-MANAGEMENT:</span> Wie Noahs Arche. Man muss wissen, wann man mit dem Strom schwimmt (Innovation/Majra) und wann man den Anker wirft (Werte/Mursa).
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 112</span>
+            <span class="arabic">فَاسْتَقِمْ كَمَا أُمِرْتَ وَمَن تَابَ مَعَكَ وَلَا تَطْغَوْا</span>
+            <span class="rasm">فاستقم كما أمرت ومن تاب معك ولا تطغوا</span>
+            <span class="translation">"Halte den Vektor (Fastaqim) wie programmiert (Umirt)... und driftet nicht ab (La Tatghau)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">ISTIQAMA (Linearität):</span> Die Fähigkeit, eine gerade Linie zu halten, trotz externer Kräfte (Sturm). Gyroskopische Stabilisierung.
+                <strong>Tughyan (Drift):</strong> Das Überschreiten der Grenzwerte. Abweichung vom Kurs.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">POLITISCHE KONSISTENZ:</span> Bleib auf Kurs. Lass dich nicht von Populismus oder Extremismus (Tughyan) nach links oder rechts ablenken.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 114</span>
+            <span class="arabic">... إِنَّ الْحَسَنَاتِ يُذْهِبْنَ السَّيِّئَاتِ</span>
+            <span class="rasm">... إن الحسنت يذهبن السيئات</span>
+            <span class="translation">"Wahrlich, optimierte Prozesse (Hasanat) löschen/überschreiben korrupte Daten (Sayyi'at)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">ERROR CORRECTION:</span> Entropie (Sayyi'at) wird nicht durch Löschen bekämpft, sondern durch das Einspeisen von Negentropie (Hasanat/Ordnung). Positiver Input neutralisiert negativen Output.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">AKTIVE REPARATUR:</span> Fehler der Vergangenheit werden nicht durch Reue allein gelöscht, sondern durch konstruktive Gegenmaßnahmen. Bauen statt nur Bedauern.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="architecture.html" class="btn">ARCHITEKTUR MENÜ</a>
+            <a href="#" class="btn" style="border-color: #333; color: #333;">NEXT: SEQMUK_13 (LOCKED)</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "[ SEQMUK 12 : HUD (NAVIGATION SYSTEMS) ]", type: "log-root", delay: 800 },
+            { txt: "A-L-R PROJEKTION AKTIV.", type: "log-sys", delay: 800 },
+            { txt: "CODE-INTEGRITÄT PRÜFEN (UHKIMAT)...", type: "log-io", delay: 600 },
+            { txt: "    > COMPILER: FEHLERFREI.", type: "log-sys", delay: 400 },
+            { txt: "    > STRUKTUR: LOCKED.", type: "log-sys", delay: 400 },
+            { txt: "GYROSKOP-CHECK (ISTIQAMA)...", type: "log-io", delay: 600 },
+            { txt: "    > VEKTOR: STABIL.", type: "log-sys", delay: 400 },
+            { txt: "    > DRIFT (TUGHYAN): 0%.", type: "log-sys", delay: 400 },
+            { txt: "FEHLER-KORREKTUR (HASANAT-ENGINE)...", type: "log-root", delay: 800 },
+            { txt: "    > ÜBERSCHREIBE KORRUPTE SEKTOREN...", type: "log-warn", delay: 600 },
+            { txt: "SYSTEM AUF KURS.", type: "log-sys", delay: 1000 }
+        ];
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+</body>
+</html>
