@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQMUK_13: YUSUF | HAKĪKAT-KONSOLU</title>
+    <style>
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+        .sub-header { color: #888; margin-bottom: 30px; font-size: 0.9em; }
+        #terminal-box { background-color: #000; border: 1px solid #333; padding: 15px; font-family: 'Courier New', monospace; font-size: 0.85em; margin-bottom: 30px; box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); display: none; }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } .log-root { color: #d4af37; font-weight: bold; } .log-io { color: #00bcd4; } .log-warn { color: #ff9800; }
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+        .boot-btn { background-color: #1a1a1a; color: #d4af37; border: 1px solid #d4af37; padding: 15px 30px; font-family: 'Courier New', monospace; font-weight: bold; cursor: pointer; width: 100%; text-align: center; margin-bottom: 20px; transition: 0.3s; }
+        .boot-btn:hover { background-color: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #d4af37; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[RASM]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        .domain-tag { display: inline-block; background: #222; color: #888; padding: 2px 5px; font-size: 0.7em; border-radius: 3px; margin-right: 5px; margin-bottom: 5px; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #d4af37; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="hud.html" style="text-decoration: none; color: #555;">&larr; ZURÜCK ZU HUD (SEQ_12)</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQMUK_13: YUSUF (الر)</h1>
+        <div class="sub-header">
+            ORT: SURAH 12 [1-4, 21, 47-48]<br>
+            MODELL: SIMULATION & DATA-CACHING
+        </div>
+    </div>
+
+    <button class="boot-btn" onclick="runBootSequence()">[ PROTOKOLL STARTEN: A-L-R ]</button>
+
+    <div id="terminal-box"><div id="terminal-content"></div><span class="cursor">_</span></div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01-03</span>
+            <span class="arabic">الر ۚ تِلْكَ آيَاتُ الْكِتَابِ الْمُبِينِ ... نَحْنُ نَقُصُّ عَلَيْكَ أَحْسَنَ الْقَصَصِ</span>
+            <span class="rasm">الر تلك ءايت الكتب المبين ... نحن نقص عليك أحسن القصص</span>
+            <span class="translation">"A-L-R. Zeichen des klaren Codes... Wir rendern für dich die optimalste Simulation (Ahsan al-Qasas)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">AHSAN AL-QASAS (Best-Case Scenario):</span> Das System zeigt nicht irgendeine Geschichte, sondern das "Optimale Modell". Eine Blaupause für den Aufstieg durch Resilienz.
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">NARRATIVE INTELLIGENZ:</span> Gesellschaften lernen durch Stories. Die Yusuf-Sequenz ist das perfekte Lehrmodell für Aufstieg, Fall und Rehabilitation.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 04</span>
+            <span class="arabic">إِذْ قَالَ يُوسُفُ لِأَبِيهِ يَا أَبَتِ إِنِّي رَأَيْتُ أَحَدَ عَشَرَ كَوْكَبًا ...</span>
+            <span class="rasm">... إني رأيت أحد عشر كوكبا ...</span>
+            <span class="translation">"Ich sah (in der Simulation) 11 Himmelskörper (Planeten/Systeme)... die sich synchronisierten."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">PRE-RENDERING (Traum):</span> Das Gehirn simuliert zukünftige Wahrscheinlichkeiten. Yusuf hat Zugriff auf die Metadaten der Zukunft, bevor sie in der Materie kollabieren.<br>
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 21</span>
+            <span class="arabic">... وَلِنُعَلِّمَهُ مِن تَأْوِيلِ الْأَحَادِيثِ</span>
+            <span class="rasm">... ولنعلمه من تأويل الأحاديث</span>
+            <span class="translation">"Damit wir ihm das Decoding (Ta'wil) der Datensätze/Ereignisse (Ahadith) beibringen."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">TA'WIL (Decoding):</span> Die Fähigkeit, rohe Signale (Träume, Marktdaten, Nachrichten) in kohärente Information zu übersetzen. Mustererkennung auf höchstem Niveau.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">ANALYTISCHE KOMPETENZ:</span> Ein Leader muss hinter die Fassade (das Ereignis) schauen und die Kausalität (den Code) verstehen.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 47-48</span>
+            <span class="arabic">... فَمَا حَصَدتُّمْ فَذَرُوهُ فِي سُنبُلِهِ ... ثُمَّ يَأْتِي مِن بَعْدِ ذَٰلِكَ سَبْعٌ شِدَادٌ</span>
+            <span class="rasm">... فما حصدتم فذروه في سنبله ... ثم يأتي من بعد ذلك سبع شداد</span>
+            <span class="translation">"Was ihr erntet, lasst es im Speicher (Ähre)... danach kommen 7 harte Zyklen (Entropie), die den Cache verbrauchen."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">CACHING (Speicher):</span> Energiemanagement. In Zeiten des Überflusses (High Energy) muss ein Puffer für Zeiten der Dürre (Low Energy) angelegt werden. System-Resilienz gegen Volatilität.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">NACHHALTIGKEIT:</span> Ökonomische Planung über Legislaturperioden hinaus. Sparen statt Konsumieren. Das Prinzip der Antizyklik.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="architecture.html" class="btn">ARCHITEKTUR MENÜ</a>
+            <a href="#" class="btn" style="border-color: #333; color: #333;">NEXT: SEQMUK_14 (LOCKED)</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "[ SEQMUK 13 : YUSUF (DATA CACHING) ]", type: "log-root", delay: 800 },
+            { txt: "LADE SIMULATION: [ A-L-R ] (BEST CASE)...", type: "log-sys", delay: 1000 },
+            { txt: "PRE-RENDERING ZUKUNFT (TRAUM)...", type: "log-io", delay: 600 },
+            { txt: "    > OBJEKTE: 11 PLANETEN.", type: "log-warn", delay: 400 },
+            { txt: "    > STATUS: SYNCHRONISIERT.", type: "log-sys", delay: 400 },
+            { txt: "DECODING ALGORITHMUS (TA'WIL) AKTIV...", type: "log-io", delay: 600 },
+            { txt: "    > ANALYSIERE MARKT-ZYKLEN...", type: "log-sys", delay: 400 },
+            { txt: "RESOURCE MANAGEMENT (CACHING)...", type: "log-root", delay: 800 },
+            { txt: "    > BEFEHL: SPEICHERN (7 JAHRE).", type: "log-warn", delay: 600 },
+            { txt: "    > PUFFER FÜR ENTROPIE (DÜRRE) ERSTELLT.", type: "log-sys", delay: 600 },
+            { txt: "SYSTEM STABILISIERT.", type: "log-sys", delay: 1000 }
+        ];
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+</body>
+</html>
