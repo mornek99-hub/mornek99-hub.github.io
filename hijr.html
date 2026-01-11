@@ -94,4 +94,66 @@
 
         <div class="verse-block">
             <span class="verse-number">AYAT 26</span>
-            <span class="arabic">وَلَقَدْ خَلَقْنَا الْإِنسَانَ مِن صَلْصَالٍ مِّن
+            <span class="arabic">وَلَقَدْ خَلَقْنَا الْإِنسَانَ مِن صَلْصَالٍ مِّنْ حَمَإٍ مَّسْنُونٍ</span>
+            <span class="rasm">ولقد خلقنا الإنسن من صلصل من حمإ مسنون</span>
+            <span class="translation">"Wir erschufen den Menschen aus trockenem Ton (Salsal), aus geformtem schwarzem Schlamm (Hama' Masnun)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">BIO-CHEMIE (Kohlenstoff-Basis):</span> 
+                <strong>Salsal:</strong> Resonanzfähige Materie (Silikate/Ton). 
+                <strong>Hama' Masnun:</strong> Organische Polymere/Proteine (Schlamm). 
+                Der Mensch ist eine Hardware aus Erde, die Informationen leiten kann.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">DEMUT vs. ARROGANZ:</span> Wir sind biochemisch "Dreck" (Schlamm). Unsere Wertigkeit kommt nur durch den "Ruh" (Geist/Software), der eingehaucht wurde. Rassismus (wie bei Iblis/Feuer) ist ein logischer Fehler in der Materialanalyse.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="architecture.html" class="btn">ARCHITEKTUR MENÜ</a>
+            <a href="ibrahim.html" class="btn" style="border-color: #d4af37; color: #d4af37;">NEXT: SEQMUK_15 (IBRAHIM)</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "[ SEQMUK 14 : AL-HIJR (DATA SECURITY) ]", type: "log-root", delay: 800 },
+            { txt: "DECODIERE QUELLCODE: [ A-L-R ]...", type: "log-sys", delay: 1000 },
+            { txt: "PRÜFE DATEN-INTEGRITÄT (HAFIZUN)...", type: "log-io", delay: 600 },
+            { txt: "    > VIRENSCHUTZ: AKTIV.", type: "log-sys", delay: 400 },
+            { txt: "    > MODIFIKATIONEN: BLOCKIERT.", type: "log-sys", delay: 400 },
+            { txt: "GEO-STABILISIERUNG (RAWASI)...", type: "log-io", delay: 600 },
+            { txt: "    > TEKTONIK: STABILISIERT.", type: "log-sys", delay: 400 },
+            { txt: "ANALYSIERE BIO-HARDWARE (SALSAL)...", type: "log-root", delay: 800 },
+            { txt: "    > BASIS: KOHLENSTOFF/SILIKAT.", type: "log-warn", delay: 600 },
+            { txt: "    > STATUS: BEREIT FÜR DOWNLOAD.", type: "log-sys", delay: 600 },
+            { txt: "SYSTEM ONLINE.", type: "log-sys", delay: 1000 }
+        ];
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+</body>
+</html>
