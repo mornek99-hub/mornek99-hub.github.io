@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQMUK_09: NEML | HAKİKAT-KONSOLU</title>
+    <style>
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+        .sub-header { color: #888; margin-bottom: 30px; font-size: 0.9em; }
+        #terminal-box { background-color: #000; border: 1px solid #333; padding: 15px; font-family: 'Courier New', monospace; font-size: 0.85em; margin-bottom: 30px; box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); display: none; }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } .log-root { color: #d4af37; font-weight: bold; } .log-io { color: #00bcd4; } .log-warn { color: #ff9800; }
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+        .boot-btn { background-color: #1a1a1a; color: #d4af37; border: 1px solid #d4af37; padding: 15px 30px; font-family: 'Courier New', monospace; font-weight: bold; cursor: pointer; width: 100%; text-align: center; margin-bottom: 20px; transition: 0.3s; }
+        .boot-btn:hover { background-color: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #d4af37; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[RASM]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        .domain-tag { display: inline-block; background: #222; color: #888; padding: 2px 5px; font-size: 0.7em; border-radius: 3px; margin-right: 5px; margin-bottom: 5px; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #d4af37; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="suara-tr.html" style="text-decoration: none; color: #555;">&larr; ŞUARA (SEQ_08)'YA DÖN</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQMUK_09: NEML (طس)</h1>
+        <div class="sub-header">
+            KONUM: SURE 27 [1, 18, 40, 88]<br>
+            MODELL: SÜRÜ ZEKASI & KUANTUM TRANSFERİ
+        </div>
+    </div>
+
+    <button class="boot-btn" onclick="runBootSequence()">[ PROTOKOLÜ BAŞLAT: T-S ]</button>
+
+    <div id="terminal-box"><div id="terminal-content"></div><span class="cursor">_</span></div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01</span>
+            <span class="arabic">طس ۚ تِلْكَ آيَاتُ الْقُرْآنِ وَكِتَابٍ مُّبِينِ</span>
+            <span class="rasm">طس تلك ءايت القرءان وكتاب مبين</span>
+            <span class="translation">"Ta (Zemin) Sin (Sinyal). Bunlar Veri Tabanının (Kuran) ve apaçık bir Kodun (Kitab) işaretleridir."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSİKO-BİYO-FİZİK</span>
+                <span class="keyword">T-S (Doğrudan Arayüz):</span> "Mim" (Madde Matrisi) aradan kalkmıştır. Bilinç (Sin) ile Gerçeklik (Ta) arasında aracısız, hızlı iletişim.<br>
+                <br>
+                <span class="domain-tag">SOSYO-ETİK</span>
+                <span class="keyword">NETLİK:</span> Toplumun temelleri "Mübin" (apaçık) olmalıdır. Bürokrasi (Mim) anlamı (Sin) örtmemelidir.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 18</span>
+            <span class="arabic">... قَالَتْ نَمْلَةٌ يَا أَيُّهَا النَّمْلُ ادْخُلُوا مَسَاكِنَكُمْ ...</span>
+            <span class="rasm">... قالت نملة يايها النمل ادخلوا مسكنكم ...</span>
+            <span class="translation">"Bir karınca sinyal verdi (Dedi ki): Ey Karıncalar, savunma protokolüne geçin (yuvalara girin), ezilmeyin..."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSİKO-BİYO-FİZİK</span>
+                <span class="keyword">SÜRÜ ZEKASI:</span> Merkezi olmayan kontrol. Tek bir sensör (Karınca), tüm ağı uyarır. Feromon/Sinyal ile gerçek zamanlı veri aktarımı.<br>
+                <br>
+                <span class="domain-tag">SOSYO-ETİK</span>
+                <span class="keyword">SİVİL SAVUNMA & DAYANIŞMA:</span> Birey, kolektif için sorumluluk alır. Kriz (Süleyman/Ordu) gelmeden önce uyarı sistemleri çalışmalıdır.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 40</span>
+            <span class="arabic">قَالَ الَّذِي عِندَهُ عِلْمٌ مِّنَ الْكِتَابِ أَنَا آتِيكَ بِهِ قَبْلَ أَن يَرْتَدَّ إِلَيْكَ طَرْفُكَ</span>
+            <span class="rasm">... انا ءاتيك به قبل ان يرتد اليك طرفك ...</span>
+            <span class="translation">"Yanında Koddan bir ilim (İlm-ul Kitab) olan dedi ki: Göz sinyalin geri dönmeden (Göz kırpmadan) onu sana getiririm."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSİKO-BİYO-FİZİK</span>
+                <span class="keyword">KUANTUM TRANSFER (Işınlanma):</span> Maddenin (Tahtın), nöronal işlem süresinden (Göz kırpma) daha hızlı nakli. Sadece Kaynak Koduna (Kitap) erişimle mümkündür.<br>
+                <br>
+                <span class="domain-tag">SOSYO-ETİK</span>
+                <span class="keyword">BİLGİ GÜÇTÜR:</span> İfrit (Fiziksel Güç), Bilginden (Veri Gücü) daha yavaştır. Gerçek üstünlük kaba kuvvette değil, enformasyon teknolojisindedir.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 88</span>
+            <span class="arabic">وَتَرَى الْجِبَالَ تَحْسَبُهَا جَامِدَةً وَهِيَ تَمُرُّ مَرَّ السَّحَابِ</span>
+            <span class="rasm">وترى الجبال تحسبها جامدة وهي تمر مر السحاب</span>
+            <span class="translation">"Dağları görürsün de onları sabit (Camid) sanırsın; oysa onlar bulutların geçişi gibi hareket halindedir."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSİKO-BİYO-FİZİK</span>
+                <span class="keyword">GÖRELİLİK & TEKTONİK:</span> Algı yanıltıcıdır. Gerçeklikte her şey kinetik akış (Dünya dönüşü/Levha tektoniği) halindedir. Madde yavaşlamış enerjidir (Bulut).<br>
+                <br>
+                <span class="domain-tag">SOSYO-ETİK</span>
+                <span class="keyword">DEĞİŞİM DİNAMİĞİ:</span> Sonsuz görünen kurumlar (Dağlar) bile sürekli değişim halindedir. Hiçbir statüko kalıcı değildir. Değişimi görmeyen illüzyonda yaşar.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="phase2_master_index_tr.html" class="btn">ANA TABLOYA DÖN</a>
+            <a href="kasas-tr.html" class="btn" style="border-color: #d4af37; color: #d4af37;">SONRAKİ: SEQMUK_10 (KASAS)</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "[ SEQMUK 09 : NEML (SÜRÜ & KUANTUM) ]", type: "log-root", delay: 800 },
+            { txt: "T-S DEŞİFRE (DİREKT BAĞLANTI)...", type: "log-sys", delay: 1000 },
+            { txt: "SÜRÜ PROTOKOLÜ AKTİF (NEML)...", type: "log-io", delay: 600 },
+            { txt: "    > UYARI SİNYALİ: ALINDI.", type: "log-warn", delay: 400 },
+            { txt: "    > ÇARPIŞMA ÖNLEME: AKTİF.", type: "log-sys", delay: 400 },
+            { txt: "KUANTUM TRANSFER BAŞLAT (İLM-KİTAP)...", type: "log-root", delay: 800 },
+            { txt: "    > GECİKME: 0ms (BLINK HIZI).", type: "log-sys", delay: 600 },
+            { txt: "    > NESNE TRANSFER EDİLDİ.", type: "log-sys", delay: 600 },
+            { txt: "GÖRELİLİK KONTROLÜ (DAĞLAR)...", type: "log-io", delay: 500 },
+            { txt: "    > DURUM: KİNETİK (BULUT GİBİ).", type: "log-warn", delay: 600 },
+            { txt: "SİSTEM ÇALIŞIYOR.", type: "log-sys", delay: 1000 }
+        ];
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+</body>
+</html>
