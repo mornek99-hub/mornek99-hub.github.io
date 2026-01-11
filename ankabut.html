@@ -90,7 +90,7 @@
         </div>
 
         <div class="verse-block">
-            <span class="verse-number">AYAT 64</span>
+            <span class="verse-number">AYAT 64 (EOF)</span>
             <span class="arabic">وَمَا هَٰذِهِ الْحَيَاةُ الدُّنْيَا إِلَّا لَهْوٌ وَلَعِبٌ ۚ وَإِنَّ الدَّارَ الْآخِرَةَ لَهِيَ الْحَيَوَانُ</span>
             <span class="rasm">... لهو ولعب ... لهي الحيوان</span>
             <span class="translation">"Diese niedrige Ebene (Dunya) ist nur Simulation/Unterhaltung (Lahw)... die nächste Ebene (Akhira) ist das Hyper-Leben (Hayawan)."</span>
@@ -99,4 +99,53 @@
                 <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
                 <span class="keyword">SIMULATION VS. REALITY:</span> 
                 <strong>Lahw (Game):</strong> Diese Welt ist eine Trainingsumgebung mit niedriger Auflösung.
-                <strong>Hayawan (Hyper-Life):</strong> "Hayawan" ist gesteigertes Leben. Maximale Intensität und Realität. Das Verlassen der Simulation hin zur "
+                <strong>Hayawan (Hyper-Life):</strong> "Hayawan" ist gesteigertes Leben. Maximale Intensität und Realität. Das Verlassen der Simulation hin zur "Base Reality" (Ewigkeit).
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="architecture.html" class="btn">ARCHITEKTUR MENÜ</a>
+            <a href="rum.html" class="btn" style="border-color: #d4af37; color: #d4af37;">NEXT: SEQMUK_18 (AR-RUM)</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "[ SEQMUK 17 : AL-ANKABUT (NETWORK TOPOLOGY) ]", type: "log-root", delay: 800 },
+            { txt: "INITIERE LOAD-TEST (FITNAH)...", type: "log-sys", delay: 1000 },
+            { txt: "NETZWERK-ANALYSE LÄUFT...", type: "log-io", delay: 600 },
+            { txt: "    > EXTERNE ABHÄNGIGKEITEN (AWLIYA): ERKANNT.", type: "log-warn", delay: 400 },
+            { txt: "    > STRUKTUR-INTEGRITÄT: KRITISCH (SPINNENNETZ).", type: "log-warn", delay: 400 },
+            { txt: "PRÜFE INTERNEN SPEICHER (SUDUR)...", type: "log-io", delay: 600 },
+            { txt: "    > WISSENS-STATUS: AKTIV.", type: "log-sys", delay: 400 },
+            { txt: "SIMULATIONS-STATUS (DUNYA): LAHW/GAME.", type: "log-sys", delay: 500 },
+            { txt: "ZIEL: HYPER-LIFE (HAYAWAN).", type: "log-root", delay: 800 },
+            { txt: "TEST ABGESCHLOSSEN.", type: "log-sys", delay: 1000 }
+        ];
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+</body>
+</html>
