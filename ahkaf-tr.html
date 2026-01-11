@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQMUK_26: AHKAF | HAKİKAT-KONSOLU</title>
+    <style>
+        body{background-color:#0d0d0d;color:#e0e0e0;font-family:'Courier New',monospace;padding:20px;line-height:1.6}
+        h1{color:#d4af37;border-bottom:2px solid #d4af37;padding-bottom:10px}
+        .sub-header{color:#888;margin-bottom:30px;font-size:0.9em}
+        #terminal-box{background-color:#000;border:1px solid #333;padding:15px;font-family:'Courier New',monospace;font-size:0.85em;margin-bottom:30px;box-shadow:0 0 15px rgba(212,175,55,0.2);display:none}
+        .log-line{margin-bottom:5px;display:block}
+        .log-sys{color:#00ff41}
+        .log-root{color:#d4af37;font-weight:bold}
+        .log-io{color:#00bcd4}
+        .log-warn{color:#ff9800}
+        .cursor{animation:blink 1s infinite}
+        @keyframes blink{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
+        .boot-btn{background-color:#1a1a1a;color:#d4af37;border:1px solid #d4af37;padding:15px 30px;font-family:'Courier New',monospace;font-weight:bold;cursor:pointer;width:100%;text-align:center;margin-bottom:20px;transition:0.3s}
+        .boot-btn:hover{background-color:#d4af37;color:#000;box-shadow:0 0 15px #d4af37}
+        .verse-block{background-color:#1a1a1a;padding:15px;margin-bottom:20px;border-left:4px solid #d4af37;opacity:0;transition:opacity 1s}
+        .verse-visible{opacity:1}
+        .verse-number{color:#555;font-size:0.8em;display:block;margin-bottom:5px}
+        .arabic{font-size:1.4em;color:#fff;direction:rtl;display:block;margin-bottom:5px;font-family:'Amiri',serif}
+        .rasm{font-family:'Courier New',monospace;color:#00ff41;font-size:0.9em;display:block;margin-bottom:10px;border-bottom:1px solid #333;padding-bottom:5px;direction:rtl}
+        .rasm::before{content:'[RASM]: ';color:#555;font-size:0.7em;direction:ltr;display:inline-block;margin-right:10px}
+        .translation{color:#ccc;font-style:italic;margin-bottom:10px;display:block}
+        .analysis{font-size:0.85em;color:#888;border-top:1px dotted #333;padding-top:10px}
+        .keyword{color:#e5c07b;font-weight:bold}
+        .domain-tag{display:inline-block;background:#222;color:#888;padding:2px 5px;font-size:0.7em;border-radius:3px;margin-right:5px;margin-bottom:5px}
+        a.btn{display:inline-block;margin-top:20px;padding:10px 20px;border:1px solid #d4af37;color:#d4af37;text-decoration:none;transition:0.3s;margin-right:10px}
+        a.btn:hover{background-color:#d4af37;color:#000}
+    </style>
+</head>
+<body>
+
+    <a href="casiye-tr.html" style="text-decoration: none; color: #555;">&larr; CASİYE (SEQ_25)'YE DÖN</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQMUK_26: AHKAF (حم)</h1>
+        <div class="sub-header">
+            KONUM: SURE 46 [1-4, 13, 26, 35]<br>
+            MODELL: KAYNAK KOD DOĞRULAMASI & ELİT STABİLİTE
+        </div>
+    </div>
+
+    <button class="boot-btn" onclick="runBootSequence()">[ PROTOKOLÜ BAŞLAT: H-M ]</button>
+
+    <div id="terminal-box"><div id="terminal-content"></div><span class="cursor">_</span></div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01-04</span>
+            <span class="arabic">حم . تَنزِيلُ الْكِتَابِ ... أَرُونِي مَاذَا خَلَقُوا مِنَ الْأَرْضِ ... ائْتُونِي بِكِTābٍ</span>
+            <span class="rasm">حم . تنزيل الكتب ... أروني ماذا خلقوا من الأرض ... ائتوني بكتب</span>
+            <span class="translation">"Ha-Mim. Kodun İndirilişi... Bana gösterin (Kod İncelemesi), yerden ne yarattılar? Bana bir Veri Dosyası (Kitap) veya Bilgi İzi (Esare) getirin."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSİKO-BİYO-FİZİK</span>
+                <span class="keyword">YARATILIŞ KANITI:</span> Sistem bir "İş Kanıtı" (Proof of Work) talep eder. Yönetici hakları iddia edenler (Putlar/İdeolojiler), ne kodladıklarını göstermelidir. Yaratım yoksa Hak da yoktur.
+                <strong>Esare min İlm:</strong> Bilgiye dayalı bir veri parçası/izi. Kuru iddia geçersizdir.<br>
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 13</span>
+            <span class="arabic">إِنَّ الَّذِينَ قَالُوا رَبُّنَا اللَّهُ ثُمَّ اسْتَقَامُوا فَلَا خَوْفٌ عَلَيْهِمْ</span>
+            <span class="rasm">إن الذين قالوا ربنا الله ثم استقموا ...</span>
+            <span class="translation">"Şüphesiz 'Yöneticimiz Allah'tır' deyip sonra Vektörü Koruyanlar (İstikamet edenler), onlara Sistem Hatası/Korku (Havf) yoktur."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSİKO-BİYO-FİZİK</span>
+                <span class="keyword">VEKTÖR STABİLİTESİ II:</span> Fussilet'ten tekrar. Stabilitenin (İstikamet) korkusuzluk durumunun (No-Fear-State) anahtarı olduğunun teyidi. Stabil bir sistem panik tanımaz.<br>
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 26</span>
+            <span class="arabic">وَلَقَدْ مَكَّنَّاهُمْ ... وَجَعَلْنَا لَهُمْ سَمْعًا وَأَبْصَارًا وَأَفْئِدَةً فَمَا أَغْنَىٰ عَنْهُمْ ...</span>
+            <span class="rasm">... وجعلنا لهم سمعا وأبصرا وأفئدة فما أغنى عنهم ...</span>
+            <span class="translation">"Onlara (Ad kavmine) Root Yetkileri (Mekkennahum) ve donanım (İşitme/Görme/CPU) verdik... ama donanımları işe yaramadı, çünkü sinyalleri (Ayetleri) reddettiler."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSİKO-BİYO-FİZİK</span>
+                <span class="keyword">SÜRÜCÜ HATASI:</span> En iyi donanım bile, doğru sürücü (İman/Kabul) olmadan işe yaramaz. Kullanıcı girdiyi (Input) bloke ederse ("Cuhud"), donanım gereksiz yüke dönüşür.<br>
+                <br>
+                <span class="domain-tag">SOSYO-ETİK</span>
+                <span class="keyword">TEKNOLOJİ VS BİLGELİK:</span> Yüksek teknoloji toplumları (Ad), etik yazılımları bozuksa yine de çökerler.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 35 (EOF)</span>
+            <span class="arabic">فَاصْبِرْ كَمَا صَبَرَ أُولُو الْعَزْمِ مِنَ الرُّسُلِ</span>
+            <span class="rasm">فاصبر كما صبر أولوا العزم من الرسل</span>
+            <span class="translation">"Öyleyse, Elçilerden Azim Sahiplerinin (Ulul-Azm) sabrettiği gibi sabret (Direnç göster)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSİKO-BİYO-FİZİK</span>
+                <span class="keyword">ULUL-AZM (Elit Kullanıcılar):</span> Maksimum dayanıklılığa sahip işlemciler (Azm = Kararlılık/Katılık). Ağın taşıyıcı sütunlarıdır. Sabır, pasif bekleyiş değil, yüksek basınç altında aktif "yük taşımadır".<br>
+                <br>
+                <span class="domain-tag">SOSYO-ETİK</span>
+                <span class="keyword">LİDERLİK KALİTESİ:</span> Gerçek liderlik, kriz anındaki sarsılmaz kararlılıkta (Azm) kendini gösterir.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="phase2_master_index_tr.html" class="btn">ANA TABLOYA DÖN</a>
+            <a href="kaf-tr.html" class="btn" style="border-color: #d4af37; color: #d4af37;">SONRAKİ: SEQMUK_27 (KAF)</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "[ SEQMUK 26 : AHKAF (SİSTEM DOĞRULAMASI) ]", type: "log-root", delay: 800 },
+            { txt: "HAVAMİM BLOĞU [ H-M ] FİNALİZASYON...", type: "log-sys", delay: 1000 },
+            { txt: "KAYNAK KOD KONTROLÜ (AYET 4)...", type: "log-io", delay: 600 },
+            { txt: "    > HARİCİ YARATIM: NULL.", type: "log-warn", delay: 400 },
+            { txt: "    > DOĞRULAMA: BAŞARISIZ.", type: "log-warn", delay: 400 },
+            { txt: "DONANIM TANISI (AD KAVMİ)...", type: "log-io", delay: 600 },
+            { txt: "    > SENSÖRLER: ONLINE.", type: "log-sys", delay: 400 },
+            { txt: "    > VERİ İŞLEME: HATA (CUHUD).", type: "log-warn", delay: 400 },
+            { txt: "ELİT PROTOKOLÜ YÜKLE (ULUL-AZM)...", type: "log-root", delay: 800 },
+            { txt: "    > DAYANIKLILIK SEVİYESİ: MAKSİMUM.", type: "log-sys", delay: 600 },
+            { txt: "HAVAMİM BLOĞU TAMAMLANDI.", type: "log-sys", delay: 1000 }
+        ];
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+</body>
+</html>
