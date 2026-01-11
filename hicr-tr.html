@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQMUK_14: HİCR | HAKİKAT-KONSOLU</title>
+    <style>
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+        .sub-header { color: #888; margin-bottom: 30px; font-size: 0.9em; }
+        #terminal-box { background-color: #000; border: 1px solid #333; padding: 15px; font-family: 'Courier New', monospace; font-size: 0.85em; margin-bottom: 30px; box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); display: none; }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } .log-root { color: #d4af37; font-weight: bold; } .log-io { color: #00bcd4; } .log-warn { color: #ff9800; }
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+        .boot-btn { background-color: #1a1a1a; color: #d4af37; border: 1px solid #d4af37; padding: 15px 30px; font-family: 'Courier New', monospace; font-weight: bold; cursor: pointer; width: 100%; text-align: center; margin-bottom: 20px; transition: 0.3s; }
+        .boot-btn:hover { background-color: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #d4af37; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[RASM]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        .domain-tag { display: inline-block; background: #222; color: #888; padding: 2px 5px; font-size: 0.7em; border-radius: 3px; margin-right: 5px; margin-bottom: 5px; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #d4af37; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="yusuf-tr.html" style="text-decoration: none; color: #555;">&larr; YUSUF (SEQ_13)'A DÖN</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQMUK_14: HİCR (الر)</h1>
+        <div class="sub-header">
+            KONUM: SURE 15 [1, 9, 19, 26]<br>
+            MODELL: SİSTEM GÜVENLİĞİ & BİYO-KİMYA
+        </div>
+    </div>
+
+    <button class="boot-btn" onclick="runBootSequence()">[ PROTOKOLÜ BAŞLAT: A-L-R ]</button>
+
+    <div id="terminal-box"><div id="terminal-content"></div><span class="cursor">_</span></div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01</span>
+            <span class="arabic">الر ۚ تِلْكَ آيَاتُ الْكِتَابِ وَقُرْآنٍ مُّبِينٍ</span>
+            <span class="rasm">الر تلك ءايت الكتب وقرءan مبين</span>
+            <span class="translation">"A-L-R. Kod Betiğinin (Kitab) ve şeffaf/açık Veri Tabanının (Kuran-ı Mübin) işaretleridir."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSİKO-BİYO-FİZİK</span>
+                <span class="keyword">A-L-R (Görünürlük):</span> Kod gizli değildir. "Mübin" (HD/Açık) formattadır. Sistem, yetkili erişime (Root Access) sahip olanlar için Açık Kaynak prensibiyle çalışır.<br>
+                <br>
+                <span class="domain-tag">SOSYO-ETİK</span>
+                <span class="keyword">HUKUKUN ÜSTÜNLÜĞÜ:</span> Yasalar herkes tarafından okunabilir ve anlaşılabilir olmalıdır. Gizli hukuk yoktur.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 09</span>
+            <span class="arabic">إِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ وَإِنَّا لَهُ لَحَافِظُونَ</span>
+            <span class="rasm">إنا نحن نزلنا الذكر وإنا له لحفظون</span>
+            <span class="translation">"Hafızayı/Kodu (Zikri) biz yükledik ve onun Koruyucusu/Yedeği (Hafizun) biziz."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSİKO-BİYO-FİZİK</span>
+                <span class="keyword">VERİ BÜTÜNLÜĞÜ:</span> Sistem bozulmaya karşı korumalıdır. "Hafizun" aktif antivirüs/koruma kalkanıdır. Kod dışarıdan hacklenemez veya değiştirilemez.<br>
+                <br>
+                <span class="domain-tag">SOSYO-ETİK</span>
+                <span class="keyword">HAKİKAT GARANTİSİ:</span> Yalanlar kısa vadede yayılabilir, ancak tarihsel gerçeklik (Zikir) sistemsel olarak korunur ve sonunda ortaya çıkar.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 19</span>
+            <span class="arabic">وَالْأَرْضَ مَدَدْنَاهَا وَأَلْقَيْنَا فِيهَا رَوَاسِيَ ...</span>
+            <span class="rasm">والأرض مددناها وألقينا فيها روسي ...</span>
+            <span class="translation">"Ve yeri uzatıp yaydık (Madd), içine Sabitleyiciler/Çapalar (Ravasî) attık."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSİKO-BİYO-FİZİK</span>
+                <span class="keyword">JEO-MÜHENDİSLİK:</span> Kabuğun yayılması (Madd). "Ravasî" (Dağlar/Kökler), tektonik rotasyona/titreşime karşı izostatik dengeleyicilerdir. Gezegesel balans.<br>
+                <br>
+                <span class="domain-tag">SOSYO-ETİK</span>
+                <span class="keyword">ALTYAPI:</span> Bir toplumun "Ravasî"ye ihtiyacı vardır; politik zemin (Arz) genişlese veya değişse bile sabit kalan kurumlara (Anayasa, Yargı).
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 26</span>
+            <span class="arabic">وَلَقَدْ خَلَقْنَا الْإِنسَانَ مِن صَلْصَالٍ مِّنْ حَمَإٍ مَّسْنُونٍ</span>
+            <span class="rasm">ولقد خلقنا الإنسن من صلصل من حمإ مسنون</span>
+            <span class="translation">"Andolsun insanı Salsal'dan (tınlayan kil/silikat), Hame-i Mesnun'dan (şekillenmiş, kara balçıktan) tasarladık."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSİKO-BİYO-FİZİK</span>
+                <span class="keyword">BİYO-KİMYA:</span> 
+                <strong>Hame-i Mesnun:</strong> Organik kimya. "Mesnun" (zamanla değişmiş/yaşlanmış) karbon zengini balçık. Polimerizasyon süreci.
+                <strong>Salsal:</strong> Kuruma ve yapılaşma evresi. İnsan, kristalize yapıya sahip karbon donanımıdır.<br>
+                <br>
+                <span class="domain-tag">SOSYO-ETİK</span>
+                <span class="keyword">MADDİ TEVAZU:</span> Köken çamurdur. Kibir (Ateş/Plazma kökenli İblis gibi) için bir neden yok. Onur, maddeden değil, "Ruh" (Yazılım) üflenmesinden gelir.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="phase2_master_index_tr.html" class="btn">ANA TABLOYA DÖN</a>
+            <a href="ibrahim-tr.html" class="btn" style="border-color: #d4af37; color: #d4af37;">SONRAKİ: SEQMUK_15 (İBRAHİM)</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "[ SEQMUK 14 : HİCR (SİSTEM GÜVENLİĞİ) ]", type: "log-root", delay: 800 },
+            { txt: "A-L-R GÖRÜNTÜLEME ÇALIŞIYOR...", type: "log-sys", delay: 1000 },
+            { txt: "BÜTÜNLÜK KONTROLÜ (HAFİZUN)...", type: "log-io", delay: 600 },
+            { txt: "    > ANA VERİ (ZİKİR): KORUMALI.", type: "log-sys", delay: 400 },
+            { txt: "    > DIŞ ERİŞİM: ENGELLENDİ.", type: "log-sys", delay: 400 },
+            { txt: "TEKTONİK ANALİZ (RAVASİ)...", type: "log-warn", delay: 500 },
+            { txt: "    > BALANS: STABİLİZE EDİLDİ.", type: "log-sys", delay: 400 },
+            { txt: "BİYO-GENEZ TARAMASI (SALSAL)...", type: "log-io", delay: 600 },
+            { txt: "    > TABAN: KARBON POLİMER (HAME).", type: "log-warn", delay: 400 },
+            { txt: "    > YAPI: KATI.", type: "log-sys", delay: 600 },
+            { txt: "SİSTEM HATASIZ ÇALIŞIYOR.", type: "log-sys", delay: 1000 }
+        ];
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+</body>
+</html>
