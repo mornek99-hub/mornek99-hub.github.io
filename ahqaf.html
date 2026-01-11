@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQMUK_26: AL-AHQAF | HAKĪKAT-KONSOLU</title>
+    <style>
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+        .sub-header { color: #888; margin-bottom: 30px; font-size: 0.9em; }
+        #terminal-box { background-color: #000; border: 1px solid #333; padding: 15px; font-family: 'Courier New', monospace; font-size: 0.85em; margin-bottom: 30px; box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); display: none; }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } .log-root { color: #d4af37; font-weight: bold; } .log-io { color: #00bcd4; } .log-warn { color: #ff9800; }
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+        .boot-btn { background-color: #1a1a1a; color: #d4af37; border: 1px solid #d4af37; padding: 15px 30px; font-family: 'Courier New', monospace; font-weight: bold; cursor: pointer; width: 100%; text-align: center; margin-bottom: 20px; transition: 0.3s; }
+        .boot-btn:hover { background-color: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #d4af37; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[RASM]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        .domain-tag { display: inline-block; background: #222; color: #888; padding: 2px 5px; font-size: 0.7em; border-radius: 3px; margin-right: 5px; margin-bottom: 5px; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #d4af37; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="jathiya.html" style="text-decoration: none; color: #555;">&larr; ZURÜCK ZU AL-JATHIYA (SEQ_25)</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQMUK_26: AL-AHQAF (حم)</h1>
+        <div class="sub-header">
+            ORT: SURAH 46 [1-4, 13, 26, 35]<br>
+            MODELL: SOURCE-CODE VALIDIERUNG & ELITE-STABILITÄT
+        </div>
+    </div>
+
+    <button class="boot-btn" onclick="runBootSequence()">[ PROTOKOLL STARTEN: H-M ]</button>
+
+    <div id="terminal-box"><div id="terminal-content"></div><span class="cursor">_</span></div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01-04</span>
+            <span class="arabic">حم . تَنزِيلُ الْكِتَابِ ... أَرُونِي مَاذَا خَلَقُوا مِنَ الْأَرْضِ ... ائْتُونِي بِكِتَابٍ</span>
+            <span class="rasm">حم . تنزيل الكتب ... أروني ماذا خلقوا من الأرض ... ائتوني بكتب</span>
+            <span class="translation">"Ha-Mim. Download des Codes... Zeigt mir (Code-Review), was sie (eure Götzen) von der Erde erschaffen haben... Bringt mir ein Logfile (Kitab) oder einen Trace von Wissen (Athara)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">CREATION-PROOF:</span> Das System fordert einen "Proof of Work". Wer Admin-Rechte beansprucht (Götzen/Ideologien), muss zeigen, was er programmiert hat. Keine Schöpfung = Keine Rechte.
+                <strong>Athara min 'Ilm:</strong> Ein Daten-Fragment/Spur, das auf Wissen basiert. Bloße Meinung zählt nicht.<br>
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 13</span>
+            <span class="arabic">إِنَّ الَّذِينَ قَالُوا رَبُّنَا اللَّهُ ثُمَّ اسْتَقَامُوا فَلَا خَوْفٌ عَلَيْهِمْ</span>
+            <span class="rasm">إن الذين قالوا ربنا الله ثم استقموا ...</span>
+            <span class="translation">"Diejenigen, die sagen 'Unser Admin ist Allah' und dann den Vektor halten (Istaqamu), für sie gibt es keinen Systemfehler (Khawf/Angst)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">VEKTOR-STABILITÄT II:</span> Wiederholung aus Fussilat. Bestätigung, dass Stabilität (Istiqama) der Schlüssel zur Angstfreiheit (No-Fear-State) ist. Ein stabiles System kennt keine Panik.<br>
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 26</span>
+            <span class="arabic">وَلَقَدْ مَكَّنَّاهُمْ ... وَجَعَلْنَا لَهُمْ سَمْعًا وَأَبْصَارًا وَأَفْئِدَةً فَمَا أَغْنَىٰ عَنْهُمْ ...</span>
+            <span class="rasm">... وجعلنا لهم سمعا وأبصرا وأفئدة فما أغنى عنهم ...</span>
+            <span class="translation">"Wir gaben ihnen (Ad) Root-Rechte (Makkannahum) und Hardware (Audio/Video/CPU)... aber ihre Hardware nützte ihnen nichts, da sie die Signale (Ayat) leugneten."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">DRIVER FAILURE:</span> Die beste Hardware (Sinnesorgane) ist nutzlos ohne den richtigen Treiber (Glaube/Akzeptanz). Wenn der User den Input blockiert ("Juhud"), wird die Hardware zum nutzlosen Ballast.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">TECHNOLOGIE VS WEISHEIT:</span> Hochtechnologisierte Gesellschaften ('Ad) können trotzdem kollabieren, wenn ihre ethische Software veraltet oder korrupt ist.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 35 (EOF)</span>
+            <span class="arabic">فَاصْبِرْ كَمَا صَبَرَ أُولُو الْعَزْمِ مِنَ الرُّسُلِ</span>
+            <span class="rasm">فاصبر كما صبر أولوا العزم من الرسل</span>
+            <span class="translation">"So halte durch (Sabr) wie die High-Performance-Transmitter (Ulul-Azm) unter den Gesandten."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">ULUL-AZM (Elite-User):</span> Prozessoren mit maximaler Belastbarkeit (Azm = Entschlossenheit/Festigkeit). Sie sind die Stützpfeiler des Netzwerks. Geduld (Sabr) ist hier nicht passives Warten, sondern aktives "Lasten-Tragen" unter Hochdruck.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">LEADERSHIP-QUALITÄT:</span> Wahre Führung zeigt sich in der "Azm" – der unerschütterlichen Entschlossenheit in der Krise.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="architecture.html" class="btn">ARCHITEKTUR MENÜ</a>
+            <a href="baqarah.html" class="btn" style="border-color: #d4af37; color: #d4af37;">NEXT: SEQMUK_27 (AL-BAQARAH)</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "[ SEQMUK 26 : AL-AHQAF (SYSTEM VALIDATION) ]", type: "log-root", delay: 800 },
+            { txt: "HAWAMIM-BLOCK [ H-M ] FINALISIERUNG...", type: "log-sys", delay: 1000 },
+            { txt: "SOURCE-CODE CHECK (VERS 4)...", type: "log-io", delay: 600 },
+            { txt: "    > EXTERNE SCHÖPFUNG: NULL.", type: "log-warn", delay: 400 },
+            { txt: "    > AUTHENTIFIZIERUNG: FEHLGESCHLAGEN.", type: "log-warn", delay: 400 },
+            { txt: "HARDWARE-DIAGNOSE ('AD)...", type: "log-io", delay: 600 },
+            { txt: "    > SENSOREN: ONLINE.", type: "log-sys", delay: 400 },
+            { txt: "    > DATEN-VERARBEITUNG: ERROR (JUHUD).", type: "log-warn", delay: 400 },
+            { txt: "LADE ELITE-PROTOKOLL (ULUL-AZM)...", type: "log-root", delay: 800 },
+            { txt: "    > RESILIENZ-LEVEL: MAXIMUM.", type: "log-sys", delay: 600 },
+            { txt: "HAWAMIM-BLOCK ABGESCHLOSSEN.", type: "log-sys", delay: 1000 }
+        ];
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+</body>
+</html>
