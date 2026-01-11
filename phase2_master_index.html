@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAKĪKAT-KALESİ | SYSTEM-ARCHITEKTUR</title>
+    <style>
+        /* CORE SYSTEM STYLES */
+        body { 
+            background-color: #050505; 
+            color: #c0c0c0; 
+            font-family: 'Courier New', monospace; 
+            padding: 20px; 
+            line-height: 1.4; 
+        }
+
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            border: 1px solid #333; 
+            padding: 20px; 
+            background: #0a0a0a; 
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.05); 
+        }
+
+        /* HEADER SECTION */
+        h1 { 
+            color: #00ff41; 
+            text-transform: uppercase; 
+            border-bottom: 2px solid #333; 
+            padding-bottom: 10px; 
+            letter-spacing: 2px; 
+            margin-bottom: 5px;
+        }
+        
+        .subtitle {
+            color: #d4af37;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* NAVIGATION BUTTON */
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.8rem;
+            border: 1px solid #333;
+            padding: 5px 10px;
+            transition: 0.3s;
+        }
+        .back-btn:hover { color: #00ff41; border-color: #00ff41; }
+
+        /* THE SYSTEM REGISTRY TABLE */
+        .registry-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-top: 20px;
+        }
+
+        .registry-table th {
+            text-align: left;
+            padding: 12px;
+            background-color: #111;
+            color: #d4af37; /* Goldene Header */
+            border-bottom: 2px solid #00ff41;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .registry-table td {
+            padding: 10px;
+            border-bottom: 1px solid #222;
+            vertical-align: top;
+        }
+
+        /* LINK STYLES WITHIN TABLE */
+        .table-link {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            transition: 0.2s;
+        }
+        .table-link:hover {
+            color: #00ff41;
+            text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+        }
+
+        /* ZEILEN-HOVER EFFEKT (SCANNER) */
+        .registry-table tr:hover {
+            background-color: #0f1a0f;
+        }
+
+        /* SPALTEN SPEZIFIKA */
+        .col-seq { color: #666; width: 50px; }
+        .col-sure { color: #fff; font-weight: bold; width: 180px; }
+        .col-header { color: #00ff41; font-weight: bold; width: 150px; letter-spacing: 1px; }
+        .col-decode { color: #d4af37; font-weight: bold; width: 200px; }
+        .col-logic { color: #aaa; font-style: italic; }
+
+        /* MOBILE OPTIMIERUNG */
+        @media (max-width: 768px) {
+            .registry-table, .registry-table tbody, .registry-table tr, .registry-table td, .registry-table th {
+                display: block; 
+            }
+            .registry-table thead { display: none; }
+            .registry-table tr { 
+                margin-bottom: 20px; 
+                border: 1px solid #333; 
+                padding: 10px; 
+                background: #080808;
+            }
+            .registry-table td { 
+                padding: 5px 0; 
+                border: none; 
+            }
+            .col-seq::before { content: "SEQ: "; color: #666; }
+            .col-header::before { content: "CODE: "; color: #666; }
+            .col-decode::before { content: "CMD: "; color: #666; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">< ZURÜCK ZUR BASIS</a>
+
+        <h1>System-Architektur</h1>
+        <div class="subtitle">>> Modul: MUKATTAA_REGISTRY // Kernel: RASM-V52.0</div>
+
+        <div style="border-left: 3px solid #00ff41; padding-left: 15px; margin-bottom: 30px; color: #888; font-size: 0.9rem;">
+            <strong style="color: #fff;">SYSTEM-LOGIK:</strong><br>
+            Diese Tabelle entschlüsselt die 29 "Initial-Signaturen" (Mukattaa) in ihrer chronologischen Boot-Sequenz (Nuzul).<br>
+            Klicke auf den Namen der Sure, um das entsprechende Modul zu laden.
+        </div>
+
+        <table class="registry-table">
+            <thead>
+                <tr>
+                    <th class="col-seq">SEQ</th>
+                    <th class="col-sure">DATEN-PAKET (SURE)</th>
+                    <th class="col-header">HEADER-CODE</th>
+                    <th class="col-decode">SYSTEM-BEFEHL</th>
+                    <th class="col-logic">LOGIK & FUNKTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-seq">02</td>
+                    <td class="col-sure">Al-Qalam (68)</td>
+                    <td class="col-header">N</td>
+                    <td class="col-decode">POTENTIAL_INIT</td>
+                    <td class="col-logic">Der 'Akku' (Nun/Tintenfass). Speicherung der Energie vor der Codierung.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">34</td>
+                    <td class="col-sure">Qaf (50)</td>
+                    <td class="col-header">Q</td>
+                    <td class="col-decode">ROOT_ACCESS</td>
+                    <td class="col-logic">Direkter Zugriff auf den Quellcode (Qudrah). Maximale Autorität.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">38</td>
+                    <td class="col-sure">Sad (38)</td>
+                    <td class="col-header">S</td>
+                    <td class="col-decode">SOLID_TRUTH</td>
+                    <td class="col-logic">Validierung durch unerschütterliche Wahrheit (Sidq).</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">39</td>
+                    <td class="col-sure"><a href="araf.html" class="table-link">Al-A'raf (7)</a></td>
+                    <td class="col-header">A-L-M-S</td>
+                    <td class="col-decode">FULL_STACK_VALID</td>
+                    <td class="col-logic">Quelle (A) > Link (L) > Materie (M) > Validiert durch Wahrheit (S).</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">41</td>
+                    <td class="col-sure">Yasin (36)</td>
+                    <td class="col-header">Y-S</td>
+                    <td class="col-decode">USER_INTERRUPT</td>
+                    <td class="col-logic">Ping (Y) an das geheime menschliche Bewusstsein (S).</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">44</td>
+                    <td class="col-sure">Maryam (19)</td>
+                    <td class="col-header">K-H-Y-E-S</td>
+                    <td class="col-decode">EXECUTION_STRING</td>
+                    <td class="col-logic">Befehl (K) > Führung (H) > Ping (Y) > Vision (E) > Wahrheit (S).</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">45</td>
+                    <td class="col-sure">Taha (20)</td>
+                    <td class="col-header">T-H</td>
+                    <td class="col-decode">CALIBRATION</td>
+                    <td class="col-logic">Erde dich (T) und empfange Führung (H). Stabilisierung.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">47</td>
+                    <td class="col-sure">Ash-Shu'ara (26)</td>
+                    <td class="col-header">T-S-M</td>
+                    <td class="col-decode">HIST_MANIFEST</td>
+                    <td class="col-logic">Festigkeit (T) > Kern (S) > Wird zur historischen Struktur (M).</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">48</td>
+                    <td class="col-sure">An-Naml (27)</td>
+                    <td class="col-header">T-S</td>
+                    <td class="col-decode">SOLID_CORE</td>
+                    <td class="col-logic">Verbindung von fester Realität (T) und reinem Bewusstsein (S).</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">49</td>
+                    <td class="col-sure">Al-Qasas (28)</td>
+                    <td class="col-header">T-S-M</td>
+                    <td class="col-decode">HIST_MANIFEST_II</td>
+                    <td class="col-logic">Wiederholung des Musters: Bewusstsein wird Materie.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">51</td>
+                    <td class="col-sure">Yunus (10)</td>
+                    <td class="col-header">A-L-R</td>
+                    <td class="col-decode">VISUAL_STREAM</td>
+                    <td class="col-logic">Quelle (A) > Link (L) > Wird sichtbar/projiziert (R).</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">52</td>
+                    <td class="col-sure">Hud (11)</td>
+                    <td class="col-header">A-L-R</td>
+                    <td class="col-decode">VISUAL_STREAM</td>
+                    <td class="col-logic">Datenstrom zur Visualisierung früherer Zivilisationen.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">53</td>
+                    <td class="col-sure">Yusuf (12)</td>
+                    <td class="col-header">A-L-R</td>
+                    <td class="col-decode">DREAM_PROJECTION</td>
+                    <td class="col-logic">Quelle (A) > Link (L) > Traum/Vision (R).</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">54</td>
+                    <td class="col-sure">Al-Hijr (15)</td>
+                    <td class="col-header">A-L-R</td>
+                    <td class="col-decode">PROTECTED_STREAM</td>
+                    <td class="col-logic">Projektion (R) der göttlichen Ordnung gegen Chaos.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">57</td>
+                    <td class="col-sure">Luqman (31)</td>
+                    <td class="col-header">A-L-M</td>
+                    <td class="col-decode">STD_DOWNLOAD</td>
+                    <td class="col-logic">Quelle > Link > Materie (Weisheit). Basis-Architektur.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">60</td>
+                    <td class="col-sure"><a href="ghafir.html" class="table-link">Ghafir (40)</a></td>
+                    <td class="col-header">H-M</td>
+                    <td class="col-decode">LIVING_STRUCT_I</td>
+                    <td class="col-logic">Lebendige Energie (H) wird Gesetz (M). Start der 7 Archive.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">61</td>
+                    <td class="col-sure"><a href="fussilat.html" class="table-link">Fussilat (41)</a></td>
+                    <td class="col-header">H-M</td>
+                    <td class="col-decode">LIVING_STRUCT_II</td>
+                    <td class="col-logic">Detaillierung der System-Gesetze.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">62</td>
+                    <td class="col-sure"><a href="shura.html" class="table-link">Ash-Shura (42)</a></td>
+                    <td class="col-header">H-M E-S-Q</td>
+                    <td class="col-decode">MULTI_LAYER_ACC</td>
+                    <td class="col-logic">Struktur (HM) trifft Vision (E), Kern (S), Code (Q). Tiefster Zugriff.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">63</td>
+                    <td class="col-sure"><a href="zukhruf.html" class="table-link">Az-Zukhruf (43)</a></td>
+                    <td class="col-header">H-M</td>
+                    <td class="col-decode">LIVING_STRUCT_IV</td>
+                    <td class="col-logic">Der Goldene Code (Zukhruf) in der Struktur.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">64</td>
+                    <td class="col-sure"><a href="dukhan.html" class="table-link">Ad-Dukhan (44)</a></td>
+                    <td class="col-header">H-M</td>
+                    <td class="col-decode">LIVING_STRUCT_V</td>
+                    <td class="col-logic">Warnung vor Systemfehler (Rauch) innerhalb der Struktur.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">65</td>
+                    <td class="col-sure"><a href="jathiya.html" class="table-link">Al-Jathiya (45)</a></td>
+                    <td class="col-header">H-M</td>
+                    <td class="col-decode">LIVING_STRUCT_VI</td>
+                    <td class="col-logic">Die Knieende Struktur. Demut vor dem Gesetz.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">66</td>
+                    <td class="col-sure"><a href="ahqaf.html" class="table-link">Al-Ahqaf (46)</a></td>
+                    <td class="col-header">H-M</td>
+                    <td class="col-decode">LIVING_STRUCT_VII</td>
+                    <td class="col-logic">Abschluss der Ha-Mim Sequenz. Realitäts-Check.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">72</td>
+                    <td class="col-sure">Ibrahim (14)</td>
+                    <td class="col-header">A-L-R</td>
+                    <td class="col-decode">LIGHT_PROJECT</td>
+                    <td class="col-logic">Aus der Finsternis ins Licht (Projektion R).</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">84</td>
+                    <td class="col-sure"><a href="rum.html" class="table-link">Ar-Rum (30)</a></td>
+                    <td class="col-header">A-L-M</td>
+                    <td class="col-decode">GEOPOL_MANIFEST</td>
+                    <td class="col-logic">Quelle > Link > Materie. Eingriff in die physische Welt (Sieg).</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">85</td>
+                    <td class="col-sure">Al-Ankabut (29)</td>
+                    <td class="col-header">A-L-M</td>
+                    <td class="col-decode">TEST_PROTOCOL</td>
+                    <td class="col-logic">Manifestation (M) von Glauben durch Prüfungen.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">87</td>
+                    <td class="col-sure"><a href="baqarah.html" class="table-link">Al-Baqarah (2)</a></td>
+                    <td class="col-header">A-L-M</td>
+                    <td class="col-decode">MASTER_BOOT_REC</td>
+                    <td class="col-logic">Der vollständige Download. Das System-Handbuch.</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">89</td>
+                    <td class="col-sure"><a href="imran.html" class="table-link">Al-Imran (3)</a></td>
+                    <td class="col-header">A-L-M</td>
+                    <td class="col-decode">SYSTEM_MAINT</td>
+                    <td class="col-logic">Bestätigung des Downloads. Unterscheidung (Furqan).</td>
+                </tr>
+                <tr>
+                    <td class="col-seq">96</td>
+                    <td class="col-sure"><a href="rad.html" class="table-link">Ar-Ra'd (13)</a></td>
+                    <td class="col-header">A-L-M-R</td>
+                    <td class="col-decode">TOTAL_SYNTHESIS</td>
+                    <td class="col-logic">Synthese von Struktur (M) und Vision (R). Totale Erkenntnis.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 40px; text-align: center; font-size: 0.8rem; color: #444;">
+            /// END OF REGISTRY /// RASM-KERNEL V52.0 ///
+        </div>
+    </div>
+
+</body>
+</html>
