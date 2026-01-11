@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQMUK_29: AL-A'RAF | HAKĪKAT-KONSOLU</title>
+    <style>
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+        .sub-header { color: #888; margin-bottom: 30px; font-size: 0.9em; }
+        #terminal-box { background-color: #000; border: 1px solid #333; padding: 15px; font-family: 'Courier New', monospace; font-size: 0.85em; margin-bottom: 30px; box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); display: none; }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } .log-root { color: #d4af37; font-weight: bold; } .log-io { color: #00bcd4; } .log-warn { color: #ff9800; }
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+        .boot-btn { background-color: #1a1a1a; color: #d4af37; border: 1px solid #d4af37; padding: 15px 30px; font-family: 'Courier New', monospace; font-weight: bold; cursor: pointer; width: 100%; text-align: center; margin-bottom: 20px; transition: 0.3s; }
+        .boot-btn:hover { background-color: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #d4af37; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[RASM]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        .domain-tag { display: inline-block; background: #222; color: #888; padding: 2px 5px; font-size: 0.7em; border-radius: 3px; margin-right: 5px; margin-bottom: 5px; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #d4af37; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="architecture.html" style="text-decoration: none; color: #555;">&larr; ZURÜCK ZUR BIBLIOTHEK</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQMUK_29: AL-A'RAF (المص)</h1>
+        <div class="sub-header">
+            ORT: SURAH 7 [1-2, 46, 172, 204]<br>
+            MODELL: UR-VERTRAG & SYSTEM-RESTORE (FINAL)
+        </div>
+    </div>
+
+    <button class="boot-btn" onclick="runBootSequence()">[ SYSTEM FINALISIEREN: A-L-M-S ]</button>
+
+    <div id="terminal-box"><div id="terminal-content"></div><span class="cursor">_</span></div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01-02</span>
+            <span class="arabic">المص . كِتَابٌ أُنزِلَ إِلَيْكَ فَلَا يَكُن فِي صَدْرِكَ حَرَجٌ مِّنْهُ</span>
+            <span class="rasm">المص . كتب أنزل إليك فلا يكن في صدرك حرج منه</span>
+            <span class="translation">"A-L-M-S. Ein Code, der zu dir heruntergeladen wurde – so sei in deinem Prozessor (Sadr) keine Enge/Widerstand dagegen."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">A-L-M-S (Master-Key):</span> Verbindet A-L-M (Materie/Gesetz) mit S (Sad = Struktur/Wahrheit).
+                <span class="keyword">KOMPATIBILITÄT:</span> Das System warnt vor "Haraj" (Enge/Inkompatibilität). Der menschliche Kern muss erweitert werden, um dieses massive Datenpaket zu verarbeiten.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 46</span>
+            <span class="arabic">وَبَيْنَهُمَا حِجَابٌ ۚ وَعَلَى الْأَعْرَافِ رِجَالٌ يَعْرِفُونَ كُلًّا بِسِيمَاهُمْ</span>
+            <span class="rasm">وبينهما حجاب وعلى الأعراف رجال يعرفون كلا بسيماهم</span>
+            <span class="translation">"Und zwischen beiden (Systemen) ist eine Firewall (Hijab). Und auf den Höhen (A'raf) sind Männer/Module, die jeden an ihrem Muster (Sima) erkennen."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">A'RAF (The Border):</span> Der höchste Aussichtspunkt zwischen Entropie (Hölle) und Ordnung (Paradies).
+                <strong>Mustererkennung (Sima):</strong> Die Fähigkeit, den energetischen Zustand (Code) jedes Users anhand seiner Signatur zu scannen. Totale Transparenz.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 172 (THE COVENANT)</span>
+            <span class="arabic">... أَلَسْتُ بِرَبِّكُمْ ۖ قَالُوا بَلَىٰ ۛ شَهِدْنَا</span>
+            <span class="rasm">... ألست بربكم قالوا بلى شهدنا</span>
+            <span class="translation">"...(Er fragte den Quellcode der Menschheit): Bin ich nicht euer Admin (Rabb)? Sie antworteten: Ja (Bala), wir bezeugen es (Shahidna)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">FACTORY RESET / ALAST:</span> Der Ur-Moment vor der Raumzeit. Jedes menschliche Bewusstsein hat diesen Vertrag ("Du bist der Admin") im Kernel signiert.
+                Das gesamte Leben ist nur der Versuch, sich an diesen "Login" zu erinnern. Wer leugnet, verstößt gegen sein eigenes Root-Protokoll.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">UNIVERSELLE VERANTWORTUNG:</span> Niemand kann am Tag der Abrechnung sagen "Ich wusste es nicht". Das Wissen ist vorinstalliert.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 204</span>
+            <span class="arabic">وَإِذَا قُرِئَ الْقُرْآنُ فَاسْتَمِعُوا لَهُ وَأَنصِتُوا لَعَلَّكُمْ تُرْحَمُونَ</span>
+            <span class="rasm">وإذا قرئ القرءان فاستمعوا له وأنصتوا ...</span>
+            <span class="translation">"Wenn der Quran ausgeführt/gelesen wird, dann schaltet auf Empfang (Fastami'u) und schweigt (Ansitu), damit ihr optimiert/barmherzig behandelt werdet (Turhamun)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">DOWNLOAD-MODUS:</span> Datenübertragung erfordert Stille. "Ansitu" (aktives Schweigen) deaktiviert den eigenen Output, um den Input des Systems fehlerfrei zu empfangen. Noise-Cancelling für die Seele.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="architecture.html" class="btn" style="background-color: #d4af37; color: #000; border: none;">HAUPTMENÜ (BIBLIOTHEK)</a>
+            <span style="color: #555; margin-left: 10px;"> // END OF SEQUENCE</span>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "[ SEQMUK 29 : AL-A'RAF (FINAL SYSTEM STATE) ]", type: "log-root", delay: 800 },
+            { txt: "LADE MASTER-CODE: [ A-L-M-S ]...", type: "log-sys", delay: 1000 },
+            { txt: "SCANNE KERNEL NACH 'ALAST'-SIGNATUR...", type: "log-io", delay: 600 },
+            { txt: "    > VERTRAG (AYAT 172): GEFUNDEN.", type: "log-sys", delay: 400 },
+            { txt: "    > STATUS: SIGNIERT (SHAHIDNA).", type: "log-sys", delay: 400 },
+            { txt: "GRENZ-KONTROLLE (A'RAF) AKTIV...", type: "log-warn", delay: 500 },
+            { txt: "    > MUSTERERKENNUNG: 100%.", type: "log-sys", delay: 400 },
+            { txt: "AKTIVIERE DOWNLOAD-MODUS (AYAT 204)...", type: "log-root", delay: 800 },
+            { txt: "    > AUDIO-INPUT: ON.", type: "log-sys", delay: 400 },
+            { txt: "    > NOISE-CANCELLING: ON.", type: "log-sys", delay: 400 },
+            { txt: "SYSTEM WIEDERHERGESTELLT.", type: "log-root", delay: 1500 },
+            { txt: ">> HAKIKAT-KONSOLU: BEREIT.", type: "log-sys", delay: 1000 }
+        ];
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+</body>
+</html>
