@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQMUK_02: KAF | HAKİKAT-KONSOLU</title>
+    <style>
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+        .sub-header { color: #888; margin-bottom: 30px; font-size: 0.9em; }
+        #terminal-box { background-color: #000; border: 1px solid #333; padding: 15px; font-family: 'Courier New', monospace; font-size: 0.85em; margin-bottom: 30px; box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); display: none; }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } .log-root { color: #d4af37; font-weight: bold; } .log-io { color: #00bcd4; } .log-warn { color: #ff9800; }
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+        .boot-btn { background-color: #1a1a1a; color: #d4af37; border: 1px solid #d4af37; padding: 15px 30px; font-family: 'Courier New', monospace; font-weight: bold; cursor: pointer; width: 100%; text-align: center; margin-bottom: 20px; transition: 0.3s; }
+        .boot-btn:hover { background-color: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #d4af37; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[RASM]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        .domain-tag { display: inline-block; background: #222; color: #888; padding: 2px 5px; font-size: 0.7em; border-radius: 3px; margin-right: 5px; margin-bottom: 5px; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #d4af37; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="nun-tr.html" style="text-decoration: none; color: #555;">&larr; NUN (SEQ_01)'A DÖN</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQMUK_02: KAF (Q)</h1>
+        <div class="sub-header">
+            KONUM: SURE 50 [1, 16, 18, 22]<br>
+            MODELL: KUANTUM DOLANIKLIK & ALGI
+        </div>
+    </div>
+
+    <button class="boot-btn" onclick="runBootSequence()">[ PROTOKOLÜ BAŞLAT: Q ]</button>
+
+    <div id="terminal-box"><div id="terminal-content"></div><span class="cursor">_</span></div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01</span>
+            <span class="arabic">ق ۚ وَالْقُرْآنِ الْمَجِيدِ</span>
+            <span class="rasm">ق والقرءان المجيد</span>
+            <span class="translation">"Q (Tetikleyici). En yüksek yoğunluğa/karmaşıklığa sahip (Mecid) Enformasyon Alanına (Kuran) andolsun."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSİKO-BİYO-FİZİK</span>
+                <span class="keyword">Q (Çökme Fonksiyonu):</span> Enerjinin maddeye dönüştüğü an (Kudret).<br>
+                <span class="keyword">MECİD (Enformasyon Yoğunluğu):</span> Evren boş değildir; holografik prensiple çalışan yoğun bir veri alanıdır.<br>
+                <br>
+                <span class="domain-tag">SOSYO-ETİK</span>
+                <span class="keyword">KURAN-I MECİD (Anayasa):</span> İstikrarlı bir toplumun üzerine inşa edilmesi gereken değişmez doğa yasaları (Sünnetullah).
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 16</span>
+            <span class="arabic">وَنَحْنُ أَقْرَبُ إِلَيْهِ مِنْ حَبْلِ الْوَرِيدِ</span>
+            <span class="rasm">ونحن أقرب إليه من حبل الوريد</span>
+            <span class="translation">"Biz ona şah damarından (biyolojik yaşam hattından) daha yakınız."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSİKO-BİYO-FİZİK</span>
+                <span class="keyword">YEREL OLMAYAN (Non-Locality):</span> Bilinç beyne hapsolmuş değildir. Kaynak ("Biz"), özneye kendi biyolojik donanımından (Habl-ul Verid) daha doğrudan, kuantum dolanıklık seviyesinde bağlıdır.<br>
+                <br>
+                <span class="domain-tag">SOSYO-ETİK</span>
+                <span class="keyword">ŞEFFAFLIK:</span> Sistem, bireyi bireyin kendisini tanıdığından daha iyi tanır. Etki-tepki yasasından kaçış yoktur.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 18</span>
+            <span class="arabic">مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ</span>
+            <span class="rasm">ما يلفظ من قول إلا لديه رقيب عتيد</span>
+            <span class="translation">"Hiçbir emisyon (Lafz/Söz) yayılmaz ki, onu tespit etmeye hazır (Atid) bir Gözlemci (Rakib) olmasın."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSİKO-BİYO-FİZİK</span>
+                <span class="keyword">RAKİB (Geri Besleme):</span> Her enerjetik yayılım, alanda anında bir tepki oluşturur.<br>
+                <span class="keyword">ATİD (Potansiyel):</span> Alan (Field), impulsu kaydetmeye daima hazırdır.<br>
+                <br>
+                <span class="domain-tag">SOSYO-ETİK</span>
+                <span class="keyword">RADİKAL SORUMLULUK:</span> Sözler boş değildir; programlama komutlarıdır. Her beyan sosyal bir gerçeklik yaratır.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 22</span>
+            <span class="arabic">... فَكَشَفْنَا عَنكَ غِطَاءَكَ فَبَصَرُكَ الْيَوْمَ حَدِيدٌ</span>
+            <span class="rasm">... فكشفنا عنك غطاءك فبصرك اليوم حديد</span>
+            <span class="translation">"Sen bilişsel transta (Gaflet) idin... şimdi filtreni (Gıta) kaldırdık; algın (Basar) bugün demirdir (Hadid)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSİKO-BİYO-FİZİK</span>
+                <span class="keyword">GAFLET (Otopilot):</span> Beynin enerji tasarrufu modu. Farkındasızlık.<br>
+                <span class="keyword">GITA (Filtre):</span> Gerçekliği çarpıtan bilişsel önyargılar.<br>
+                <br>
+                <span class="domain-tag">SOSYO-ETİK</span>
+                <span class="keyword">HADİD (Objektiflik):</span> Kriz anlarında maskeler düşer. Gerçeklik "demir gibi sert" ve inkar edilemez hale gelir. İllüzyonlar çöker.
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="phase2_master_index_tr.html" class="btn">ANA TABLOYA DÖN</a>
+            <a href="sad-tr.html" class="btn" style="border-color: #d4af37; color: #d4af37;">SONRAKİ: SEQMUK_03 (SAD)</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "[ SEQMUK 02 : KAF (KUANTUM GERÇEKLİK) ]", type: "log-root", delay: 800 },
+            { txt: "Q-ALANI BAŞLATILIYOR...", type: "log-sys", delay: 800 },
+            { txt: "ENFORMASYON YOĞUNLUĞU (MECİD) TARANIYOR...", type: "log-io", delay: 600 },
+            { txt: "LOKALİTE KONTROLÜ (HABL-UL VERİD)...", type: "log-io", delay: 500 },
+            { txt: "    > BİYOLOJİK GECİKME: TESPİT EDİLDİ.", type: "log-warn", delay: 400 },
+            { txt: "    > KUANTUM DOLANIKLIK: AKTİF (AKRAB).", type: "log-root", delay: 600 },
+            { txt: "GÖZLEMCİ ETKİSİ (RAKİB) DEVREDE...", type: "log-sys", delay: 500 },
+            { txt: "    > EMİSYON TESPİT EDİLDİ.", type: "log-warn", delay: 400 },
+            { txt: "BİLİŞSEL FİLTRELER (GITA) KALDIRILIYOR...", type: "log-warn", delay: 800 },
+            { txt: "    > GERÇEKLİK KONTROLÜ: HADİD (DEMİR/OBJEKTİF).", type: "log-sys", delay: 600 },
+            { txt: "ALGI SENKRONİZE EDİLDİ.", type: "log-sys", delay: 1000 }
+        ];
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+</body>
+</html>
