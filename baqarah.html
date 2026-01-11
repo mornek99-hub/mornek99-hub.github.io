@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEQMUK_27: AL-BAQARAH | HAKĪKAT-KONSOLU</title>
+    <style>
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.6; }
+        h1 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+        .sub-header { color: #888; margin-bottom: 30px; font-size: 0.9em; }
+        #terminal-box { background-color: #000; border: 1px solid #333; padding: 15px; font-family: 'Courier New', monospace; font-size: 0.85em; margin-bottom: 30px; box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); display: none; }
+        .log-line { margin-bottom: 5px; display: block; }
+        .log-sys { color: #00ff41; } .log-root { color: #d4af37; font-weight: bold; } .log-io { color: #00bcd4; } .log-warn { color: #ff9800; }
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+        .boot-btn { background-color: #1a1a1a; color: #d4af37; border: 1px solid #d4af37; padding: 15px 30px; font-family: 'Courier New', monospace; font-weight: bold; cursor: pointer; width: 100%; text-align: center; margin-bottom: 20px; transition: 0.3s; }
+        .boot-btn:hover { background-color: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
+        .verse-block { background-color: #1a1a1a; padding: 15px; margin-bottom: 20px; border-left: 4px solid #d4af37; opacity: 0; transition: opacity 1s; }
+        .verse-visible { opacity: 1; }
+        .verse-number { color: #555; font-size: 0.8em; display: block; margin-bottom: 5px; }
+        .arabic { font-size: 1.4em; color: #fff; direction: rtl; display: block; margin-bottom: 5px; font-family: 'Amiri', serif; }
+        .rasm { font-family: 'Courier New', monospace; color: #00ff41; font-size: 0.9em; display: block; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; direction: rtl; }
+        .rasm::before { content: '[RASM]: '; color: #555; font-size: 0.7em; direction: ltr; display: inline-block; margin-right: 10px;}
+        .translation { color: #ccc; font-style: italic; margin-bottom: 10px; display: block; }
+        .analysis { font-size: 0.85em; color: #888; border-top: 1px dotted #333; padding-top: 10px; }
+        .keyword { color: #e5c07b; font-weight: bold; }
+        .domain-tag { display: inline-block; background: #222; color: #888; padding: 2px 5px; font-size: 0.7em; border-radius: 3px; margin-right: 5px; margin-bottom: 5px; }
+        a.btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; transition: 0.3s; margin-right: 10px; }
+        a.btn:hover { background-color: #d4af37; color: #000; }
+    </style>
+</head>
+<body>
+
+    <a href="ahqaf.html" style="text-decoration: none; color: #555;">&larr; ZURÜCK ZU AL-AHQAF (SEQ_26)</a>
+
+    <div style="margin-top: 20px;">
+        <h1>SEQMUK_27: AL-BAQARAH (الم)</h1>
+        <div class="sub-header">
+            ORT: SURAH 2 [1-2, 31, 255]<br>
+            MODELL: KONSTITUTION & ROOT-DEFINITIONEN
+        </div>
+    </div>
+
+    <button class="boot-btn" onclick="runBootSequence()">[ PROTOKOLL STARTEN: A-L-M ]</button>
+
+    <div id="terminal-box"><div id="terminal-content"></div><span class="cursor">_</span></div>
+
+    <div id="main-content" style="display:none;">
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 01-02</span>
+            <span class="arabic">الم . ذَٰلِكَ الْكِتَابُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًى لِّلْمُتَّقِينَ</span>
+            <span class="rasm">الم . ذلك الكتب لا ريب فيه هدى للمتقين</span>
+            <span class="translation">"A-L-M. Dieser Datensatz (Kitab) – kein Bug/Zweifel darin – ist das Navigationssystem (Huda) für die System-Wächter (Muttaqin)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">QUELLCODE-INTEGRITÄT:</span> "La Rayba" ist die Signatur des Admins. Der Code ist sauber.
+                <span class="keyword">MUTTAQIN (Firewall-User):</span> Taqwa ist der Schutzmechanismus (Schild) gegen Systemabstürze (Sünden). Nur wer Schutzmaßnahmen aktiviert, kann das Navi nutzen.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 31</span>
+            <span class="arabic">وَعَلَّمَ آدَمَ الْأَسْمَاءَ كُلَّهَا ثُمَّ عَرَضَهُمْ عَلَى الْمَلَائِكَةِ</span>
+            <span class="rasm">وعلم ءادم الأسماء كلها ...</span>
+            <span class="translation">"Und Er lehrte Adam alle Variablen/Namen (Asma) und präsentierte sie den Engeln (automatisierten Prozessen)."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">SEMANTISCHE KONTROLLE:</span> "Namen" sind Definitionen. Wer die Definitionen kontrolliert, kontrolliert das System. Adam (der Mensch) ist den Engeln überlegen, weil er programmieren (benennen/definieren) kann, während Engel nur ausführen.<br>
+                <br>
+                <span class="domain-tag">SOZIO-ETHIK</span>
+                <span class="keyword">WISSENSCHAFT:</span> Die Fähigkeit zur Klassifizierung und Analyse ist das göttliche Erbe des Menschen.
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-number">AYAT 255 (AYAT AL-KURSI)</span>
+            <span class="arabic">اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ... وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ</span>
+            <span class="rasm">الله لا إله إلا هو الحي القيوم ... وسع كرسيه السموت والأرض</span>
+            <span class="translation">"Allah... der Lebendige (Hayy), der Self-Sustaining Server (Qayyum). Sein Kursi (Thron/Wissensbasis) umfasst alle Systeme."</span>
+            
+            <div class="analysis">
+                <span class="domain-tag">PSYCHO-BIO-PHYSIK</span>
+                <span class="keyword">KURSI (CPU/Admin-Seat):</span> Der zentrale Verarbeitungspunkt.
+                <strong>Hayy/Qayyum:</strong> Das System benötigt keine externen Energiequellen und schläft nie (kein Downtime). Absolute Souveränität über Daten und Materie.<br>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="architecture.html" class="btn">ARCHITEKTUR MENÜ</a>
+            <a href="imran.html" class="btn" style="border-color: #d4af37; color: #d4af37;">NEXT: SEQMUK_28 (ALI 'IMRAN)</a>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            { txt: "[ SEQMUK 27 : AL-BAQARAH (THE CONSTITUTION) ]", type: "log-root", delay: 800 },
+            { txt: "INITIALISIERE BLOCK VI: MEDINA...", type: "log-sys", delay: 1000 },
+            { txt: "QUELLCODE-CHECK (LA RAYBA)...", type: "log-io", delay: 600 },
+            { txt: "    > INTEGRITÄT: 100%.", type: "log-sys", delay: 400 },
+            { txt: "LADE DEFINITIONEN (ADAM/ASMA)...", type: "log-sys", delay: 600 },
+            { txt: "    > VARIABLEN: GELEHRT.", type: "log-sys", delay: 400 },
+            { txt: "BOOTING KERNEL (AYAT AL-KURSI)...", type: "log-root", delay: 800 },
+            { txt: "    > SERVER STATUS: HAYY/QAYYUM (ONLINE).", type: "log-warn", delay: 600 },
+            { txt: "SYSTEM VOLLSTÄNDIG GELADEN.", type: "log-sys", delay: 1000 }
+        ];
+        function runBootSequence() {
+            document.querySelector('.boot-btn').style.display = 'none';
+            document.getElementById('terminal-box').style.display = 'block';
+            let i = 0;
+            let terminal = document.getElementById('terminal-content');
+            function printLine() {
+                if (i < logs.length) {
+                    let line = document.createElement('span');
+                    line.className = 'log-line ' + logs[i].type;
+                    line.innerText = '>> ' + logs[i].txt;
+                    terminal.appendChild(line);
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(printLine, logs[i].delay);
+                    i++;
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('main-content').style.display = 'block';
+                        let verses = document.querySelectorAll('.verse-block');
+                        verses.forEach(v => v.classList.add('verse-visible'));
+                    }, 1000);
+                }
+            }
+            printLine();
+        }
+    </script>
+</body>
+</html>
