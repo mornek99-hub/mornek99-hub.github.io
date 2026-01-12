@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSTEM-SPEZIFIKATION: HAKĪKAT-KALESİ</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-main: #c0c0c0;
+            --accent-green: #00ff41;
+            --accent-gold: #d4af37;
+            --accent-red: #ff3333;
+            --border-dim: #333;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            border: 1px solid var(--border-dim);
+            padding: 40px;
+            background: #0a0a0a;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+        }
+
+        /* HEADER */
+        header {
+            border-bottom: 2px solid var(--accent-green);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: var(--accent-green);
+            text-transform: uppercase;
+            font-size: 1.8rem;
+            margin: 0 0 10px 0;
+            letter-spacing: 2px;
+        }
+
+        .meta-data {
+            font-size: 0.8rem;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px dashed var(--border-dim);
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            color: var(--accent-gold);
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 15px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+
+        h3 {
+            color: #fff;
+            font-size: 1rem;
+            margin-top: 30px;
+            text-decoration: underline;
+            text-decoration-color: var(--border-dim);
+        }
+
+        p, li {
+            text-align: justify;
+        }
+
+        /* FORMULA BOX */
+        .formula-box {
+            background: #111;
+            border: 1px solid var(--accent-green);
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--accent-green);
+            margin: 30px 0;
+            font-weight: bold;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.1);
+        }
+
+        /* CODE BLOCKS */
+        .code-block {
+            background: #0f0f0f;
+            border: 1px solid var(--border-dim);
+            padding: 15px;
+            font-size: 0.85rem;
+            color: #a9b7c6;
+            overflow-x: auto;
+            border-left: 3px solid var(--accent-green);
+            margin: 20px 0;
+        }
+
+        /* ALERT BOX (HISTORY) */
+        .alert-box {
+            border: 1px solid var(--accent-red);
+            background: rgba(255, 51, 51, 0.05);
+            padding: 15px;
+            color: #ffcccc;
+        }
+        .alert-title { color: var(--accent-red); font-weight: bold; display: block; margin-bottom: 10px; }
+
+        /* GRID LIST */
+        .grid-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .grid-item {
+            border: 1px solid var(--border-dim);
+            padding: 10px;
+            font-size: 0.85rem;
+        }
+        .grid-label { color: var(--accent-green); font-weight: bold; display: block; }
+
+        /* NAV */
+        .nav-bar {
+            margin-bottom: 40px;
+        }
+        .back-btn {
+            color: #666;
+            text-decoration: none;
+            border: 1px solid var(--border-dim);
+            padding: 5px 15px;
+            transition: 0.3s;
+        }
+        .back-btn:hover {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 60px;
+            border-top: 1px solid var(--border-dim);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="nav-bar">
+            <a href="index.html" class="back-btn">< SYSTEM ROOT</a>
+        </div>
+
+        <header>
+            <h1>System-Spezifikation: Hakīkat-Kalesİ</h1>
+            <div style="color: var(--accent-gold); letter-spacing: 1px; margin-bottom: 10px;">WHITEPAPER V.2026 // PUBLIC RELEASE</div>
+            
+            <div class="meta-data">
+                <span>ARCHITEKT: MEHMET ÖRNEK</span>
+                <span>STATUS: DECLASSIFIED</span>
+                <span>KERNEL: RASM-V52.0</span>
+            </div>
+        </header>
+
+        <section id="preamble">
+            <h2>1. Epistemologische Präambel</h2>
+            <p>
+                Die vorliegende Forschungsarbeit postuliert einen radikalen Bruch mit der 1400-jährigen hermeneutischen Tradition. Wir definieren den Koran nicht als narratives Geschichtsbuch oder juristisches Regelwerk, sondern als eine <strong>"Reality Engine"</strong> – ein technisches Protokoll zur Kalibrierung menschlichen Bewusstseins innerhalb einer simulierten Raum-Zeit-Umgebung.
+            </p>
+            <p>
+                Das Kernproblem der bisherigen Exegese ist der "Software-Fehler" der Vokalisierung. Durch die nachträgliche Hinzufügung diakritischer Zeichen (Hareke) und interpretativer Layer (Hadithe) wurde der ursprüngliche <strong>System-Kernel (Rasm)</strong> überschrieben. Das Hakikat-Kalesi Projekt entfernt diese historischen "Patches", um den reinen, unverfälschten Code freizulegen.
+            </p>
+        </section>
+
+        <section id="physics">
+            <h2>2. Der Physikalische Kernel</h2>
+            <p>
+                Die klassische Physik operiert mit der Formel <em>E = mc²</em>. Diese Gleichung isoliert jedoch den Beobachter von der Beobachtung. Das Hakikat-Kalesi System führt den Operator <strong>I (Intelligence / Ruh)</strong> als fundamentale physikalische Größe wieder ein.
+            </p>
+
+            <div class="formula-box">
+                E = m · c² · I
+            </div>
+
+            <div class="grid-list">
+                <div class="grid-item">
+                    <span class="grid-label">STATUS: DABBET (I &lt; 0.15)</span>
+                    Kinetische Bio-Masse. Der Mensch ist rein reaktiv, triebgesteuert und determiniert.
+                </div>
+                <div class="grid-item">
+                    <span class="grid-label">STATUS: INSAN (I &rarr; ∞)</span>
+                    Souveränes Bewusstsein. Dominanz über Materie. Ziel: Supraleitung.
+                </div>
+            </div>
+        </section>
+
+        <section id="history">
+            <h2>3. Historische Diagnose: Kufr-Protokoll</h2>
+            <div class="alert-box">
+                <span class="alert-title">⚠ SYSTEM-WARNUNG: DATEI 'HISTORY_OF_SUPPRESSION'</span>
+                <p>
+                    Die Analyse beweist: Das Fehlen von 'I' war kein Zufall.
+                </p>
+                <ul>
+                    <li><strong>Etymologie:</strong> Die Wurzel K-F-R bedeutet technisch "Bedecken/Maskieren".</li>
+                    <li><strong>Funktion:</strong> 'Kufr' ist der Prozess, die Variable I (Göttlicher Funke) unter der Variable m (Masse) zu begraben.</li>
+                    <li><strong>Ziel:</strong> Erzeugung berechenbarer Einheiten für die ökonomische Matrix (Deccal-System).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="grid">
+            <h2>4. System-Architektur: Mukatta'a Master Grid</h2>
+            <p>
+                Die 29 Initial-Signaturen sind atomare System-Befehle (Header-Codes), die den Verarbeitungsmodus der Datenpakete definieren.
+            </p>
+            
+            <div class="code-block">
+>> BLOCK I: INITIALISIERUNG
+   SEQ_01 (N): POTENTIAL_INIT (Speicher-Allokation)
+   SEQ_02 (Q): ROOT_ACCESS (Quanten-Zugriff)
+   SEQ_04 (ALMS): FIREWALL (Binäre Entscheidung)
+
+>> BLOCK II: VISUALISIERUNG
+   SEQ_11-15 (ALR): HOLOGRAPHIC_STREAM (Simulation/Traum)
+
+>> BLOCK IV: STRUKTUR
+   SEQ_16-19 (ALM): STRUCTURAL_INTEGRITY (Netzwerk-Aufbau)
+
+>> BLOCK V: ADMIN-BACKEND
+   SEQ_20-26 (HM): SYSTEM_LOGGING & CONSENSUS
+
+>> FINAL: MASTER BOOT RECORD
+   SEQ_27 (ALM): VOLLSTÄNDIGER DOWNLOAD
+            </div>
+        </section>
+
+        <section id="api">
+            <h2>5. Universal API (W-Q-Y)</h2>
+            <p>
+                Das System beweist seine universelle Gültigkeit durch die polymorphe Dekodierung der Wurzel <strong>W-Q-Y (Taqwa)</strong> als "System-Integrität & Schutz":
+            </p>
+            <ul>
+                <li><strong>Informatik:</strong> Firewall gegen Malware.</li>
+                <li><strong>Biologie:</strong> Homöostase gegen toxische Einflüsse.</li>
+                <li><strong>Physik:</strong> Energetische Isolierung gegen Hochspannung.</li>
+            </ul>
+        </section>
+
+        <section id="teleology">
+            <h2>6. Teleologie: Das Supraleitungs-Protokoll</h2>
+            <p>
+                Das finale Ziel ist die Transformation des Bewusstseins in den <strong>Baqa-Zustand</strong>.
+            </p>
+            <ol>
+                <li><strong>Tekvir (ZIP):</strong> Komprimierung der Raum-Zeit-Daten. Shutdown des Ego-Systems.</li>
+                <li><strong>Null-Widerstand (0.0 Ω):</strong> Eliminierung von Reibung (Angst/Stress).</li>
+                <li><strong>Meissner-Effekt:</strong> Das Bewusstsein stößt das "Feld der Welt" ab.</li>
+                <li><strong>Rabb-Direct-Stream:</strong> Energieversorgung direkt aus der Singularität (Samad).</li>
+            </ol>
+        </section>
+
+        <footer>
+            HAKĪKAT-KALESİ SYSTEM ARCHITECTURE © 2026<br>
+            KONSTANTINOPEL // BERLIN<br>
+            <span style="color: var(--accent-green);">● SYSTEM ONLINE</span>
+        </footer>
+    </div>
+
+</body>
+</html>
