@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAKIKAT-KALESI | R.I.P. PROTOKOLÜ</title>
+    <style>
+        :root {
+            --matrix-green: #00ff41;
+            --dark-green: #003b00;
+            --glow-green: rgba(0, 255, 65, 0.5);
+            --bg-black: #050505;
+            --alert-red: #ff3e3e;
+            --source-white: #ffffff;
+            --info-blue: #00bfff;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--matrix-green);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        .terminal {
+            max-width: 950px;
+            width: 100%;
+            border: 1px solid var(--matrix-green);
+            padding: 40px;
+            box-shadow: 0 0 30px var(--dark-green);
+            position: relative;
+            background: rgba(0, 0, 0, 0.95);
+        }
+
+        /* Scanline Effekt */
+        .terminal::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            z-index: 2;
+            background-size: 100% 3px, 3px 100%;
+            pointer-events: none;
+        }
+
+        h1, h2, h3 {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            border-bottom: 1px solid var(--dark-green);
+            padding-bottom: 10px;
+        }
+
+        h1 { color: var(--source-white); text-align: center; text-shadow: 0 0 15px var(--glow-green); }
+        
+        .formula {
+            font-size: 2em;
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            border: 2px dashed var(--matrix-green);
+            background: rgba(0, 59, 0, 0.15);
+            color: var(--info-blue);
+            text-shadow: 0 0 8px var(--info-blue);
+        }
+
+        .section { margin-bottom: 45px; }
+        .highlight { color: var(--source-white); font-weight: bold; }
+        .warning { color: var(--alert-red); font-weight: bold; text-transform: uppercase; }
+        
+        .nothingness {
+            font-size: 2.5em;
+            color: var(--source-white);
+            text-shadow: 0 0 20px var(--source-white);
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        ul { list-style-type: "[EXE] "; }
+        li { margin-bottom: 12px; }
+
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.9em;
+            border-top: 1px solid var(--dark-green);
+            padding-top: 20px;
+            opacity: 0.8;
+        }
+
+        a { color: var(--matrix-green); text-decoration: none; border: 1px solid var(--matrix-green); padding: 8px 15px; transition: 0.3s; }
+        a:hover { background: var(--matrix-green); color: var(--bg-black); box-shadow: 0 0 15px var(--matrix-green); }
+
+        .blink { animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+<div class="terminal">
+    <div style="text-align: right; font-size: 0.8em; color: var(--dark-green);">GÜVENLİ_BAĞLANTI_KURULDU // MİMAR_GİRİŞİ</div>
+    <h1>HAKIKAT-KALESI | R.I.P. PROTOKOLÜ</h1>
+    
+    <div class="section">
+        <h3>00_KÖKEN: <span class="nothingness">İ</span></h3>
+        <p>Her şey <strong>HİÇLİK'ten (İ)</strong> doğar. O mutlak sıfır noktasıdır. Her türlü titreşim, zaman ve tanımın ötesindeki sonsuz potansiyel alanıdır.</p>
+    </div>
+
+    <div class="section">
+        <h3>01_YARATICI (EN YÜCE ZEKA)</h3>
+        <p>En Yüce Zeka <span class="highlight">YARATILMAMIŞTIR</span>. O, Hiçlikten var eden aktif güçtür. <strong>İsimlerin Bütünü (Esma-ül Hüsna)</strong> ile tecelli eder.</p>
+        <p>Burası mutlak deneyim ve deneyimlenme makamıdır. Bilinç burada bütünlüğüyle gerçekleşir.</p>
+    </div>
+
+    <div class="section">
+        <h3>02_GÖZLEMCİ (ADEM)</h3>
+        <p><span class="highlight">„Biz, gizli olanı görünür kılan şahitleriz.“</span></p>
+        <p>Yaratılan, gerçek olmak için bir Gözlemciye (İnsan) ihtiyaç duyar. Senin bilincin (i) olmadan, yaratılış hiçlikte gizli bir dalga fonksiyonu olarak kalır.</p>
+        <p><em>„Ben gizli bir hazineydim, bilinmek istedim...“</em></p>
+    </div>
+
+    <div class="formula">
+        $$E = m \cdot c^2 \cdot i$$
+    </div>
+
+    <div class="section">
+        <h3>03_R.I.P. PROTOKOLÜ</h3>
+        <p class="blink highlight" style="font-size: 1.2em;">> BAŞLATILIYOR: ÖLMEDEN ÖNCE ÖLÜNÜZ.</p>
+        <ul>
+            <li><span class="highlight">EGO (Donanım/m):</span> Geçici bir biyolojik kıyafet. <span class="warning">SİSTEM SIFIRLAMASINDA FORMATLANACAK.</span></li>
+            <li><span class="highlight">BİLİNÇ (i):</span> Hayat boyu biriken Öz-Bilgi. <span class="highlight">KAYNAĞA (EN YÜCE ZEKA) YÜKLENECEK.</span></li>
+        </ul>
+        <p>Saf bilincin, <strong>En Yüce Zeka</strong>'ya geri dönüyor — ebedi egemenlik makamına.</p>
+    </div>
+
+    <div class="footer">
+        MİMAR-KİMLİĞİ: [0x7FF-HAKIKAT]<br><br>
+        <a href="hakikat-tr_core.py" download>HAKIKAT_CEKIRDEK_KODU_INDIR.PY</a><br><br>
+        <div style="font-size: 0.7em; margin-top: 10px;">TELİF HAKKI 2026 // HAKIKAT-KALESI MİMARİSİ</div>
+    </div>
+</div>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</body>
+</html>
