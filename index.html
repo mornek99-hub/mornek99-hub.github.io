@@ -86,7 +86,7 @@
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
         }
 
-        /* MANUALS (BLAU ICON) */
+        /* MANUELLES UPDATE (BLAU ICON) */
         .btn-manual {
             border: 1px solid #444;
             color: #ddd;
@@ -107,6 +107,25 @@
         .btn-green { border: 1px solid #00ff41; color: #00ff41; }
         .flag { margin-right: 10px; font-size: 1.2em; filter: grayscale(30%); }
         .btn-green:hover { background-color: rgba(0, 255, 65, 0.1); box-shadow: 0 0 15px rgba(0, 255, 65, 0.2); }
+
+        /* NEW: GRID FOR 4 BUTTONS */
+        .grid-2x2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            width: 100%;
+            max-width: 450px;
+            margin: 10px auto;
+        }
+        .btn-grid {
+            margin: 0; 
+            padding: 15px 5px;
+            font-size: 0.75rem;
+            text-align: center;
+        }
+        /* RIP STYLE (ACTIVE RED) */
+        .btn-rip { border: 1px solid #ff3e3e; color: #ff3e3e; }
+        .btn-rip:hover { background-color: #ff3e3e; color: #000; box-shadow: 0 0 15px #ff3e3e; }
 
         .separator { margin: 25px auto; border-bottom: 1px dashed #333; width: 100%; max-width: 450px; }
         
@@ -133,10 +152,23 @@
 
     <div class="section-header">ACCESS TERMINAL / ERİŞİM PANELİ</div>
 
-    <a href="hakikat_core.py" class="btn btn-gold">
-        [ 👁 VIEW SOURCE: PYTHON PROTOCOL ]
-    </a>
+    <div class="grid-2x2">
+        <a href="hakikat_core.py" target="_blank" class="btn btn-green btn-grid">
+            [ 👁 CORE_LOGIC.PY ]
+        </a>
 
+        <a href="hakikat-tr_core.py" target="_blank" class="btn btn-green btn-grid">
+            [ 👁 ÇEKİRDEK.PY ]
+        </a>
+
+        <a href="rip.html" class="btn btn-rip btn-grid">
+            [ 💀 R.I.P. PROTOCOL ]
+        </a>
+
+        <a href="rip-tr.html" class="btn btn-rip btn-grid">
+            [ 💀 R.I.P. PROTOKOLÜ ]
+        </a>
+    </div>
     <a href="manual.html" class="btn btn-manual">
         <span class="blue-icon"></span>
         MANUELLES UPDATE: RESONANZ (HANDBUCH)
