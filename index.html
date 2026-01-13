@@ -122,10 +122,17 @@
             padding: 15px 5px;
             font-size: 0.75rem;
             text-align: center;
+            border: 1px solid #00ff41; 
+            color: #00ff41;
         }
+        .btn-grid:hover {
+            background-color: rgba(0, 255, 65, 0.1); 
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+        }
+
         /* RIP STYLE (ACTIVE RED) */
-        .btn-rip { border: 1px solid #ff3e3e; color: #ff3e3e; }
-        .btn-rip:hover { background-color: #ff3e3e; color: #000; box-shadow: 0 0 15px #ff3e3e; }
+        .btn-rip { border: 1px solid #ff3e3e !important; color: #ff3e3e !important; }
+        .btn-rip:hover { background-color: #ff3e3e !important; color: #000 !important; box-shadow: 0 0 15px #ff3e3e !important; }
 
         .separator { margin: 25px auto; border-bottom: 1px dashed #333; width: 100%; max-width: 450px; }
         
@@ -153,19 +160,19 @@
     <div class="section-header">ACCESS TERMINAL / ERİŞİM PANELİ</div>
 
     <div class="grid-2x2">
-        <a href="hakikat_core.py" target="_blank" class="btn btn-green btn-grid">
+        <a href="hakikat_core.py" target="_blank" class="btn btn-grid">
             [ 👁 CORE_LOGIC.PY ]
         </a>
 
-        <a href="hakikat-tr_core.py" target="_blank" class="btn btn-green btn-grid">
+        <a href="hakikat-tr_core.py" target="_blank" class="btn btn-grid">
             [ 👁 ÇEKİRDEK.PY ]
         </a>
 
-        <a href="rip.html" class="btn btn-rip btn-grid">
+        <a href="rip.html" class="btn btn-grid btn-rip">
             [ 💀 R.I.P. PROTOCOL ]
         </a>
 
-        <a href="rip-tr.html" class="btn btn-rip btn-grid">
+        <a href="rip-tr.html" class="btn btn-grid btn-rip">
             [ 💀 R.I.P. PROTOKOLÜ ]
         </a>
     </div>
