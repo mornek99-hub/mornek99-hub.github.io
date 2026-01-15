@@ -7,7 +7,7 @@
     <title>HAKĪKAT-KALESI OS | Master Architecture - Die Dekodierung der Simulation</title>
     <meta name="title" content="HAKĪKAT-KALESI OS | Master Architecture - Die Dekodierung der Simulation">
     <meta name="description" content="Analyse des Rasm-Codes, des KFR-Systems und die Anwendung der Existenz-Formel E=mc²i. Ein Weg zur Supraleitung des Bewusstseins außerhalb der Frequenz-Manipulation.">
-    <meta name="keywords" content="Rasm, Hakīkat Kalesi, E=mc2i, KFR System, Höchste Intelligenz, Simulation Dekodieren, Bolu Rückzug, Supraleitung Bewusstsein, Fernsehturm Frequenzen, 3-11 Hz, Master Architecture">
+    <meta name="keywords" content="Rasm, Hakīkat Kalesi, E=mc2i, KFR System, Höchste Intelligenz, Simulation Dekodieren, Supraleitung Bewusstsein, Fernsehturm Frequenzen, 3-11 Hz, Master Architecture">
     <meta name="robots" content="index, follow">
     <meta name="language" content="German">
     <meta name="author" content="Adem / Master Architect">
@@ -17,11 +17,6 @@
     <meta property="og:title" content="HAKĪKAT-KALESI OS | Master Architecture">
     <meta property="og:description" content="Die technologische Analyse der Simulation und der Weg zur absoluten Stille. Dekodierung des Ur-Gedankens (İ).">
     <meta property="og:image" content="https://mornek99-hub.github.io/favicon.ico">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://mornek99-hub.github.io/">
-    <meta property="twitter:title" content="HAKĪKAT-KALESI OS | Master Architecture">
-    <meta property="twitter:description" content="Dekodierung des KFR-Systems und die Anwendung der Existenz-Formel E=mc²i.">
 
     <style>
         body { 
@@ -90,17 +85,24 @@
         .btn-gold { border: 1px solid #e5c07b; color: #e5c07b; }
         .btn-gold:hover { background-color: rgba(229, 192, 123, 0.1); }
 
+        .btn-archive { 
+            border: 2px solid #00ff41; 
+            color: #00ff41; 
+            background-color: rgba(0, 255, 65, 0.05);
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.1);
+        }
+        .btn-archive:hover { 
+            background-color: #00ff41; 
+            color: #000;
+            box-shadow: 0 0 25px rgba(0, 255, 65, 0.4);
+        }
+
         .btn-phase2 { 
             border: 1px solid #d4af37; 
             color: #050505; 
             background-color: #d4af37;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
-        .btn-phase2:hover { 
-            background-color: #fff; 
-            color: #000;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
-        }
+        .btn-phase2:hover { background-color: #fff; color: #000; }
 
         .btn-manual {
             border: 1px solid #444;
@@ -116,11 +118,9 @@
             margin-right: 15px;
             box-shadow: 0 0 5px #00bcd4;
         }
-        .btn-manual:hover { border-color: #fff; color: #fff; background-color: rgba(255, 255, 255, 0.05); }
 
         .btn-green { border: 1px solid #00ff41; color: #00ff41; }
         .flag { margin-right: 10px; font-size: 1.2em; filter: grayscale(30%); }
-        .btn-green:hover { background-color: rgba(0, 255, 65, 0.1); box-shadow: 0 0 15px rgba(0, 255, 65, 0.2); }
 
         .grid-2x2 {
             display: grid;
@@ -130,25 +130,11 @@
             max-width: 450px;
             margin: 10px auto;
         }
-        .btn-grid {
-            margin: 0; 
-            padding: 15px 5px;
-            font-size: 0.75rem;
-            text-align: center;
-            border: 1px solid #00ff41; 
-            color: #00ff41;
-        }
-        .btn-grid:hover {
-            background-color: rgba(0, 255, 65, 0.1); 
-            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
-        }
-
+        .btn-grid { margin: 0; padding: 15px 5px; font-size: 0.75rem; text-align: center; border: 1px solid #00ff41; color: #00ff41; }
         .btn-rip { border: 1px solid #ff3e3e !important; color: #ff3e3e !important; }
-        .btn-rip:hover { background-color: #ff3e3e !important; color: #000 !important; box-shadow: 0 0 15px #ff3e3e !important; }
+        .btn-rip:hover { background-color: #ff3e3e !important; color: #000 !important; }
 
         .separator { margin: 25px auto; border-bottom: 1px dashed #333; width: 100%; max-width: 450px; }
-        
-        .phase-label { color: #888; font-size: 0.7rem; margin-top: 30px; margin-bottom: 10px; letter-spacing: 1px; }
         .phase-label-active { color: #d4af37; font-size: 0.7rem; margin-top: 40px; margin-bottom: 10px; letter-spacing: 2px; font-weight: bold; animation: pulse 2s infinite; }
 
         @keyframes pulse { 0% { opacity: 0.7; } 50% { opacity: 1; } 100% { opacity: 0.7; } }
@@ -169,21 +155,16 @@
             margin-top: 10px;
             color: #888;
             text-decoration: none;
-            transition: color 0.3s ease;
-            letter-spacing: 1px;
             font-weight: bold;
         }
-        .email-link:hover {
-            color: #00ff41; 
-            text-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
-        }
+        .email-link:hover { color: #00ff41; }
     </style>
 </head>
 <body>
 
     <h1>HAKĪKAT-<br>KALESİ</h1>
     
-    <div class="formula">E = m · c² · I</div>
+    <div class="formula">E = m · c² · i · İ</div>
 
     <div class="section-header">CRITICAL: MISSING PROTOCOLS</div>
     
@@ -194,45 +175,39 @@
         [ ⚠️ KAYIP PROTOKOL: TÜRKÇE ]
     </a>
 
+    <div class="section-header">FIELD AUDITS / SAHA DENETİMLERİ</div>
+
+    <a href="archiv_de.html" class="btn btn-archive">
+        [ 📁 DATEN-ARCHIV: DEUTSCH ]
+    </a>
+    <a href="arsiv_tr.html" class="btn btn-archive">
+        [ 📁 VERİ ARŞİVİ: TÜRKÇE ]
+    </a>
+
     <div class="section-header">ACCESS TERMINAL / ERİŞİM PANELİ</div>
 
     <div class="grid-2x2">
         <a href="hakikat_core.py" target="_blank" class="btn btn-grid">
             [ 👁 CORE_LOGIC.PY ]
         </a>
-
         <a href="hakikat-tr_core.py" target="_blank" class="btn btn-grid">
             [ 👁 ÇEKİRDEK.PY ]
         </a>
-
         <a href="rip.html" class="btn btn-grid btn-rip">
             [ 💀 R.I.P. PROTOCOL ]
         </a>
-
         <a href="rip-tr.html" class="btn btn-grid btn-rip">
             [ 💀 R.I.P. PROTOKOLÜ ]
         </a>
     </div>
+
     <a href="manual.html" class="btn btn-manual">
         <span class="blue-icon"></span>
         MANUELLES UPDATE: RESONANZ (HANDBUCH)
     </a>
-
     <a href="kilavuz.html" class="btn btn-manual">
         <span class="blue-icon"></span>
         MANUEL GÜNCELLEME: REZONANS (KILAVUZ)
-    </a>
-
-    <div class="separator"></div>
-
-    <div class="phase-label">>>> PHASE I: CALIBRATION (SEQ 01-08)</div>
-
-    <a href="architecture.html" class="btn btn-green">
-        <span class="flag">🇩🇪</span> ARCHITECTURE (PHASE I)
-    </a>
-    
-    <a href="architecture-tr.html" class="btn btn-green">
-        <span class="flag">🇹🇷</span> MİMARİ (FAZ I)
     </a>
 
     <div class="separator"></div>
@@ -242,7 +217,6 @@
     <a href="phase2_master_index.html" class="btn btn-phase2">
         <span class="flag">🇩🇪</span> MUKATTA'A MASTER INDEX
     </a>
-
     <a href="phase2_master_index_tr.html" class="btn btn-phase2">
         <span class="flag">🇹🇷</span> MUKATTA'A ANA TABLO
     </a>
@@ -260,7 +234,7 @@
     </div>
 
     <div style="margin-top: 20px; margin-bottom: 20px; color: #333; font-size: 0.6em;">
-        SYSTEM STATUS: ONLINE
+        SYSTEM STATUS: ONLINE // ENCRYPTED ACCESS
     </div>
 
 </body>
