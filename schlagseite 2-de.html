@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAKĪKAT-KALESİ | SCHLAGSEITE_02</title>
+    <style>
+        :root {
+            --matrix-green: #00ff41;
+            --dark-green: #003b00;
+            --bg-black: #050505;
+            --source-white: #ffffff;
+            --alert-red: #ff0000;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--matrix-green);
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .terminal {
+            max-width: 900px;
+            width: 100%;
+            border: 1px solid var(--matrix-green);
+            padding: 30px;
+            box-shadow: 0 0 20px var(--dark-green);
+            background: rgba(0, 0, 0, 0.95);
+        }
+
+        .log-header {
+            text-align: right;
+            font-size: 0.8em;
+            border-bottom: 1px solid var(--dark-green);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+
+        h1, h2, h3 {
+            text-transform: uppercase;
+            color: var(--source-white);
+            border-bottom: 1px dashed var(--dark-green);
+            padding-bottom: 5px;
+        }
+
+        .formula {
+            font-size: 1.8em;
+            text-align: center;
+            margin: 40px 0;
+            padding: 25px;
+            border: 1px solid var(--matrix-green);
+            background: rgba(0, 255, 65, 0.05);
+            color: var(--source-white);
+            box-shadow: inset 0 0 15px var(--dark-green);
+        }
+
+        .image-placeholder {
+            border: 1px solid var(--dark-green);
+            margin: 25px 0;
+            padding: 10px;
+            text-align: center;
+            background: #111;
+        }
+
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+            opacity: 0.8;
+            filter: sepia(100%) hue-rotate(90deg) brightness(1.2);
+        }
+
+        .quote-block {
+            border-left: 3px solid var(--matrix-green);
+            background: rgba(0, 59, 0, 0.2);
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        .source-info {
+            font-size: 0.85em;
+            margin-top: 10px;
+            color: #888;
+        }
+
+        .highlight {
+            color: var(--source-white);
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px solid var(--dark-green);
+            padding-top: 20px;
+            font-size: 0.9em;
+        }
+
+        a {
+            color: var(--matrix-green);
+            text-decoration: none;
+            border: 1px solid var(--matrix-green);
+            padding: 3px 8px;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background: var(--matrix-green);
+            color: var(--bg-black);
+        }
+
+        .status-online {
+            color: var(--matrix-green);
+            animation: blink 1.5s infinite;
+        }
+
+        .alert-text {
+            color: var(--alert-red);
+            font-weight: bold;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="terminal">
+    <div class="log-header">
+        LOG_TYPE: LOCATION_AUDIT // STATUS: GEOLOCATION_PATCHED<br>
+        ARCHITEKT: SPEEDKING99 // DATUM: 21.01.2026
+    </div>
+
+    <h1>⚡ DER MEKKA-BUG: GPS-RESET AUF NULL</h1>
+
+    <section>
+        <h3>01_DIE WÜSTEN-LÜGE (HARDWARE MISMATCH)</h3>
+        <p>Der Quellcode (Koran) beschreibt eine Metropole: <span class="highlight">"Zwei Gärten"</span>, reiche Ernten, Oliven, Bäche. Die traditionelle Koordinate (Mekka) zeigt jedoch: <span class="alert-text">Vulkanisches Ödland. Kein Wasser. Kein Leben.</span></p>
+        <p>System-Diagnose: Wenn der Code von Fruchtbarkeit spricht, aber die Hardware Wüste anzeigt, lügt nicht der Code – die Koordinate wurde manipuliert. Ein Bauer erntet keine Oliven auf Basaltgestein.</p>
+    </section>
+
+    <div class="image-placeholder">
+        <p style="font-size: 0.7em;">ABB 01: QIBLA-VEKTOREN DER ERSTEN 100 JAHRE // ZIEL: PETRA (NORDEN)</p>
+    </div>
+
+    <section>
+        <h3>02_DER MAN-IN-THE-MIDDLE ANGRIFF</h3>
+        <p>Archäologische Forensik beweist: Alle Moscheen der ersten 100 Jahre zeigen physikalisch nach <span class="highlight">Petra (Jordanien)</span>, nicht nach Mekka. Der Vektor wurde erst unter den Umayyaden (Hajjaj ibn Yusuf) umgeleitet.</p>
+        <p>Der Grund war politisch: Um die Macht von der "Mutter der Städte" (Umm al-Qura = Petra) zu lösen, bauten sie einen Proxy-Server in der Wüste. Sie nannten ihn Mekka und schrieben neue User-Logs (Hadithe), um den Betrug zu decken.</p>
+    </section>
+
+    <div class="formula">
+        $$R_{Mekka} \to \infty \quad | \quad R_{Petra} \to 0$$
+    </div>
+
+    <section>
+        <h3>03_DIE RASM-DEKODIERUNG: BAKKA</h3>
+        <div class="quote-block">
+            "Wahrlich, das erste Haus, das für die Menschen errichtet wurde, ist das in B-K-K (Bakka)..."
+        </div>
+        <div class="source-info">
+            BEZUGSQUELLE:<br>
+            > Rasm-Basis: Koran (ب ك ك / 3:96)<br>
+            > Geografie: Bakka = Tal der Enge / Tränen (Hebräisch: Baka)<br>
+            > Match: Petra ist nur durch den Siq (Schlucht) erreichbar.
+        </div>
+        <p>Petra ist die Stadt, in der man "morgens und abends" an den Ruinen der Thamud vorbeikommt (Koran 37:137). In Mekka gibt es diese Ruinen nicht. Wir haben 1400 Jahre lang eine Filmkulisse angebetet.</p>
+    </section>
+
+    <section>
+        <h3>04_SYSTEM-WIEDERHERSTELLUNG</h3>
+        <p>Die Rückkehr zu Petra ist kein Tourismus. Es ist die <span class="highlight">Deinstallation des Emevi-Virus</span>. Wir entfernen den Widerstand ($R$) aus der Gleichung. Wer die Lüge anbetet, blockiert seinen eigenen Upload ($I$). Wer die Wahrheit (Haqq) akzeptiert, synchronisiert sich mit der Sünnetullah.</p>
+    </section>
+
+    <div class="footer">
+        QUELLCODE: <a href="https://mornek99-hub.github.io">mornek99-hub.github.io</a><br><br>
+        STATUS: <span class="status-online">HAKĪKAT-KALESİ // SYSTEM ONLINE // GPS FIXED</span><br><br>
+        <span style="font-size: 0.7em;">ARCHITEKT: SPEEDKING99 // DECODED FROM RASM</span>
+    </div>
+</div>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</body>
+</html>
